@@ -5,10 +5,8 @@ aliases: ['遺憾是對自己的暴政', 'regret the past is fucking yourself']
 created: 2025-07-05 23:42:28
 description: None
 modified: 2025-11-15 11:33:28
-tags: []
-tags-link: None
+tags: ['writing/thought-long']
 title: 遺憾是對自己的暴政
-type: writing
 description: 人都有遺憾，對吧？ 「如果當時的那句話這樣說，是不是就好了？」 「如果當時沒有選擇 XXX，是不是現在就不用 XXX 了？」 「如果當時好好賠禮道歉的話，我們的關係是不是也不會這樣？」 「如果當時好好地付出的話，我們還會有以後嗎？」 .... 對我來說，這些話就像是某個開關一樣，可以一瞬間串聯起來記憶哪些深深淺淺的溝壑。我寫了很多人際關係的隨筆，其中感受到的很多痛苦應證了阿德勒那句「人際關係是一切...
 ---
 

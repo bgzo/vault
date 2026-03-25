@@ -4,7 +4,7 @@ draft: False
 aliases: ['到這後，一切都變味了']
 created: 2025-11-15 21:10:00
 modified: 2025-11-15 21:10:58
-tags: ['weekly/1266']
+tags: ['writing/thought-long']
 title: 到這後，一切都變味了
 description: 很多東西來了這裏都變了，VPN、eSIM、Apple、Google、Harmony 這些是你可能已經知道的產品或公司，如果你在國內工作，也應該能感受到這種變化，就我所在的軟件行業，底層大量的國產化之後，你的技術棧也會大量國產化： 這兩年中美脫鉤，我從業的公司，也正在把大量的依賴遷移到國產，這是大趨勢。我們知道，所謂的國產，可能就是 Fork -> Replace -> Rebuild -> Com...
 ---

@@ -5,7 +5,8 @@ aliases: How to generate favicon for website
 created: 2025-06-14 22:56:03
 modified: 2025-06-14 23:15:24
 type: how-to
-description: 🌟 favycon via: https://favycon.vercel.app/ Others https://realfavicongenerator.net/ https://geticon.cn/ https://www.dute.org/ico-converter References Source via: https://note.bgzo.cc/how-to/generate-f...
+tags: ['writing/how-to']
+description: 🌟 favycon via: https://favycon.vercel.app/ Others https://realfavicongenerator.net/ https://geticon.cn/ https://www.dute.org/ico-converter References Source via: https://note.bgzo.cc/weekly/generate-f...
 ---
 
 ## 🌟 favycon
@@ -20,4 +21,4 @@ description: 🌟 favycon via: https://favycon.vercel.app/ Others https://realfa
 
 ## References
 
-Source via: https://note.bgzo.cc/how-to/generate-favicon
+Source via: https://note.bgzo.cc/weekly/generate-favicon

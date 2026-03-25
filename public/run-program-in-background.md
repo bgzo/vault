@@ -4,6 +4,7 @@ aliases: ['How to run program in background', 'Run-program-in-background']
 created: 2025-07-19 12:08:14
 modified: 2025-07-19 12:09:09
 title: How to run program in background
+tags: ['writing/how-to']
 description: Windows index tmux nohup bg References What's the nohup on Windows? - Stack Overflow What is the equivalent of 'nohup' in linux PowerShell? - Stack Overflow Start-Process (Microsoft.PowerShell.Managem...
 ---
 
@@ -33,4 +34,4 @@ start
 - [What is the equivalent of 'nohup' in PowerShell? - Stack Overflow](https://stackoverflow.com/questions/19321903/what-is-the-equivalent-of-nohup-in-powershell)
 - [Start-Job (Microsoft.PowerShell.Core) - PowerShell | Microsoft Learn](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/start-job)
 
-Source via: https://note.bgzo.cc/how-to/run-program-in-background
+Source via: https://note.bgzo.cc/weekly/run-program-in-background

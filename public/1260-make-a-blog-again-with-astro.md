@@ -4,7 +4,7 @@ draft: False
 aliases: ['用 Astro 重做網站這件事']
 created: 2025-10-12 00:39:37
 modified: 2025-11-15 13:00:31
-tags: ['weekly/1260']
+tags: ['writing/lab']
 title: 用 Astro 重做網站這件事
 description: Astro 是什麼 核心思想是羣島架構，不同與傳統 VUE 的單頁應用，而是對於不用頁面按需加載，在網頁加載速度和架構兼容性上來說是一流。 模板的注入類似 Jekyll，但是比前者更加靈活。 Bun 是什麼 是用 Zig 語言實現的另一個 Javascript 運行時，目標是兼容 Node.js，提供更加快速的構建體驗。 初始化一個 Astro 項目 添加 Vue / TailwindCSS 等依...
 ---
@@ -383,4 +383,4 @@ bun run dev -- --host
 - 路由命名，因爲主要依靠 Github Pages（下叫 Pages），所以路徑上，可能會有個子其他 Pages 命名衝突的情況，比如我我的某個路由叫 `bgzo.github.io/playground`， 正好我有個項目就叫 `playground` 且開啓了 Pages，那麼 Gihtub 會優先取後者，即其他項目的頁面，而不是你當前這個項目的路由。
 - [ ] 爲什麼 Mac 熄屏後再打開，轉發的端口、頁面就會失效，需要重新轉發；
 
-Source via: https://note.bgzo.cc/labs/1260-make-a-blog-again-with-astro
+Source via: https://note.bgzo.cc/weekly/1260-make-a-blog-again-with-astro

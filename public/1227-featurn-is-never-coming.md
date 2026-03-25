@@ -4,9 +4,8 @@ draft: False
 aliases: ['1227-featurn-is-never-coming', '未來永遠不會到來']
 created: 2025-02-15 18:17:14
 modified: 2025-11-15 11:33:28
-tags: ['weekly/1227']
+tags: ['writing/thought-long']
 title: 未來永遠不會到來
-type: writing
 description: 上個月，我賣掉了身上最後一部 Android 手機 —— samsung-tab-s8，反而讓我更加想再買一臺手機。 這段時間趕上春運，價格居高不下，因爲像我這樣猶豫的人，在春節最多，像我這樣的人，註定被充滿惡意的市場裹挾，困在其中無法動彈。 也許沒有完全準備好就出手了，也許只是想寫 Android，或者只是想用家人守護，總之，我仍然想雙持 Android 和 iPhone，買一部一加手機。 總之...
 ---
 

@@ -4,9 +4,8 @@ draft: False
 aliases: ['每個人都應該知道的命名約束', '命名約束']
 created: 2024-11-02 12:00:00
 modified: 2025-11-15 11:33:28
-tags: ['weekly/1212']
+tags: ['writing/thought-long']
 title: 每個人都應該知道的命名約束
-type: writing
 description: 不知不覺，傳到 OneDrive 的數據已經有 324G。加上大學四年亂八七糟的課業，網絡隨處蒐集來的二手文檔，他們雖然看似錯綜複雜，但極細斟酌的話，你又會發現，其實其實仍然存在着某種順序，但這無益，只會讓他們顯得更加雜亂無章。 從某種意義上來說，這就是屎山。 很早就看到過牛津大學的一篇文章 https://datamanagement.hms.harvard.edu/plan-design/fi...
 ---
 

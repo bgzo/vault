@@ -4,9 +4,8 @@ draft: False
 aliases: ['比文章更遠', '超越文章']
 created: 2024-09-21 12:00:00
 modified: 2025-11-15 11:33:28
-tags: ['weekly/1206']
+tags: ['writing/thought-long']
 title: 比文章更遠
-type: writing
 description: 我很喜歡記東西，用過非常多的工具，當然積累了非常大的比計量，就像 weekly/1198-wrong-second-brain 裏面提到的，筆記不應該是如此廉價的東西，要不然就會像現在的我一樣，信息過載，淹沒在自己的文字地獄中，更加難以回顧，加以輸出利用。 一篇文章能做的事情，僅僅是把我當下做的事情，以日誌的形式，記錄下來，就像程序打 LOG，不知道你有沒有翻過 .bashhistroy / Co...
 ---
 

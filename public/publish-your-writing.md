@@ -5,6 +5,7 @@ created: 2025-06-03 22:50:04
 modified: 2025-07-04 23:08:40
 title: How to publish your writing
 type: how-to
+tags: ['writing/how-to']
 description: Traditional platform 1. https://www.blogger.com 2. https://www.cnblogs.com 3. https://www.onenote.com 4. https://blog.csdn.net Self host website / Dynamic web page 1. https://cn.wordpress.org 2. http:...
 ---
 
@@ -76,4 +77,4 @@ description: Traditional platform 1. https://www.blogger.com 2. https://www.cnbl
 - https://www.v2ex.com/t/735110
 - https://www.zhihu.com/question/273440522/answer/369268121
 
-Source via: https://note.bgzo.cc/how-to/publish-your-writing
+Source via: https://note.bgzo.cc/weekly/publish-your-writing

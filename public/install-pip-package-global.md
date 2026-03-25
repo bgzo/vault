@@ -4,7 +4,8 @@ aliases: ['How to install pip package', 'How to install pip package globally', '
 created: 2025-07-26 22:52:33
 modified: 2025-07-26 22:56:41
 title: How to install pip package
-description: Pipx 如果你用 Homebrew / Python >= 3.11 / pip >= 23.0，在全局安裝 PIP 包，會遇到如下錯誤： 可以用 PIPX 實現全局安裝並且對環境依賴無污染 Source via: https://note.bgzo.cc/how-to/install-pip-package-global
+tags: ['writing/how-to']
+description: Pipx 如果你用 Homebrew / Python >= 3.11 / pip >= 23.0，在全局安裝 PIP 包，會遇到如下錯誤： 可以用 PIPX 實現全局安裝並且對環境依賴無污染 Source via: https://note.bgzo.cc/weekly/install-pip-package-global
 ---
 
 
@@ -19,4 +20,4 @@ hint: See PEP 668 for the detailed specification.
 
 可以用 PIPX 實現全局安裝並且對環境依賴無污染
 
-Source via: https://note.bgzo.cc/how-to/install-pip-package-global
+Source via: https://note.bgzo.cc/weekly/install-pip-package-global

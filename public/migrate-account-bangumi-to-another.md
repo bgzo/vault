@@ -4,7 +4,7 @@ draft: False
 aliases: ['如何遷移 bangumi 賬號']
 created: 2025-11-13 07:27:54
 modified: 2025-11-15 12:42:39
-tags: ['bangumi']
+tags: ['bangumi', 'writing/how-to']
 title: 如何遷移 bangumi 賬號
 type: how-to
 description: 本篇指南屬於 https://pypi.org/project/bangumi_recovery/ 操作備忘 使用場景 你想把一個 Bangumi 賬號的數據（收藏、評分等）遷移到另一個賬號上。傳統上你可能需要： 1. 新建或更換賬號後想複製歷史收藏 2. 陸續把播放/觀看進度遷移到主賬號 3. 合併舊賬號數據到新賬號或做橫向備份 可能會很蛋疼，因爲： 1. 沒有一鍵導入：API 也沒有官方的“導...
@@ -56,4 +56,4 @@ bgm-clone user_id
 - 如何批量標記 Bangumi 往季新番
 - 如何刪除清空 bangumi 時間線
 
-Source via: https://note.bgzo.cc/how-to/migrate-account-bangumi-to-another
+Source via: https://note.bgzo.cc/weekly/migrate-account-bangumi-to-another

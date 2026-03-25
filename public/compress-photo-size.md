@@ -5,7 +5,7 @@ aliases: ['How to compress photo size']
 created: 2024-06-26 14:22:35
 modified: 2025-06-14 23:00:50
 type: how-to
-tags-link: ['[[photo]]']
+tags: ['writing/how-to', 'photo']
 description: Most tidy -> webp via: https://developers.google.com/speed/webp Download via: https://developers.google.com/speed/webp/docs/precompiled JEPG -> jpegoptim Convert image to JPEG using https://imagemagic...
 ---
 
@@ -53,4 +53,4 @@ a PNG optimizer that recompresses image files to a smaller size, without losing 
 optipng -o3 image.png -out output.png
 ```
 
-Source via: https://note.bgzo.cc/how-to/compress-photo-size
+Source via: https://note.bgzo.cc/weekly/compress-photo-size

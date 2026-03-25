@@ -5,10 +5,8 @@ aliases: ['美化 BroadcastChannel']
 created: 2025-10-25 11:19:59
 description: None
 modified: 2025-11-15 12:52:20
-tags: ['weekly/1263', 'weekly/tech']
-tags-link: None
+tags: ['writing/lab']
 title: 美化 BroadcastChannel
-type: writing
 description: 原項目設計很新穎，用 Cloudflare / Netlify / Vercel 等平臺天然支持 SSR 特性，完成了原網頁 https://t.me/s/ 的代理工作。最重要的是，這些平臺作爲中間轉發（代理），可以直接讓國內訪問到這部分內容（受衆 ++）。 原理 之前一直以爲是從 Telegram 網頁端拉取數據，然後再生成動態站點，但運行一段時間之後發現不是，博文同步更新的很快，部署一次之後，...
 ---
 
@@ -251,4 +249,4 @@ export default defineConfig({
 
 大致就是這些，寫完了，希望你能玩的快心，我的地址: https://cast.bgzo.cc
 
-Source via: https://note.bgzo.cc/labs/1263-beautify-boardcast
+Source via: https://note.bgzo.cc/weekly/1263-beautify-boardcast

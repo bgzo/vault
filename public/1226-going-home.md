@@ -4,10 +4,8 @@ draft: False
 aliases: ['1226-going-home-with-parents', '父母在不遠游', '最想考公的時刻']
 created: 2025-02-08 21:56:35
 modified: 2025-11-15 11:33:28
-tags: ['weekly/1226']
-tags-link: ['[[official-system-in-china|考公]]']
+tags: ['writing/thought-long', '考公']
 title: 最想考公的時刻
-type: writing
 description: 每次坐火車回家，在最後一天臨走時總是不捨，那一天，我是不能聽趙雷的「我記得」的。 唯有這段時間，我很想留在內蒙，不明白爲何當初鐵了心要出蒙。這種想法在和家鄉體制裏的同學見面後尤其明顯，體制外的就業環境太惡劣了。我有時候和我的同事抱怨：就像在阿中找個合理點的工作，就不得不獻忠，不得不唱讚歌，實在是太抽象了。 我想我是個浮萍，或者「時代的炮灰」[^disapper-30-years]，隨時保持一種拿起...
 ---
 

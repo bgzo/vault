@@ -4,7 +4,7 @@ draft: False
 aliases: ['導出知乎收藏夾']
 created: 2025-12-14 20:01:18
 modified: 2025-12-14 20:25:57
-tags: []
+tags: ['writing/lab']
 title: 導出知乎收藏夾
 description: 基於幾點原因，建議你定期備份知乎收藏夾： 1. 覆盤：工作日有的時候會看這個網站，會存一些收藏的技術文章； 2. 審查：有些答案會被隱藏，甚至刪除，比如下面收藏夾就有這種情況，頁面顯示有 4 個內容，接口返回的 total 也是 4，但是實際查詢到的內容一個都沒有，怎麼辦，好難猜啊，你懂的； 所以是不是得及時做備份？ 實現 通過網頁抓包如下接口： https://github.com/bGZo/e...
 ---
@@ -39,4 +39,4 @@ eto zhihu -c xxx -o ./zhihu
 
 項目比較個人，如果有一些通用性的意見，歡迎提 ISSUE
 
-Source via: https://note.bgzo.cc/labs/1270-export-zhihu-collection
+Source via: https://note.bgzo.cc/weekly/1270-export-zhihu-collection

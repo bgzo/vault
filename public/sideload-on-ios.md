@@ -4,7 +4,7 @@ draft: False
 aliases: ['側載', '測載', '巨魔', 'How to sideload on iOS', 'Make it like Android Sideload', 'Sideload-on-ios']
 created: 2025-06-02 11:50:24
 modified: 2026-01-02 23:41:18
-tags: []
+tags: ['writing/how-to']
 title: Sideload-on-ios
 type: how-to
 description: Troll Store How it works? The latest releases of TrollStore (specifically 2.0 and later) work through the use of a CoreTrust bug in which code signatures are not correctly verified under certain circu...
@@ -113,7 +113,7 @@ description: Troll Store How it works? The latest releases of TrollStore (specif
     - [ ] ViTA
 - 追番看漫畫
     - Aidoku
-    - open-ani-animeko
+    - ~open-ani-animeko
     - Kazumi：動漫
         - Need resign [^runing-with-live-container]
         - ![200](https://raw.githack.com/bGZo/assets/dev/2025/1745360745622.PNG)
@@ -152,4 +152,4 @@ description: Troll Store How it works? The latest releases of TrollStore (specif
 
 [^runing-with-live-container]: https://github.com/Predidit/Kazumi/issues/819, 一個更簡單的方法是用 https://github.com/LiveContainer/LiveContainer 直接運行無簽名的 IPA 文件，並且不額外佔用 App IDs 和 3 個激活 App 的名額。
 
-Source via: https://note.bgzo.cc/how-to/sideload-on-ios
+Source via: https://note.bgzo.cc/weekly/sideload-on-ios

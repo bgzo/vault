@@ -5,10 +5,8 @@ aliases: ['詐騙廣告機']
 created: 2025-04-10 21:04:39
 description: None
 modified: 2025-11-15 11:33:28
-tags: ['weekly/1235']
-tags-link: None
+tags: ['writing/thought-long']
 title: 詐騙廣告機
-type: writing
 description: 最近很累，因爲我又換手機了。 主力機: iPhone SE3 最近一年我的主要用這一臺出行，沒有什麼拍照需求，上下班通勤用哈囉，喫飯掃碼用支付寶，上班摸魚聽播客用 Snipd，娛樂看書用 iPad，沒有什麼不適。但最近我有幾個「被構建」起來的的慾望： 慾望一：TypeC 口 我的耳機是 Huawei 的 FreeLace，買它的原因就是少帶一根充電線，並且可以藍牙一拖二，快充二十分鐘，還帶點降噪。...
 ---
 

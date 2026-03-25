@@ -4,9 +4,8 @@ draft: False
 aliases: ['我都花了時間玩遊戲，爲什麼還要花錢買它？']
 created: 2023-07-08 11:15:56
 modified: 2025-11-15 11:33:28
-tags: ['weekly/1143']
+tags: ['writing/thought-long']
 title: 我都花了時間玩遊戲，爲什麼還要花錢買它？
-type: writing
 description: 好的，我承認這不是一個好的標題，當然本文沒有爲「白嫖」正名的意思，單純玩梗兒罷了 [^BUYBUYBUY]，只是後疫情時代，我建議你停下來再想一想，理性消費。 雖然 Gabe Logan Newell 已經撤銷了兩個知名的低價區，但是我還是沒忍住爲 2023 Summer Sales 充了一份錢，數額不多不少，肉疼到把我準備買的遊戲悉數拔草： 最開始是抱着揀便宜的心態買遊戲，畢竟 50TL，銅板價...
 ---
 

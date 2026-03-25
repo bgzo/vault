@@ -4,9 +4,8 @@ draft: False
 aliases: ['超越系統']
 created: 2024-06-08 12:00:00
 modified: 2025-11-15 11:33:28
-tags: ['weekly/1191']
+tags: ['writing/thought-long']
 title: 超越系統
-type: writing
 description: via: https://www.youtube.com/watch?v=2vjPBrBU-TM via: https://www.bilibili.com/video/BV1rW411j7ND I'm gonna swing from the chandelier, from the chandelier. I'm gonna live like tomorrow doesn't exist, ...
 ---
 

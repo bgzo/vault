@@ -4,6 +4,7 @@ aliases: ['How to activate jetbrains', 'How to install develop environment']
 created: 2024-12-08 09:26:21
 modified: 2025-09-27 15:18:26
 title: How to install develop environment
+tags: ['writing/how-to']
 description: Environment C++ Directly download via: https://www.mingw-w64.org (windows) https://winlibs.com Java Manage with Home \| SDKMAN! the Software Development Kit Manager NodeJS Using NVM Manage with https:...
 ---
 
@@ -112,4 +113,4 @@ Copy code and paste on IDE. Enjoy!
 [^ruby]:via: https://jekyllrb.com/docs/installation/ubuntu, https://jekyllrb.com/docs/installation/other-linux/, https://jekyllrb.com/docs/installation/ubuntu/
 [^core-jetbra]: 在環境變量中添加 JAR，啓動的時候加載破解補丁 via: https://www.exception.site/essay/idea-reset-eval
 
-Source via: https://note.bgzo.cc/how-to/install-develop-environment
+Source via: https://note.bgzo.cc/weekly/install-develop-environment

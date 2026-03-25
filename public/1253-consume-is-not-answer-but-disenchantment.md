@@ -5,7 +5,7 @@ aliases: ['消費不是答案，但祛魅得先消費']
 created: 2025-08-17 23:03:28
 modified: 2025-11-15 11:33:28
 title: 消費不是答案，但祛魅得先消費
-type: writing
+tags: ['writing/thought-long']
 description: 最近不是把大饅頭退了嗎，但物慾沒有減退，我還想要買一個 Windows 掌機，即使我已經有了 Steam Deck，因爲我在玩 Galgame 的時候，總是非常麻煩： 1. 打補丁，Steam 平臺的 Galgame 有時候爲了過審，翻譯都是錯的； 2. 第三方遊戲導入很麻煩，平臺沒有的遊戲，每次只能拷貝到 SD 卡，然後在切換桌面模式，才能導入啓動程序； 總的來說，我感覺非常匹配，因爲 Stea...
 ---
 
