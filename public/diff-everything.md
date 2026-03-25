@@ -4,6 +4,7 @@ aliases: ['Diff-everything', 'How to diff everything']
 created: 2025-07-01 21:04:56
 modified: 2025-07-16 20:27:10
 title: How to diff everything
+tags: ['writing/how-to']
 description: Text Online offline-diff-viewer via: https://diffviewer.vercel.app/v2 via: https://www.diffchecker.com/ Directories 比較兩個目錄的文件區別, 不 Care 內容 比較兩個目錄的文件區別, Care 內容 Photos Meta Video meta -u Git 比對 着色 usin...
 ---
 
@@ -58,4 +59,4 @@ colordiff <(mediainfo --fullscan old.mp4) <(mediainfo --fullscan new.mp4)
 alias diff=colordiff
 ```
 
-Source via: https://note.bgzo.cc/how-to/diff-everything
+Source via: https://note.bgzo.cc/weekly/diff-everything

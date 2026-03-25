@@ -4,9 +4,8 @@ draft: False
 aliases: ['外鏈之死']
 created: 2023-04-08 11:09:43
 modified: 2025-11-15 11:33:28
-tags: ['軟件設計', 'weekly/1130']
+tags: ['軟件設計', 'writing/thought-long']
 title: 外鏈之死
-type: writing
 description: External links been killed 這周用 https://steampy.com 低價購入了 Dead Cells 的 CDKey，雖然 Google Play 也買了，但論搓起來的手感那是不能比的，加上原本就早年就接觸的，主打手機市場的元氣騎士，Rogue 算是給我創造了很多美好的回憶，藉此機緣，搜到了這篇文章 —— 觸樂夜話：到底是“類Rogue”還是“輕度Rogue”. ...
 ---
 

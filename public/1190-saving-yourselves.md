@@ -4,9 +4,8 @@ draft: False
 aliases: ['自救之職業焦慮']
 created: 2024-06-01 12:00:00
 modified: 2025-11-15 11:33:28
-tags: ['self-care', 'weekly/1190']
+tags: ['self-care', 'writing/thought-long']
 title: 自救之職業焦慮
-type: writing
 description: via: https://www.youtube.com/watch?v=YJkOxWVn0SU [!note] Could someone save my life? 寫給 22 歲：如果你沒能進入頭部或是外企，你需要做好心裏準備 在能力範圍內，不用國貨，就不用國貨，這是我在上班之前的行爲準則。我已經不記得自己真正對國產絕望是什麼時候了。但他在我心目中的形象，從來都不算正派。三聚氰胺、科技與狠活...
 ---
 

@@ -4,7 +4,7 @@ draft: False
 aliases: ['遊戲危機']
 created: 2025-12-23 22:12:21
 modified: 2025-12-23 22:15:27
-tags: []
+tags: ['writing/thought-long']
 title: 遊戲危機
 description: 最近不是把 SD 都賣掉了嗎？可我還是想要打遊戲，所以不甘心，下意識就開始打起了其他掌機的主意。 我看 Ally X，Ally Xbox X，Switch OLED 這些，看了很久，但都沒有下手。 首先，我賣掉 SD 是因爲它沒有辦法很好的玩盜版遊戲，很多遊戲需要依賴 Proton 兼容層，如果只裝這個就算了，但是你還是得裝個 Steam，可以說，Linux 下一半都遊戲體驗都是 Steam 給的...
 ---

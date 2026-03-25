@@ -4,9 +4,8 @@ draft: False
 aliases: ['錯誤的第二大腦', 'wrong second brain']
 created: 2024-07-26 12:00:00
 modified: 2025-11-15 11:33:28
-tags: ['weekly/1198']
+tags: ['writing/thought-long']
 title: 錯誤的第二大腦
-type: writing
 description: 這個概念，24 年才寫也許已有明日黃花之嫌，但從我個人說起，Logseq 發佈後，經 V2ex 推薦之後，就再也沒有鬆手過，我愛這個 All in one 的東西，之前還在大學的時候，瞭解它的手段只是通過 changelog 一個版本一個版本地過日誌，這是一個瞭解軟件最近發生什麼的潘多拉。因爲它，我幾乎沒有看過官方的博客，也幾乎沒有點開文檔中的其他細節。 至於爲什麼要比作潘多拉？因爲軟件的很多特性...
 ---
 
@@ -63,7 +62,7 @@ description: 這個概念，24 年才寫也許已有明日黃花之嫌，但從�
         - 這很費曼：目標主題 => 用自己的語言講述 => 填補空白 => 簡化類比
       - Not classify construct => build a **self-organizing structure**.
         - convert your organizer role to a linker
-        - [ ] #gtd/todo How?
+        - [ ] How?
           - template: test
             template-including-parent: yes
             ``{ ref('test/' + c.page.name)}``
@@ -117,7 +116,7 @@ Reddit 有很多人把 Life 和 Work 分開，我自己也覺得 Programming 可
     - **then** some node D has:
       - a connection of type S with node B
       - a connection of type R with node C
-- [ ] #gtd/todo 這裏面討論了一些多邊形結構，完全看不懂啊
+- [ ] 這裏面討論了一些多邊形結構，完全看不懂啊
 
 - **orthogonal** means 完全不相關，但是還是無法理解他說的話
 

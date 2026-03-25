@@ -4,7 +4,7 @@ draft: False
 aliases: ['如何刪除清空 bangumi 時間線']
 created: 2025-11-15 12:24:32
 modified: 2025-11-15 12:42:51
-tags: ['bangumi']
+tags: ['bangumi', 'writing/how-to']
 title: 如何刪除清空 bangumi 時間線
 description: 本篇指南屬於 https://pypi.org/project/bangumi_recovery/ 操作備忘 使用場景 你可能基於如下場景想要刪除自己的活動記錄/時間線： 1. 賬號被他人查看，想刪除敏感活動記錄。 2. 更換賬號或重置狀態前清理歷史。 3. 定期清理時間線以維護隱私。 前置準備 使用本工具你需要一些前置知識，如： 1. 會使用命令行工具（bash/zsh） 2. 已安裝 Pyth...
 ---
@@ -51,4 +51,4 @@ bgm-timeline-delete bool
 - 如何遷移 bangumi 賬號
 - 如何批量標記 Bangumi 往季新番
 
-Source via: https://note.bgzo.cc/how-to/delete-bangumi-timeline
+Source via: https://note.bgzo.cc/weekly/delete-bangumi-timeline

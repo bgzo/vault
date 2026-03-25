@@ -5,6 +5,7 @@ aliases: ['Why blog today', '爲什麼寫博客']
 created: 2022-01-01 13:08:00
 modified: 2025-11-15 19:23:53
 title: Why blog today
+tags: ['writing/thought-long']
 description: Remember[^memory-disappear] [^memory-disappear]: 表達欲是有窗口期的，很多不願忘記的想法和感受，就得馬上寫下來，要不然過段時間回憶不起來會更加難受。但表達總是有成本的，各個記錄的媒介代價不一，文字，錄音，照片，影像，甚至是現在的 AI 每種媒介都有自己的分野，側重點不同。我比較古板，還是喜歡寫文章，因爲它幾乎是所有媒介剔骨去肉留下的最終產物。 Aft...
 ---
 

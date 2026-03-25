@@ -4,13 +4,14 @@ aliases: ['How to choose package management', 'Package-management']
 created: 2025-04-06 15:30:19
 modified: 2025-07-16 20:44:21
 title: How to choose package management
-description: 跨平臺 | | Windows | Debian | archlinux | MacOS | Mark | | --------------------------- | :-----: | :----: | :-----------: | :---: | ------------------------------- | | winget | ✅ | ❌ | ❌ | ❌ | | | scoop ...
+tags: ['writing/how-to']
+description: 跨平臺 | | Windows | Debian | return-archlinux | MacOS | Mark | | --------------------------- | :-----: | :----: | :-----------: | :---: | ------------------------------- | | winget | ✅ | ❌ | ❌ | ❌ | | |...
 ---
 
 
 ## 跨平臺
 
-|                             | Windows | Debian | archlinux | MacOS | Mark                            |
+|                             | Windows | Debian | return-archlinux | MacOS | Mark                            |
 | --------------------------- | :-----: | :----: | :-----------: | :---: | ------------------------------- |
 | winget                      |    ✅    |   ❌    |       ❌       |   ❌   |                                 |
 | scoop      |    ✅    |   ❌    |       ❌       |   ❌   |                                 |
@@ -89,9 +90,9 @@ description: 跨平臺 | | Windows | Debian | archlinux | MacOS | Mark | | -----
     1. 通常直接從預編譯的二進制包（bottle）安裝，無需源碼編譯。
     2. 當然也支持從源碼編譯（用 --build-from-source）。
 
-## 總結 #chatGPT
+## 總結 #llm/chatgpt
 
-|                | APT                                                           | Homebrew-brew                                                       | AUR                                               |
+|                | APT                                                           | ~Homebrew-brew                                                       | AUR                                               |
 | -------------- | ------------------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------- |
 | 軟件包數量和社區活躍度    | **APT** 倉庫中的軟件通常是經過嚴格測試的穩定版本，但更新較慢，有時可能滯後於官方版本。               | 軟件包數量雖然多，但整體遠不及 AUR，尤其是一些小衆或定製軟件可能找不到。<br>                              | 擁有極其龐大的軟件包數量和社區支持，幾乎任何軟件都能在 AUR 找到，而且更新速度非常快。<br> |
 | 軟件包多樣性和覆蓋度     |                                                               | 主要維護穩定版，開發版或實驗性版本較少。                                                    | 涵蓋範圍極廣，既有穩定版、開發版、甚至是測試版或實驗性軟件。                    |
@@ -105,4 +106,4 @@ description: 跨平臺 | | Windows | Debian | archlinux | MacOS | Mark | | -----
 | 更容易安裝非官方或第三方軟件 | APT 需要手動添加 PPA 源或編譯安裝，步驟較繁瑣。                                  | Homebrew 支持**自定義 formula**（配方），允許輕鬆安裝 GitHub 上的開源項目或個人開發的軟件包。           |                                                   |
 | 簡潔和統一的命令管理     | APT 的命令雖然功能強大，但語法有時較複雜，比如 apt-get 和 apt 的區別容易讓人混淆。            | Homebrew 的命令非常直觀，如 brew install、brew upgrade、brew uninstall，操作簡單。       |                                                   |
 
-Source via: https://note.bgzo.cc/how-to/choose-tool-for-package-management
+Source via: https://note.bgzo.cc/weekly/choose-tool-for-package-management

@@ -4,9 +4,8 @@ draft: False
 aliases: ['當 AI 破壞了我的一切']
 created: 2025-05-02 10:35:57
 modified: 2025-11-15 11:33:28
-tags: ['weekly/1238']
+tags: ['writing/thought-long']
 title: 當 AI 破壞了我的一切
-type: writing
 description: via: https://notebooklm.google.com/notebook/2e8e1a28-c300-482d-ab8f-f4e521658ab9/audio 最近喪失一些表達欲，因爲我意識到寫出來也對我的生活無濟於事，我可能耗費了整個下午的時間寫一篇文章，但轉頭文章就餵給了 AI，甚至可能都不會餵給 AI，因爲壓根就沒有人看，但這是我一開始寫作的目的嗎？ 所以當我開始不再強迫自己寫...
 ---
 

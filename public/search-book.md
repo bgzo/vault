@@ -5,6 +5,7 @@ draft: False
 modified: 2025-11-09 23:28:35
 title: 如何找書
 type: how-to
+tags: ['writing/how-to']
 description: 首選：Z-library Web: https://z-library.sk / https://z-library.ec TOR: http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion Others https://x.com/ZLibofficial https://mastodon.social/@ZLib...
 ---
 
@@ -68,4 +69,4 @@ description: 首選：Z-library Web: https://z-library.sk / https://z-library.ec
 - [Free Computer, Programming, Mathematics, Technical Books, Lecture Notes and Tutorials] https://freecomputerbooks.com/ ![](https://img.shields.io/website?url=https://freecomputerbooks.com/&style=for-the-badge&label=)
 - [Free-eBooks.net | Download free Fiction, Health, Romance and many more books] https://www.free-ebooks.net/ ![](https://img.shields.io/website?url=https://www.free-ebooks.net/&style=for-the-badge&label=)
 
-Source via: https://note.bgzo.cc/how-to/search-book
+Source via: https://note.bgzo.cc/weekly/search-book

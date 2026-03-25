@@ -5,7 +5,8 @@ aliases: ['How to make id picture']
 created: 2025-06-02 12:07:23
 modified: 2025-06-02 12:08:18
 type: how-to
-description: idify via: https://idify.netlify.app References Source via: https://note.bgzo.cc/how-to/generate-id-picture
+tags: ['writing/how-to']
+description: idify via: https://idify.netlify.app References Source via: https://note.bgzo.cc/weekly/generate-id-picture
 ---
 
 ## idify
@@ -15,4 +16,4 @@ description: idify via: https://idify.netlify.app References Source via: https:/
 
 ## References
 
-Source via: https://note.bgzo.cc/how-to/generate-id-picture
+Source via: https://note.bgzo.cc/weekly/generate-id-picture

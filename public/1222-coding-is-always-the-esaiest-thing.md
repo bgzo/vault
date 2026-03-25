@@ -4,9 +4,8 @@ draft: False
 aliases: ['1222-coding-is-always-the-esaiest-thing', '寫代碼總是最簡單的']
 created: 2025-01-09 07:55:42
 modified: 2025-11-15 11:33:28
-tags: ['weekly/1222']
+tags: ['writing/thought-long']
 title: 寫代碼總是最簡單的
-type: writing
 description: 週三晚，興沖沖的跑回家，簡單清洗身體，癱軟在牀上，打開 Mac，迫不及待地寫下心心念念整個白天的代碼，啓動，調試，修改，再次啓動。 「對，要的就是這個」 不出意外地，想了一白天的 Feature 很快就實現了，成就感拉爆！Push 代碼，提 PR，等待倉庫主的回覆。 10 分鐘過去，一個小時過去，半天過去，一天過去，一週過去，沒有任何消息，沒有任何動靜。似乎沒有人願意 Review 你的代碼，可能...
 ---
 

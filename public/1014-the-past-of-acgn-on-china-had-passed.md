@@ -4,9 +4,8 @@ draft: False
 aliases: ['簡中二次元圈已死']
 created: 2021-01-18 18:51:22
 modified: 2025-11-15 11:33:27
-tags: ['bilibili', 'copyright', 'weekly/1014']
+tags: ['bilibili', 'copyright', 'writing/thought-long']
 title: 簡中二次元圈已死
-type: writing
 description: 網絡清掃，我痛恨這個詞語，網盤不斷的炸鏈，反覆提醒您瀏覽的內容不存在，就像是去年的疫情，發出來的文章像餵了狗，用戶一個個被封，我真的懷疑，明天會更好嗎? 我發現自己什麼都做不了，我本身並不具有話語權？我能做的，就是像現在這樣，寫下一些氣憤的話。 寫 Galgame 是我的私心，完全是情緒使然，還容易暴露自己是個沉迷情色的「二次元」。 當然說 Galgame 避免不了 R18 部分，我一開始接觸 G...
 ---
 

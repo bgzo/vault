@@ -4,6 +4,7 @@ aliases: ['How to manage app in debian', 'Manage-app-in-debian']
 created: 2025-07-16 20:45:43
 modified: 2025-07-16 20:46:16
 title: How to manage app in debian
+tags: ['writing/how-to']
 description: Ubuntu 和 Debian 通喫是因爲 Debian 系的 APT 包管理器。 \#1 Install From mirror source: From deb package: Use another tool after run sudo apt install gdebi From source code (after tar zxf xxx.tgz): 有些軟件沒有被收錄進軟件鏡像源，...
 ---
 
@@ -112,7 +113,7 @@ dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
 
 > [!tip]
 > 這條命令是用於清理 Debian 或 Ubuntu 系統中殘留的已經被標記爲 "rc"（已刪除但配置文件仍然存在）狀態的軟件包。讓我逐步解釋這個命令的各個部分：
-#chatGPT
+#llm/chatgpt
 
 `dpkg -l`：這部分命令列出系統中安裝的所有軟件包。
 
@@ -129,4 +130,4 @@ dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
 > [!Warning]
 > 使用 `dpkg -P` 命令可能會導致數據丟失，因此在運行此命令之前應謹慎考慮，並確保您瞭解正在刪除的軟件包及其影響。
 
-Source via: https://note.bgzo.cc/how-to/manage-app-in-debian
+Source via: https://note.bgzo.cc/weekly/manage-app-in-debian

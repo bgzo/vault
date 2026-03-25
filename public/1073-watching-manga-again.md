@@ -4,9 +4,8 @@ draft: False
 aliases: ['重新開始看漫畫']
 created: 2022-03-04 10:45:31
 modified: 2025-11-15 11:33:27
-tags: ['bilibili', 'copyright', 'manga', 'weekly/1073']
+tags: ['bilibili', 'copyright', 'manga', 'writing/thought-long']
 title: 重新開始看漫畫
-type: writing
 description: 最近因爲買了 samsung-tab-s4，常常用它來看電子書，當然漫畫也算電子書的一種，加上上了大學有了零用錢，終於可以開始支持正版漫畫了，所以一直在用 bilibili 家的漫畫客戶端。 自（動漫之）家被抄家之後 [^dong-hua-zhi-jia-dao-bi]，就失去了能看漫畫的地方，漫畫櫃又被牆，總是加載不出來，不再爲大陸提供閱讀服務，但真的是我們感覺的那樣嗎？真的不是 GFW 從中做...
 ---
 

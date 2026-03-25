@@ -4,9 +4,8 @@ draft: False
 aliases: ['貓貓能有什麼壞心思呢？']
 created: 2021-03-14 10:41:03
 modified: 2025-11-15 11:33:27
-tags: ['cat', 'weekly/1022']
+tags: ['cat', 'writing/thought-long']
 title: 貓貓能有什麼壞心思呢？
-type: writing
 description: 養貓這檔事 貓 (Felis catus) 隸屬動物界脊索動物門哺乳綱食肉目貓科貓屬，而智人 (Homo sapiens) 隸屬動物界脊索動物門哺乳綱靈長目人科人屬，兩個種族的動物，怎麼就能產生人類一方甘願爲奴的羈絆? 我看過一篇這樣的論文： 學生時代，教科書的某種病名跟你也是那樣相似： 貓叫綜合徵（英語：Cri du chat syndrome），也稱貓哭症、貓啼症、5 號染色體短臂缺失綜合徵（...
 ---
 

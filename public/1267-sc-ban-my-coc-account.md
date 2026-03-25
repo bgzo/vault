@@ -4,7 +4,7 @@ draft: False
 aliases: ['SC 永久封禁了我的 COC 賬號']
 created: 2025-11-22 09:14:46
 modified: 2025-11-22 16:03:48
-tags: []
+tags: ['writing/thought-long']
 title: SC 永久封禁了我的 COC 賬號
 description: 最早玩部落衝突（下稱 COC）還是 2014、2015 年，那會兒最高的基地也就是 10 本，那個時候甚至還沒有渠道服，雖然偶爾網會掉線，並且無法登錄 Google 和 Supercell ID， 但是仍然可以裸連 Super Cell（下稱 SC） 服務器，唯一缺點就是賬號存在本地，換手機就意味着從頭開始。 有個記憶深刻的點，那會兒有個朋友在我剛玩的時候就姍姍的笑笑，說自己早就滿防不玩了，並甩給...
 ---

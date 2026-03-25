@@ -4,14 +4,13 @@ draft: False
 aliases: ['放棄 Logseq', 'Giving up Logseq', 'logseq problem', 'why giving up logseq']
 created: 2024-12-09 12:00:00
 modified: 2025-11-15 11:33:28
-tags: ['weekly/1218']
+tags: ['writing/thought-long']
 title: Giving up Logseq
-type: writing
-description: Okey, I know it's ridiculous and hard to say: I give up logseq-logseq. I've used it 3 years, and make 1400 pages. Honestly, I'm not a good one using it, especially in earlier version, they released ve...
+description: Okey, I know it's ridiculous and hard to say: I give up ~logseq-logseq. I've used it 3 years, and make 1400 pages. Honestly, I'm not a good one using it, especially in earlier version, they released v...
 ---
 
 
-Okey, I know it's ridiculous and hard to say: **I give up logseq-logseq**.
+Okey, I know it's ridiculous and hard to say: **I give up ~logseq-logseq**.
 
 I've used it 3 years, and make 1400 pages. Honestly, I'm not a good one using it, especially in earlier version, they released very fast, I even don't know when they add the support of markdown YAML properties.[^earier-logseq]
 

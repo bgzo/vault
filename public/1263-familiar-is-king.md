@@ -5,6 +5,7 @@ aliases: ['瀏覽器使用的心路歷程', 'ChatGPT Atlas 發佈了，但你真
 created: 2025-10-26 22:00:04
 modified: 2025-11-15 11:33:28
 title: ChatGPT Atlas 發佈了，但你真的需要嗎？
+tags: ['writing/thought-long']
 description: 來寫寫瀏覽器使用的心路歷程吧，我沒有能力開發出屬於自己的瀏覽器，只能在這些產品中徘徊，最終我回到了原點，Firefox(下稱 FF，火狐)。 最開始，我還不會用 Google 的時候，我用的是 FF 中國的服務，但總是磕磕絆絆有問題，最終我轉到了 FF 國際的服務。 然後，在學習 Linux 的時候，我迷上了 Ubuntu，把電腦全部換成了這個操作系統，當時在 Ubuntu 上，語雀等網絡工具在 ...
 ---
 

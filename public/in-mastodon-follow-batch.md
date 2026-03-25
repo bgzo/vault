@@ -5,7 +5,7 @@ aliases: ['How to follow batch in mastodon']
 created: 2025-06-12 22:56:34
 modified: 2025-06-12 23:28:47
 type: how-to
-tags-link: ['[[mastodon-mastodon|mastodon]]']
+tags: ['writing/how-to', 'mastodon']
 description: Import csv from setting [!Warning] 存在超時的問題，並且無法得知是哪些賬戶，雖然我的導入大部分是成功的，但現在一直顯示導入中。可能的原因是關注的賬戶存在「加鎖」問題，有些賬戶並不希望被大量的不認識的人關注，所以需要在主人同意之後才能關注。 I have some address from rss feed like this: Then I use regex t...
 ---
 
@@ -230,4 +230,4 @@ Account address,Show boosts,Notify on new posts,Languages
 1. https://mguhlin.org/2022/11/09/tootorial-importing-followinglist-members-for-mastodon/
 2. https://github.com/seanthegeek/mastodon-lists
 
-Source via: https://note.bgzo.cc/how-to/in-mastodon-follow-batch
+Source via: https://note.bgzo.cc/weekly/in-mastodon-follow-batch

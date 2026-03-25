@@ -4,7 +4,7 @@ draft: False
 aliases: ['如何修復 Steam Deck OLED 開機卡 Logo', 'How to fix steam deck stuck on logo when startup']
 created: 2025-11-30 14:01:38
 modified: 2025-11-30 14:14:25
-tags: []
+tags: ['writing/how-to']
 title: 如何修復 Steam Deck OLED 開機卡 Logo
 description: 先寫下自己怎麼搞壞的吧，我自己準備了一塊 Windows 的啓動盤，然後進 Windows，進去更新了 Windows，打好了驅動，但是發現藍牙無論如何都無法識別。Reddit 當然有一些方法，但 OLED 和 LED 的版本還不一樣，還沒有辦法通用，所以暫時無解。 折騰完，我看着挺完美，就直接放過去了，下個星期準備玩的時候才發現連 Steam 主系統都進不去了，非常震驚，是沒想到裝個 Windo...
 ---
@@ -39,4 +39,4 @@ description: 先寫下自己怎麼搞壞的吧，我自己準備了一塊 Window
 
 如果上述步驟無法解決你的問題，你可能只能通過方法 2 了，具體步驟可能需要查看官網的指南，如下： https://help.steampowered.com/zh-cn/faqs/view/1B71-EDF2-EB6D-2BB3
 
-Source via: https://note.bgzo.cc/how-to/fix-steam-deck-stuck-on-logo-when-startup
+Source via: https://note.bgzo.cc/weekly/fix-steam-deck-stuck-on-logo-when-startup
