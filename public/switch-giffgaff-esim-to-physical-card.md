@@ -5,7 +5,7 @@ created: 2025-10-26 11:13:05
 modified: 2025-10-26 11:38:03
 title: 如何把英國 GiffGaff 從 ESIM 轉 SIM
 tags: ['writing/how-to']
-description: 操作其實很簡單，跟着官網來就行： https://help.giffgaff.com/en/articles/240706-can-i-switch-back-to-a-physical-sim-card-from-an-esim 首先，需要從官網申請一張實體 SIM 卡，從英國到內陸大概一個多月的時間，爲了方便可以直接從有現貨的店裏面買一張，無論是白卡還是有顏色的卡都行，只有是 giffgaff...
+description: 操作其實很簡單，跟着官網來就行： https//help.giffgaff.com/en/articles/240706-can-i-switch-back-to-a-physical-sim-card-from-an-esim 首先，需要從官網申請一張實體 SIM 卡，從英國到內陸大概一個多月的時間，爲了方便可以直接從有現貨的店裏面買一張，無論是白卡還是有顏色的卡都行，只有是 giffgaff ...
 ---
 
 

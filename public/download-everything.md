@@ -6,7 +6,7 @@ modified: 2025-07-01 22:56:03
 title: How to download everything
 type: how-to
 tags: ['writing/how-to']
-description: Youtube youtube-dl Subtitle Based on official API (https://github.com/eliascotto/youtube-subtitles-downloader/blob/6e4c82b2ac42818b3ec96f0d894ecff50697bc7e/src/index.js#L9), using following or online ...
+description: Youtube youtube-dl Subtitle Based on official API (https//github.com/eliascotto/youtube-subtitles-downloader/blob/6e4c82b2ac42818b3ec96f0d894ecff50697bc7e/src/index.js#L9), using following or online s...
 ---
 
 

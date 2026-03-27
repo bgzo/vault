@@ -6,7 +6,7 @@ created: 2025-06-02 12:07:23
 modified: 2025-06-02 12:08:18
 type: how-to
 tags: ['writing/how-to']
-description: idify via: https://idify.netlify.app References Source via: https://note.bgzo.cc/weekly/generate-id-picture
+description: idify via https//idify.netlify.app References Source via https//note.bgzo.cc/weekly/generate-id-picture
 ---
 
 ## idify

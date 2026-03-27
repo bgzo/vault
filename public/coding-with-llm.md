@@ -7,7 +7,7 @@ modified: 2025-06-30 23:59:32
 tags: ['llm', 'writing/how-to']
 title: How to coding with llm
 type: how-to
-description: 啓發於: https://linux.do/t/topic/126077/7 via: https://www.youtube.com/watch?v=AV_8czoF3PU Local Server: ollama Enable LAN access Restart Module Deepseek by China deepseek-coder-v2:16b Extension Continue...
+description: 啓發於 https//linux.do/t/topic/126077/7 via https//www.youtube.com/watch?v=AV_8czoF3PU Local Server ollama Enable LAN access Restart Module Deepseek by China deepseek-coder-v216b Extension Continue high ...
 ---
 
 

@@ -5,7 +5,7 @@ created: 2025-08-16 22:57:01
 modified: 2025-08-16 23:04:42
 title: How to check deleted telegram channels info
 tags: ['writing/how-to']
-description: TGStat via: https://tgstat.com Telemetr via: https://telemetr.io Source via: https://note.bgzo.cc/weekly/check-deleted-telegram-channels-info
+description: TGStat via https//tgstat.com Telemetr via https//telemetr.io Source via https//note.bgzo.cc/weekly/check-deleted-telegram-channels-info
 ---
 
 

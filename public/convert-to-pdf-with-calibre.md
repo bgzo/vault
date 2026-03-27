@@ -5,7 +5,7 @@ draft: False
 modified: 2025-11-14 06:39:41
 title: 如何用 Calibre 轉化爲 PDF
 tags: ['writing/how-to']
-description: 簡單的講，直接在操作欄選擇轉換書籍，然後選擇 PDF 即可，但是導出書籍的格式不一，最好還是有一些約定好的配置，兼顧閱讀和打印，也可以避免版權問題。 需要準備的字體 https://source.typekit.com/source-han-serif/cn/ https://github.com/be5invis/Sarasa-Gothic https://github.com/laishulu...
+description: 簡單的講，直接在操作欄選擇轉換書籍，然後選擇 PDF 即可，但是導出書籍的格式不一，最好還是有一些約定好的配置，兼顧閱讀和打印，也可以避免版權問題。 需要準備的字體 https//source.typekit.com/source-han-serif/cn/ https//github.com/be5invis/Sarasa-Gothic https//github.com/laishulu/Sa...
 ---
 
 

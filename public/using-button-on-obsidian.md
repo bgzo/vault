@@ -5,7 +5,6 @@ created: 2026-02-01 14:42:45
 modified: 2026-02-01 15:50:27
 comments: True
 draft: False
-description: None
 tags: ['writing/how-to']
 type: how-to
 description: 電腦有鍵盤，可以綁定快捷鍵，可以很方便地插入模版，但是手機端不行，手機端的操作主要是「點擊」，所以這個操作場景是針對手機端的： 在頁面上渲染一個按鈕，每次點擊它就可以自動地按既定模板創建一片文章。 方案有： 1. ==Buttons + Templater== 2. QuickAdd（更偏命令） 對於方案 1，下載安裝 Buttons 和 Templater，並用下面的案例測試下自己當前的 Vau...

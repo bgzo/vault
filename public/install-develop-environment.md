@@ -5,7 +5,7 @@ created: 2024-12-08 09:26:21
 modified: 2025-09-27 15:18:26
 title: How to install develop environment
 tags: ['writing/how-to']
-description: Environment C++ Directly download via: https://www.mingw-w64.org (windows) https://winlibs.com Java Manage with Home \| SDKMAN! the Software Development Kit Manager NodeJS Using NVM Manage with https:...
+description: Environment C++ Directly download via https//www.mingw-w64.org (windows) https//winlibs.com Java Manage with Home \| SDKMAN! the Software Development Kit Manager NodeJS Using NVM Manage with https//gi...
 ---
 
 

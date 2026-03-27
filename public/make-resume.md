@@ -5,7 +5,7 @@ created: 2025-07-05 10:50:46
 modified: 2025-07-05 10:52:33
 title: How to make resume
 tags: ['writing/how-to']
-description: Offline Service 簡歷模板 Online cvfy via: https://cvfy.xyz/zh Notion Source via: https://note.bgzo.cc/weekly/make-resume
+description: Offline Service 簡歷模板 Online cvfy via https//cvfy.xyz/zh Notion Source via https//note.bgzo.cc/weekly/make-resume
 ---
 
 

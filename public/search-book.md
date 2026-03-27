@@ -6,7 +6,7 @@ modified: 2025-11-09 23:28:35
 title: 如何找書
 type: how-to
 tags: ['writing/how-to']
-description: 首選：Z-library Web: https://z-library.sk / https://z-library.ec TOR: http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion Others https://x.com/ZLibofficial https://mastodon.social/@ZLib...
+description: 首選：Z-library Web https//z-library.sk / https//z-library.ec TOR http//bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion Others https//x.com/ZLibofficial https//mastodon.social/@ZLibofficia...
 ---
 
 
