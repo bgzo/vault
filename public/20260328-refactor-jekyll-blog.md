@@ -2,7 +2,7 @@
 title: 重構 Jekyll 博客
 aliases: ['重構 Jekyll 博客']
 created: 2026-03-28 13:57:04
-modified: 2026-03-28 18:13:12
+modified: 2026-03-29 21:12:57
 comments: True
 draft: False
 tags: ['blog', 'jekyll', 'rss', 'writing/lab']
@@ -81,6 +81,8 @@ defaults: # 批量爲文檔注入默認 front matter，避免每篇文章重複�
 
 到這完成首頁、文章的改造。
 
+## 輸出 RSS
+
 因爲選擇了方案 2，拋棄了 `site.posts`， 所以社區的 RSS 插件 `jekyll-feed` 會失效，所以生成 RSS 地址需要自己手寫：
 
 ```markdown
@@ -119,6 +121,18 @@ layout: none
 ```
 
 之後，RSS Feed 也可以正常輸出了。
+
+如果你的網站裏面存在 Jekyll 的模板內容，最終輸出可能會亂掉，所以需要在配置裏面新增一行配置：
+
+```diff
+defaults: # 批量爲文檔注入默認 front matter，避免每篇文章重複聲明
+  - scope: # 定義該組默認值的作用範圍
+      path: "" # 路徑爲空字符串，表示匹配網站內所有路徑
+      type: articles # 僅對 "articles" 集合中的文檔生效
+    values: # 以下爲要注入的默認 front matter 字段
+      layout: post # 默認使用 "post" 佈局模板（對應 _layouts/post.html）
++     render_with_liquid: false # 禁止對文章內容進行 Liquid 渲染，避免代碼塊中的模板語法被執行
+```
 
 ## Feed 不兼容
 
@@ -166,5 +180,112 @@ layout: none
 ```
 
 前後的格式保持一致了，這下再觀察一下
+
+## 兼容 Obsidian 的語法糖
+
+```markdown
+![](https://x.com/Enter_Apps/status/1768669206826926292)
+![](https://twitter.com/Enter_Apps/status/1768669206826926292)
+![](https://www.youtube.com/watch?v=p485kUNpPvE)
+```
+
+增加以下邏輯：
+
+```html
+<!-- Replace Obsidian-style ![]( URL ) with proper embeds for Twitter/X and YouTube -->
+<script>
+  (function () {
+    var YT_RE =
+      /(?:youtube\.com\/watch\?(?:.*&)?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+    var YT_SHORT_RE = /youtube\.com\/shorts\/([a-zA-Z0-9_-]{11})/;
+    var TW_RE = /(?:twitter\.com|x\.com)\/\w+\/status\/(\d+)/;
+
+    function replaceImg(img, embed) {
+      var parent = img.parentNode;
+      // kramdown wraps standalone ![]() in <p>; unwrap it so block elements are valid
+      if (parent && parent.tagName === "P" && parent.childNodes.length === 1) {
+        parent.parentNode.replaceChild(embed, parent);
+      } else {
+        parent.replaceChild(embed, img);
+      }
+    }
+
+    function makeYouTubeEmbed(videoId) {
+      var wrapper = document.createElement("div");
+      wrapper.className = "embed-youtube";
+      var iframe = document.createElement("iframe");
+      iframe.src = "https://www.youtube.com/embed/" + videoId;
+      iframe.title = "YouTube video player";
+      iframe.frameBorder = "0";
+      iframe.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.allowFullscreen = true;
+      iframe.setAttribute("loading", "lazy");
+      wrapper.appendChild(iframe);
+      return wrapper;
+    }
+
+    function makeTwitterEmbed(tweetUrl) {
+      var blockquote = document.createElement("blockquote");
+      blockquote.className = "twitter-tweet";
+      var a = document.createElement("a");
+      a.href = tweetUrl;
+      a.textContent = tweetUrl;
+      blockquote.appendChild(a);
+      return blockquote;
+    }
+
+    var imgs = Array.from(document.querySelectorAll("article img"));
+    var hasTweet = false;
+
+    imgs.forEach(function (img) {
+      var src = img.getAttribute("src") || "";
+
+      var ytMatch = src.match(YT_RE) || src.match(YT_SHORT_RE);
+      if (ytMatch) {
+        replaceImg(img, makeYouTubeEmbed(ytMatch[1]));
+        return;
+      }
+
+      var twMatch = src.match(TW_RE);
+      if (twMatch) {
+        // Twitter's widgets.js only accepts twitter.com URLs, so normalise x.com → twitter.com
+        var tweetUrl = src.replace(/^(https?:\/\/)x\.com\//, "$1twitter.com/");
+        replaceImg(img, makeTwitterEmbed(tweetUrl));
+        hasTweet = true;
+        return;
+      }
+    });
+    if (hasTweet) {
+      var s = document.createElement("script");
+      s.src = "https://platform.twitter.com/widgets.js";
+      s.async = true;
+      s.charset = "utf-8";
+      document.head.appendChild(s);
+    }
+  })();
+</script>
+```
+
+做的時候發現，只有 x.com 的鏈接無法嵌入，這才發現注入的腳本還是老域名 twitter.com，沒有換成新域名，這可太好笑了。
+
+增加如下邏輯，從 x.com ，重新換回 twitter.com
+
+```js
+var twMatch = src.match(TW_RE);
+if (twMatch) {
+	// Twitter's widgets.js only accepts twitter.com URLs, so normalise x.com → twitter.com
+	var tweetUrl = src.replace(/^(https?:\/\/)x\.com\//, "$1twitter.com/");
+	replaceImg(img, makeTwitterEmbed(tweetUrl));
+	hasTweet = true;
+	return;
+}
+```
+
+然後就可以正常的嵌入Youtube 和 X 的鏈接了。
+
+![](https://x.com/imbGZo/status/1986569052161253708)
+
+![](https://www.youtube.com/watch?v=IHENIg8Se7M)
 
 Source via: https://note.bgzo.cc/weekly/20260328-refactor-jekyll-blog
