@@ -2,10 +2,10 @@
 title: 重構 Jekyll 博客
 aliases: ['重構 Jekyll 博客']
 created: 2026-03-28 13:57:04
-modified: 2026-03-29 21:12:57
+modified: 2026-03-30 22:09:20
 comments: True
 draft: False
-tags: ['blog', 'jekyll', 'rss', 'writing/lab']
+tags: ['blog', 'callout', 'jekyll', 'rss', 'writing/lab']
 description: 因爲種種原因，我需要統一： https//note.bgzo.cc https//blog.bgzo.cc https//bgzo.cc 這幾個網站的定位，考慮到自己的 blog.bgzo.cc 已經存在很長一段時間了，並且已被 V2EX 收錄，最終考慮依然將自己的大部分文章放在這裏，note.bgzo.cc 專注零碎的思考，bgzo.cc 只是個人探索的項目。 Jekyll 兼容自定義類型的 M...
 ---
 
@@ -50,14 +50,16 @@ tags:
 > [!TIP]
 > 關於爲什麼第二方案必須重新定義一套規則，因爲 `site.posts` 在 Jekyll 裏面是**硬編碼**，不可配置的。比如不按人家的命名規則走， `site.posts` 永遠爲空。
 
-| `site.posts`      | 自定義 collection        |                                      |
-| ----------------- | --------------------- | ------------------------------------ |
-| 來源目錄              | 只能是 `_posts`          | `_<name>/` 任意命名                      |
-| 文件名要求             | 必須 `YYYY-MM-DD-title` | 無限制                                  |
-| 內置 `date` 解析      | 自動從文件名提取              | 需自己在 front matter 寫 `date`/`created` |
-| `output: true` 默認 | 是                     | 顯式配置                                 |
+| 比較                | `site.posts`          | 自定義 collection                       |     |
+| ----------------- | --------------------- | ------------------------------------ | --- |
+| 來源目錄              | 只能是 `_posts`          | `_<name>/` 任意命名                      |     |
+| 文件名要求             | 必須 `YYYY-MM-DD-title` | 無限制                                  |     |
+| 內置 `date` 解析      | 自動從文件名提取              | 需自己在 front matter 寫 `date`/`created` |     |
+| `output: true` 默認 | 是                     | 顯式配置                                 |     |
 
-所以，自定義一套 `_articles` 集合，增加配置：
+考慮了一下，果斷選擇方案 2。
+
+因此，我們需要自定義一套 `_articles` 集合，增加配置：
 
 ```yml
 collections: # 定義 Jekyll 集合，用於將同類內容分組管理
@@ -81,7 +83,7 @@ defaults: # 批量爲文檔注入默認 front matter，避免每篇文章重複�
 
 到這完成首頁、文章的改造。
 
-## 輸出 RSS
+## 重新輸出 RSS
 
 因爲選擇了方案 2，拋棄了 `site.posts`， 所以社區的 RSS 插件 `jekyll-feed` 會失效，所以生成 RSS 地址需要自己手寫：
 
@@ -134,7 +136,15 @@ defaults: # 批量爲文檔注入默認 front matter，避免每篇文章重複�
 +     render_with_liquid: false # 禁止對文章內容進行 Liquid 渲染，避免代碼塊中的模板語法被執行
 ```
 
-## Feed 不兼容
+當然，還有一種辦法是修改文章，在代碼塊上下加入：
+
+```ruby
+{% raw %}
+{% endraw %}
+```
+
+> [!NOTE]
+> 做的過程有個小插曲，如果第一次構建可以跳過下面部分
 
 上面加完之後依然有一個問題，我發現收錄我博客的下面兩個網址沒有更新內容（已經超過 12h）
 
@@ -181,7 +191,7 @@ defaults: # 批量爲文檔注入默認 front matter，避免每篇文章重複�
 
 前後的格式保持一致了，這下再觀察一下
 
-## 兼容 Obsidian 的語法糖
+## Jekyll 支持 Obsidian 的語法糖：Youtube、Twitter 嵌入
 
 ```markdown
 ![](https://x.com/Enter_Apps/status/1768669206826926292)
@@ -282,10 +292,134 @@ if (twMatch) {
 }
 ```
 
-然後就可以正常的嵌入Youtube 和 X 的鏈接了。
+然後就可以正常的嵌入 Youtube 和 X 的鏈接了。
 
 ![](https://x.com/imbGZo/status/1986569052161253708)
 
 ![](https://www.youtube.com/watch?v=IHENIg8Se7M)
+
+## Jekyll 支持 Callout
+
+因爲 Jekyll + kramdown 天然不支持這些擴展語法，因此唯一的思路就是在渲染頁面之前捕獲這些元素，然後進行 HTML 內容渲染。
+
+因此，我們增加一個組件：
+
+```html
+<!-- Transform GFM-style callouts: > [!NOTE], > [!TIP], > [!WARNING], > [!IMPORTANT], > [!CAUTION] -->
+<script>
+  (function () {
+    var TYPES = {
+      NOTE: "Note",
+      TIP: "Tip",
+      WARNING: "Warning",
+      IMPORTANT: "Important",
+      CAUTION: "Caution",
+    };
+
+    // ── SVG icon paths ────────────────────────────────────────────────────────
+    // Each value is the `d` attribute of a single <path> on a 24×24 viewBox.
+    // Leave a string empty to show no icon for that type.
+    var SVG_PATHS = {
+      NOTE: "M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z",
+      TIP: "M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z",
+      WARNING:
+        "M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z",
+      IMPORTANT:
+        "M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z",
+      CAUTION:
+        "M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z",
+    };
+    // ─────────────────────────────────────────────────────────────────────────
+
+    var SVG_NS = "http://www.w3.org/2000/svg";
+    var RE = /^\[!(NOTE|TIP|WARNING|IMPORTANT|CAUTION)\]\[ \t]*/i;
+
+    function makeIcon(type) {
+      var d = SVG_PATHS[type];
+      var svg = document.createElementNS(SVG_NS, "svg");
+      svg.setAttribute("viewBox", "0 0 16 16");
+      svg.setAttribute("fill", "currentColor");
+      svg.setAttribute("aria-hidden", "true");
+      if (d) {
+        var path = document.createElementNS(SVG_NS, "path");
+        path.setAttribute("d", d);
+        svg.appendChild(path);
+      }
+      return svg;
+    }
+
+    document
+      .querySelectorAll("article blockquote:not([class])")
+      .forEach(function (bq) {
+        var firstP = bq.querySelector("p:first-child");
+        if (!firstP) return;
+
+        var firstText = firstP.firstChild;
+        if (!firstText || firstText.nodeType !== 3 /* TEXT_NODE */) return;
+
+        var m = firstText.nodeValue.match(RE);
+        if (!m) return;
+
+        var type = m[1].toUpperCase();
+
+        // Strip the "[!TYPE] " prefix from the opening text node
+        firstText.nodeValue = firstText.nodeValue.slice(m[0].length);
+
+        // If the text node is now empty, remove it and any following hard-wrap <br>
+        if (firstText.nodeValue === "") {
+          var next = firstText.nextSibling;
+          firstP.removeChild(firstText);
+          if (next && next.nodeName === "BR") firstP.removeChild(next);
+        }
+
+        // If the first <p> is now empty, discard it entirely
+        if (
+          firstP.childNodes.length === 0 ||
+          firstP.textContent.trim() === ""
+        ) {
+          bq.removeChild(firstP);
+        }
+
+        // Build the callout title element
+        var titleEl = document.createElement("p");
+        titleEl.className = "callout-title";
+        titleEl.setAttribute("aria-label", TYPES[type]);
+
+        var iconSpan = document.createElement("span");
+        iconSpan.className = "callout-icon";
+        iconSpan.appendChild(makeIcon(type));
+
+        var labelSpan = document.createElement("span");
+        labelSpan.textContent = TYPES[type];
+
+        titleEl.appendChild(iconSpan);
+        titleEl.appendChild(document.createTextNode("\u00a0"));
+        titleEl.appendChild(labelSpan);
+
+        bq.insertBefore(titleEl, bq.firstChild);
+        bq.classList.add("callout", "callout-" + type.toLowerCase());
+      });
+  })();
+</script>
+```
+
+需要說明下，樣式和顏色的靈感來自 [GitHub](https://github.com/orgs/community/discussions/16925) 。支持種類也是直接照搬 GitHub。具體如下：
+
+> [!NOTE]
+> Highlights information that users should take into account, even when skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]
+> Critical content demanding immediate user attention due to potential risks.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
+
+相關 CSS 我就不貼在這裏了，感興趣的朋友可以直接照搬本博客的 部分 CSS。
 
 Source via: https://note.bgzo.cc/weekly/20260328-refactor-jekyll-blog
