@@ -7,14 +7,14 @@ modified: 2025-12-11 22:18:58
 tags: ['writing/how-to']
 title: How to install and use chatgpt on rooted android
 type: how-to
-description: 總的來說，在 ROOT 的手機上使用 chatGPT，你可能會遇到的幾個問題： 1. Devices's date and time are set properly 1. 2. PlayIntegrity: Preauth PlayIntegrity verification failed 1. 3. Unusual Activity Coming from your system 1. 第一個...
+description: 總的來說，在 ROOT 的手機上使用 chatGPT，你可能會遇到的幾個問題： 1. Devices's date and time are set properly 1. 2. PlayIntegrity Preauth PlayIntegrity verification failed 1. 3. Unusual Activity Coming from your system 1. 第一個可...
 ---
-
 
 總的來說，在 ROOT 的手機上使用 chatGPT，你可能會遇到的幾個問題：
 
 1. Devices's date and time are set properly
-	1. ![](https://raw.githack.com/bGZo/assets/dev/2025/1749868182517.png)
+
+1. ![](https://raw.githack.com/bGZo/assets/dev/2025/1749868182517.png)
 2. PlayIntegrity: Preauth PlayIntegrity verification failed
 	1. ![](https://raw.githack.com/bGZo/assets/dev/2025/1749826001219.jpg)
 3. Unusual Activity Coming from your system
@@ -22,7 +22,9 @@ description: 總的來說，在 ROOT 的手機上使用 chatGPT，你可能會�
 
 第一個可能是手機的 Play 版本比較低，我在嘗試更新過後可以正常使用。
 
-第二個和第三個其實是一個問題，就是 Play Integerity 不完成，Google 驗證過不去導致的。所以問題變成了如何修補 Play Integerity。先來下載這個 App 檢查下自己的環境：`Play Integrity API Checker`，看看這幾個指標：
+第二個和第三個其實是一個問題，就是 Play Integerity 不完成，Google 驗證過不去導致的。所以問題變成了如何修補 Play Integerity。
+
+先來下載這個 App 檢查下自己的環境：`Play Integrity API Checker`，看看這幾個指標：
 
 - MEETS_DEVICE_INTEGRITY：系統沒被改動/解鎖（或成功僞裝）
 - MEETS_BASIC_INTEGRITY：沒被當成模擬器 / 惡意環境

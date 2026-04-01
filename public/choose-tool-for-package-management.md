@@ -5,9 +5,8 @@ created: 2025-04-06 15:30:19
 modified: 2025-07-16 20:44:21
 title: How to choose package management
 tags: ['writing/how-to']
-description: 跨平臺 | | Windows | Debian | return-archlinux | MacOS | Mark | | --------------------------- | :-----: | :----: | :-----------: | :---: | ------------------------------- | | winget | ✅ | ❌ | ❌ | ❌ | | |...
+description: 跨平臺 | | Windows | Debian | return-archlinux | MacOS | Mark | | --------------------------- | ----- | ---- | ----------- | --- | ------------------------------- | | winget | ✅ | ❌ | ❌ | ❌ | | | scoop |...
 ---
-
 
 ## 跨平臺
 

@@ -6,7 +6,7 @@ created: 2025-06-14 22:07:16
 modified: 2025-06-14 22:17:38
 type: how-to
 tags: ['writing/how-to']
-description: drawio-desktop via: https://app.diagrams.net excalidraw via: https://excalidraw.com/ Source via: https://note.bgzo.cc/weekly/draw-uml-or-user-case
+description: drawio-desktop via https//app.diagrams.net excalidraw via https//excalidraw.com/ Source via https//note.bgzo.cc/weekly/draw-uml-or-user-case
 ---
 
 ## drawio-desktop

@@ -6,7 +6,7 @@ created: 2024-07-27 15:16:08
 modified: 2025-06-14 16:33:18
 type: how-to
 tags: ['writing/how-to']
-description: What I choose: obsidian-clipper Browser extension: SingleFile SingleFile https://chrome.google.com/webstore/detail/singlefile/mpiodijhokgodhhofbcjdecpffjipkle SingleFileZ https://chrome.google.com/web...
+description: What I choose obsidian-clipper Browser extension SingleFile SingleFile https//chrome.google.com/webstore/detail/singlefile/mpiodijhokgodhhofbcjdecpffjipkle SingleFileZ https//chrome.google.com/webstor...
 ---
 
 ## What I choose: obsidian-clipper

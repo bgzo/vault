@@ -6,9 +6,8 @@ modified: 2025-07-01 21:19:59
 title: How to run GitHub action on local
 type: how-to
 tags: ['writing/how-to']
-description: Act gh Extension via: https://nektosact.com/installation/gh.html Source via: https://note.bgzo.cc/weekly/run-github-action-on-local
+description: Act gh Extension via https//nektosact.com/installation/gh.html --- Source via https//note.bgzo.cc/weekly/run-github-action-on-local
 ---
-
 
 ## Act
 
@@ -20,6 +19,9 @@ gh act push
 gh act -l pull_request
 ```
 
+
 via: https://nektosact.com/installation/gh.html
+
+---
 
 Source via: https://note.bgzo.cc/weekly/run-github-action-on-local

@@ -6,9 +6,8 @@ created: 2025-11-15 12:34:34
 modified: 2025-11-15 12:44:13
 tags: ['bangumi', 'writing/how-to']
 title: 如何批量標記 bangumi 往季新番
-description: 本篇指南屬於 https://pypi.org/project/bangumi_recovery/ 操作備忘 使用場景 你可能是一個多年的追番達人，突然某一天發現了 https://bangumi.tv/ 這樣一個網站，你很希望擁有自己的一套收藏夾，但是可能會有如下問題： 1. 手動點格子耗時且容易出錯； 2. 代理或網絡不穩定會整個過程有點坐牢； 當然，你也有可能是豆瓣難民，遷移來這裏，你同樣面...
+description: 本篇指南屬於 https//pypi.org/project/bangumi_recovery/ 操作備忘 使用場景 你可能是一個多年的追番達人，突然某一天發現了 https//bangumi.tv/ 這樣一個網站，你很希望擁有自己的一套收藏夾，但是可能會有如下問題： 1. 手動點格子耗時且容易出錯； 2. 代理或網絡不穩定會整個過程有點坐牢； 當然，你也有可能是豆瓣難民，遷移來這裏，你同樣面臨如...
 ---
-
 
 本篇指南屬於 https://pypi.org/project/bangumi_recovery/ 操作備忘
 

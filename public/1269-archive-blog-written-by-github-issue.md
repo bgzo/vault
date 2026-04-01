@@ -1,14 +1,13 @@
 ---
-comments: True
-draft: False
+title: 用 GitHub issue 寫博客很好，但我要放棄了
 aliases: ['用 GitHub issue 寫博客很好，但我要放棄了']
 created: 2025-12-06 11:15:36
-modified: 2025-12-06 14:56:37
+modified: 2026-03-27 22:10:08
+comments: True
+draft: False
 tags: ['writing/lab']
-title: 用 GitHub issue 寫博客很好，但我要放棄了
 description: 這曾經是一個比火熱的寫作方式，至少在 2020 年是如此，我也是聽、看 laike9m 和 yihong618 的項目慢慢摸索的，它有很多優點，比如至少解決了如下的問題： 1. 文章託管：所有文件放在 GitHub，他的穩定性至少要比你電腦的壽命要長； 2. 圖片引用：所有本地寫過博客的人一定頭疼過如何上傳圖片，這方面不贅述了； 3. SEO 索引：GitHub issue 自帶 SEO 索引，會...
 ---
-
 
 這曾經是一個比火熱的寫作方式，至少在 2020 年是如此，我也是聽、看 laike9m 和 yihong618 的項目慢慢摸索的，它有很多優點，比如至少解決了如下的問題：
 

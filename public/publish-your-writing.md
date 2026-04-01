@@ -6,9 +6,8 @@ modified: 2025-07-04 23:08:40
 title: How to publish your writing
 type: how-to
 tags: ['writing/how-to']
-description: Traditional platform 1. https://www.blogger.com 2. https://www.cnblogs.com 3. https://www.onenote.com 4. https://blog.csdn.net Self host website / Dynamic web page 1. https://cn.wordpress.org 2. http:...
+description: Traditional platform 1. https//www.blogger.com 2. https//www.cnblogs.com 3. https//www.onenote.com 4. https//blog.csdn.net Self host website / Dynamic web page 1. https//cn.wordpress.org 2. http//type...
 ---
-
 
 ## Traditional platform
 
@@ -45,6 +44,7 @@ description: Traditional platform 1. https://www.blogger.com 2. https://www.cnbl
 6. gitbook
 7. vuepress
     1. 集成了 Google Analytics，以及基於 Git 的「最後更新時間」功能
+
 8. vitepress
 9. mkdocs
 10. gitlab

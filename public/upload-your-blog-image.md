@@ -6,12 +6,12 @@ created: 2025-06-07 16:41:48
 modified: 2025-06-14 23:43:32
 type: how-to
 tags: ['writing/how-to']
-description: 🌟 Github with PicGo https://github.com/Molunerfinn/PicGo Free Service https://img.duiai.cc/tc https://sm.ms https://www.superbed.cn https://imgchr.com http://upload.likeyunba.com/ https://imgbed.cn ht...
+description: 🌟 Github with PicGo PicGo Free Service https//img.duiai.cc/tc https//sm.ms https//www.superbed.cn https//imgchr.com http//upload.likeyunba.com/ https//imgbed.cn — V2EX 討論 https//my.imgbed.org — V2EX 討...
 ---
 
 ## 🌟 Github with PicGo
 
-https://github.com/Molunerfinn/PicGo
+[PicGo](https://github.com/Molunerfinn/PicGo)
 
 ## Free Service
 
@@ -20,13 +20,8 @@ https://github.com/Molunerfinn/PicGo
 - https://www.superbed.cn
 - https://imgchr.com
 - http://upload.likeyunba.com/
-- https://imgbed.cn
-    - https://v2ex.com/member/imgbed
-      - https://www.v2ex.com/member/OldActorsSmile
-      - https://www.v2ex.com/t/716071
-- https://my.imgbed.org
-    - https://v2ex.com/member/Wikiworker
-    - https://v2ex.com/t/743502
+- https://imgbed.cn — [V2EX 討論](https://www.v2ex.com/t/716071)
+- https://my.imgbed.org — [V2EX 討論](https://v2ex.com/t/743502)
 
 ## Pay Service — AliyunOSS
 

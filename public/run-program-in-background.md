@@ -8,7 +8,6 @@ tags: ['writing/how-to']
 description: Windows index tmux nohup bg References What's the nohup on Windows? - Stack Overflow What is the equivalent of 'nohup' in linux PowerShell? - Stack Overflow Start-Process (Microsoft.PowerShell.Managem...
 ---
 
-
 ## Windows
 
 ```powershell
@@ -16,9 +15,11 @@ Start-Process
 Start Job { & C:\Full\Path\To\my.exe }
 ```
 
+
 ```cmd
 start
 ```
+
 
 ## index
 

@@ -6,9 +6,8 @@ modified: 2025-11-09 23:28:35
 title: 如何找書
 type: how-to
 tags: ['writing/how-to']
-description: 首選：Z-library Web: https://z-library.sk / https://z-library.ec TOR: http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion Others https://x.com/ZLibofficial https://mastodon.social/@ZLib...
+description: 首選：Z-library Web https//z-library.sk / https//z-library.ec TOR http//bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion Others https//x.com/ZLibofficial https//mastodon.social/@ZLibofficia...
 ---
-
 
 ## 首選：Z-library
 
@@ -46,6 +45,7 @@ description: 首選：Z-library Web: https://z-library.sk / https://z-library.ec
 	- 下載國外教材的電子書網站；
 - 好讀 https://www.haodoo.net/ ![](https://img.shields.io/website?url=https://www.haodoo.net/&style=for-the-badge&label=)
 	- 繁體字的界面，你應該知道它是哪兒的網站~一個推廣中文電子書的公益網站，建站於 2001 年。
+
 - PDF 之家 https://www.pdfzj.com/ ![](https://img.shields.io/website?url=https://www.pdfzj.com/&style=for-the-badge&label=)
 	- 擁有海量優質資源的 PDF 站點；
 - 圖靈社區 https://www.ituring.com.cn/book?tab=free ![](https://img.shields.io/website?url=https://www.ituring.com.cn/book?tab=free&style=for-the-badge&label=)
@@ -53,7 +53,8 @@ description: 首選：Z-library Web: https://z-library.sk / https://z-library.ec
 - 採書 https://ebook.name/ ![](https://img.shields.io/website?url=https://ebook.name/&style=for-the-badge&label=)
 	- 一個免費電子書搜索引擎,爲用戶提供 kindle 電子書的搜索服務；
 - Sobooks https://sobooks.cc/xiaoshuowenxue. ![](https://img.shields.io/website?url=https://sobooks.cc/xiaoshuowenxue.&style=for-the-badge&label=)
-	- 提供時間、文件格式、文件頁數等維度搜索，快速定位到想要的文檔
+
+- 提供時間、文件格式、文件頁數等維度搜索，快速定位到想要的文檔
 - 萬方數據 https://www.wanfangdata.com.cn/index.html ![](https://img.shields.io/website?url=https://www.wanfangdata.com.cn/index.html&style=for-the-badge&label=)
 	- 知識服務平臺，期刊、報告、論文、專利
 - 上海圖書館家譜 https://wrd2016.library.sh.cn/channel/stjp/ ![](https://img.shields.io/website?url=https://wrd2016.library.sh.cn/channel/stjp/&style=for-the-badge&label=)
