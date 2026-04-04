@@ -1,15 +1,14 @@
 ---
-comments: True
-draft: False
+published: 2025-06-02 11:50:24
 aliases: ['側載', '測載', '巨魔', 'How to sideload on iOS', 'Make it like Android Sideload', 'Sideload-on-ios']
 created: 2025-06-02 11:50:24
 modified: 2026-01-02 23:41:18
-tags: ['writing/how-to']
+tags: ['writing/how-to', 'public']
+draft: False
 title: Sideload-on-ios
 type: how-to
 description: Troll Store How it works? The latest releases of TrollStore (specifically 2.0 and later) work through the use of a CoreTrust bug in which code signatures are not correctly verified under certain circu...
 ---
-
 
 ## Troll Store
 
@@ -53,7 +52,8 @@ description: Troll Store How it works? The latest releases of TrollStore (specif
 3. 用 Jitterbug 得到配對文件 `xxx.mobiledevicepairing`
 4. 將配對文件 `xxx.mobiledevicepairing` 載入 SideStore
 5. 安裝 StosVPN https://apps.apple.com/us/app/stosvpn/id6744003051
-    1. 或者 WireGuard VPN (需要額外配置文件)
+
+1. 或者 WireGuard VPN (需要額外配置文件)
 6. 打開 VPN，然後重新側載 SideStore
 
 <iframe src='https://faq.altstore.io/altstore-classic/how-to-install-altstore-macos' style='height:40vh;width:100%' class='iframe-radius' allow='fullscreen'></iframe>
@@ -103,6 +103,7 @@ description: Troll Store How it works? The latest releases of TrollStore (specif
 - 去廣告軟件
     - Revanced Youtube: https://www.reddit.com/r/sideloaded/comments/12dfaa9
     - c001apk：酷安
+
 - 遊戲模擬器
     - ONScripter Plus: https://apptopia.com/ios/app/1459512942/about
     - [ ] 吉里吉里 2
@@ -111,6 +112,7 @@ description: Troll Store How it works? The latest releases of TrollStore (specif
     - [ ] Citra
     - [ ] Dolphin Emulator
     - [ ] ViTA
+
 - 追番看漫畫
     - Aidoku
     - ~open-ani-animeko
@@ -121,6 +123,7 @@ description: Troll Store How it works? The latest releases of TrollStore (specif
     - ~Mihon-(Tachiyomi)-使用教學-手機免費看漫畫的開源APP-附常用漫畫源
     - mihon 不支持 iOS，且沒有計劃支持
         - https://github.com/mihonapp/mihon/issues/1041
+
 - 通話錄音：TrollRecorder
 - USB 攝像頭
 - VPN 熱點

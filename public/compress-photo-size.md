@@ -1,11 +1,12 @@
 ---
-draft: False
+published: 2024-06-26 14:22:35
 title: How to compress photo size
 aliases: ['How to compress photo size']
 created: 2024-06-26 14:22:35
 modified: 2025-06-14 23:00:50
 type: how-to
-tags: ['writing/how-to', 'photo']
+tags: ['writing/how-to', 'photo', 'public']
+draft: False
 description: Most tidy -> webp via https//developers.google.com/speed/webp Download via https//developers.google.com/speed/webp/docs/precompiled JEPG -> jpegoptim Convert image to JPEG using https//imagemagick.org...
 ---
 

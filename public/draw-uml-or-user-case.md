@@ -1,11 +1,12 @@
 ---
-draft: False
+published: 2025-06-14 22:07:16
 title: How to draw uml or user-case
 aliases: How to draw uml or user-case
 created: 2025-06-14 22:07:16
 modified: 2025-06-14 22:17:38
 type: how-to
-tags: ['writing/how-to']
+tags: ['writing/how-to', 'public']
+draft: False
 description: drawio-desktop via https//app.diagrams.net excalidraw via https//excalidraw.com/ Source via https//note.bgzo.cc/weekly/draw-uml-or-user-case
 ---
 

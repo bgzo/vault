@@ -1,11 +1,12 @@
 ---
-draft: False
+published: 2024-07-27 15:16:08
 title: How to archive or cache web on internet
 aliases: ['How to archive or cache web on internet', 'How to found web archive or cache on internet']
 created: 2024-07-27 15:16:08
 modified: 2025-06-14 16:33:18
 type: how-to
-tags: ['writing/how-to']
+tags: ['writing/how-to', 'public']
+draft: False
 description: What I choose obsidian-clipper Browser extension SingleFile SingleFile https//chrome.google.com/webstore/detail/singlefile/mpiodijhokgodhhofbcjdecpffjipkle SingleFileZ https//chrome.google.com/webstor...
 ---
 

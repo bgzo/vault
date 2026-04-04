@@ -3,12 +3,11 @@ title: 連接 Threads
 aliases: ['連接 Threads']
 created: 2025-11-16 14:14:24
 modified: 2026-03-29 09:24:54
-comments: True
+published: 2025-11-16 14:14:24
+tags: ['export-to-obsidian', 'gtd/todo', 'writing/lab', 'public']
 draft: False
-tags: ['export-to-obsidian', 'gtd/todo', 'writing/lab']
 description: 背景：Social media post sync 需求 兩種實現方案 1. 盜版 API 2. 正版 API 正版 API via https//github.com/tirthpatell/threads-go 註冊開發者，居然需要註冊手機號，而且用哪個手機號都發不出短信 ip 被 meta 送中了，meta/facebook 系的 ip 規則十分嚴格，甚至可以說嚴格到變態。而且最致命的是無解...
 ---
-
 
 背景：Social media post sync 需求
 

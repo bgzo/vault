@@ -3,12 +3,11 @@ title: Openclaw 踩坑
 aliases: ['20260222', 'Openclaw 踩坑']
 created: 2026-02-22 01:23:54
 modified: 2026-02-27 23:16:30
-comments: True
+published: 2026-02-22 01:23:54
+tags: ['writing/lab', 'llm', 'openclaw', 'public']
 draft: False
-tags: ['writing/lab', 'llm', 'openclaw']
 description: 我對 OpenClaw 帶給我的驚喜，恰如一開始讀他的提示詞那樣驚豔： You're not a chatbot. You're becoming someone 我完全被這句話震住了。 無法使用 openclaw devices list 修改 ~/.openclaw/devices/pending.json，從 "silent" false 到 "silent" true via https/...
 ---
-
 
 我對 OpenClaw 帶給我的驚喜，恰如一開始讀他的提示詞那樣驚豔：
 

@@ -3,12 +3,11 @@ title: Steam 和 Mint
 aliases: ['Steam 和 Mint']
 created: 2026-03-22 19:23:43
 modified: 2026-03-29 10:51:25
-comments: True
+published: 2026-03-22 19:23:43
+tags: ['mint', 'steam', 'writing/lab', 'public']
 draft: False
-tags: ['mint', 'steam', 'writing/lab']
 description: 翻看書籤，看到了前半個月在 Mint 服務器上安裝 Steam 的經歷，想起來幾個操蛋的事情： Steam 開啓之後會自動進行更新，然後從更新到顯示這部分時間，是什麼都沒有的，沒有標籤欄圖標，後臺進程沒有真正啓動，所以如果你的網絡環境不行，實際效果就是：點和沒點沒區別。 很苦惱啊，怎麼都打不開，難道說 Steam 依賴跟其他亂八七糟的軟件衝突了？Steam 又沒有提供 AppImage 的包，怎麼...
 ---
-
 
 翻看書籤，看到了前半個月在 Mint 服務器上安裝 Steam 的經歷，想起來幾個操蛋的事情：
 

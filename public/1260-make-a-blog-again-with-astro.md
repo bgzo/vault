@@ -1,14 +1,13 @@
 ---
-comments: True
-draft: False
+published: 2025-10-12 00:39:37
 aliases: ['用 Astro 重做網站這件事']
 created: 2025-10-12 00:39:37
 modified: 2025-11-15 13:00:31
-tags: ['writing/lab']
+tags: ['writing/lab', 'public']
+draft: False
 title: 用 Astro 重做網站這件事
 description: Astro 是什麼 核心思想是羣島架構，不同與傳統 VUE 的單頁應用，而是對於不用頁面按需加載，在網頁加載速度和架構兼容性上來說是一流。 模板的注入類似 Jekyll，但是比前者更加靈活。 Bun 是什麼 是用 Zig 語言實現的另一個 Javascript 運行時，目標是兼容 Node.js，提供更加快速的構建體驗。 初始化一個 Astro 項目 添加 Vue / TailwindCSS 等依...
 ---
-
 
 ## Astro 是什麼
 

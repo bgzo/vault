@@ -3,12 +3,11 @@ title: Windows 調教指南
 aliases: ['How to setup a new windows', 'Windows 調教指南']
 created: 2024-09-22 09:26:22
 modified: 2026-03-22 00:17:29
-comments: True
+published: 2024-09-22 09:26:22
+tags: ['writing/how-to', 'public']
 draft: False
-tags: ['writing/how-to']
 description: [!TIP] 換機很麻煩，不妨看看這篇指南？ 安裝 拿到 Windows ISO 鏡像： https//www.microsoft.com/en-us/software-download/windows11 https//msdn.sjjzm.com https//msdn.itellyou.cn https//www.hellowindows.cn 寫到 U 盤裏面： https//github...
 ---
-
 
 > [!TIP]
 > 換機很麻煩，不妨看看這篇指南？
@@ -382,54 +381,54 @@ Impossible via: https://answers.microsoft.com/en-us/windows/forum/all/option-to-
 
 ### Global
 
-|Operation|Effects|
-|:--------------:|:---------------:|
-|Win+E|打開資源管理器|
-|Win+t|循環切換任務欄|
-|Win+Ctrl+D|創建虛擬 Desktop|
-|Win+Q|搜索|
-|Win+Ctrl+F4|關閉虛擬 Desktop|
-|Win+R|對話框|
-|Win+Ctrl+ 左/右|左右切換虛擬 Desktop|
-|Win+X|“Windows 移動中心”設置面板|
-|Win+F4|關閉窗口|
-|Win+m|最小化窗口（全部窗口）|
-|Win+Shift+M|還原窗口最小化（全部）|
+|    Operation    |          Effects           |
+| :-------------: | :------------------------: |
+|      Win+E      |       打開資源管理器       |
+|      Win+t      |       循環切換任務欄       |
+|   Win+Ctrl+D    |      創建虛擬 Desktop      |
+|      Win+Q      |            搜索            |
+|   Win+Ctrl+F4   |      關閉虛擬 Desktop      |
+|      Win+R      |           對話框           |
+| Win+Ctrl+ 左/右 |    左右切換虛擬 Desktop    |
+|      Win+X      | “Windows 移動中心”設置面板 |
+|     Win+F4      |          關閉窗口          |
+|      Win+m      |   最小化窗口（全部窗口）   |
+|   Win+Shift+M   |   還原窗口最小化（全部）   |
 
 ### Ctrl
 
-|    Operation    |    Effects     |
-| :-------------: | :------------: |
+|    Operation    |           Effects            |
+| :-------------: | :--------------------------: |
 |     ctrl+w      | 關閉瀏覽器當前頁（我的電腦） |
-|     ctrl+t      |     打開新標籤頁     |
-| ctrl+alt+delete |    打開任務管理器     |
-|  ctrl+shift+t   |   恢復關閉的瀏覽器頁面   |
-|      ctrl+      |      放大頁面      |
-|      ctrl-      |      縮小頁面      |
+|     ctrl+t      |         打開新標籤頁         |
+| ctrl+alt+delete |        打開任務管理器        |
+|  ctrl+shift+t   |     恢復關閉的瀏覽器頁面     |
+|      ctrl+      |           放大頁面           |
+|      ctrl-      |           縮小頁面           |
 
 ### Alt
 
-|Operation|Effects|
-|:------------------:|:-----------------:|
-|alt+F4|關閉窗口|
-|alt+enter|查看選中文件屬性|
-|alt+ 前進/後退方向鍵|瀏覽器頁面後退前進|
-|alt+d|焦點固定到地址欄|
-|alt+shief+numLock|用鍵盤控制鼠標|
-|alt+space+n|單個窗口最小化（配合 Dock 使用）|
+|      Operation       |             Effects              |
+| :------------------: | :------------------------------: |
+|        alt+F4        |             關閉窗口             |
+|      alt+enter       |         查看選中文件屬性         |
+| alt+ 前進/後退方向鍵 |        瀏覽器頁面後退前進        |
+|        alt+d         |         焦點固定到地址欄         |
+|  alt+shief+numLock   |          用鍵盤控制鼠標          |
+|     alt+space+n      | 單個窗口最小化（配合 Dock 使用） |
 
 ### Fn
 
-|Operation|Effects|
-|:----------:|:--------:|
-|F1|顯示當前程序或者 windows 的幫助內容|
-|F2|如果選中文件的話，進行重命名|
-|F3|查找|
-|F5|瀏覽器頁面刷新|
-|F6|使用瀏覽器時，地址欄獲得焦點（即光標移到了地址欄）|
-|F11|瀏覽器全屏|
-|F12|瀏覽器審查元素/調試界面|
-|prtsc|截屏|
+| Operation |                      Effects                       |
+| :-------: | :------------------------------------------------: |
+|    F1     |        顯示當前程序或者 windows 的幫助內容         |
+|    F2     |            如果選中文件的話，進行重命名            |
+|    F3     |                        查找                        |
+|    F5     |                   瀏覽器頁面刷新                   |
+|    F6     | 使用瀏覽器時，地址欄獲得焦點（即光標移到了地址欄） |
+|    F11    |                     瀏覽器全屏                     |
+|    F12    |              瀏覽器審查元素/調試界面               |
+|   prtsc   |                        截屏                        |
 
 ## Changelog
 
