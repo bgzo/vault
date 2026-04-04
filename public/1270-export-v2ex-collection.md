@@ -1,10 +1,10 @@
 ---
-comments: True
-draft: False
+published: 2025-12-14 20:13:07
 aliases: ['導出 V2ex 的收藏主題']
 created: 2025-12-14 20:13:07
 modified: 2025-12-14 20:29:00
-tags: ['writing/lab', 'export-to-obsidian']
+tags: ['writing/lab', 'export-to-obsidian', 'public']
+draft: False
 title: 導出 V2ex 的收藏主題
 description: 基於幾點原因有這方面的需求： 1. 覆盤；寫自己的週報用，總結看看最近一週摸魚的結果； 2. 備份：V2 是個人站點，賬號有被封禁的可能，並且沒有導出數據的功能，你的數據可能永遠消失； 實現 儘管 V2 過去已經開放過一版 API，但是缺少個人的部分，因此具體實現上還需要結合傳統的 Cookie 網頁，解析收藏列表，然後纔可以通過 API 調用獲得主題詳情。還是希望未來有一天能有相關的接口，具體官...
 ---

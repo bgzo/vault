@@ -1,10 +1,10 @@
 ---
-comments: True
-draft: False
+published: 2025-12-06 21:11:11
 aliases: ['導出 Qi Reader 的 Read latter']
 created: 2025-12-06 21:11:11
 modified: 2025-12-07 12:26:16
-tags: ['writing/lab', 'export-to-obsidian']
+tags: ['writing/lab', 'export-to-obsidian', 'public']
+draft: False
 title: 導出 Qi Reader 的 Read latter
 description: 上一次寫這個我記得還是給 https//rss.anyant.com/ 寫的，源碼在 https//github.com/bGZo/playground/tree/2022/01/rssant-backup 已經做的比較完善了，當然這種事情不太好，就沒有引流，自然也沒有多少人用，當時第一次抓包，寫的還比較費勁哈哈哈。 官方當然有計劃，但是已經快 2 年了，猜測是有什麼顧慮，因爲我比較急，就不等了，...
 ---

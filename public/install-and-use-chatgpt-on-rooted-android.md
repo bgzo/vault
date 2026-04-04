@@ -1,10 +1,10 @@
 ---
-comments: True
-draft: False
+published: 2025-06-12 23:41:37
 aliases: ['How to install and use chatgpt on rooted android', 'What problem you could meet when using chatgpt on a rooted android']
 created: 2025-06-12 23:41:37
 modified: 2025-12-11 22:18:58
-tags: ['writing/how-to']
+tags: ['writing/how-to', 'public']
+draft: False
 title: How to install and use chatgpt on rooted android
 type: how-to
 description: 總的來說，在 ROOT 的手機上使用 chatGPT，你可能會遇到的幾個問題： 1. Devices's date and time are set properly 1. 2. PlayIntegrity Preauth PlayIntegrity verification failed 1. 3. Unusual Activity Coming from your system 1. 第一個可...

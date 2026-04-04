@@ -3,9 +3,9 @@ title: 重構 Jekyll 博客
 aliases: ['重構 Jekyll 博客']
 created: 2026-03-28 13:57:04
 modified: 2026-03-30 22:09:20
-comments: True
+published: 2026-03-28 13:57:04
+tags: ['blog', 'callout', 'jekyll', 'rss', 'writing/lab', 'public']
 draft: False
-tags: ['blog', 'callout', 'jekyll', 'rss', 'writing/lab']
 description: 因爲種種原因，我需要統一： https//note.bgzo.cc https//blog.bgzo.cc https//bgzo.cc 這幾個網站的定位，考慮到自己的 blog.bgzo.cc 已經存在很長一段時間了，並且已被 V2EX 收錄，最終考慮依然將自己的大部分文章放在這裏，note.bgzo.cc 專注零碎的思考，bgzo.cc 只是個人探索的項目。 Jekyll 兼容自定義類型的 M...
 ---
 
@@ -35,8 +35,6 @@ aliases:
   - xxx
 created: 2026-03-28T13:57:04
 modified: 2026-03-28T16:52:30
-comments: true
-draft: true
 tags:
   - writing/lab
 ```
@@ -49,12 +47,12 @@ tags:
 > [!TIP]
 > 關於爲什麼第二方案必須重新定義一套規則，因爲 `site.posts` 在 Jekyll 裏面是**硬編碼**，不可配置的。比如不按人家的命名規則走， `site.posts` 永遠爲空。
 
-| 比較                | `site.posts`          | 自定義 collection                       |     |
-| ----------------- | --------------------- | ------------------------------------ | --- |
-| 來源目錄              | 只能是 `_posts`          | `_<name>/` 任意命名                      |     |
-| 文件名要求             | 必須 `YYYY-MM-DD-title` | 無限制                                  |     |
-| 內置 `date` 解析      | 自動從文件名提取              | 需自己在 front matter 寫 `date`/`created` |     |
-| `output: true` 默認 | 是                     | 顯式配置                                 |     |
+| 比較                | `site.posts`            | 自定義 collection                         |     |
+| ------------------- | ----------------------- | ----------------------------------------- | --- |
+| 來源目錄            | 只能是 `_posts`         | `_<name>/` 任意命名                       |     |
+| 文件名要求          | 必須 `YYYY-MM-DD-title` | 無限制                                    |     |
+| 內置 `date` 解析    | 自動從文件名提取        | 需自己在 front matter 寫 `date`/`created` |     |
+| `output: true` 默認 | 是                      | 顯式配置                                  |     |
 
 考慮了一下，果斷選擇方案 2。
 

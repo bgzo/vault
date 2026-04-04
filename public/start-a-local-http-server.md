@@ -1,10 +1,10 @@
 ---
-comments: True
-draft: False
+published: 2024-04-20 21:26:22
 aliases: ['如何啓動一個本地服務']
 created: 2024-04-20 21:26:22
 modified: 2025-12-11 22:55:53
-tags: ['writing/how-to']
+tags: ['writing/how-to', 'public']
+draft: False
 title: 如何啓動一個本地服務
 type: how-to
 description: gohttpserver https//github.com/codeskyblue/gohttpserver simple-http-server https//github.com/TheWaWaR/simple-http-server http-server https//github.com/http-party/http-server Source via https//note.bgz...

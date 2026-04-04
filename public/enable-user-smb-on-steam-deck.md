@@ -1,10 +1,10 @@
 ---
-comments: True
-draft: False
+published: 2025-09-16 21:21:32
 aliases: ['在 Steam Deck 上開啓用戶級別的 SMB']
 created: 2025-09-16 21:21:32
 modified: 2025-12-08 22:17:15
-tags: ['writing/how-to']
+tags: ['writing/how-to', 'public']
+draft: False
 title: 在 Steam Deck 上開啓用戶級別的 SMB
 description: 重要性不言而喻，遠程打個補丁，從 SD 上下載點文件都非常有用，導出一些遊戲也比較實用。 傳統上，SMB 必須使用 Sudo 開啓，但是 SteamOS 這種不可變系統有個毛病就是，每次更新完系統，之前所有的東西全部重裝，包括你的 SMB，而跳過系統更新對於 SD 來說更是不可能，這點簡直是跟 MC 學的，笑死。 所以一個合理的方案就是一用戶級別的權限開啓 SMB，這需要走一些彎路。 前置要求：H...
 ---

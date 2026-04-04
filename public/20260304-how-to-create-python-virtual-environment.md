@@ -3,9 +3,9 @@ title: Python 創建虛擬環境
 aliases: ['Python 創建虛擬環境']
 created: 2026-03-04 22:24:48
 modified: 2026-03-04 22:39:40
-comments: True
+published: 2026-03-04 22:24:48
+tags: ['llm/note', 'python', 'venv', 'llm/gpt-53-codex', 'writing/how-to', 'public']
 draft: False
-tags: ['llm/note', 'python', 'venv', 'llm/gpt-53-codex', 'writing/how-to']
 description: "從零到一的 Python 虛擬環境，包含創建步驟、工作原理、常見坑和最佳實踐。"
 ---
 

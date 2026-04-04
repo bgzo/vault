@@ -1,11 +1,12 @@
 ---
-draft: False
+published: 2025-06-02 12:07:23
 title: How to make id picture
 aliases: ['How to make id picture']
 created: 2025-06-02 12:07:23
 modified: 2025-06-02 12:08:18
 type: how-to
-tags: ['writing/how-to']
+tags: ['writing/how-to', 'public']
+draft: False
 description: idify via https//idify.netlify.app Source via https//note.bgzo.cc/weekly/generate-id-picture
 ---
 

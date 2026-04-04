@@ -1,10 +1,10 @@
 ---
-comments: True
-draft: False
+published: 2025-11-13 07:27:54
 aliases: ['如何遷移 bangumi 賬號']
 created: 2025-11-13 07:27:54
 modified: 2025-11-15 12:42:39
-tags: ['bangumi', 'writing/how-to']
+tags: ['bangumi', 'writing/how-to', 'public']
+draft: False
 title: 如何遷移 bangumi 賬號
 type: how-to
 description: 本篇指南屬於 https//pypi.org/project/bangumi_recovery/ 操作備忘 使用場景 你想把一個 Bangumi 賬號的數據（收藏、評分等）遷移到另一個賬號上。傳統上你可能需要： 1. 新建或更換賬號後想複製歷史收藏 2. 陸續把播放/觀看進度遷移到主賬號 3. 合併舊賬號數據到新賬號或做橫向備份 可能會很蛋疼，因爲： 1. 沒有一鍵導入：API 也沒有官方的"導入...

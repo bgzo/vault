@@ -3,9 +3,9 @@ title: 重構 TG 機器人
 aliases: ['重構 TG 機器人']
 created: 2026-02-17 14:36:01
 modified: 2026-02-17 20:01:27
-comments: True
+published: 2026-02-17 14:36:01
+tags: ['writing/lab', 'golang', 'telegram-bot', 'public']
 draft: False
-tags: ['writing/lab', 'golang', 'telegram-bot']
 description: 不懂的點（學習筆記） Golang 跑測試 爲啥可以直接測試？測試在另一個文件裏面 service_test.go？ ==猜測是按文件夾測試== Golang 的接口實現 比較變態，沒有顯示聲明，差點沒看出來是 Provider 是 Service 的接口實現。 如果想實現一個接口，能否快速生成這個接口的全部方法？要不然還得反過頭來反覆查找，感覺如果沒有這個語法糖有點坐牢，而且沒有顯示聲明，也不容...
 ---
 

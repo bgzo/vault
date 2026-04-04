@@ -1,10 +1,11 @@
 ---
-draft: False
+published: 2025-08-16 22:57:01
 aliases: ['How to check deleted telegram channels info']
 created: 2025-08-16 22:57:01
 modified: 2025-08-16 23:04:42
 title: How to check deleted telegram channels info
-tags: ['writing/how-to']
+tags: ['writing/how-to', 'public']
+draft: False
 description: TGStat via https//tgstat.com Telemetr via https//telemetr.io Source via https//note.bgzo.cc/weekly/check-deleted-telegram-channels-info
 ---
 

@@ -1,11 +1,12 @@
 ---
-draft: False
+published: 2025-06-02 11:15:36
 title: How to play online game offline
 aliases: ['How to play online game offline']
 created: 2025-06-02 11:15:36
 modified: 2025-06-02 12:05:18
 type: how-to
-tags: ['gtd/todo', 'writing/how-to']
+tags: ['gtd/todo', 'writing/how-to', 'public']
+draft: False
 description: 只要是上了 PC，就難免流出私服版本。所以爲什麼放着官方穩定的版本不玩，而選擇盜版呢？ 1. 優秀的建模設計：隱居山林可能是個好的選擇，但人終究是社會化的動物，即使我不從正面接觸這款遊戲，遊戲的各種二創，切片還是會從社交媒體上傳播到我手上，我終究會被這些資本運作的遊戲同化。 2. 圍繞消費的遊戲設計：這是我不願意踏入氪金手遊的執念，因爲任何稀缺的遊戲資源，都註定與金錢綁定，你在這樣一個圍繞着金錢構...
 ---
 

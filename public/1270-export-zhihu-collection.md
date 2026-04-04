@@ -1,10 +1,10 @@
 ---
-comments: True
-draft: False
+published: 2025-12-14 20:01:18
 aliases: ['導出知乎收藏夾']
 created: 2025-12-14 20:01:18
 modified: 2025-12-14 20:25:57
-tags: ['writing/lab']
+tags: ['writing/lab', 'public']
+draft: False
 title: 導出知乎收藏夾
 description: 基於幾點原因，建議你定期備份知乎收藏夾： 1. 覆盤：工作日有的時候會看這個網站，會存一些收藏的技術文章； 2. 審查：有些答案會被隱藏，甚至刪除，比如下面收藏夾就有這種情況，頁面顯示有 4 個內容，接口返回的 total 也是 4，但是實際查詢到的內容一個都沒有，怎麼辦，好難猜啊，你懂的； 所以是不是得及時做備份？ 實現 通過網頁抓包如下接口： https//github.com/bGZo/en...
 ---

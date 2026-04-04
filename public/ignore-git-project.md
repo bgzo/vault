@@ -1,10 +1,11 @@
 ---
-draft: False
+published: 2025-08-03 21:46:10
 aliases: ['How to ignore git project', 'Ignore-git-project']
 created: 2025-08-03 21:46:10
 modified: 2025-08-03 21:48:16
 title: How to ignore git project
-tags: ['writing/how-to']
+tags: ['writing/how-to', 'public']
+draft: False
 description: Jetbrains directory mappings vscode close repo Source via https//note.bgzo.cc/weekly/ignore-git-project
 ---
 

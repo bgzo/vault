@@ -1,10 +1,10 @@
 ---
-comments: True
-draft: False
+published: 2025-11-30 10:20:59
 aliases: ['如何把你的.git 分離出 OneDrive/iCloud', 'How to separate your git directory from onedrive and icloud']
 created: 2025-11-30 10:20:59
 modified: 2025-11-30 10:34:14
-tags: ['writing/how-to']
+tags: ['writing/how-to', 'public']
+draft: False
 title: 如何把你的.git 分離出 OneDrive/iCloud
 type: how-to
 description: 爲什麼這麼做呢？ 雲同步固然方便，可以讓你在任何設備中隨時開展工作，但這不是網盤發明的目的，也會帶來額外的性能開銷，增加設備發熱和網絡帶寬流量。 一個比較好的解決方案就是，保留你本地的副本，你依然可以在各個設備上開展工作，但是你的 git 目錄需要存在本地的某個目錄，Git 本身給了很好分離支持，如 --git-dir[^git-dir]。 [^git-dir] https//git-scm.co...

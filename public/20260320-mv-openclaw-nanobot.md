@@ -3,9 +3,9 @@ title: NanoBot 踩坑
 aliases: ['NanoBot 踩坑']
 created: 2026-03-20 22:38:33
 modified: 2026-03-28 18:14:59
-comments: True
+published: 2026-03-20 22:38:33
+tags: ['llm', 'nanobot', 'writing/lab', 'public']
 draft: False
-tags: ['llm', 'nanobot', 'writing/lab']
 description: 之前有使用 Openclaw 踩坑 的經歷，用起來也還可以，但有幾點問題： 1. 啓動慢； 2. 配置複雜； 3. 性能； Openclaw 的代碼十幾萬行是出了名的臭，大家都知道，所以爆火之後就接二連三出來了很多語言的平替版本，有： NonoBot (Python) PicoClaw (Golang) ZeroClaw (Rust) 考慮到我的模型是 CopilotPro，並且不想走彎路，所以最...
 ---
 

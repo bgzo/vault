@@ -3,9 +3,9 @@ title: 探索現有社交媒體 CLI 對導入 Obsidian 的可能性
 aliases: ['探索現有社交媒體 CLI 對導入 Obsidian 的可能性']
 created: 2026-03-21 20:12:10
 modified: 2026-03-21 22:44:42
-comments: True
+published: 2026-03-21 20:12:10
+tags: ['ai/slop', 'twitter', 'writing/lab', 'xiaohongshu', 'public']
 draft: False
-tags: ['ai/slop', 'twitter', 'writing/lab', 'xiaohongshu']
 description: 最近 X 的時間線頻繁春賢一個創作者： @jackwener，他有 5 個比較有代表性的作品： bilibili-cli twitter-cli discord-cli tg-cli xiaohongshu-cli 這些全都是客戶端級別的工具，面向 CLI 用戶，CLI 用戶是哪部份人呢？ AI。 當然也不盡然，吸引我的是這些平臺的 CLI 並不好做，我正好最近在全量導出自己的數據到 Obsidi...
 ---
 

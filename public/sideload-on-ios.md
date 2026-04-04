@@ -1,10 +1,10 @@
 ---
-comments: True
-draft: False
+published: 2025-06-02 11:50:24
 aliases: ['側載', '測載', '巨魔', 'How to sideload on iOS', 'Make it like Android Sideload', 'Sideload-on-ios']
 created: 2025-06-02 11:50:24
 modified: 2026-01-02 23:41:18
-tags: ['writing/how-to']
+tags: ['writing/how-to', 'public']
+draft: False
 title: Sideload-on-ios
 type: how-to
 description: Troll Store How it works? The latest releases of TrollStore (specifically 2.0 and later) work through the use of a CoreTrust bug in which code signatures are not correctly verified under certain circu...
