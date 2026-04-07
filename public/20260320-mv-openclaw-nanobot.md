@@ -1,10 +1,10 @@
 ---
-title: NanoBot 踩坑
-aliases: ['NanoBot 踩坑']
+title: Nanobot 踩坑
+aliases: ['Nanobot 踩坑']
 created: 2026-03-20 22:38:33
 modified: 2026-03-28 18:14:59
 published: 2026-03-20 22:38:33
-tags: ['llm', 'nanobot', 'writing/lab', 'public']
+tags: ['copilot', 'llm', 'nanobot', 'writing/lab', 'public']
 draft: False
 description: 之前有使用 Openclaw 踩坑 的經歷，用起來也還可以，但有幾點問題： 1. 啓動慢； 2. 配置複雜； 3. 性能； Openclaw 的代碼十幾萬行是出了名的臭，大家都知道，所以爆火之後就接二連三出來了很多語言的平替版本，有： NonoBot (Python) PicoClaw (Golang) ZeroClaw (Rust) 考慮到我的模型是 CopilotPro，並且不想走彎路，所以最...
 ---
@@ -112,6 +112,43 @@ systemctl --user enable --now nanobot-gateway
 
 接下來就可以正常使用了。
 
-##
+## 從源碼安裝
+
+最近 3 月底爆出 LietLLM 被供應鏈投毒，然後 Nanobot 在最新版本 `v0.1.4.post6`，迅速把這個依賴切割掉了，出現最大的一個問題是，Copilot 用不了了，幸好幾天過後有人修了：
+
+- https://github.com/HKUDS/nanobot/pull/2668
+
+皆知目前還沒有發佈最新版本，所以只能自己編譯了，無奈，卸載之前自己的 nanobot-ai
+
+```shell
+un tool uninstall nanobot-ai
+rm -f ~/.local/bin/nanobot
+
+pipx uninstall nanobot-ai
+```
+
+總之，確保自己本地已經沒有安裝過的 nanobot-ai 的包了，然後：
+
+```shell
+git clone https://github.com/HKUDS/nanobot.git
+cd nanobot
+pipx install .
+```
+
+爲了以防萬一可以已經修改個版本號，然後安裝之後自己驗證下，保證是自己安裝的版本
+
+```shell
+~/workspaces/trending > nanobot --version
+🐈 nanobot v0.1.4.post7
+```
+
+DONE
+
+## 技術債
+
+- 管理工具 https://hatch.pypa.io
+- GitHub OAuth 爲什麼在新版本中失效？
+- 爲什麼 GitHub Token 無法訪問 Copilot？
+	- https://github.com/orgs/community/discussions/156263
 
 Source via: https://note.bgzo.cc/weekly/20260320-mv-openclaw-nanobot
