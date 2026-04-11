@@ -2,9 +2,9 @@
 title: Twitter 數據導出
 aliases: ['Twitter 數據導出']
 created: 2026-02-14 18:39:04
-modified: 2026-02-16 11:05:18
+modified: 2026-04-11 18:50:18
 published: 2026-02-14 18:39:04
-tags: ['writing/lab', 'twitter', 'export-to-obsidian', 'public']
+tags: ['export-to-obsidian', 'public', 'twitter', 'writing/lab']
 draft: False
 description: 本文爲 黑曜石導入計劃 的一部分，理由自不必多說。 我們來看看怎麼做？ 1. 官方存檔； 2. API 爬取； 官方存檔 官方從 Twitter 就一直有這個功能，支持下載自己的全部推文，還有賬號的一些其他數據，如果裏面的 README 文件所述不假，那麼這個存檔文件可能會超過 50GB。Of course, 一切都需要在你賬號沒有被徹底封禁之前請求，封掉就什麼都沒有了😊。 這也是一個偷懶的方法，...
 ---

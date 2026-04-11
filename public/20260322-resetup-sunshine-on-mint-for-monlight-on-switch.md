@@ -2,9 +2,9 @@
 title: 重新設置 Sunshine 給 NS 串流用
 aliases: ['重新設置 Sunshine 給 NS 串流用']
 created: 2026-03-22 15:31:22
-modified: 2026-03-29 10:12:00
+modified: 2026-04-11 18:50:18
 published: 2026-03-22 15:31:22
-tags: ['game/switch', 'mint', 'streaming', 'writing/lab', 'public']
+tags: ['game/switch', 'mint', 'public', 'streaming', 'writing/lab']
 draft: False
 description: 最近我發現自己根本不需要什麼 Win/Android/毫米波 掌機，也不需要折騰 如何在安卓模擬器上玩遊戲，我有硬破的 Switch，裏面就有 Moonlight，我可以直接串流到服務器上去玩遊戲！ 突然感覺香起來了。 準備什麼 1. 一臺 24h 開機的服務器 2. 已經安裝 Steam 3. https//github.com/LizardByte/Sunshine 1. https//git...
 ---
