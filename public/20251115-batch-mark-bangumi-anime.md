@@ -45,7 +45,7 @@ bgm-click-server
 
 本地瀏覽器打開運行的項目，效果圖如下：
 
-![](https://raw.githack.com/bGZo/assets/dev/2025/202508021025451.png)
+![](https://img.bgzo.cc/2025/202508021025451.png)
 
 ## Related
 

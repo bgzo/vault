@@ -14,11 +14,11 @@ description: 總的來說，在 ROOT 的手機上使用 chatGPT，你可能會�
 
 1. Devices's date and time are set properly
 
-1. ![](https://raw.githack.com/bGZo/assets/dev/2025/1749868182517.png)
+1. ![](https://img.bgzo.cc/2025/1749868182517.png)
 2. PlayIntegrity: Preauth PlayIntegrity verification failed
-	1. ![](https://raw.githack.com/bGZo/assets/dev/2025/1749826001219.jpg)
+	1. ![](https://img.bgzo.cc/2025/1749826001219.jpg)
 3. Unusual Activity Coming from your system
-	1. ![](https://raw.githack.com/bGZo/assets/dev/2025/1749826400677.png)
+	1. ![](https://img.bgzo.cc/2025/1749826400677.png)
 
 第一個可能是手機的 Play 版本比較低，我在嘗試更新過後可以正常使用。
 

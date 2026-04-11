@@ -69,7 +69,7 @@ https://github.com/bGZo/blog/commit/428035c7167ce2899e4db9fb5d1d006d60829cc3
 
 這是我模仿的結果：
 
-![](https://raw.githack.com/bGZo/assets/dev/2025/202507022230006.png)
+![](https://img.bgzo.cc/2025/202507022230006.png)
 
 ### 內容獲取
 

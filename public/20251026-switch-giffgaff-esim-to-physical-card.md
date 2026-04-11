@@ -17,7 +17,7 @@ https://help.giffgaff.com/en/articles/240706-can-i-switch-back-to-a-physical-sim
 
 然後在 APP 內部點擊 `Account > SIM > Replace my SIM >  Replace my physical SIM`，之後你會被跳轉到官方的網站，然後在這個網頁的 Replace my SIM 裏面進行激活操作即可。
 
-![](https://raw.githack.com/bGZo/assets/dev/2025/202510261117368.PNG)
+![](https://img.bgzo.cc/2025/202510261117368.PNG)
 
 > 需要注意操作具有窗口期，英國 4:30am to 9:30pm，換算到東八區的時間大概是 11:30am - 4:30am（次日）/12:30pm - 5:30am（次日）
 

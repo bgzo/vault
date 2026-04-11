@@ -2,7 +2,7 @@
 title: How to compress photo size
 aliases: ['How to compress photo size']
 created: 2024-06-26 14:22:35
-modified: 2026-04-11 18:53:53
+modified: 2026-04-12 02:13:05
 published: 2024-06-26 14:22:35
 tags: ['photo', 'public', 'writing/how-to']
 draft: False
@@ -36,10 +36,15 @@ jpegoptim --size=1024k xxx.jpg
 
 ## PNG
 
-### (lossy compress) Pngquant
+- lossy compress with https://pngquant.org
 
-<iframe src='https://pngquant.org/' style='height:40vh;width:100%' class='iframe-radius' allow='fullscreen'></iframe>
-<center>via: <a href='https://pngquant.org/' target='_blank' class='external-link'>https://pngquant.org/</a></center>
+```shell
+pngquant image_1653621462242_0.png
+pngquant --quality=60-80 image_1653621462242_0.png
+pngquant --force --ext .png 202508021025451.png
+pngquant --force --ext .png *.png
+pngquant --force --ext .png --quality=60-80 202503161837403.png
+```
 
 ### Optipng
 

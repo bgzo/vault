@@ -34,11 +34,11 @@ description: 原項目設計很新穎，用 Cloudflare / Netlify / Vercel 等平
 
 說幹就幹，這是優化前：
 
-![](https://raw.githack.com/bGZo/assets/dev/2025/202510251122073.png)
+![](https://img.bgzo.cc/2025/202510251122073.png)
 
 這是優化後：
 
-![](https://raw.githack.com/bGZo/assets/dev/2025/202510251124670.png)
+![](https://img.bgzo.cc/2025/202510251124670.png)
 
 左側的主體還是保持朋友圈的設計，右側導航欄變成卡片，公告右移，必要的時候隱藏，我覺得還是蠻好看的。
 

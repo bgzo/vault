@@ -74,7 +74,7 @@ description: Troll Store How it works? The latest releases of TrollStore (specif
 > A: use `.dmg` and install it.
 
 > Q: AFC unable to manage files
-> ![](https://raw.githack.com/bGZo/assets/dev/2025/1745357262178.PNG)
+> ![](https://img.bgzo.cc/2025/1745357262178.PNG)
 > A: 可能是沒有開啓 VPN ，重試就解決了。
 > via: https://github.com/SideStore/SideStore/issues/156
 
@@ -87,7 +87,7 @@ description: Troll Store How it works? The latest releases of TrollStore (specif
 > 簡單來說，連接 Xcode，然後再啓用 JIT 就行了
 
 > Q: The device has reached the maximux number of installed apps using a developer profile
-> ![](https://raw.githack.com/bGZo/assets/dev/2025/1745360291647.PNG)
+> ![](https://img.bgzo.cc/2025/1745360291647.PNG)
 > A: 最多支持 3 個 APP 激活，10 個 APP IDs
 
 ### Community: Replace Android
@@ -118,7 +118,7 @@ description: Troll Store How it works? The latest releases of TrollStore (specif
     - ~open-ani-animeko
     - Kazumi：動漫
         - Need resign [^runing-with-live-container]
-        - ![200](https://raw.githack.com/bGZo/assets/dev/2025/1745360745622.PNG)
+        - ![200](https://img.bgzo.cc/2025/1745360745622.PNG)
     - mangayomi：漫畫
     - ~Mihon-(Tachiyomi)-使用教學-手機免費看漫畫的開源APP-附常用漫畫源
     - mihon 不支持 iOS，且沒有計劃支持
