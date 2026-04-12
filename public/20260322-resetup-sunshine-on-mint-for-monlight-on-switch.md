@@ -61,7 +61,7 @@ ssh -L 47990:127.0.0.1:47990 bgzo@192.168.xxx.xxx
 
 輸入 Moonlight 顯示的 Pair 碼即可完美的運行:
 
- ![1774750031826.webp](https://img.bgzo.cc/2026/1774750031826.webp)
+ ![1774750031826.webp](https://pub-89c11651a8434f18a530bd6f93e399da.r2.dev/2026/1774750031826.webp)
 
 > [!NOTE]
 > 調試: 電腦端可以退出 **Ctrl+Alt+Shift+Q** 重新設置碼率

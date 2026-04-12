@@ -13,12 +13,12 @@ description: Jetbrains directory mappings vscode close repo Source via https//no
 
 `directory mappings`
 
-![](https://img.bgzo.cc/2025/202507232110869.png)
+![](https://pub-89c11651a8434f18a530bd6f93e399da.r2.dev/2025/202507232110869.png)
 
 ## vscode
 
 `close repo`
 
-![](https://img.bgzo.cc/2025/202508032148884.png)
+![](https://pub-89c11651a8434f18a530bd6f93e399da.r2.dev/2025/202508032148884.png)
 
 Source via: https://note.bgzo.cc/weekly/20250803-ignore-git-project
