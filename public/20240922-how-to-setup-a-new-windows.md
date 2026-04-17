@@ -536,4 +536,4 @@ via: https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-11-ve
 [^case-sensitive]: case-sensitive via https://juejin.cn/post/7135422871735631902, https://www.zhihu.com/question/443835000/answer/1726902348↩
 [^auto_replace_in_chinese_windows]: via: https://hermit.world/post/2022/01/17/refining-windows-font-rendering/, https://www.zhihu.com/question/67196637, https://v2ex.com/t/941786
 
-Source via: https://note.bgzo.cc/weekly/2024-09-22-how-to-setup-a-new-windows
+Source via: https://note.bgzo.cc/weekly/20240922-how-to-setup-a-new-windows
