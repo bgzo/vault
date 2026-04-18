@@ -2,7 +2,7 @@
 title: 重構 Jekyll 博客
 aliases: ['重構 Jekyll 博客']
 created: 2026-03-28 13:57:04
-modified: 2026-04-11 18:50:18
+modified: 2026-04-18 20:05:19
 published: 2026-03-28 13:57:04
 tags: ['blog', 'callout', 'jekyll', 'public', 'rss', 'writing/lab']
 draft: False
@@ -418,5 +418,154 @@ if (twMatch) {
 > Negative potential consequences of an action.
 
 相關 CSS 我就不貼在這裏了，感興趣的朋友可以直接照搬本博客的 部分 CSS。
+
+## 引入 SEED 時間線
+
+最近執迷於把自己的閒言碎語也同步到博客中去，思考再三，決定在引入兩個分類：
+
+- SEEDS
+- STORIES
+
+前者是碎碎念，後者是一些敘事類的內容。有什麼區別呢？
+
+STORIES 聚焦於我自己身上發生的事情，我養過的 XXX 只貓，我的遊戲賬號被封了，我的大學等等，SEEDS 就更加大雜燴了，不屬於 LABS、THOUGHTS、STORIES 的都會放在裏面，正如其名，有一天他們會變成三者之一。
+
+於是，除了增加一個專欄之外，還有兩項項改動
+
+### 對 RSS 進行過濾
+
+保證 SEEDS 不要輸出到 RSS 中，具體這樣做：
+
+```ruby
+{% assign rss_articles = site.articles
+| where_exp: "item", "item.path contains '_articles/labs/' or item.path contains '_articles/thoughts/' or item.path contains '_articles/stories/'"
+| sort: "created"
+| reverse %}
+```
+
+### 時間線分頁
+
+我們有兩種改造方案：
+
+1. 純靜態分頁，即某個分頁是一個靜態頁面；
+2. 動態分頁，生成分頁 JSON，然後動態渲染；
+
+對於這種動態數據，我更傾向於輸出 JSON，因爲輸出純靜態雖然容易被搜索引擎收錄，但是收錄的其實往往是舊的信息，也會產生很多分頁的垃圾頁面，聽不喜歡的，如果你有需求，可以參考官方的 [教程](https://jekyll.ruby-lang.org.cn/docs/pagination/)，用 [jekyll-paginate-v2](https://github.com/sverrirs/jekyll-paginate-v2) 實現。
+
+第二種方案，沒有現成的插件給我們用，因此我們只能自己寫插件，對沒錯，如果需要生成序列化的 JSON，第一版模板文件如下：
+
+```ruby
+---
+layout: none
+permalink: /posts.json
+---
+{%- assign all_posts = site.articles | sort: "created" | reverse -%}
+{%- assign filtered = "" | split: "" -%}
+{%- for post in all_posts -%}
+  {%- unless post.path contains '_articles/archives/' -%}
+    {%- assign filtered = filtered | push: post -%}
+  {%- endunless -%}
+{%- endfor -%}
+[{%- for post in filtered -%}
+{"title":{{ post.title | jsonify }},"url":{{ post.url | relative_url | jsonify }},"date":"{{ post.created | date: '%Y/%m/%d' }}","datetime":"{{ post.created | date: '%F' }}","desc":{{ post.description | default: "" | truncate: 200 | jsonify }}}{% unless forloop.last %},{% endunless %}
+{%- endfor -%}]
+```
+
+這是最簡單的，相當於自定義一個模板文件，把所有文章都塞進去，但是這其實是一個假分頁，因爲所有的數據還是一次性返回回去了，實際使用的時候，當博客數量大概是 87 個時，最終大小約爲 57k，大小換算差不多 1/2。
+
+也就是說，如果未來寫 1000 篇博客，大概大小爲 500K，如果有 10000 個，那個就有 5M 的大小，我覺得這個依然是一個問題，儘管傳輸 GZIP 會讓這個提及小一些，但 10 年之後呢，10 年之後，是不是就會變的無法維護？
+
+| 文章數   | 原始大小   | gzip 後大小 |
+| ----- | ------ | -------- |
+| 87    | 57KB   | ~12KB    |
+| 1000  | ~655KB | ~130KB   |
+| 10000 | ~6.5MB | ~1.3MB   |
+
+如果不吹毛求疵的話，其實這個分頁就夠用了，但是我有強迫症，不行。好在 Jekyll 提供了這樣的 API（Hook）給我們用，所以能寫 Ruby 腳本實現，輸出到 `_plugins/posts_api.rb`，最終實現如下：
+
+```ruby
+require 'json'
+require 'fileutils'
+
+module PostsApiGenerator
+  def self.format_date(val, fmt)
+    return '' unless val
+    val.respond_to?(:strftime) ? val.strftime(fmt) : val.to_s
+  end
+end
+
+Jekyll::Hooks.register :site, :post_write do |site|
+  per_page = 5
+
+  all_docs = site.collections['articles']&.docs
+  next unless all_docs
+
+  posts = all_docs
+    .reject { |doc| doc.data['archive'] }
+    .sort_by { |doc| doc.data['created'].to_s }
+    .reverse
+
+  pages = posts.each_slice(per_page).to_a
+  total_pages = pages.length
+
+  dir = File.join(site.dest, 'api', 'posts')
+  FileUtils.mkdir_p(dir)
+
+  pages.each_with_index do |batch, i|
+    page_num  = i + 1
+    next_page = page_num < total_pages ? page_num + 1 : nil
+
+    data = {
+      'posts' => batch.map do |doc|
+        desc = (doc.data['description'] || '').to_s
+        desc = desc.length > 200 ? "#{desc[0, 197]}..." : desc
+        {
+          'title'    => doc.data['title'].to_s,
+          'url'      => doc.url,
+          'date'     => PostsApiGenerator.format_date(doc.data['created'], '%Y/%m/%d'),
+          'datetime' => PostsApiGenerator.format_date(doc.data['created'], '%F'),
+          'desc'     => desc
+        }
+      end,
+      'total_pages'  => total_pages,
+      'current_page' => page_num,
+      'next_page'    => next_page
+    }
+
+    File.write(File.join(dir, "#{page_num}.json"), JSON.generate(data))
+  end
+
+  Jekyll.logger.info 'Posts API:', "Generated #{total_pages} page(s) → /api/posts/{1..#{total_pages}}.json"
+end
+
+```
+
+Jekyll 提供的 `site` 變量提供了很多可用數據和路徑：
+
+- `site.source`：源目錄
+- `site.dest`：輸出目錄
+- `site.collections['articles'].docs`：集合文檔對象
+- `doc.data`：front matter 數據（比如 `created`、`archive`）
+- `doc.url`：該文章最終 URL
+- `Jekyll.logger`：構建日誌輸出
+
+本質上就是 Jekyll 提供某一階段的生命週期 HOOK 能力，讓我們跑自己的代碼。
+
+## 修正 Favicon.ico
+
+有些服務獲取站點圖標的方式就是請求 `/favicon.ico`，但很多 Jekyll 站點並不會真的把 favicon 放在根目前，其實就可以通過上一屆的 HOOK 能力來實現一次拷貝，如下：
+
+```ruby
+ # Copy favicon.ico to the root directory
+  source_favicon = File.join(site.source, 'assets', 'favicons', 'favicon.ico')
+  target_favicon = File.join(site.dest, 'favicon.ico')
+
+  if File.exist?(source_favicon)
+    FileUtils.cp(source_favicon, target_favicon)
+    Jekyll.logger.info 'Favicon:', 'Copied /assets/favicons/favicon.ico -> /favicon.ico'
+  else
+    Jekyll.logger.warn 'Favicon:', "Source file not found: #{source_favicon}"
+  end
+```
 
 Source via: https://note.bgzo.cc/weekly/20260328-refactor-jekyll-blog
