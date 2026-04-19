@@ -27,7 +27,7 @@ description: Traditional platform 1. https//www.blogger.com 2. https//www.cnblog
 6. https://tiddlywiki.com
 7. https://www.bookstackapp.com
 
-## New productivity
+## Online Server
 
 1. https://www.notion.so
 2. https://www.yuque.com
@@ -46,17 +46,19 @@ description: Traditional platform 1. https//www.blogger.com 2. https//www.cnblog
 7. vuepress
     1. 集成了 Google Analytics，以及基於 Git 的「最後更新時間」功能
 
-8. vitepress
-9. mkdocs
-10. gitlab
-11. sphinx
-12. docsite
-13. wiki
-14. showdoc
-15. vimwiki
-16. https://wikidpad.sourceforge.net/
-17. https://zim-wiki.org
-18. https://asciidoc.org
+1. vitepress
+2. mkdocs
+3. gitlab
+4. sphinx
+5. docsite
+6. wiki
+7. showdoc
+8. vimwiki
+9. https://wikidpad.sourceforge.net/
+10. https://zim-wiki.org
+11. https://asciidoc.org
+12. [SvelteKit](https://vidstack.io/)
+	1. https://github.com/sveltejs/kit
 
 ## Apple notes to blog
 
@@ -77,5 +79,6 @@ description: Traditional platform 1. https//www.blogger.com 2. https//www.cnblog
 
 - https://www.v2ex.com/t/735110
 - https://www.zhihu.com/question/273440522/answer/369268121
+- https://github.com/xianyu110/awesome-claudcode-tutorial/blob/main/FRAMEWORK_COMPARISON.md
 
 Source via: https://note.bgzo.cc/weekly/20250603-publish-your-writing
