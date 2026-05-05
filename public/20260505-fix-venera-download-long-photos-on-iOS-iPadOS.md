@@ -19,7 +19,7 @@ description: 我之前不是說用魔改的 venera 客戶端「漫閱」嗎？�
 
 ## Flutter requires the Rosetta translation environment
 
-因爲我用的 SDK 是 3.41.9，在連接 iPad 之後居然報錯了：
+我用的 SDK 是 3.41.9，搜了下發現是最新穩定版，居然在連接 iPad 之後居然報錯，讓我安裝 Rosetta：
 
 ```shell
 Installing and launching...
@@ -38,7 +38,7 @@ translation environment. Try running:
   sudo softwareupdate --install-rosetta --agree-to-license
 ```
 
-臥槽，怎麼可能，我們只需要幹掉這個 x86 的包即可：
+臥槽，怎麼可能爲了這個東西安裝虛擬層，只能幹掉這個 x86 的包了：
 
 ```shell
 which iproxy
@@ -48,7 +48,7 @@ mv /Users/bgzo/fvm/versions/3.41.9/bin/cache/artifacts/libusbmuxd/iproxy /Users/
 ln -s /opt/homebrew/bin/iproxy /Users/bgzo/fvm/versions/3.41.9/bin/cache/artifacts/libusbmuxd/iproxy
 ```
 
-重新起服務
+然後重新起服務：
 
 ```shell
 fvm flutter run
@@ -159,11 +159,11 @@ Future<void> saveFile({
 }
 ```
 
-然後發現問題修復了，太好了。因爲這個問題 Mac 上無法復現，所以我有點納悶，因爲這可能意味着這不是系統文件名長度的限制，也就是可能並不是文件截斷的問題，於是我嘗試吧原本超長的文件名替換進去，發現 Files 還是可以寫入的。
+然後發現問題修復了，太好了。
 
-實錘了，肯定不是文件名的問題，然後刪刪改改，把上面添加的 `buildIOSSaveDialogFilename` 函數移除之後，我發現問題也被解決了。
+因爲這個問題 Mac 上無法復現，所以我從始至終都有點納悶，這可能不是系統文件名長度的限制，即不是文件截斷的問題，於是我嘗試在彈窗之後，把原本超長的文件名替換進去，發現 Files 還是可以寫入的。實錘了，肯定不是文件名的問題，然後刪刪改改，把上面添加的 `buildIOSSaveDialogFilename` 函數移除之後，我發現問題也可以被解決。
 
-發現依然可以正常寫入，我 TM 更納悶了，也就是說，其實影響 iOS/iPad OS 彈窗保存的，僅僅是 params 的一個參數！
+我 TM 更納悶了，也就是說，其實影響 iOS/iPad OS 彈窗保存的，僅僅是 params 的一個參數！
 
 ```dart
 // FIX: iOS export dialog cannot show filename and save.
@@ -176,7 +176,7 @@ await FlutterFileDialog.saveFile(params: params);
 
 爲什麼啊？
 
-最終定位到 Swift 的源碼，可以看到僅僅是多走了一個複製分支的事情，然後這個問題就解決了？！沒有辦法，加點日誌在上面，重新啓動看看調用過程：
+最終定位到 Swift 的源碼，可以看到多傳一個參數，僅僅是多走了一個複製分支的事情，然後這個問題就解決了？！沒有辦法，加點日誌在上面，重新啓動看看調用過程：
 
 ```swift
 // /Users/bgzo/.pub-cache/hosted/pub.dev/flutter_file_dialog-3.0.3/ios/Classes/SaveFileDialog.swift
