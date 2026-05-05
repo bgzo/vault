@@ -27,7 +27,7 @@ title: XXX
 updated: 2026-03-28
 ```
 
-並且要求文件名類似 `YEAR-MONTH-DAY-title.MARKUP` 格式，例如 `2026-03-27-my-post.md`。但我日常用 Obsidian 書寫不用這些書寫，文件名都是隨機起的，priority 也不一樣，我用的是：
+並且要求文件名類似 `YEAR-MONTH-DAY-title.MARKUP` 格式，例如 `2026-03-27-my-post.md`。但我日常用 Obsidian 書寫不用這些書寫，文件名都是隨機起的，priority 也不一樣，我用的是：
 
 ```yaml
 title: xxx
@@ -39,6 +39,7 @@ tags:
   - writing/lab
 ```
 
+
 默認情況下，我的這些文章不會進入變量 `site.posts`，因此爲了使 Jekyll 強行兼容後者，因此有兩種改動：
 
 1. 下游同步腳本增加額外處理，批量重命名文件爲 Jekyll 標準命名；
@@ -49,10 +50,10 @@ tags:
 
 | 比較                | `site.posts`            | 自定義 collection                         |     |
 | ------------------- | ----------------------- | ----------------------------------------- | --- |
-| 來源目錄            | 只能是 `_posts`         | `_<name>/` 任意命名                       |     |
-| 文件名要求          | 必須 `YYYY-MM-DD-title` | 無限制                                    |     |
-| 內置 `date` 解析    | 自動從文件名提取        | 需自己在 front matter 寫 `date`/`created` |     |
-| `output: true` 默認 | 是                      | 顯式配置                                  |     |
+| 來源目錄            | 只能是 `_posts`         | `_<name>/` 任意命名                       |     |
+| 文件名要求          | 必須 `YYYY-MM-DD-title` | 無限制                                    |     |
+| 內置 `date` 解析    | 自動從文件名提取        | 需自己在 front matter 寫 `date`/`created` |     |
+| `output: true` 默認 | 是                      | 顯式配置                                  |     |
 
 考慮了一下，果斷選擇方案 2。
 
@@ -67,6 +68,7 @@ collections: # 定義 Jekyll 集合，用於將同類內容分組管理
     permalink: /:title.html # 輸出頁面的 URL 格式：以文章標題命名，擴展名爲 .html
 ```
 
+
 截止目前，首頁函數已經可以解析，但是進去沒有聲明 layout，會導致無 CSS，需要再增加如下配置，隱式補全：
 
 ```yml
@@ -77,6 +79,7 @@ defaults: # 批量爲文檔注入默認 front matter，避免每篇文章重複�
     values: # 以下爲要注入的默認 front matter 字段
       layout: post # 默認使用 "post" 佈局模板（對應 _layouts/post.html）
 ```
+
 
 到這完成首頁、文章的改造。
 
@@ -119,6 +122,7 @@ layout: none
 </feed>
 ```
 
+
 之後，RSS Feed 也可以正常輸出了。
 
 如果你的網站裏面存在 Jekyll 的模板內容，最終輸出可能會亂掉，所以需要在配置裏面新增一行配置：
@@ -133,12 +137,14 @@ defaults: # 批量爲文檔注入默認 front matter，避免每篇文章重複�
 +     render_with_liquid: false # 禁止對文章內容進行 Liquid 渲染，避免代碼塊中的模板語法被執行
 ```
 
+
 當然，還有一種辦法是修改文章，在代碼塊上下加入：
 
 ```ruby
 {% raw %}
 {% endraw %}
 ```
+
 
 > [!NOTE]
 > 做的過程有個小插曲，如果第一次構建可以跳過下面部分
@@ -159,7 +165,7 @@ defaults: # 批量爲文檔注入默認 front matter，避免每篇文章重複�
 
 分析一下，有幾點差異：
 
-1. **[最大可能]** `<link>` 缺少 `rel` 和 `type` 屬性
+1. **[最大可能]** `<link>` 缺少 `rel` 和 `type` 屬性
 
 ```diff
 - <link href="..." rel="alternate" type="text/html" title="..."/>
@@ -167,14 +173,15 @@ defaults: # 批量爲文檔注入默認 front matter，避免每篇文章重複�
 ```
 
 > [!NOTE]
-> Atom 規範要求每個 `<entry>` 至少有一個 `rel="alternate"` 的 link。很多 feed 聚合器依賴這個屬性來識別文章鏈接，沒有它就無法找到條目的 URL，導致不更新或不顯示。
+> Atom 規範要求每個 `<entry>` 至少有一個 `rel="alternate"` 的 link。很多 feed 聚合器依賴這個屬性來識別文章鏈接，沒有它就無法找到條目的 URL，導致不更新或不顯示。
 
-2. 內容用 `xml_escape` 而非 CDATA
+2. 內容用 `xml_escape` 而非 CDATA
 
 ```diff
 - <content ...><![CDATA[<p>...</p>]]></content>
 + <content ...>&lt;p&gt;...&lt;/p&gt;</content>
 ```
+
 
 作出如下調整：
 
@@ -186,6 +193,7 @@ defaults: # 批量爲文檔注入默認 front matter，避免每篇文章重複�
 + <content type="html" xml:base="{{ post.url | prepend: site.url }}"><![CDATA[{{ post.content }}]]></content>
 ```
 
+
 前後的格式保持一致了，這下再觀察一下
 
 ## Jekyll 支持 Obsidian 的語法糖：Youtube、Twitter 嵌入
@@ -195,6 +203,7 @@ defaults: # 批量爲文檔注入默認 front matter，避免每篇文章重複�
 ![](https://twitter.com/Enter_Apps/status/1768669206826926292)
 ![](https://www.youtube.com/watch?v=p485kUNpPvE)
 ```
+
 
 增加以下邏輯：
 
@@ -274,6 +283,7 @@ defaults: # 批量爲文檔注入默認 front matter，避免每篇文章重複�
 </script>
 ```
 
+
 做的時候發現，只有 x.com 的鏈接無法嵌入，這才發現注入的腳本還是老域名 twitter.com，沒有換成新域名，這可太好笑了。
 
 增加如下邏輯，從 x.com ，重新換回 twitter.com
@@ -288,6 +298,7 @@ if (twMatch) {
 	return;
 }
 ```
+
 
 然後就可以正常的嵌入 Youtube 和 X 的鏈接了。
 
@@ -400,6 +411,7 @@ if (twMatch) {
 </script>
 ```
 
+
 需要說明下，樣式和顏色的靈感來自 [GitHub](https://github.com/orgs/community/discussions/16925) 。支持種類也是直接照搬 GitHub。具體如下：
 
 > [!NOTE]
@@ -443,6 +455,7 @@ STORIES 聚焦於我自己身上發生的事情，我養過的 XXX 只貓，我�
 | reverse %}
 ```
 
+
 ### 時間線分頁
 
 我們有兩種改造方案：
@@ -470,6 +483,7 @@ permalink: /posts.json
 {"title":{{ post.title | jsonify }},"url":{{ post.url | relative_url | jsonify }},"date":"{{ post.created | date: '%Y/%m/%d' }}","datetime":"{{ post.created | date: '%F' }}","desc":{{ post.description | default: "" | truncate: 200 | jsonify }}}{% unless forloop.last %},{% endunless %}
 {%- endfor -%}]
 ```
+
 
 這是最簡單的，相當於自定義一個模板文件，把所有文章都塞進去，但是這其實是一個假分頁，因爲所有的數據還是一次性返回回去了，實際使用的時候，當博客數量大概是 87 個時，最終大小約爲 57k，大小換算差不多 1/2。
 
@@ -540,12 +554,13 @@ end
 
 ```
 
-Jekyll 提供的 `site` 變量提供了很多可用數據和路徑：
+
+Jekyll 提供的 `site` 變量提供了很多可用數據和路徑：
 
 - `site.source`：源目錄
 - `site.dest`：輸出目錄
 - `site.collections['articles'].docs`：集合文檔對象
-- `doc.data`：front matter 數據（比如 `created`、`archive`）
+- `doc.data`：front matter 數據（比如 `created`、`archive`）
 - `doc.url`：該文章最終 URL
 - `Jekyll.logger`：構建日誌輸出
 
@@ -567,5 +582,6 @@ Jekyll 提供的 `site` 變量提供了很多可用數據和路徑：
     Jekyll.logger.warn 'Favicon:', "Source file not found: #{source_favicon}"
   end
 ```
+
 
 Source via: https://note.bgzo.cc/weekly/20260328-refactor-jekyll-blog
