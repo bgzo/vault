@@ -3,7 +3,7 @@ title: Venera 無法在 iOS/iPad OS 上保存圖片
 aliases: ['Venera 無法在 iOS/iPad OS 上保存圖片']
 created: 2026-05-05 14:00:12
 modified: 2026-05-05 23:09:35
-published: 2026-04-17 14:52:49
+published: 2026-05-05 23:09:35
 tags: ['apple', 'flutter', 'public', 'venera', 'writing/lab']
 draft: False
 description: 我之前不是說用魔改的 venera 客戶端「漫閱」嗎？它和官方都有一個問題，在漫畫名特別長的時候，下載圖片會不顯示保存按鈕，也就是置灰狀態： 很頭疼啊，我的一個壞毛病就是看到好看的章節直接下載到本地，不用官方自帶的圖片收藏，漫閱這個東西已經發布至少半年了，就沒有一個人發現這玩意有問題嗎？？？ 還好 Venera 是開源的，可以直接調試，過程比較痛苦，因爲這個問題只存在 iOS 和 iPad 上面，...
