@@ -17,9 +17,9 @@ description: 我之前不是說用魔改的 venera 客戶端「漫閱」嗎？�
 
 還好 Venera 是開源的，可以直接調試，過程比較痛苦，因爲這個問題只存在 iOS 和 iPad 上面，所以只能連接 iPad 進行調試。
 
-## Flutter requires the Rosetta translation environment
+## 真機調試需要 Rosetta 兼容層
 
-我用的 SDK 是 3.41.9，搜了下發現是最新穩定版，居然在連接 iPad 之後居然報錯，讓我安裝 Rosetta：
+我用的 SDK 是 3.41.9，這可是最新的穩定版，這麼多年了，iPad 調試還讓我安裝 Rosetta？
 
 ```shell
 Installing and launching...
@@ -38,7 +38,7 @@ translation environment. Try running:
   sudo softwareupdate --install-rosetta --agree-to-license
 ```
 
-臥槽，怎麼可能爲了這個東西安裝虛擬層，只能幹掉這個 x86 的包了：
+臥槽，有沒有搞錯，怎麼可能爲了這個東西安裝虛擬層，無奈，只能幹掉這個 x86 的包了：
 
 ```shell
 which iproxy
