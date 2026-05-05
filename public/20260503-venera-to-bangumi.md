@@ -1,11 +1,11 @@
 ---
 title: Sync venera data to Bangumi
 aliases: ['Sync venera data to Bangumi']
-created: 2026-05-04 09:59:37
-modified: 2026-05-05 21:07:45
-tags: ['bangumi', 'flutter', 'public', 'venera', 'writing/lab', 'gtd/todo']
+created: 2026-05-03 09:59:37
+modified: 2026-05-06 00:18:45
+published: 2026-05-04 09:59:37
+tags: ['bangumi', 'flutter', 'gtd/todo', 'public', 'venera', 'writing/lab']
 draft: False
-published: 2026-05-05 16:07:21
 description: 其實我一直在 iPad 上用魔改的 venera (漫閱) 看漫畫 ，他其實已經提供了追蹤器跟蹤的功能，只是不太好用（需要手動關聯，總是失敗），加上開發者長時間不修，也不看羣，我感覺已經不再維護。 一致挺喜歡 venera 的，得益於 Flutter 跨平臺，它提供了 ipa，可以在 iPad 上測載看漫畫，體驗上和 Mihon 非常接近，配合上 WebDev 同步，已經是一個不錯的全平臺解決方案...
 ---
 
