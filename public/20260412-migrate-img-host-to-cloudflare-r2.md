@@ -45,17 +45,20 @@ description: 不得不說 CF 是互聯網界的活菩薩，免費提供的對象
 pngquant --force --ext .png *.png
 ```
 
+
 就算圖片有其他格式，也可以通過 magick 轉換爲 PNG，執行上述操作
 
 ```shell
 magick frieren.jpg frieren.png
 ```
 
+
 如果效果不理想，那麼只能犧牲品質，進行有損壓縮
 
 ```shell
 pngquant --force --ext .png --quality=60-80 frieren.png
 ```
+
 
 ## PicList 管理圖片和上傳圖片配置
 
@@ -87,5 +90,6 @@ pngquant --force --ext .png --quality=60-80 frieren.png
 https://img.bgzo.cc
 https://pub-89c11651a8434f18a530bd6f93e399da.r2.dev
 ```
+
 
 Source via: https://note.bgzo.cc/weekly/20260412-migrate-img-host-to-cloudflare-r2
