@@ -3,7 +3,7 @@ title: 修復 Venera 點擊導出無反應，章節顯示問題
 aliases: ['修復 Venera 點擊導出無反應，章節顯示問題']
 created: 2026-05-16 10:47:28
 modified: 2026-05-16 15:41:31
-published: 2026-05-10 07:05:43
+published: 2026-05-16 15:41:31
 tags: ['flutter', 'public', 'venera', 'writing/lab']
 draft: False
 description: 上次修復 Venera 無法在 iOS/iPad OS 上保存圖片 的問題，很可能是 iOS 的一個 BUG，因爲這周升級 iOS 26.5 之後，這個奇怪的問題就消失了。 除了這個問題，上次修復還有一個遺留問題是 iOS 會自動處理超長文件名，導致如： 最終會被 iOS 系統直接截斷爲： 很奇怪啊，之前一直沒有發現這個問題，檢測文件是否存在的時候用的原始原標題，而不是截斷後的，最終導致保存邏輯非...
