@@ -1,9 +1,9 @@
 ---
 title: Kazumi 同步 Bangumi
-aliases: ['Kazumi Bangumi Sync Enhance', 'Kazumi 同步 Bangumi']
+aliases: ['Kazumi 同步 Bangumi']
 created: 2026-04-22 19:55:44
-modified: 2026-05-06 20:25:12
-published: 2026-04-17 14:52:49
+modified: 2026-05-16 23:57:51
+published: 2026-05-01 23:57:51
 tags: ['bangumi', 'flutter', 'kazumi', 'public', 'writing/lab']
 draft: False
 description: 距離提 PR，到最終合併進主分支，一共耗時半個月吧，前一個星期把大部分功能修了下，後一個星期則在 反反覆覆進行修改，其實沒有那麼輕鬆。 一開始是想找一個追番軟件去補舊番，我的需求比較簡單： 1. 集成 Bangumi 2. 支持截圖 3. 支持測載 iOS 所以壓根沒得選，只有 animeko 滿足這些條件，實際測試中，在我的 iPad 上表現的也不如 Android/Mac（比較慢），也沒事，我...
@@ -39,8 +39,4 @@ description: 距離提 PR，到最終合併進主分支，一共耗時半個月�
 
 接下來，我終於能好好用 Kazumi 看幾部老番了。
 
-## 指定 IDE
-
-`/bin/cache/dart-sdk`
-
-Source via: https://note.bgzo.cc/weekly/20260422-gfw-more-and-more-tall
+Source via: https://note.bgzo.cc/weekly/20260422-kazumi-sync-with-bangumi
