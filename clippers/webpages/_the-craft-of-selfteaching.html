@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>自学自学是门手艺</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto Sans:wght@400;700&amp;family=Noto Serif:ital,wght@0,400;0,600;1,400;1,600&amp;family=JetBrains Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="bGZo's Notes"/><meta property="og:title" content="自学自学是门手艺"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="自学自学是门手艺"/><meta name="twitter:description" content="自学自学是门手艺 github.com/selfteaching/the-craft-of-selfteaching renew-web.github.io/the-craft-of-selfteaching/ 如何证明你真的读过这本书？ 積ん読 ==日语里有个很好玩的词，“積ん読”（tsundoku）：== 指那些买回来堆在那里还没读过的（甚至后来干脆不看了的）书…… 细想想，每个人都有很多很多 “積ん読”。小时候我们拿回家的教科书中就有相当一部分，其实就是 “積ん読”，虽然那时候掏钱买书的是父母，不仔细看、或者干脆不看的时候，也知道自己在偷懒…… 再后来就是 “主动犯罪” 了 —— 比如，..."/><meta property="og:description" content="自学自学是门手艺 github.com/selfteaching/the-craft-of-selfteaching renew-web.github.io/the-craft-of-selfteaching/ 如何证明你真的读过这本书？ 積ん読 ==日语里有个很好玩的词，“積ん読”（tsundoku）：== 指那些买回来堆在那里还没读过的（甚至后来干脆不看了的）书…… 细想想，每个人都有很多很多 “積ん読”。小时候我们拿回家的教科书中就有相当一部分，其实就是 “積ん読”，虽然那时候掏钱买书的是父母，不仔细看、或者干脆不看的时候，也知道自己在偷懒…… 再后来就是 “主动犯罪” 了 —— 比如，..."/><meta property="og:image:alt" content="自学自学是门手艺 github.com/selfteaching/the-craft-of-selfteaching renew-web.github.io/the-craft-of-selfteaching/ 如何证明你真的读过这本书？ 積ん読 ==日语里有个很好玩的词，“積ん読”（tsundoku）：== 指那些买回来堆在那里还没读过的（甚至后来干脆不看了的）书…… 细想想，每个人都有很多很多 “積ん読”。小时候我们拿回家的教科书中就有相当一部分，其实就是 “積ん読”，虽然那时候掏钱买书的是父母，不仔细看、或者干脆不看的时候，也知道自己在偷懒…… 再后来就是 “主动犯罪” 了 —— 比如，..."/><meta property="og:image" content="https://note.bgzo.cc//static/og-image.png"/><meta property="og:image:url" content="https://note.bgzo.cc//static/og-image.png"/><meta name="twitter:image" content="https://note.bgzo.cc//static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="note.bgzo.cc/"/><meta property="og:url" content="https://note.bgzo.cc/clippers/webpages/_the-craft-of-selfteaching"/><meta property="twitter:url" content="https://note.bgzo.cc/clippers/webpages/_the-craft-of-selfteaching"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="自学自学是门手艺 github.com/selfteaching/the-craft-of-selfteaching renew-web.github.io/the-craft-of-selfteaching/ 如何证明你真的读过这本书？ 積ん読 ==日语里有个很好玩的词，“積ん読”（tsundoku）：== 指那些买回来堆在那里还没读过的（甚至后来干脆不看了的）书…… 细想想，每个人都有很多很多 “積ん読”。小时候我们拿回家的教科书中就有相当一部分，其实就是 “積ん読”，虽然那时候掏钱买书的是父母，不仔细看、或者干脆不看的时候，也知道自己在偷懒…… 再后来就是 “主动犯罪” 了 —— 比如，..."/><meta name="generator" content="Quartz"/><link href="../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL3F1YXJ0ei9xdWFydHovY29tcG9uZW50cy9zdHlsZXMiLCJzb3VyY2VzIjpbIm1lcm1haWQuaW5saW5lLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUdGO0VBQ0U7OztBQUtGO0VBQ0U7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDAgMDtcbiAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjFzIGVhc2U7XG4gICAgICBvdmVyZmxvdzogdmlzaWJsZTtcbiAgICAgIG1pbi1oZWlnaHQ6IDIwMHB4O1xuICAgICAgbWluLXdpZHRoOiAyMDBweDtcblxuICAgICAgcHJlIHtcbiAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICB9XG5cbiAgICAgIHN2ZyB7XG4gICAgICAgIG1heC13aWR0aDogbm9uZTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAubWVybWFpZC1jb250cm9scyB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBib3R0b206IDIwcHg7XG4gICAgICByaWdodDogMjBweDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBnYXA6IDhweDtcbiAgICAgIHBhZGRpbmc6IDhweDtcbiAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgICAgei1pbmRleDogMjtcblxuICAgICAgLm1lcm1haWQtY29udHJvbC1idXR0b24ge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgd2lkdGg6IDMycHg7XG4gICAgICAgIGhlaWdodDogMzJweDtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgICBjb2xvcjogdmFyKC0tZGFyayk7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1ib2R5Rm9udCk7XG4gICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjJzIGVhc2U7XG5cbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTtcbiAgICAgICAgfVxuXG4gICAgICAgIC8vIFN0eWxlIHRoZSByZXNldCBidXR0b24gZGlmZmVyZW50bHlcbiAgICAgICAgJjpudGgtY2hpbGQoMikge1xuICAgICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTJweDtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdfQ== */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script></head><body data-slug="clippers/webpages/_the-craft-of-selfteaching"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">bGZo's Notes</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>!new Set([\&quot;bgzo\&quot;,\&quot;clippers/newsletter/sync\&quot;]).has(node.displayName.toLowerCase())&quot;,&quot;mapFn&quot;:&quot;node=>{node.isFolder?node.displayName=\&quot;\\u{1F4C1} \&quot;+node.displayName:node.displayName=\&quot;\\u{1F4C4} \&quot;+node.displayName}&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-2" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../clippers/">Clippers</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../clippers/webpages/">webpages</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>自学自学是门手艺</a></div></nav><p show-comma="true" class="content-meta"><time datetime="2026-05-24T17:20:54.050Z">May 24, 2026</time><span>185 min read</span></p><ul class="tags"><li><a href="../../tags/archive-web" class="internal tag-link">archive-web</a></li><li><a href="../../tags/lixiaolai" class="internal tag-link">lixiaolai</a></li><li><a href="../../tags/public" class="internal tag-link">public</a></li><li><a href="../../tags/self-learning" class="internal tag-link">self-learning</a></li></ul></div></div><article class="popover-hint"><h1 id="自学自学是门手艺">自学自学是门手艺<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#自学自学是门手艺" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li><a href="https://github.com/selfteaching/the-craft-of-selfteaching" class="external">https://github.com/selfteaching/the-craft-of-selfteaching<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://renew-web.github.io/the-craft-of-selfteaching/" class="external">https://renew-web.github.io/the-craft-of-selfteaching/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<h2 id="如何证明你真的读过这本书">如何证明你真的读过这本书？<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#如何证明你真的读过这本书" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="積ん読">積ん読<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#積ん読" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>==日语里有个很好玩的词，“<strong>積ん読</strong>”（<a href="https://en.wikipedia.org/wiki/Tsundoku" class="external">tsundoku<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>）：==</p>
+<blockquote>
+<p>指那些买回来堆在那里还没读过的（甚至后来干脆不看了的）书……</p>
+</blockquote>
+<p>细想想，每个人都有很多很多 “積ん読”。小时候我们拿回家的教科书中就有相当一部分，其实就是 “積ん読”，虽然那时候掏钱买书的是父母，不仔细看、或者干脆不看的时候，也知道自己在偷懒…… 再后来就是 “主动犯罪” 了 —— 比如，很多人买到手里的英语词汇书是根本就没有翻到过第二个列表的，乃至于过去我常常开玩笑说，中国学生都认识一个单词，<em>abandon</em>，不是吗？这个单词是很多很多人 “决心重新做人” 而后 “就这样罢” 的铁板钉钉的见证者。</p>
+<p>在没有电子书的时代，印刷版书籍多少还有一点 “装饰品” 功用，可是到了<span class="text-highlight">电子书时代，谁知道你的设备里有多少付费书籍呢？攒下那么多，其实并没有炫耀的地方，给谁看呢？据说，Kindle 的后台数据里可以看到清楚的 “打开率”，大抵上也是在 ¼ ~ ⅓ 之间，也就是说，差不多有 ⅔ ~ ¾ 的电子书籍被购买下载之后，从来就没有被打开过</span>。</p>
+<p>如此看来，付费之后并不阅读，只能欺骗一个对象了：自己。跟心理学家们之前想象的不同，我认为人们通常是不会欺骗自己的，至少很难 “故意欺骗自己”。所以，对于 “买了之后坚决不读” 这个现象，我不认为 “给自己虚妄的满足感” 是最好的解释。</p>
+<p>更朴素一点，更接近真相的解释是：</p>
+<blockquote>
+<p><span class="text-highlight">那百分之七八十的人，其实是想着给自己一个希望……</span></p>
+</blockquote>
+<p>—— 等我有空了一定看。嗯。</p>
+<p>说来好笑，其实每个人共同拥有的目标之一是这样的：</p>
+<blockquote>
+<p>成为前百分之二十的少数人……</p>
+</blockquote>
+<p>然而，PK 掉百分之七八十的人的方法真的很简单很简单啊：</p>
+<blockquote>
+<p>把买来的书都真真切切地认真读过就可以了。</p>
+</blockquote>
+<p>这实在是太简单了罢？！可是…… 我知道你刚刚那个没出息的闪念：</p>
+<blockquote>
+<p>那我少买书甚至不买书不就可以了吗？</p>
+</blockquote>
+<p>你自己都知道这是荒谬的，却忍不住为你的小聪明得意 —— 其实吧，幸亏有你们在，否则我们怎么混进前百分之二十呢？</p>
+<h3 id="pow">PoW<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#pow" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>比特币这个地球上第一个真正被证明为可行的区块链应用中有一个特别重要的概念，叫做 “<strong>工作证明</strong>”（Proof of Work）—— 你干活了就是干活了，你没干活就是没干活，你的工作是可被证明的……</p>
+<p>借用这个思路，我设计了个方法，让你有办法证明自己就是看过这本书，就是读完了这本书 —— 你能向自己也向别人证明自己曾经的工作…… 是不是挺好？</p>
+<p>证明的方法是使用 <a href="https://github.com" class="external">github.com<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 这个网站以及版本控制工具 <strong>git</strong>。</p>
+<h2 id="1c-只靠阅读习得新技能">1.C 只靠阅读习得新技能<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1c-只靠阅读习得新技能" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>习得自学能力的终极目标就是：</p>
+<blockquote>
+<p>有能力 <strong>只靠阅读</strong> 就能习得新技能。</p>
+</blockquote>
+<p>退而求其次，是 “尽量只靠阅读就习得新技能” —— 当然，刚开始的时候可能需要有人陪伴，一起学，一起讨论，一起克服困难…… 但就是要摆脱 “没人教，没人带，没人逼，就彻底没戏” 的状态。</p>
+<p>小时候总是听大人说：</p>
+<blockquote>
+<p>不是什么东西都可以从书本里学到的……</p>
+</blockquote>
+<p>一度，我觉得他们说的有道理。再后来，隐约感觉这话哪儿有毛病，但竟然又感觉无力反驳……</p>
+<p>那时，真被他们忽悠到了；后来，也差点被他们彻底忽悠到！</p>
+<p>幸亏后来我渐渐明白，且越来越相信：</p>
+<blockquote>
+<p>自己生活工作学习上遇到的所有疑问，书本里应该都有答案 —— 起码有所参考。</p>
+</blockquote>
+<p>“不是什么东西都可以从书本里学到的……” 这话听起来那么有道理，只不过是因为自己读书 <strong>不够多</strong> 、 <strong>不够对</strong> 而已。</p>
+<p>过了 25 岁，我放弃了读小说，虚构类作品，我只选择看电影；而非虚构类作品，我选择尽量只读英文书，虽然那时候买起来很贵也很费劲，但我觉得值 —— 英文世界和中文世界的文化风格略有不同。<span class="text-highlight">在英文世界里，你看到的正常作者好像更多地把 “通俗易懂”、“逻辑严谨” 当作最基本的素养；而在中文世界里，好像 “故弄玄虚”、“偷梁换柱” 更常见一些；在英文世界里，遇到读不懂的东西可以很平静地接受自己暂时的愚笨，心平气和地继续努力就好；在中文世界里，遇到装神弄鬼欺世盗名的，弄不好最初根本没认出来，到最后跟 “认贼作父” 一样令人羞辱难当不堪回首</span>。</p>
+<p>说实话，我真觉得这事跟崇洋媚外没什么关系。我是朝鲜族，去过韩国，真觉得韩国的书更没法看（虽然明显是个人看法）…… 2015 年年底，我的律师告诉我，美国移民就快帮我办下来了，可那时候我开始觉得美国政府也各种乱七八糟，于是决定停止办理。我是个很宅的人，除了餐馆基本上哪儿都不去，陪家人朋友出去所谓旅游的时候，我只不过是换个房间继续宅着…… 可这些都不是重点，重点在于：</p>
+<blockquote>
+<p><strong>知识原本就应该无国界</strong> …… 不是吗？不是吗！</p>
+</blockquote>
+<p>再说，这<span class="text-highlight">些年我其实还读了不少中国人写的英文书呢，比如，张纯如的书很值得一看；郑念的 Life and Death in Shanghai，真的很好很好。我也读了不少老外写的关于中国的书 —— 这些年我一直推荐费正清的剑桥中国史（The Cambridge History of China），当然有中文版的，不过，能读英文版的话感受很不一样</span>。</p>
+<p>当然，英文书里同样烂书也很多，烂作者也同样一大堆，胡说八道欺世盗名的一大串…… 但总体上来看，非小说类著作质量的确更高一点。</p>
+<p>还有，<span class="text-highlight">英语在科学研究领域早已成为 “主导语言”（Dominant Language）也是不争的事实。不过，英语成为主导语言的结果，就是英语本身被不断 “强奸”，外来语越来越多，“Long time no see” 被辞典收录就是很好的例子</span>。事实上，英语本身就是个大杂烩……</p>
+<p><img src="https://raw.githubusercontent.com/selfteaching/the-craft-of-selfteaching/master/images/Joseph-M-Williams-research-visualized.png?raw=true" alt="Joseph M. Williams’ research visualized (top 10,000 words)."/></p>
+<p>读书越多越明白读书少会被忽悠…… 很多人真的会大头捣蒜一般地认同 “不是什么东西都可以从书本里学到的……”</p>
+<p>另外，很多人在如此教导小朋友的时候，往往是因为 “人心叵测” 啊，“江湖险恶” 啊，所以害怕小朋友吃亏。可事实上，如若说，人间那些勾心斗角的事貌似从书本里学不来的话，其实也不过还是历史书看少了 —— 勾心斗角的套路历史上全都被反复用过了。倒是有本中文书值得吐血推荐，民国时代的作者连阔如先生写的《江湖丛谈》，粗略扫过你就知道了，江湖那点事，也早就有人给你里里外外翻了个遍…… 只不过这书不太容易买到就是了。</p>
+<p>我也遇到过这样的反驳：</p>
+<blockquote>
+<p>书本能教会你做生意吗？！</p>
+</blockquote>
+<p>说实话，去回驳这个反驳还真挺难，因为反驳者是脑容量特别有限才能说出这种话 —— <span class="text-highlight">世界上有那么多商学院都是干嘛的？搞得它们好像不存在一样。首先，它们的存在说明，商业这事是有迹可循的，是可学习的；其次，商业类书籍非常多，是非虚构类书籍中的一大品类；更为重要的是，做生意这事，看谁做 —— 有本事（即，比别人拥有更多技能）的人做生意和没本事的人做生意，用同样的商业技巧，能有一样的效果吗？</span>最后啊，这世界在这方面从来没有变过：一技傍身的人，总是不愁生活……</p>
+<p>更为重要的是，这才几年啊，互联网本身已经成了一本大书 —— 关于全世界的一整本大书。仅仅是 10 多年前，大约在 2008 年前后，经过几年发展的 Wikipedia 被众多西方大学教授们群起而攻，指责它错误百出…… 可现在呢？Wikipedia 好像有天生的自我修复基因，它变得越来越值得信赖，越来越好用。</p>
+<p>七零后八零后长大的过程中，还经常被父母无故呵斥：“怎么就你事这么多！” 或者无奈敷衍：“等你长大了就明白了……” 九零后、零零后呢？他们很少有什么疑问需要向父母提问，直接问搜索引擎，效果就是父母们天天被惊到甚至吓到。最近两年更不一样了，我有朋友在旧金山生活，他的孩子整天跟 Google 说话，有点什么问题，就直接 “Hey Google…”</p>
+<p>我长大的那个年代，一句 “通过阅读了解世界” 好像还是很抽象甚至很不现实的话，现在呢？现在，除了阅读之外，你还能想出什么更有效的方法吗？反正我想不出。</p>
+<p>有个很有趣的现象：</p>
+<blockquote>
+<p>人么，只要识字，就忍不住阅读……</p>
+</blockquote>
+<p>只不过，人们阅读的选择很不同而已。有自学能力的人和没有自学能力的人，在这一点上很容易分辨：</p>
+<blockquote>
+<ul>
+<li>有自学能力的人，选择阅读 “有繁殖能力” 的内容；</li>
+<li><span class="text-highlight">没有自学能力的人，阅读只是为了消磨时光</span>……</li>
+</ul>
+</blockquote>
+<p>我把那些能给你带来新视野，能让你改变思考模式，甚至能让你拥有一项新技能的内容称之为 “有繁殖能力的内容”。</p>
+<p>人都一样，拥有什么样的能力之后，就会忍不住去用，甚至总是连下意识中也要用。</p>
+<p>那些靠阅读机器算法推送的内容而杀时间的人，恰恰就是因为他们有阅读能力才去不断地读，读啊读，像是那只被打了兴奋剂后来死在滚轮上的小白鼠。<span class="text-highlight">如果这些人哪怕有一点点自学能力，那么他们很快就会分辨出自己正在阅读的东西不会刺激自己的产出，只会消磨自己的时间；那么，他们就会主动放弃阅读那些杀时间的内容，把那时间和精力自然而然地用在筛选有繁殖能力的内容，让自己进步，让自己习得更多技能上去了</span>。</p>
+<p>所以，只要你有一次 “ <strong>只靠阅读习得一项新技能</strong> ” 的经验，你就变成另外一个人了。你会不由自主、哪怕下意识里都会去运用你新习得的能力…… 从这个角度看，自学很上瘾！能上瘾，却不仅无害，还好处无穷，这样的好事，恐怕也就这一个了罢。</p>
+<p>我有过只靠阅读学会游泳的经历…… 听起来不像真的吧？更邪门的是，罗永浩同学的蛙泳，是我站在游泳池边，仅靠言语讲解，就让他从入水就扑腾开始三十分钟之内可以开始蛙泳的 —— 虽然当天他第一次蛙泳，一个来回五十米都坚持不下来。</p>
+<p>仅靠阅读学会新技能不仅是可能的，并且，你随后会发现的真相是：</p>
+<blockquote>
+<p>绝大多数情况下，没人能教你，也不一定有人愿意教你…… 到最后，你想学会或你必须学会什么东西的时候， <strong>你只能靠阅读！</strong> —— 因为其实你谁都靠不上……</p>
+</blockquote>
+<p>我有很多偶像，英国数学家乔治・布尔就是其中一个 —— 因为他就是个基本上只靠阅读自学成才的人。十八、九岁，就自学了微积分 —— 那是将近两百年前，没有 Google，没有 Wikipedia…… 然后他还自己创办了学校，给自己打工…… 从来没有上过大学，后来却被皇家学院聘请为该学院第一个数学教授。然后，人家发明的布尔代数，在百年之后引发了信息革命…… 达芬奇也是这样的人 —— 要说惨，他比所有人都惨…… 因为几乎从一开始就貌似没有谁有资格有能力教他。</p>
+<p>这些例子都太遥远了。给你讲个我身边的人，我亲自打过很长时间交道的人 —— 此人姓邱，人称邱老板。</p>
+<p>邱老板所写的区块链交易所引擎，在 Github 上用的是个很霸气的名字，“ <a href="https://github.com/peatio/peatio" class="external">貔貅<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ”（英文用了一个生造的词，Peatio）—— 这个 Repo 至 2019 年春节的时候，总计有 2,913 个 Star，有 2,150 个 Fork…… 绝对是全球这个领域中最受关注的开源项目。2017 年 9 月，云币应有关部门要求关闭之前，是全球排名前三的区块链交易所。</p>
+<p>邱老板当年上学上到几年级呢？初中未读完，所以，跟他聊天随口说成语是很有负担的，因为他真的可能听不懂…… 然而，他的编程、他的英语，全是自学的…… 学到什么地步呢？学到可以创造极有价值的商业项目的地步。他什么学习班都没上过，全靠阅读 —— 基本上只读互联网这本大书。</p>
+<p><span class="text-highlight">讲真，你没有选择，只靠阅读习得新技能，这是你唯一的出路。</span></p>
+<h2 id="1f-如何从容应对含有过多-过早引用-的知识">1.F 如何从容应对含有过多 “过早引用” 的知识？<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1f-如何从容应对含有过多-过早引用-的知识" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>“过早引用”（ <a href="https://en.wikipedia.org/wiki/Forward_declaration#id=Forward_reference" class="external">Forward References<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ，另译为 “前置引用”），原本是计算机领域的术语。</p>
+<p><span class="text-highlight">在几乎所有的编程语言中，对于变量的使用，都有 “先声明再使用” 的要求。直接使用未声明的变量是被禁止的</span>。Python 中，同样如此。如果在从未给 <code>an_undefined_variable</code> 赋值的情况下，直接调用这个变量，比如， <code>print(an_undefined_variable)</code> ，那就会报错： <code>NameError: name 'an_undefined_variable' is not defined</code> 。</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="python" data-theme="github-light github-dark"><code data-language="python" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">print</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(an_undefined_variable)</span></span></code></pre></figure>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="js" data-theme="github-light github-dark"><code data-language="js" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">---------------------------------------------------------------------------</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">NameError                                 </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">Traceback</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (most recent call last)</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">ipython-input-1-7e0e1cc14e37</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">> in &lt;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">module</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">></span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">----> 1 print(an_undefined_variable)</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">NameError: name 'an_undefined_variable' is not defined</span></span></code></pre></figure>
+<p>充满过早引用的知识结构，在大脑中会构成类似 M.C. Escher 善画的那种 “不可能图形” 那样的 “结构”。</p>
+<p><img src="https://raw.githubusercontent.com/selfteaching/the-craft-of-selfteaching/master/images/four-cones.png?raw=true" alt/></p>
+<p>在上图中，前三个椎形一般不会造成视觉困惑 —— 尤其是第一个。</p>
+<p>若是加上虚线，比如，第二个和第三个，那么由于我们预设虚线表示 “原本应该看不见的部分”，于是， <code>C</code> 点的位置相对于 <code>B</code> 和 <code>D</code> 应该更靠近自己； <code>C'</code> 的位置，相对于 <code>B'</code> 和 <code>D'</code> 应该更远离自己……</p>
+<p>然而，在第四个椎形中，由于 <code>B&quot;D&quot;</code> 和 <code>A&quot;C&quot;</code> 都是实线，于是，我们一下子就失去了判断依据，不知道 <code>C&quot;</code> 究竟是离自己更近还是更远？</p>
+<p>对一个点的位置困惑，连带着它与其它三个点之间的关系。可若那不是锥体，而是立方体呢？每个点的位置困惑会造成对它与更多点之间的更多联系的困惑…… 若是更多面体呢？</p>
+<p><img src="https://raw.githubusercontent.com/selfteaching/the-craft-of-selfteaching/master/images/2_necker_cubes.png?raw=true" alt/></p>
+<p>把这些令人困惑的点，比喻成 “过早引用”，你就明白为什么 “很多过早引用” 的知识结构会那么令人困惑，处理起来那么令人疲惫了吧？</p>
+<h3 id="过早引用就是无所不在">过早引用就是无所不在<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#过早引用就是无所不在" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>可生活、学习、工作，都不是计算机，它们可不管这套，管它是否定义过，管它是否定义清晰，直接甩出来就用的情况比比皆是。</p>
+<p>对绝大多数 “不懂事” 的小朋友来说，几乎所有痛苦的根源都来自这里：“懂事” 的定义究竟是怎样的呢？什么样算作懂事，什么样算作不懂事？弄不好，即便整个童年都在揣摩这个事，到最后还是迷迷糊糊。他们的父母，从未想过对孩子说话也好提要求也好，最好 “先声明再使用”，或者即便事先声明过也语焉不详…… 于是，这些可怜的孩子，能做的只有在惶恐中摸索，就好像在黑暗中拼图一样。</p>
+<p>可事实上，他们的父母也不容易。因为确实有太多细节，给小朋友讲了也没用，或者讲也讲不清楚，又或者拼命解释清楚了，但小朋友就是听不进去…… 所以，令人恼火的 “过早引用”，有时候真的是只能那样的存在。</p>
+<p>谈恋爱的时候也是这样。太多的概念，千真万确地属于过早引用。爱情这东西究竟是什么，刚开始的时候谁都弄不大明白。并且事实证明，身边的绝大多数人跟自己一样迷糊。至于从小说电影里获得的 “知识”，虽然自己看心神愉悦，但几乎肯定给对方带来无穷无尽的烦恼 —— 于对方来说你撒出来的是漫天飞舞的过早引用……</p>
+<p>到了工作阶段，技术岗位还相对好一点，其他领域，哪哪儿都是过早引用，并且还隐藏着不可见，搞得人们都弄出了一门玄学，叫做 “潜规则”。</p>
+<p><span class="text-highlight">人们岁数越大，交朋友越来越不容易。最简单的解释就是，每个人的历史，对他人来说都构成 “过早引用”。所以，理解万岁？太难了吧，幼儿园、小学的时候，人们之间几乎不需要刻意相互理解，都没觉得有这个必要；中学的时候，相互理解就已经开始出现不同程度的困难了，因为过早引用的积累</span>。大学毕业之后，再工作上几年，不仅相互理解变得越来越困难，还有另外一层更大的压力 —— 生活中要处理的事情越来越多，脑力消耗越来越大，遇到莫名其妙的过早引用，哪儿有心思处理？</p>
+<h3 id="不懂也要硬着头皮读完">不懂也要硬着头皮读完<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#不懂也要硬着头皮读完" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>这是事实：大多数难以掌握的技能都有这个特点。人们通常用 “学习曲线陡峭” 来形容这类知识，只不过，这种形容只限于形容而已，对学习没有实际的帮助。面对这样的实际情况，有没有一套有效的应对策略呢？</p>
+<p>首先是要学会一个重要的技能：</p>
+<blockquote>
+<p><strong><span class="text-highlight">读不懂也要读完，然后重复很多遍</span>。</strong></p>
+</blockquote>
+<p>这是最重要的起点。听起来简单，甚至有点莫名其妙 —— 但以后你就会越来越深刻地体会到，这么简单的策略，绝大多数人竟然不懂，也因此吃了很多很多亏。</p>
+<p><span class="text-highlight">充满了过早引用的知识结构，就不可能是一遍就读懂的。别说这种信息密度极高的复杂且重要的知识获取了，哪怕你去看一部好电影，也要多刷几遍才能彻底看懂，不是嘛</span>？比如，Quentin Tarantino 导演的 <a href="https://www.imdb.com/title/tt0110912/" class="external">Pulp Fiction (1994)<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 、David Fincher 导演的 <a href="https://www.imdb.com/title/tt0137523/" class="external">Fight Club (1999)<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 、Christopher Nolan 导演的 <a href="https://www.imdb.com/title/tt1375666/" class="external">Inception (2010)<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 、或者 Martin Scorsese 导演的 <a href="https://www.imdb.com/title/tt1130884/" class="external">Shutter Island (2010)<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ……</p>
+<p>所以，==从一开始就要做好 <em>将要重复很多遍</em> 的准备，从一开始就要做好 <em>第一次只能读懂个大概</em> 的准备==。</p>
+<p>古人说，读书百遍其义自见，道理就在这里了 —— 只不过，他们那时候没有计算机术语可以借用，所以，这道理本身成了 “过早引用”，对那些根本就没有过 “读书百遍” 经历的人，绝对以为那只不过是在忽悠自己……</p>
+<p>有经验的读书者，拿来一本书开始自学技能的时候，他会先翻翻目录（Table Of Contents），看看其中有没有自己完全没有接触过的概念；然后再翻翻术语表（Glossary），看看是否可以尽量理解；而后会看看索引（Index），根据页码提示，直接翻到相关页面进一步查找…… 在通读书籍之前，还会看看书后的参考文献（References），看看此书都引用了哪些大牛的书籍，弄不好会顺手多买几本。</p>
+<p>这样做，显然是老到 —— 这么做的最大好处是 “尽力消解了大量的过早引用”，为自己减少了极大的理解负担。</p>
+<p>所以，第一遍的正经手段是 “ <strong>囫囵吞枣</strong> 地读完”。</p>
+<p>囫囵吞枣从一开始就是贬义词。但在当前这个特殊的情况下，它是最好的策略。那些只习惯于一上来就仔细认真的人，在这里很吃亏，因为他们越是仔细认真，越是容易被各种过早引用搞得灰心丧气；相应地，他们的挫败感积累得越快；到最后弄不好最先放弃的是他们 —— 失败的原因竟然是因为 “太仔细了”……</p>
+<p>第一遍囫囵吞枣，用个正面一点的描述，就是 “ <em>为探索未知领域先画个潦草的地图</em> ”。地图这东西，有总比没有好；虽然说它最好精确，但即便是 “不精确的地图” 也比 “完全没地图” 好一万倍，对吧？更何况，这地图总是可以不断校正的，不是吗？世界上哪个地图不是一点一点校正过来才变成今天这般精确的呢？</p>
+<h3 id="磨练-只字不差-的能力">磨练 “只字不差” 的能力<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#磨练-只字不差-的能力" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>通过阅读习得新技能（尤其是 “尽量只通过阅读习得新技能”），肯定与 “通过阅读获得心灵愉悦” 很不相同。</p>
+<p>读个段子、读个小说，读个当前热搜文章，通常情况下不需要 “精读” —— 草草浏览已经足够，顶多对自己特别感兴趣的地方，慢下来仔细看看……</p>
+<p>但是，若是为了习得新技能去阅读，就要施展 “ <strong>只字不差地阅读</strong> ” 这项专门的技能。</p>
+<p>对，“只字不差地阅读” 是所有自学能力强的人都会且都经常使用的技能。尤其是当你在阅读一个重要概念的定义之时，你就是这么干的：定义中的每个字都是有用的，每个词的内涵外延都是需要进行推敲的，它是什么，它不是什么，它的内涵外延都是什么，因此，在使用的时候需要注意什么……</p>
+<p>很有趣的一个现象是，绝大多数自学能力差的人，都是把一切都当作小说去看，随便看看，粗略看看……</p>
+<p>你有没有注意到一个现象，人们在看电影的时候，绝大多数人会错过绝大多数细节；但这好像并不会削减他们的观影体验；并且，他们有能力使用错过了无数细节之后剩下的那些碎片拼接出一个 “完整的故事” —— 当然，通常干脆是 “另一个貌似完整的故事”。于是，当你在跟他们讨论同一个电影的时候，常常像是你们没坐在同一个电影院，看的不是同一个电影似的……</p>
+<p>所谓的自学能力差，很可能最重要的坑就在这里：</p>
+<blockquote>
+<p>每一次学习新技能的时候，很多人只不过是因为做不到只字不差地阅读，于是总是会错过很多细节；于是，最终就好像 “看了另外一个山寨版电影一样”，实际上 “习得了另外一个山寨版技能”……</p>
+</blockquote>
+<p>在学习 Python 语言的过程中，有个例子可以说明以上的现象。</p>
+<p>在 Python 语言中， <code>for</code> 循环可以附加一个 <code>else</code> 部分。你到 Google 上搜索一下 <a href="https://www.google.com/search?q=for+else+python" class="external"><code>for else python</code><svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 就能看到有多少人在 “追问” 这是干什么的？还有另外一些链接，会告诉你 “for… else” 这个 “秘密” 的含义，将其称为 “语法糖” 什么的……</p>
+<p>其实， <a href="https://docs.python.org/3/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops" class="external">官方教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 里写的非常清楚的，并且还给出了一个例子：</p>
+<blockquote>
+<p>Loop statements may have an else clause; it is executed when the loop terminates through exhaustion of the list (with for) or when the condition becomes false (with while), but not when the loop is terminated by a break statement. This is exemplified by the following loop, which searches for prime numbers:</p>
+<p>```python</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>for n in range(2, 10):… for x in range(2, n):… if n % x == 0:… print(n, ‘equals’, x, ’*’, n//x)… break… else:… # loop fell through without finding a factor… print(n, ‘is a prime number’)… 2 is a prime number 3 is a prime number 4 equals 2 * 2 5 is a prime number 6 equals 2 * 3 7 is a prime number 8 equals 2 * 4 9 equals 3 * 3 ```</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>只有两种情况，</p>
+<blockquote>
+<ul>
+<li>要么干脆就没读过，</li>
+<li>要么是读了，却没读到这个细节……</li>
+</ul>
+</blockquote>
+<p>—— <span class="text-highlight">后者更为可怕，跟花了同样的钱看了另外一个残缺版本的电影似的</span>……</p>
+<p>为什么说 “只字不差地阅读” 是一项专门的技能呢？你自己试过就知道了。明明你已经刻意让自己慢下来，也刻意揣摩每个字每个词的含义，甚至为了理解正确，做了很多笔记…… 可是，当你再一次 “只字不差地阅读” 的时候，你经常会 “惊讶地发现”，自己竟然有若干处遗漏的地方！对，这就是一种需要多次练习、长期训练才能真正掌握的技能。绝对不像听起来那么简单。</p>
+<p>所以， <em>到了第二遍第三遍就必须施展 “只字不差地阅读” 这项专门的技能了</em> ，只此一点，你就已然 <strong>与众不同</strong> 了。</p>
+<h3 id="好的记忆力很重要">好的记忆力很重要<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#好的记忆力很重要" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>“就算读不懂也要读完” 的更高境界，是 “ <strong>就算不明白也要先记住</strong> ”。</p>
+<p>人们普遍讨厌 “死记硬背”…… 不过，说实话，这很肤浅。虽然确实也有 “擅长死记硬背却就是什么都不会的人”，但是，其实有更多记忆力强的人，实际上更可能是 “博闻强识”。</p>
+<p>面对 “过早引用” 常见的知识领域，好记忆力是超强加分项。记不清、记不住、甚至干脆忘了 —— 这是自学过程中最耽误事的缺点。尤其在有 “过早引用知识点” 存在的时候，更是如此。</p>
+<p>然而，很多人并没有意识到的是，记忆力也是 “一门手艺” 而已。并且，事实上，它是任何时候都可以通过刻意练习加强的 “手艺”。</p>
+<p><span class="text-highlight">更为重要的是，记忆力这个东西，有一百种方法去弥补 —— 比如，最明显、最简单的办法就是 “好记性不如烂笔头”</span>……</p>
+<p>所以，在绝大多数正常情况下，所谓的 “记不清、记不住、甚至干脆忘了”，都只不过是懒的结果 —— <span class="text-highlight">若是一个人懒，且不肯承认自己懒，又因为不肯承认而已就不去纠正，那…… 那就算了，那就那么活下去罢</span>。</p>
+<p>然而，提高对有效知识的记忆力还有另外一个简单实用的方法 —— 而市面上有各种 “快速记忆法”，通常相对于这个方法来看用处并不大。</p>
+<p>这个方法就是以下要讲到的 “整理归纳总结” —— <strong>反复做整理归纳总结，记不住才怪呢！</strong></p>
+<h3 id="尽快开始整理归纳总结">尽快开始整理归纳总结<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#尽快开始整理归纳总结" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>从另外一个角度，这类体系的知识书籍，对作者来说，不仅是挑战，还是摆脱不了的负担。</p>
+<p>Python 官方网站上的 <a href="https://docs.python.org/3/tutorial/index.html" class="external">The Python Tutorial<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ，是公认的最好的 Python 教材 —— 因为那是 Python 语言的作者 <a href="https://en.wikipedia.org/wiki/Guido_van_Rossum" class="external">Guido van Rossum<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 写的……</p>
+<p>虽然 Guido van Rossum 已经很小心了，但还是没办法在讲解上避免大量的过早引用。==他的小心体现在，在目录里就出现过五次 <strong>More</strong>== ：</p>
+<blockquote>
+<ul>
+<li>More Control Flow Tools</li>
+<li>More on Defining Functions</li>
+<li>More on Lists</li>
+<li>More on Conditions</li>
+<li>More on Modules</li>
+</ul>
+</blockquote>
+<p>好几次，他都是先粗略讲过，而后在另外一处再重新深入一遍…… 这显然是一个最尽力的作者了 —— 无论是在创造一个编程语言上，还是在写一本教程上。</p>
+<p>然而，即便如此，这本书对任何初学者来说，都很难。当个好作者不容易。</p>
+<p>于是，<span class="text-highlight">这只能是读者自己的工作了 —— 因为即便是最牛的作者，也只能到这一步了</span>。</p>
+<p>第一遍囫囵吞枣之后，马上就要开始 “ <strong>总结</strong> 、 <strong>归纳</strong> 、 <strong>整理</strong> 、 <strong>组织</strong> 关键知识点” 的工作。自己动手完成这些工作，是所谓学霸的特点。他们只不过是掌握了这样一个其他人从未想过必须掌握的简单技巧。他们一定有个本子，里面是各种 <em>列表</em> 、 <em>示意图</em> 、 <em>表格</em> —— 这些都是最常用的知识（概念）整理组织归纳工具，这些工具的用法看起来简单的要死。</p>
+<p>这个技巧说出来、看起来都非常简单。然而，也许正因为它看起来如此简单，才被绝大多数人忽略…… 与学霸们相对，绝大多数非学霸都有一模一样的糊弄自己的理由：反正有别人做好的，拿过来用就是了！—— 听起来那么理直气壮……</p>
+<p>可实际上， <strong>自己动手做做就知道了</strong> —— 整理、归纳、组织，再次反复，是个相当麻烦的过程。非学霸们自己不动手做的真正原因只不过是：嫌麻烦、怕麻烦。一个字总结，就是， <strong>懒</strong> ！可是，谁愿意承认自己懒呢？没有人愿意。于是，都给自己找个冠冕堂皇的理由，比如，上面说的 “反正别人已经做好了，我为什么还要再做一遍呢？” 再比如，“这世界就是懒人推进的！”</p>
+<p>久而久之，各种爱面子的说法完美地达成了自我欺骗的效果，最后连自己都信了！于是，身上多了一个明明存在却永远找不到的漏洞 —— <strong>且不自知</strong> 。</p>
+<p>我在第一次粗略读过整个 <a href="https://docs.python.org/3/tutorial/datastructures.html" class="external">Python Official Tutorial<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 中的第五章之后，顺手整理了一下 Containers 的概念表格：</p>
+<p><img src="https://raw.githubusercontent.com/selfteaching/the-craft-of-selfteaching/master/images/python-containers.png?raw=true" alt/></p>
+<p><strong>可这张图错了！</strong></p>
+<p>因为我最早 “合理囫囵吞枣” 的时候， <code>Bytes</code> 这种数据类型全部跳过；而后来多轮反复之后继续深入，又去读 <a href="https://docs.python.org/3/reference/datamodel.html" class="external">The Python Language Reference<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 的第五章 <code>Data Model</code> 之后， <code>发现 Set</code> 也有 Immutable，是 <code>Frozen Set</code> …… 当然，最错的是，整理的过程中，一不小心把 “Ordered” 给弄反了！</p>
+<p>于是肯定需要再次整理，若干次改进之后，那张图就变成了下面这个样子：</p>
+<p><img src="https://raw.githubusercontent.com/selfteaching/the-craft-of-selfteaching/master/images/python-containers-final.png?raw=true" alt/></p>
+<blockquote>
+<p>另外，从 Python 3.7 开始，Dictionary 是 insertion ordered 了：
+<a href="https://docs.python.org/3/library/collections.html#ordereddict-objects" class="external">https://docs.python.org/3/library/collections.html#ordereddict-objects<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+<p>这个自己动手的过程其实真的 “很麻烦”，但它实际上是帮助自己强化记忆的过程，并且对自我记忆强化来说，绝对是不可或缺的过程。习惯于自己动手做罢！习惯于自己不断修改罢！</p>
+<p>再给你看个善于学习的人的例子：</p>
+<blockquote>
+<p><a href="https://nvie.com/posts/iterators-vs-generators/" class="external">https://nvie.com/posts/iterators-vs-generators/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+<p>作者 Vincent Driessen 在这个帖子里写到：</p>
+<blockquote>
+<p>I’m writing this post as a pocket reference for later.</p>
+</blockquote>
+<p>人家随手做个图，都舍不得不精致：</p>
+<p><img src="https://raw.githubusercontent.com/selfteaching/the-craft-of-selfteaching/master/images/iter-relationships.gif?raw=true" alt/></p>
+<p>自学能力强的人有个特点，就是 <strong>不怕麻烦</strong> 。小时候经常听到母亲念叨，“怕麻烦！那还活着干嘛啊？活着多麻烦啊！” —— 深刻。</p>
+<h3 id="先关注使用再研究原理">先关注使用再研究原理<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#先关注使用再研究原理" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>作为人类，我们原本很擅长运用自己并不真正理解的物件、技能、原理、知识的……</p>
+<p>三千多年以前，一艘欧洲腓尼基人的商船在贝鲁斯河上航行的时候搁浅了…… 于是，船员们纷纷登上沙滩。饿了怎么办？架火做饭呗。吃完饭，船员们惊讶地发现锅下面的沙地上有很多亮晶晶、闪闪发光的东西！今天的化学知识对当年的他们来说，是那一生不可触摸的 “过早引用”。他们并不懂这个东西的本质、原理，但稍加研究，他们发现的是，锅底沾有他们运输的天然苏打…… 于是，他们的总结是，天然苏打和沙子（我们现在知道沙子中含有石英砂）被火烧，可能会产生这个东西。几经实验，成功了。于是，腓尼基人学会了制做玻璃球，发了大财……</p>
+<p>两千五六百年之前，释加牟尼用他的理解以及在那个时代有限的概念详细叙述了打坐的感受 —— 他曾连续打坐 6 年。今天，西方科学家们在深入研究脑科学的时候，发现 <a href="https://en.wikipedia.org/wiki/Meditation" class="external">Meditation<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 对大脑有特别多的好处…… 这些好处就是好处，与宗教全然没有任何关系的好处。</p>
+<blockquote>
+<ul>
+<li><a href="https://www.washingtonpost.com/news/inspired-life/wp/2015/05/26/harvard-neuroscientist-meditation-not-only-reduces-stress-it-literally-changes-your-brain/" class="external">Harvard neuroscientist: Meditation not only reduces stress, here’s how it changes your brain<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.psychologytoday.com/us/blog/use-your-mind-change-your-brain/201305/is-your-brain-meditation" class="external">This Is Your Brain on Meditation — The science explaining why you should meditate every day<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://news.harvard.edu/gazette/story/2018/04/harvard-researchers-study-how-mindfulness-may-change-the-brain-in-depressed-patients/" class="external">Researchers study how it seems to change the brain in depressed patients<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.scientificamerican.com/article/meditations-calming-effects-pinpointed-in-brain/" class="external">Meditation’s Calming Effects Pinpointed in the Brain<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.newscientist.com/article/2149489-different-meditation-types-train-distinct-parts-of-your-brain/" class="external">Different meditation types train distinct parts of your brain<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</blockquote>
+<p>你看，我们原本就是可以直接使用自己并不真正理解的物件、技能、原理、知识的！可为什么后来就不行了呢？</p>
+<p>或者说，从什么时候开始，我们开始害怕自己并不真正理解的东西，不敢去用，甚至连试都不敢去试了呢？</p>
+<p>==有一个相当恼人的解释： <strong>上学上坏了</strong>== 。</p>
+<p>学校里教的全都是属于 “先声明再使用” 的知识。反过来，<span class="text-highlight">不属于这种体系架构的知识，学校总是回避的 —— 比如，关于投资与交易的课程，从来看不见地球上有哪个义务教育体系把它纳入教学范围。虽然，投资与交易，是每个人都应该掌握、都必须掌握的不可或缺的技能，某种意义上它甚至比数学语文都更重要，然而，学校就是不会真教这样的东西</span>。</p>
+<p>而且，现在的人上学的时间越来越长。小学、初中、高中、本科加起来 16 年…… 这么长时间的 “熏陶”，只能给大多数人造成幻觉，严重、深刻，甚至不可磨灭的幻觉，误以为所有的知识都是这种类型…… <span class="text-highlight">可偏偏，这世界上真正有用的、真正必要的知识，几乎全都不是这种类型 —— 颇令人恼火</span>。</p>
+<p>现在的你，不一样了 —— 你要跳出来。养成一个习惯：</p>
+<blockquote>
+<p><span class="text-highlight">不管怎么样，先用起来，反正，研究透原理，不可能马上做到，需要时间漫漫。</span></p>
+</blockquote>
+<p>用错了没关系，改正就好。用得不好没关系，用多了就会好。只要开始用起来，理解速度就会加快 —— 实践出真知，不是空话。</p>
+<p>有的时候，就是因为没有犯过错，所以不可能有机会改正，于是，就从未做对过。</p>
+<h3 id="尊重前人的总结和建议">尊重前人的总结和建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#尊重前人的总结和建议" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>生活中，年轻人最常犯的错误就是把那句话当作屁：</p>
+<blockquote>
+<p>不听老人言，吃亏在眼前。</p>
+</blockquote>
+<p>对年轻人来讲，老人言确实很讨厌，尤其是与自己当下的感受相左的时候。</p>
+<p>然而，这种 “讨厌” 的感觉，更多的时候是陷阱，因为那些老人言只不过是过早引用，所以，在年轻人的脑子里 “无法执行”，“报错为类型错误”……</p>
+<p>于是，很多人一不小心就把 “不听老人言” 和 “独立思考” 混淆起来，然后最终自己吃了亏。可尴尬在于，等自己意识到自己吃亏了的时候吧，大量的时间早已飘逝，是为 “无力回天”。</p>
+<p>你可以观察到一个现象，学霸（好学生）的特点之一就是 “老师让干啥就干啥”，没废话。</p>
+<p>比如，上面告诉你了，“必须自己动手”，那你就从现在开始老老实实地在一切必要的情况下自己动手去 “ <strong>总结</strong> 、 <strong>归纳</strong> 、 <strong>整理</strong> 、 <strong>组织</strong> 关键知识点”…… 那你就必然能够学好。但针对这么个建议，你反复在那里问，“为什么呀？”，“有没有更简单的办法啊？”…… 那你就完了，死定了。</p>
+<p>==学写代码的过程中，有很多重要的东西实际上并不属于 “编程语言范畴”。比如，如何为变量命名、如何组织代码，这些 “规范”，不是违背了就会马上死掉的 <sup><a href="#user-content-fn-death" id="user-content-fnref-death" data-footnote-ref aria-describedby="footnote-label" class="internal alias">1</a></sup> ；并且，初来乍到的时候，这些东西看起来就是很啰嗦、很麻烦的…… 然而，这些东西若是不遵守，甚至干脆不了解，那么最终的结果是，你永远不可能写出大项目，永远是小打小闹 ==—— 至于为什么，可以用那句你最讨厌的话回答你：</p>
+<blockquote>
+<p>等你长大了就懂了……</p>
+</blockquote>
+<p>自学编程的好处之一，就是有机会让一个人见识到 “规范”、“建议” 的好处。也有机会让一个人见识到不遵守这些东西会吃怎样的亏（往往是现世报）。</p>
+<p>Python 中有一个概念叫 PEP，Python Enhancement Proposals，必须找时间阅读，反复阅读，牢记于心：</p>
+<blockquote>
+<p><a href="https://www.python.org/dev/peps/pep-0008/" class="external">https://www.python.org/dev/peps/pep-0008/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+<p>到最后，你会体会到，这不只是编程的事，这种东西背后的思考与体量，对整个人生都有巨大帮助。</p>
+<h2 id="2a-笨拙与耐心">2.A 笨拙与耐心<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2a-笨拙与耐心" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>自学的过程，实际上需要拆解为以下四个阶段，虽然它们之间常常有部分重叠：</p>
+<p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord cjk_fallback">学</span><span class="mord">−</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord cjk_fallback">练</span><span class="mord">−</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord cjk_fallback">用</span><span class="mord">−</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord cjk_fallback">造</span></span></span></span></p>
+<p>只要识字，就会忍不住阅读；只要感觉上有 “值得学” 的，就会忍不住去学 —— <span class="text-highlight">事实上每个人时时刻刻都在学习，只不过，学习的目标选择与学习的方式以及效率均不相同而已</span>。</p>
+<p>绝大多数人从未区分过这几个阶段，也从未研究过这几个阶段分别应该如何对待。这就解释了为什么那么多人虽然总是忍不住阅读，总是忍不住学习，但终其一生都没有真正掌握过像样的技能…… 因为他们在第一个阶段就出错，到了第二个阶段就放弃，第三个阶段是直接跳过去的，总是 “对付着用”，至于第四个阶段么，想都没想过……</p>
+<p>第一部分的内容，基本用来展示 “学” 的过程。 <strong>学，就需要重复</strong> ，甚至很多次重复，尤其是在面对充满了 “过早引用” 现象的知识结构的时候。</p>
+<p>反复学，最锻炼的是 “归纳整理” 的能力。而且，最有意思的，这在大多数情况下还是自动发生的 —— 只要你不断重复，你的大脑会在不自主之间把那些已经掌握的知识点与当前尚未掌握的知识点区分开来，前者处理起来轻松容易，甚至可以跳过；后者需要投入更多的注意力去仔细处理…… 在这个过程中，绝大多数的归纳整理工作自动完成了。最后再加上一点 “刻意的、收尾性的归纳总结整理工作” —— 大功告成。</p>
+<p><span class="text-highlight">绝大多数人总是希望自己一遍就能学会 —— 于是，注定了失败；而面对注定的失败，却并不知道那与天分、智商全无关系，因为谁都是那样的</span>；于是，默默认定自己没有天分，甚至怀疑自己的智商；于是，默默地离开，希望换个地方验证自己的天分与智商；于是，再次面临注定的失败；于是，一而再再而三地被 “证明” 为天分不够智商不够…… 于是，就变成了那条狗：</p>
+<blockquote>
+<p>在一项心理学实验中，狗是被测试对象。把狗关进栅栏里；然而那栅栏并不算太高，原本狗一使劲就能跳过去。但狗带着电项圈，只要它被发现有要跳过栅栏的企图，它就会被电击…… 几次尝试之后，狗就放弃了跳出栅栏 —— 虽然它其实能跳过去。更为惊人的结果是，随后把这条狗关进很低的栅栏，甚至是它都不用跳直接就可以跨过去的栅栏，它也老老实实地呆在栅栏里。</p>
+</blockquote>
+<p><span class="text-highlight">自学是门手艺，编程很大程度上也是一门手艺，掌握它在绝大多数情况下与天分智商全无关系 —— 很多人是在十来岁的时候学会编程的基本技能的。所有的手艺，最基本特征就是</span>：</p>
+<blockquote>
+<p><strong><span class="text-highlight">主要靠时间</span></strong></p>
+</blockquote>
+<p>这就跟你看人们的车技一样，二十年安全驾龄和刚上路的肯定不一样，但这事跟天分、智商真的没什么关系……</p>
+<p>到了第二部分，我们终于进入 “用” 的阶段 —— 嗯？“练” 怎么跳过去了？没有，我们的策略是， <strong>以用带练</strong> —— 在不断应用的过程中带动刻意练习。</p>
+<p>练和学，是多少有些重合部分的。比如，你可能反复 “学” 了第一部分两三遍，而后就进入了第二部分，开始接触 “用”，在 “用” 的过程中，只要有空，或者只要有需求，你就可能回去 “复习” 一遍第一部分的内容……</p>
+<p>无论之前的 “学”，重复了多少遍，一旦开始练，就注定体会到各式各样的笨拙。一会儿漏写了一个引号或者一个括号，一会儿不小心使用了非英文字符的全角符号，要么就是发现自己犯的错误愚蠢且反复发生，比如，语句块起始语句末尾忘了写冒号……</p>
+<p>这再正常不过了。</p>
+<p><span class="text-highlight">每次自学什么新东西的时候，你就把自己想象成 “再次出生的婴儿” —— 其实每次自学，的的确确都是重生。一旦掌握了一项新的技能，你就不再是从前的那个自己，你是另外一个人了</span>。</p>
+<p>看着婴儿蹒跚学步，的确笨拙，但谁会觉得它不可爱呢？</p>
+<p>同样的道理，刚开始用一个技能的时候，笨拙其实就是可爱 —— 只不过这时候旁人不再这么觉得而已了，只不过因为你披着一张成年人的皮。然而，你的大脑中正在学习的那一部分，和新生婴儿的大脑没有任何区别。</p>
+<p>在第一部分的时候，“练” 的必要其实并不大…… 甚至，因为这是 “ <a href="https://renew-web.github.io/the-craft-of-selfteaching/Part.1.F.deal-with-forward-references/" class="external">过早引用<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ” 太多的知识结构，所以，急于练习反倒会有副作用。由于对自己所面对的复杂知识结构（就是过早引用太多的知识结构）认识不够，没有提前的应对策略，所以，他们根据原本的习惯，边学边练，学不明白当然就练不明白，于是，走着走着就挫败感太强，于是，就自然而然地放弃了…… 而且，弄不好，越练越容易出现 “不必要的挫败感”。</p>
+<p>一切 “主要靠时间” 的活动都一样，都需要在从事之前认真做 “心理建设”。通常情况下，读一本教程，上个学习班，就 “会” 了 —— 几乎肯定是错觉或者幻觉。</p>
+<blockquote>
+<ul>
+<li>首先要明白，这肯定是个比 “天真的想象” 要长得多的过程。</li>
+<li>其次要明白，并且要越来越自然地明白，哪儿哪儿都需要很多重复。读，要读很多遍；练，要练很多遍；做，要做很多遍……</li>
+</ul>
+</blockquote>
+<p>有了这样的心理建设，就相对更容易保持耐心。</p>
+<p>人们缺乏耐心的常见根源就是 “之前根本就没准备花那么多时间和精力”，所以当然很容易超出 “时间和精力的预算”，当然相对更容易焦虑 —— 就好像没多少本钱的人做生意常常更容易失败一样。</p>
+<p>这也解释了为什么我在写这本书的过程中，心中锁定的目标群体是大一学生和高一学生（甚至也有初一学生）：</p>
+<blockquote>
+<p>他们最有自学的 “本钱”……</p>
+</blockquote>
+<p>离开学校之后，绝大多数人很难再有 “一看一下午”、“一练一整天”、“一玩一整夜” 的本钱。又由于生活的压力越来越大，对 “能够使用” 新技能的 “需求” 越来越紧迫，于是，对任何一次自学的 “时间精力投资” 都缩手缩脚，小里小气……</p>
+<p><strong>预算观念</strong> 非常重要 —— 这个观念的存在与否，成熟与否，基本上决定一个人未来的盈利能力。</p>
+<p>大多数人对此不仅不成熟，甚至干脆没有预算观念！—— 这也是为什么绝大多数人不适合创业的最根本原因。</p>
+<p>不夸张地讲，未来的你只需要恪守一个原则，就很可能会因此超越 99% 的人：</p>
+<blockquote>
+<p><span class="text-highlight">绝对不做预算不够的事情</span>。</p>
+</blockquote>
+<p>说来惭愧，我是四十多岁之后，在创业和投资中经历了大量的失败，付了不可想像的学费之后，才深刻理解这条看起来过分简单的原则 —— 亏得本科还是学会计毕业的呢！我的运气在于，在自学这件事上，从来给出的预算都很多……</p>
+<p>大约 1984 年，我在远在边疆的延吉市的本地青少年宫参加了一个要交 10 元学费的暑期计算机兴趣班，老师姓金，教的是 BASIC 语言，用的机器是这样的：</p>
+<p><img src="https://raw.githubusercontent.com/selfteaching/the-craft-of-selfteaching/master/images/Acorn-Electron.png?raw=true" alt/></p>
+<p>它要外接上一个九寸的单色显示器，那时候还没有磁盘，所以，只要一断电，就什么都没有了……</p>
+<p>后来上了大学，买书自学 C++，结果在一个地方被卡住了：</p>
+<p>我写的代码死活编译不过去…… 当时的编译器错误提醒还不像今天这么完善，当时也没有什么 Google 可以随时看看网上是否早就有人遇到过跟我一样的问题…… 当时我身边根本就没有什么别人在玩这些东西，当时的学校里的电脑还很少，需要提前申请所谓的 “上机时间”，后来呢？后来就放弃了。</p>
+<p>当时是什么东西卡住我了呢？说来都能笑死，或者都能被气死：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="c" data-theme="github-light github-dark"><code data-language="c" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (c </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> 1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) {</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    ...</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span></code></pre></figure>
+<p>习惯于写 BASIC 的我，“被习惯蒙蔽了双眼”，反复检查那么多遍，完全没看到应该写的是 <code>c == 1</code> ！</p>
+<p>一晃就好几年过去，有一天在书店看到一本 C++ 教程，想起来多年前放弃的东西，就把书买回来，在家里的电脑上重新玩了起来…… 然后就想起来问题在哪儿了，然后这事就被我重新捡起来了……</p>
+<p><span class="text-highlight">学完了也就学完了，真没地儿用。没地儿用，当然就很少练</span>。</p>
+<p>又过了好几年，我去新东方教书。2003 年，在写词汇书的过程中，需要统计词频，C++ 倒是用不上，用之前学过它的经验，学了一点 Python，写程序统计词频 ——《TOEFL 核心词汇 21 天突破》到今天还在销售。一个当年 10 块钱学费开始学的技能，就因为这本书，这些年给我 “变现” 了很多钱。</p>
+<p>我有很多东西都是这样，隔了好多年，才重新捡起来，而后继续前行的。</p>
+<p>最搞笑的是弹吉他。</p>
+<p>十五六岁的时候，父亲给我买了一把吉他，理由是：</p>
+<blockquote>
+<p>你连唱歌都跑调，将来咋学英语啊？</p>
+</blockquote>
+<p>然后我就开始玩。花 5 块钱上了个培训班，第一天学了一个曲子，第二天就因为打架把吉他砸坏了，害得父亲又去给我买了一把更便宜的……</p>
+<p>那个年代学吉他的人，第一首肯定是 “ <a href="https://www.youtube.com/results?search_query=Romance+d%27Amour+" class="external">Romance d’Amour<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ”（爱的罗曼史），我当然不例外。那曲子好听啊，好听到弹得不好也好听的地步。</p>
+<p>然后吧，有一天，在一姑娘面前显摆，竟然没有弹错！弹完之后很得意…… 结果那姑娘一脸迷茫，隔了两三秒钟说，“不还有第二段吗？” —— 我一脸懵蛋，“…… 啊？”</p>
+<p>可是吧，那第二段我终究没有学…… 其实也练过，但后来因为指骨摔断了，所以再后来的许多年，弹吉他只用拨片。直到…… 直到四十五岁那年。有一天，忽然想起这事，于是找来琴谱试了一下，花了一会的时间顺了下来。</p>
+<p>所以，我猜我的 “自学能力强” 这件事本身，其实只不过是我投入的预算很多造成的 —— 活到老学到老，在我这里不是空话，所以，相对于别人，我这里只不过是预算太多、太充裕了而已。</p>
+<p>于是，<span class="text-highlight">我学的时候重复得比别人多；练的时候重复得比别人多；到最后用得也相对比别人多很多 —— 这跟是否有天分或者聪明与否全然没有关系</span>。</p>
+<p>当然，学到的东西多了，就变得更聪明了似的。有高中学历的人通常情况下比只有小学学历的人更聪明 —— 其实就是这个原因而已。而这个现象与天生的智商并不总是正相关。</p>
+<p>有个现象，不自学的人不知道。</p>
+<p>真正开始自学且不断自学之后，刚开始总是觉得时间不够用 —— 因为当时的自己和其他人没什么太大区别。</p>
+<p>随着时间的推移，不仅差异会出现，自我认知差异也开始越来越明显：</p>
+<blockquote>
+<p>别人的时间都白过了，自己的时间都有产出……</p>
+</blockquote>
+<p>到了下一个阶段，在其他人不断焦虑的情况下，自己却开始越来越淡定：</p>
+<blockquote>
+<p>因为早已习惯了投入大量时间换取新技能……</p>
+</blockquote>
+<p>等后来真的开始用这些技能做事，不断地做其他人因为时间白过了或者因为投入的 “预算” 不够而学不会做不到的事情 —— 并且还能充分明白，这并不是自己聪明、有天分的结果；只不过是做了该做的事情，投入了该投入的 “成本” 和 “预算” 而已……</p>
+<p>于是，就真的能够理解下面这句话背后的深意：</p>
+<blockquote>
+<p>人生很长，何必惊慌。</p>
+</blockquote>
+<p>反正，这事跟天分与智商几乎没有任何关系。</p>
+<h2 id="2b-刻意练习">2.B 刻意练习<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2b-刻意练习" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>在自学的过程中，总是有一些部分需要刻意练习。就好像小时候我们学习汉字，有些人总是把 “武” 这个字上加上一个撇 —— 对他们来说，不去写那个不该有的撇，就是需要刻意练习的。另外一些人倒是不在这个字上出错，但候和侯傻傻地分不清楚（类似的例子不计其数），那么，对他们来说就有了另外需要刻意练习的地方……</p>
+<p>手艺这个东西，尤其需要刻意练习。我们说，手艺么，主要是靠时间…… 这里的 “时间”，准确地讲，就是 “刻意练习” 的时间，而不是任何时间。</p>
+<p>我当过很长时间的英语老师。异常苦于一件事：最有用的道理最没人听。</p>
+<p>学英语根本就不应该那么难，学了十六年也学不明白 —— 至于嘛！然而，<span class="text-highlight">最简单的道理，人们就是听不进去。他们之所以不行，就是因为从未刻意练习。学英语最简单的刻意练习就是朗读。每天朗读一小时，一百天下来就会超越绝大多数人，也会超越自己原本可能永远跨不过去的那个坎 —— 神奇的是，朗读什么无所谓，反正现在有声书那么多…… 更神奇的是，刚开始朗读得好不好听，甚至好不好都无所谓，反正没几天就能体会到大幅进步…… 最神奇的是，这么简单的事，99.99% 的人不做 —— 你身在中国，能理解这个比例真的没有夸张</span>。</p>
+<p>顺带推荐一下王渊源（John Gordan）的微信公众号：</p>
+<blockquote>
+<p>清晨朗读会</p>
+</blockquote>
+<p>到 2019 年 2 月 21 日，王渊源同学的清晨朗读会带着大伙朗读了第 1000 天……</p>
+<p>许多年前，资质平庸的我，一直苦恼一件事：</p>
+<blockquote>
+<ul>
+<li>为什么自己无论干什么都笨手笨脚、差这儿差那儿的……</li>
+<li>为什么与此同时，总是能看到另外一些人，给人感觉 “一出手就是高手” 呢？！</li>
+</ul>
+</blockquote>
+<p>这事折磨了我好多年…… 直到后来我当了老师，每年面前流过几万名学生之后，我才 “羞耻” 地反应过来：</p>
+<blockquote>
+<ul>
+<li>==我花在刻意练习上的时间 <strong>太少</strong> 了==；</li>
+<li>==并且，也没有 <strong>刻意思考</strong> 哪些地方我应该去刻意练习==。</li>
+</ul>
+</blockquote>
+<p>而那些看起来 “一出手就是高手” 的人，则恰恰相反，他们不仅花很多时间刻意练习，还总是刻意思考在哪些地方尤其要刻意练习 —— 就是这一点差别造成了那么大的差距。</p>
+<p>比如，小时候玩琴，因为手骨摔断了，于是就中断了很多刻意练习 —— 后来换成拨片之后，也习惯不好，不做很多基础练习，只是顺着感觉 “胡搞瞎搞”…… 于是，我的琴艺永远是自娱自乐也就刚刚够用的水准，永远上不了下一个台阶。我认识的人之中，许岑同学在这方面就是我这种情况的反向典范。</p>
+<p>然而，<span class="text-highlight">我深刻地意识到，在另外一些地方，若是再 “混” 下去，那这辈子就别想有什么名堂了</span>。所以，我就下决心在必要的地方一定要刻意地练习。印象中我第一个应用这种思考模式与决心的地方就是写书。我花了很长时间去准备第一本书，并且刻意地思考在哪些地方应该刻意地用力 —— 比如，在取书名这件在别人眼里可能并不是很重要的事上，我每天都琢磨，前后换了二十几个名字，最终选定…… 其后每一本出版的书籍，在书名选择上我都 “殚精竭虑” —— 最终的结果是，我的第一本书就是畅销书、长销书 —— 后面的每一本都是。</p>
+<p>对，所谓的 “混”，解释很简单：</p>
+<blockquote>
+<p><strong><span class="text-highlight">不做刻意练习的人就是在混时间</span></strong> 。</p>
+</blockquote>
+<p>需要刻意练习的地方，因人而异。有的人就是不可能让 “武” 字带把刀，不需要刻意练习，但另外一些人不是。有些人就是朗读十分钟的效果跟别人朗读一小时的效果一样地好，但更多的人并不是……</p>
+<p>然而，这并不是所谓的 “天分” 差异，这大抵上只相当于正态分布坐标略不相同而已。每个人都一样，都有各自必须刻意练习的地方，都有对别人来说无比容易可偏偏对自己来说就是很难的地方，而且，在这件事上，大家的点虽然各不相同，但总体上需要刻意练习的部分比例都差不多 —— 虽然说不清楚那个比例到底是多少。</p>
+<p>比如，在学一门新的编程语言时，我常常做这样的刻意练习：</p>
+<blockquote>
+<p><strong>在纸上用笔写程序……</strong></p>
+</blockquote>
+<p>而后，看着纸上的程序，把自己的大脑当作解析器，去判断每一句执行后的结果……</p>
+<p>反复确认之后，再在编辑器里输入这个程序 —— 用很慢的速度，确保自己的输入无误……</p>
+<p>然后再一运行，十有八九出错 —— 要再反复检查修改很多次才能顺利执行到最后……</p>
+<p>为什么要这么做呢？因为我发现自己一旦学另外一个语言的时候，自己的大脑就会经常把这个新的语言与之前学过的其他语言相混淆，这很痛苦。我必须想出一个办法，让之前的也好，之后的也罢，干脆刻在自己的脑子里，不可能相互混淆。</p>
+<p>我相信不是所有人都有我这样的烦恼和痛苦，虽然他们在我不烦恼不痛苦的地方也可能烦恼痛苦……</p>
+<p>然而，于我来讲，这就是 <strong>我需要刻意练习</strong> 的地方 —— 这也是我 <strong>刻意思考</strong> 之后才找到的需要刻意练习的地方。</p>
+<p>你也一样。你需要刻意练习的地方，需要你自己去刻意思考 —— 你和别人不一样，没有人和你一样，就这样。</p>
+<p>这种事情，过去还真的是所谓 “书本上学不到” 的东西 —— 因为没有哪个作者能做到 “遍历世上所有人的所有特殊情况”…… 不过，互联网这本大书貌似正在突破这种限制，因为有无数的作者在写书，每个人所关注的点也不一样，再加上搜索引擎，所以，你总是可以在互联网这本大书中找到 “竟然与我一样的人”！</p>
+<p>于是，你可能感受到了，其实吧，所谓 “刻意练习”，其实是 “刻意思考哪里需要刻意练习” 之后最自然不过的事情 —— 所以， <strong>“刻意思考” 才是关键。</strong></p>
+<p>应对策略很简单：</p>
+<blockquote>
+<p>准备个专门的地方记录</p>
+</blockquote>
+<p>我现在用的最多的就是 iPhone 上的 Notes，一旦遇到什么 “疑似需要刻意练习” 的点，就顺手记录在那里以防不小心忘记或者不小心遗漏。</p>
+<p>而后有时间的时候就拿出来看看，排列一下优先级，琢磨一下刻意练习的方式，而后找时间刻意练习，如此这般，做到 “尽量不混日子”……</p>
+<p><span class="text-highlight">有时候，刻意练习是很容易的，比如，为了让自己记住当前正在学习的编程语言的语法规则，直至 “刻在脑子里一般”，需要做的无非是把编辑器中的 “Auto completion”（自动补全）先关掉三个月 —— 麻烦一点就麻烦一点，坚决不让 Tab 键帮自己哗啦哗啦写上一大片…… 那不叫麻烦，那叫刻意练习</span>。</p>
+<p>人们常说：</p>
+<blockquote>
+<p>凡事，就怕 <strong>琢磨</strong> ……</p>
+</blockquote>
+<p>那些高手，无一例外都是善于琢磨的人…… 可是，他们在琢磨什么呢？为什么他们会琢磨那些事呢？</p>
+<p>你看，所谓的琢磨，其实真的不是很难，只不过，在此之前，你不知道该琢磨什么而已，一旦知道了，剩下的都再自然不过，都会自然而然地发生 —— 事实上，所谓的差别差距，只不过一线间而已。</p>
+<h2 id="2e-刻意思考">2.E 刻意思考<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2e-刻意思考" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>随着时间的推移，你会体会到它的威力：</p>
+<blockquote>
+<p>刻意思考哪儿需要刻意练习</p>
+</blockquote>
+<p>只不过是一句话而已，却因知道或不知道，竟然会逐渐形成天壤之别的差异，也是神奇。</p>
+<p>刻意思考，就是所谓的琢磨。琢磨这事，一旦开始就简单得要死，可无从下手的时候就神秘无比。让我们再看一个 “刻意思考” —— 即，琢磨 —— 的应用领域：</p>
+<blockquote>
+<p><strong><span class="text-highlight">这东西能用在哪儿呢</span>？</strong></p>
+</blockquote>
+<p>很多人学了却没怎么练，有一个很现实的原因 —— 没什么地方用得上。</p>
+<p>这也怪我们的应试教育，大学前上 12 年学，“学”（更多是被逼的）的绝大多数东西，只有一个能够切实体会到的用处，考试 —— 中考、高考，以及以它们为目标的无数 “模考”…… 于是，反过来，不管学什么东西，除了考试之外，几乎无法想象其他的用处。</p>
+<p>一旦我们启动了对某项技能的自学之后，在那过程中，最具价值的刻意思考就是，时时刻刻琢磨 “这东西能用在哪儿呢？”</p>
+<p>比如，当你看到字符串的 Methods 中有一个 <code>str.zfill()</code> 的时候，马上就能想到，“嗯！这可以用来批量更名文件……”</p>
+<p><img src="https://raw.githubusercontent.com/selfteaching/the-craft-of-selfteaching/master/images/rename-macos.png?raw=true" alt/></p>
+<p>虽然现在的 Mac OS 操作系统里已经有相当不错的批量更名工具内建在 Finder 之中（选中多个文件之后，在右键菜单中能看到 <code>rename</code> 命令），但这是近期才加进去的功能，几年前却没有 —— 也就是说，几年前的时候，有人可以用 <code>str.zfill()</code> 写个简单的程序完成自己的工作，而另外一些人仅因为操作系统没有提供类似的功能就要么手工做，要么干脆忍着忘了算了……</p>
+<p>但更多的时候，需要你花时间去琢磨，才能找到用处。</p>
+<p>找到用处，有时候还真挺难的 —— <span class="text-highlight">因为人都一样，容易被自己的眼界所限，放眼望过去，没有用处，自然也就不用了，甚至不用学了，更不用提那就肯定是感觉不用练了</span>……</p>
+<p>所以，仔细想想罢 —— 那些在学校里帮老师干活的小朋友们，更多情况下还真不是很多人以为的 “拍马屁”（不排除肯定有哈），只不过是在 “主动找活干”……</p>
+<p>==<strong>找活干</strong> ，是应用所学的最有效方式，有活干，所以就有问题需要解决，所以就有机会反复攻关，在这个过程中， <strong>以用带练</strong>== ……</p>
+<p>所以，很多人在很多事上都想反了。</p>
+<p>人们常常取笑那些呼哧呼哧干活的人，笑着说，“能者多劳”，觉得他们有点傻。</p>
+<p>这话真的没错。但这么说更准： <strong>劳者多能</strong> —— 你看，都想反了吧？</p>
+<p>到最后，一切自学能力差的人，外部的表现都差不多，都起码包括这么一条：眼里没活。他们也不喜欢干活，甚至也没想过，玩乐也是干活（每次逢年过节玩得累死那种）—— 从消耗或者成本的角度来看根本没啥区别 —— 只不过那些通常都是没有产出的活而已。</p>
+<p>在最初想不出有什么用处的时候，还可以退而求其次，看看 “别人想出什么用处没有？” —— 比如，我去 Google <code>best applications of python skill</code> ，在第一个页面我就发现了这么篇文章：“ <a href="https://medium.freecodecamp.org/what-can-you-do-with-python-the-3-main-applications-518db9a68a78" class="external">What exactly can you do with Python?<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ”，翻了一会儿觉得颇有意思……</p>
+<p>再高阶一点的刻意思考（琢磨），无非是在 “这东西能用在哪儿呢？” 这句话里加上一个字而已：</p>
+<blockquote>
+<p>这东西 <strong>还</strong> 能用在哪儿呢？</p>
+</blockquote>
+<p>我觉得这个问题对思维训练的帮助非常深刻 —— 别看只是多了一个字而已。</p>
+<p>当我读到在编程的过程中有很多的 “约定” 的时候，就琢磨着：</p>
+<blockquote>
+<ul>
+<li>哦，原来约定如此重要……</li>
+<li>哦，原来竟然有那么多人不重视约定……</li>
+<li>哦，原来就应该直接过滤掉那些不遵守约定的人…… —— 那这个原理（东西）还能用在哪儿呢？ —— 哦，在生活中也一样，遇到不遵守约定的人或事，直接过滤，不要浪费自己的生命……</li>
+</ul>
+</blockquote>
+<p><span class="text-highlight">学编程真的很有意思，因为这个领域是世界上最聪明的人群之一开辟出来并不断共同努力着发展的，所以，在这个世界里有很多思考方式，琢磨方式，甚至可以干脆称为 “做事哲学” 的东西，可以普遍应用在其它领域，甚至其它任何领域</span>。</p>
+<p>比如，==在开发方法论中，有一个叫做 <a href="https://en.wikipedia.org/wiki/MoSCoW_method" class="external">MoSCoW Method<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 的东西，1994 年由 Clegg Dai 在《Case Method Fast-Track: A RAD Approach》一书中提出的 —— 两个 <code>o</code> 字母放在那里，是为了能够把这个缩写读出来，发音跟莫斯科一样==。</p>
+<p>简单说，就是，凡事都可以分为：</p>
+<blockquote>
+<ul>
+<li>Must have</li>
+<li>Should have</li>
+<li>Could have</li>
+<li>Won’t have</li>
+</ul>
+</blockquote>
+<p>于是，在开发的时候，把所谓的需求打上这 4 个标签中的某一个，以此分类，就很容易剔除掉那些实际上做了还不如不做的功能……</p>
+<p>琢磨一下罢，这个东西还可以用在什么地方？</p>
+<p>显然，除了编程之外，其他应用领域挺多的，这个原则相当地有启发性……</p>
+<p>我写书就是这样的。在准备的过程中 —— 这个过程比绝大多数人想象得长很多 —— 我会罗列所有我能想到的相关话题…… 等我觉得已经再也没有什么可补充的时候，再为这些话题写上几句话构成大纲…… 这时候就会发现很多话题其实应该是同一个话题。如此这般，一次扩张，一次收缩之后，就会进行下一步，应用 MoSCoW 原则，给这些话题打上标签 —— 在这过程中，总是发现很多之前感觉必要的话题，其实可以打上 <code>Won't have</code> 的标签，于是，把它们剔除，然后从 <code>Must have</code> 开始写起，直到 <code>Should have</code> ，至于 <code>Could have</code> 看时间是否允许，看情况，比如，看有没有最后期限限制……</p>
+<p>在写书这事上，我总是给人感觉很快，事实上也是，因为有方法论 —— 但显然，那方法论不是从某一本 “如何写书” 的书里获得的，而是从另外一个看起来完全不相关的领域里习得后琢磨到的……</p>
+<p>所谓的 “活学活用”，所谓的 “触类旁通”，也不过如此。</p>
+<h2 id="3a-战胜难点">3.A 战胜难点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3a-战胜难点" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>无论学什么，都有难点。所谓的 “学习曲线陡峭”，无非就是难点靠前、难点很多、难点貌似很难而已。</p>
+<p>然而，==相信我，所有的难点，事实上都可以被拆解成更小的单元，而后在逐一突破的时候，就没那么难了。逐一突破全部完成之后，再拼起来重新审视的时候就会发现那所谓的难常常只不过是错觉、幻觉而已 —— 我把它称为 <strong>困难幻觉</strong>== 。</p>
+<p>把一切都当作手艺看的好处之一就是心态平和，因为你知道那不靠天分和智商，它靠的是另外几件事：不混时间，刻意思考，以及刻意练习 —— 其实吧，老祖宗早就有总结：</p>
+<blockquote>
+<p>天下无难事，只怕 <strong>有心人</strong> ……</p>
+</blockquote>
+<p>大家都是人，咋可能没 “心” 呢？</p>
+<p>想成为有心人，其实无非就是学会拆解之后逐一突破，就这么简单。</p>
+<p>第三部分所用的例子依然非常简单 —— 这当然是作者的刻意；但是，所涉及的话题都是被认为 “很难很难”、“很不容易理解”、“初学者就没必要学那些了” 之类的话题：</p>
+<blockquote>
+<ul>
+<li>类，以及面向对象编程（Class，OOP）</li>
+<li>迭代器、生成器、装饰器（Iterators、Generators、Decorators）</li>
+<li>正则表达式（Regular Expressions）</li>
+<li>巴科斯 - 诺尔范式（Backus Normal Form）</li>
+</ul>
+</blockquote>
+<p>尤其是最后一个，<span class="text-highlight">巴科斯 - 诺尔范式，几乎所有的编程入门书籍都不会提到</span>……</p>
+<p>然而，这些内容，在我设计《自学是门手艺》内容的过程中，是被当作 <code>Must have</code> ，而不是 <code>Should have</code> ，当然更不是 <code>Could have</code> 或者 <code>Won't have</code> 的。</p>
+<p>它们属于 <code>Must have</code> 的原因也很简单：</p>
+<blockquote>
+<p><span class="text-highlight">无论学什么都一样，难的部分不学会，就等于整个没学</span>。</p>
+</blockquote>
+<p>—— 仅因为不够全面。</p>
+<p><span class="text-highlight">有什么必要干前功尽弃的事情呢？要么干脆别学算了，何必把自己搞成一个半吊子？—— 可惜，这偏偏是绝大多数人的习惯，学什么都一样，容易的部分糊弄糊弄，困难的部分直接回避…… 其实，所有焦虑，都是这样在许多年前被埋下，在许多年后生根发芽、茂盛发达的 —— 你想想看是不是如此？</span></p>
+<p>虽然别人认为难，你刚开始也会有这样的错觉，但只要你开始施展 “读不懂也要读完，读完之后再读很多遍” 的手段，并且还 “不断自己动手归纳总结整理”，你就会 “发现”，其实没什么大不了的，甚至你会有错觉：</p>
+<blockquote>
+<p>“突然” 之间一切都明了了！</p>
+</blockquote>
+<p>那个 “突然”，其实就是阿基米德的 <a href="https://en.wikipedia.org/wiki/Eureka_effect" class="external">Eureka<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ，那个他从澡堂里冲出来大喊大叫的词汇。</p>
+<p><img src="https://raw.githubusercontent.com/selfteaching/the-craft-of-selfteaching/master/images/archimedes-eureka.png?raw=true" alt/></p>
+<p>其实吧，泡澡和冥想，还真是最容易产生 Eureka 状态的两种活动。原理在于，<span class="text-highlight">泡澡和打坐的时候，大脑都极其放松，乃至于原本相互之间并无联系的脑神经突触之间突然产生相互关联；而那结果就是日常生活中所描述的 “融会贯通”</span>，于是，突然之间，Eureka！</p>
+<p>自学者总是感觉幸福度很高，就是这个原因。日常中因为自学，所以总是遇到更多的困难。又因为这些东西不过是手艺，没什么可能终其一生也解决不了，恰恰相反，都是假以时日必然解决的 “困难”…… 于是，自学者恰恰因为遇到的 “困难” 多，所以才有更多遇到 “Eureka” 的可能性，那种幸福，还真的难以表述，即便表述清楚了，身边的人也难以理解，因为自学者就是很少很少。</p>
+<p>对很多人来说，阅读的难点在于起初的时候它总是显得异常枯燥。</p>
+<p>刚识字、刚上学的时候，由于理解能力有限，又由于年龄的关系于是耐心有限，所以，那时需要老师耐心陪伴、悉心引导。这就好像小朋友刚出生的时候，没有牙齿，所以只能喝奶差不多…… 然而，到了一定程度之后一定要断奶，是不是？可绝大多数人的实际情况却是，小学的时候爱上了 “奶嘴”（有人带着阅读），而后一生没有奶嘴就吃不下任何东西。</p>
+<p>他们必须去 “上课”，需要有人给他们讲书。不仅如此，讲得 “不生动”、“不幽默” 还不行；就算那职业提供奶嘴的人（这是非常令人遗憾的真相：很多的时候，所谓的 “老师” 本质上只不过就是奶妈而已）帅气漂亮、生动幽默、尽职尽力…… 最终还是一样的结果 —— 绝大多数人依然没有完整掌握所有应该掌握的细节。</p>
+<p>开始 “自学” 的活动，本质上来看，和 <strong>断奶</strong> 其实是一回事。</p>
+<blockquote>
+<ul>
+<li>知识就是知识，它没有任何义务去具备幽默生动的属性；</li>
+<li>手艺就是手艺，它没有任何义务去具备有趣欢乐的属性。</li>
+</ul>
+</blockquote>
+<p><span class="text-highlight">幽默与生动，是要自己去扮演的角色；有趣与欢乐，是要自己去挖掘的幸福 —— 它们从来都并不自动包含在知识和手艺之中</span>。只有当它们被 “有心人” 掌握、被 “有心人” 应用、甚至被 “有心人” 拿去创造的时候，也只有 “有心人” 才能体会到那幽默与生动、那有趣与欢乐。</p>
+<p>所以，有自学能力的人，不怕枯燥 —— 因为那本来就理应是枯燥的。这就好像人生本无意义，有意义的人生都是自己活出来的一样，有意义的知识都是自己用出来的 —— 对不用它的人，用不上它的人来说，只能也只剩下无法容忍的枯燥。</p>
+<p>==能够 <strong>耐心</strong> 读完那么多在别人看来 “极度枯燥” 的资料，是自学者的擅长。可那在别人看来 “无以伦比” 的耐心，究竟是哪儿来的呢？如何造就的呢？没断奶的人想象不出来。其实也很简单，首先，平静地接受了它枯燥的本质；其次，就是经过多次实践已然明白，无论多枯燥，总能读完；无论多难，多读几遍总能读懂…… 于是，到最后， <strong>只不过是习惯了而已。</strong>==</p>
+<p>第三部分关于编程的内容过后，还有若干关于自学的内容。</p>
+<p>在反复阅读编程部分突破难点的过程之中、过程之后，你会对那些关于自学的内容有更深更生动的认识。很多道理过去你都知道是对的，只不过因为没有遇到过生动的例子 —— 主要是没遇到过能让自己感到生动的例子 —— 于是你就一直没有重视起来，于是，就还是那句话，那一点点的差异，造成了后来那么大的差距。</p>
+<p>然而，既然知道了真相的你，以后就再也没办法蒙蔽自己了 —— 这就是收获，这就是进步。</p>
+<h2 id="3d-刚需幻觉">3.D 刚需幻觉<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3d-刚需幻觉" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>在前言之中，就举过一个例子，人们一不小心就把自己搭了进去…… 只不过因为没搞明白，道理就是道理，跟讲道理的老生其实全然没什么关系。</p>
+<p>在自学中，耽误人的幻觉很多。比如，时间幻觉。<span class="text-highlight">人们总觉得自己时间不够了，所以学东西的时候总是很急…… 可实际上，练成一门手艺，到够用的地步，一两年足够；到很好的地步，三五年足够 —— 至于极好么，那是一辈子的事。结果呢，很多人瞎着急，乱 “省时间”，学啥都不全面，练啥都不足数足量，一晃三五年就过去，然后又开始焦虑，换个手艺再学学再试试…… 然后循环焦虑</span>。</p>
+<p>最坑人的幻觉，在我看来，就是刚需幻觉 —— 这又是我杜撰的一个词…… 听我慢慢讲。</p>
+<h3 id="感觉总是最大的坑">感觉总是最大的坑<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#感觉总是最大的坑" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>我的结论是：</p>
+<blockquote>
+<p>绝大多数人的自学能力，基本上都是被 “自己的感觉” 耽误掉的。</p>
+</blockquote>
+<p>即，原本每个人都有一定的自学能力，但最终，都被自己的感觉给干掉了，直至全然失去自学能力 —— 虽然其后也经常学习，但其后一生从事的全都是学习这个行为里最初级的模式：“模仿”。</p>
+<p>为什么 “模仿” 是学习行为最初级的模式呢？</p>
+<p>首先，模仿必须依赖模仿对象，受自己的视野所限。</p>
+<p>其次，模仿只能处理表里如一的简单知识和技能；一旦遇到那些深层次的、表面上看不大出来的，模仿就无效了，即便是非要模仿、愣模仿，结果就只能是 “东施效颦”。</p>
+<p>在《 <a href="https://github.com/xiaolai/time-as-a-friend" class="external">把时间当作朋友<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 》中，我就反复强调一件事：</p>
+<blockquote>
+<p>不要问学它有什么用，学就是了……</p>
+</blockquote>
+<p>这原本是自学的最佳策略之一，也是自学的最根本策略。然而，听进去这句话的人不多，即便是我举了无数的例子，即便是他可能当时也有一点认同…… 然而，转瞬间又变成了原来的状态，无论遇到什么自学机会都不由自主地问：</p>
+<blockquote>
+<p>我学它有什么用啊？</p>
+</blockquote>
+<p>如果，得到的答案中，那 “用处” 对自己不是 “刚需”，瞬间就失去了动力，瞬间就放弃了追求…… 直至某一天，突然 “发现” 那竟然是个刚需…… 于是，临时抱佛脚。<span class="text-highlight">人么，总是对追求的事情形影相随；又有谁会对曾经放弃的事情念念不忘呢？于是，下一次还是会再做 “预算不足” 的决定</span>。</p>
+<p>最终失去自学能力的人，都是因为对 “刚需” 的判断失误 —— 这就是我说的 “刚需幻觉”。</p>
+<h3 id="刚需幻觉">刚需幻觉<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#刚需幻觉" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>“刚需幻觉” 的根源在于：</p>
+<blockquote>
+<p><span class="text-highlight">你不会的东西，对你来说感觉上就不是刚需</span>。</p>
+</blockquote>
+<p>要不是这本 “书” 里有个自学编程那么大且立体的一个例子存在，供我反复地、多角度地阐述道理，上面这句话还真的不好解释 —— 即便解释清楚了，也因为缺乏生动的例证而失去效力。</p>
+<p>正则表达式（Regex）就是很好的例子。</p>
+<p>当你没有学会它的时候，甚至不知道它的时候，感觉上，你不可能觉得那是个刚需 —— 因为你一直都活得好好的，甚至在你全然不知道那个东西竟然存在的情况下。</p>
+<p>你略微学了一下，没学会、没学好、或者干脆放弃了之后，在感觉上，你也同样不会觉得那是刚需。因为你不会用它，所以你当然 “用不上它”…… 你根本没办法知道你不懂正则表达式这个事实让你 “未得到” 什么（不是 “失去”，因为你不曾拥有）。</p>
+<p><span class="text-highlight">然而，只要你花了一点力气，真的掌握了它，你会有两个 “发现”</span>：</p>
+<blockquote>
+<ul>
+<li><span class="text-highlight">你根本离不开它</span> <sup><a href="#user-content-fn-regex" id="user-content-fnref-regex" data-footnote-ref aria-describedby="footnote-label" class="internal alias">2</a></sup> ；</li>
+<li><span class="text-highlight">它其实真没多难</span>……</li>
+</ul>
+</blockquote>
+<p>第二个 “发现” 总是让你无比庆幸 —— 幸亏学了，幸亏 “发现” 了，否则，自己耽误自己一辈子且完全不自知。庆幸！庆幸！！但第一个 “发现” 更为重要，因为但凡哪怕只有过一次这样的经历，你就可以永久摆脱 “刚需幻觉” 的诅咒。</p>
+<p>编程也是一样的，当你开始学编程的时候，被身边的人发现，他们中的大多数一定会问你：</p>
+<blockquote>
+<p>你学它要干嘛啊？</p>
+</blockquote>
+<p>无论你怎么回答，他们的反应应该都是差不多的：反正就是不理解你的投入是否合理。</p>
+<p>然后，等你学会了编程，掌握了这个技能，你的 “发现” 肯定包括那两点：</p>
+<blockquote>
+<ul>
+<li>你根本离不开它；</li>
+<li>它其实真没多难……</li>
+</ul>
+</blockquote>
+<p>哪怕很简单的技能都是如此。许多年前，我专门花一两周的时间练习键盘盲打，以及把输入法方案选择改为微软双拼方案…… 也有人揶揄过我：“我靠，你练这玩意干嘛？难道将来要当一辈子打字员？”</p>
+<p>当然，我很早就练就了一定的自学能力，所以很早就有一些自学经验，所以我用不着事后 “发现”，而是 “直接就知道”，将来：</p>
+<blockquote>
+<ul>
+<li>我根本离不开它；</li>
+<li>它其实真没多难……</li>
+</ul>
+</blockquote>
+<p>事实上呢？事实上就是如此。打字速度极快，直接导致了后来我成为多产作家。无法想象如果我是个打字速度极慢的人，我如何写书，如何写那么多书和那么多文章；以及，后来我又是如何于 2018 年 9 月的某一天开始在 72 小时之内完成《韭菜的自我修养》初稿…… 可问题在于，这个技能难吗？在我长大的年代里，它算个技能；在今天，全都是从小就用键盘的人的世界里，谁不会呢？</p>
+<p>所以，<span class="text-highlight">当面对一项新技能的时候，“觉得并非刚需” 肯定是幻觉。因为一个技能到底是不是刚需，在掌握它之前是不知道的</span>……</p>
+<blockquote>
+<p>只有真正掌握了那个技能之后，那个技能才会 “变” 成刚需。</p>
+</blockquote>
+<p>并且，</p>
+<blockquote>
+<p>一旦掌握了某项技能，它只能是刚需。</p>
+</blockquote>
+<p>这种幻觉非常坑人。</p>
+<p>我们的大脑，有一种神奇的功能 —— “无论如何都会用已有信息拼成一个完整图像的功能”。</p>
+<p>“无论如何” 的意思是说，不管那已有信息有多么凌乱、有多么残缺、有多么无意义、人脑竟然还是可以拼出一个完整的 “有意义” 的图像。</p>
+<p>这一点也经常被人利用。在新闻学里，就有著名的 “<span class="text-highlight">Framing Effect</span>”：</p>
+<p><img src="https://raw.githubusercontent.com/selfteaching/the-craft-of-selfteaching/master/images/framing-effect.png?raw=true" alt/></p>
+<p>这个原理也经常被各路营销使用：</p>
+<p><img src="https://raw.githubusercontent.com/selfteaching/the-craft-of-selfteaching/master/images/framing-bias.png?raw=true" alt/></p>
+<p>很容易想象，经常被这些东西误导的人，“脑力” 欠缺到什么程度 —— 这当然也是他们全无自学能力的结果之一。</p>
+<p><span class="text-highlight">而当我们被刚需幻觉所左右的时候，我们明显是使用 “片面的信息” 拼出了 “完整的意义”，而后被其误导，严重误导，且全然不自知 —— 最气人的是，误导我们的竟然不是别人，竟然是我们自己的大脑！刚需幻觉如此，时间幻觉、困难幻觉亦如是。后面会讲到的注意力漂移，也依然是这种情况，自己才是真正的元凶</span>……</p>
+<p><span class="text-highlight">所以，在决定学任何东西的时候，最好不要去咨询身边的人 —— 除非你确定对方是高手，最好是自学高手。否则，你遇到的永远是怀疑、打击、甚至嘲笑。最令人遗憾、最令人无奈的是，那些人其实也不是坏人，他们其实也不是故意，他们只是被自己的 “刚需幻觉” 误导了而已，他们（竟然）以为所有人都和他们一样…… 然后，若是你（居然）听信了他们的话，那就实在是太惨了</span>！</p>
+<p><strong>要学，想学，那就自顾自去学吧，用不着征求别人的意见！</strong></p>
+<h3 id="优势策略">优势策略<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#优势策略" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>如何不被 “刚需幻觉” 所迷惑、所限制呢？</p>
+<p>首先，基础策略是，要深刻理解这个现象及其解释：</p>
+<blockquote>
+<p>对任何一项技能来说， <strong>刚需是自学的结果</strong> ，而不是自学的原因。</p>
+</blockquote>
+<p>用 “是否为刚需” 作为自己是否开始学习的理由，注定会吃亏的，因为如此做的下场就是肯定被 “刚需幻觉” 所迷惑、所限制。</p>
+<p>而后，也是更为重要的一个策略：</p>
+<blockquote>
+<p><strong>做个自驱动的人</strong> ，而非被外部驱动的被动的人。</p>
+</blockquote>
+<p>这基本上是个越早建立越好的习惯。绝大多数人一生都是被动者，终生只是被外界驱动而已。所以，他们会在某一时刻，“发现” 某个技能是刚需，然后再去学，但可惜却肯定的是，到那时候预算总是并不充裕，总是捉襟见肘。</p>
+<p>最后一个很简单却很有效的策略是三个字， <a href="https://renew-web.github.io/the-craft-of-selfteaching/Part.2.E.deliberate-thinking/" class="external">之前提到过的<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ：</p>
+<blockquote>
+<p><strong>找活干</strong></p>
+</blockquote>
+<p>有活干，真的很幸福。</p>
+<h3 id="影响下一代">影响下一代<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#影响下一代" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>想象一下有些父母是这样跟孩子对话的：</p>
+<blockquote>
+<ul>
+<li>爸爸（妈妈），你在干什么呀？</li>
+<li>我在学 _________________（请自行填空）</li>
+<li>那你学它干什么用啊？</li>
+<li>等我学会就知道了……</li>
+</ul>
+</blockquote>
+<p>而后又过了段时间……</p>
+<blockquote>
+<ul>
+<li>孩子，过来看看！这是爸爸（妈妈）做的东西！</li>
+</ul>
+</blockquote>
+<p><span class="text-highlight">我猜，这样的孩子，会从小就自然而然地破解掉 “刚需幻觉”</span>。</p>
+<p>所谓的 “潜移默化”，所谓的 “耳闻目染”，其实是很简单的东西。</p>
+<p>然而，效果呢？效果不会因为策略的简单或者容易而消减。通常的情况是，越是简单容易的策略，效用越是惊人。</p>
+<p>所以，正确结论是这样的：</p>
+<blockquote>
+<p><strong><span class="text-highlight">一切的技能都是刚需</span>。</strong></p>
+</blockquote>
+<p>虽然，这并不意味着你不需要选择。</p>
+<p>然而，至<span class="text-highlight">于学还是不学，其实从来都不是从 “有没有用” 来判断的，真正有意义的判断依据只有一条</span>：</p>
+<blockquote>
+<p><span class="text-highlight">有没有时间</span>？</p>
+</blockquote>
+<p>有时间就学呗！没时间就挤时间呗！学得不足够好怎么办？花更多时间呗……</p>
+<h2 id="3e-全面--自学的境界">3.E 全面 —— 自学的境界<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3e-全面--自学的境界" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>之前提到过那些 “貌似一出手就已然是高手” 的人，也为此做过一番解释：</p>
+<blockquote>
+<p>他们的特点就是善于 <strong>刻意练习</strong> ……</p>
+</blockquote>
+<p>为了真正做到刻意练习，更重要的是需要不断地进行 <strong>刻意思考</strong> —— 刻意思考自己究竟应该在哪些地方必须刻意练习？</p>
+<p>之前也说过，人和人非常不同，于是，需要刻意练习的地方也各不相同。</p>
+<p>不过，倒是有一个方面，所有的自学者都必须刻意练习 —— 这是谁都逃不过的地方：</p>
+<blockquote>
+<p><strong>全面</strong></p>
+</blockquote>
+<p>那些 “貌似一出手就已然是高手” 的人就是在这一方面超越了绝大多数人 —— 在每个层面上，他们都学习得更全面，练习得更全面，使用得更全面，在使用此技能去创造的时候，思考得也就自然更为全面。于是，就产生了 “全面碾压” 的效果。</p>
+<p>然而，这是很难被人发现的 “秘密”，因为 “全面” 这个事实，只存在于这些高人的大脑之中，很难被展示出来…… 而他们不会想到这是个什么 “秘密” —— 因为他们一直就是这么做的，他们会误以为所有人都是这么做的。</p>
+<p>小时候，我经常看到父亲备课到深夜。他手中的教科书，每一页的页边都密密麻麻地写着各种注释，实在没地方写了，就在那个地方插上一张纸，于是能写得更多…… 到最后，他的那本书，要比别人同样的书看起来厚很多。</p>
+<p>许多年后，我竟然成了老师，于是，我就备课。我备课的方法自然是 “拷贝” 过来的，我父亲怎么做的，我见过，于是我也那么做。到最后，都到了这个地步：只有那书已经成了别人的两倍厚度心里才踏实。</p>
+<p>又过了一段时间，在一个内部分享会中，我听到一位老师的说法，他问我：</p>
+<blockquote>
+<p>…… 李老师啊，您已经讲了这么久了，都熟到干脆不用备课的地步了吧？</p>
+</blockquote>
+<p>我愣了一下，讲课前不用备课这事根本就不在我的想象范围之内啊！我父亲讲了那么多年的课，不还是经常备课到深夜嘛？我也一样做了，总是觉得 “还是有很多可以补充的地方” 啊！</p>
+<p>然而，这个小插曲提醒了我一个现象：</p>
+<blockquote>
+<p>我会那么做，我就会误以为所有人都会那么做……</p>
+</blockquote>
+<p>我猜，那些 “貌似一出手就已然是高手” 的人，也一样，他们从未觉得这是什么 “秘密”，他就是那么做的，他们很久以来就是那么做的，他们误以为所有人都是那么做的。</p>
+<p>从另外一方面，外人更希望他们拥有的是个 “秘密”。于是，因为自己并不知道那个 “秘密”，所以，自己做不到他们那样 —— 这样看起来就合理了，自己的心里也够舒服了，毕竟看起来理所应当了么。</p>
+<p>把自学当作一门手艺，把所有的技能也都当作一门手艺，那就相对容易理解了：</p>
+<blockquote>
+<p><strong>全面</strong> ，是掌握一门手艺的基本。</p>
+</blockquote>
+<p>为了全面，当然要靠时间。所以，关于 “混与不混”，我们有了更深刻却又更朴素的认识：</p>
+<blockquote>
+<p>所谓的不混时间，无非就是 <strong>刻意练习</strong> 、 <strong>追求全面</strong> 。</p>
+</blockquote>
+<p>也正是这个原因，几乎所有自学高手都懂这个道理：</p>
+<blockquote>
+<p><strong>绝对不能只靠一本书</strong></p>
+</blockquote>
+<p>有个特别有趣的现象，我觉得绝大多数人平日里都挺大手大脚的，都挺舍不得对自己过分苛刻的，但一到买书这件事上，绝大多数人真的很节俭，真的很苛刻 —— 对待越严肃的知识越是如此。倒是在买本小说啊或者买张电影票的时候，基本不用过脑子。</p>
+<p>他们好像完全不知道自己正在疯狂地虐待自己…… 的大脑。</p>
+<p>对自己的胃好一点，我绝对认同 —— 因为我自己就是个吃货。</p>
+<p>可是，在很长一段时间里，我完全不能理解人们为什么不由自主地对自己的大脑不好，不仅是不好，还是格外地不好，甚至干脆是虐待。</p>
+<p>观察学生多了，也就慢慢理解了。</p>
+<p>绝大多数人事实上从来没有习得过自学能力，他们终生都在被指导、被引领。而在校教育少则九年，多则十几年二十年，他们体验过太多 “不过尔尔” 的学习过程。他们肯定不是没花过钱，九年义务教育的过程中，就花了父母很多钱，后面若是上了大学，花钱更多…… 花过那么多钱，却总是没什么收获，在他们的经验中，“这次我应该小心点” 是再自然不过的事。</p>
+<p>“第一次突破” 很重要。</p>
+<p>如果一个人有过一次只通过阅读书籍即获得一项新技能的体验，那么，他们内心深处（更准的说法是大脑的底层操作系统）的那个成本计算方法就会发生改变，心里想的更可能是：</p>
+<blockquote>
+<ul>
+<li>这肯定是有用的，一旦学会，收益可不是几十块钱的书价或几百块课价那么一点点……</li>
+<li>至于是否能学会，主要看我投入的时间精力预算有多少……</li>
+</ul>
+</blockquote>
+<p>我身边有很多自学能力非常强的人。</p>
+<p>这些人买书的方式都是一样的，一旦他们决定学习什么技能的时候，第一个想到的是去买书，而不是去找人。他们之前体验过，他们就是很清楚：</p>
+<blockquote>
+<ul>
+<li>首先，书里什么都有；</li>
+<li>其次，仅靠阅读在大多数情况下绝对够了……</li>
+</ul>
+</blockquote>
+<p>更为不一样的是，他们一定会买回来一大堆书 —— 而不是四处去问，“关于 xx 的哪一本书最好啊？”</p>
+<p>在他们眼里，书是成本最低的东西，比起最终的收益来讲更是不值一提。</p>
+<p>更为重要的是， <strong>一本书绝对不够</strong> —— 无论是谁写的，无论那个作者多么著名，影响力有多大…… 因为，书也好、教程也罢，这种东西就是有 “篇幅限制” 的。更为关键的是，每个作者都有不一样的视角、不一样的出发点和不一样的讲解方式、组织方法。</p>
+<p>比如，我这本就跟别人写的很不一样。我的出发点是把编程当作一个自学的例子，重点在于学会如何自学，并且通过实践真的习得一个起初你觉得不是刚需，学会之后发现干脆离不开的、不可或缺的技能。这本书的内容组织方式也不一样 —— 反正你现在已经知道了。</p>
+<p>另外，这本书的目标里有更重要的另外一个：“让你有能力靠自己能够理解所有的官方文档” —— 书里不用讲官方标准库里的每个模块、每个函数究竟如何使用，因为那些在官方文档里定义得非常清楚……</p>
+<p>而其他人写的呢？比如 <a href="http://greenteapress.com/wp/think-python-2e/" class="external">Think Python<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ，比如 <a href="https://python.swaroopch.com/" class="external">A Bite of Python<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ，再比如 <a href="https://linux.die.net/diveintopython/html/" class="external">Dive into Python<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> <sup><a href="#user-content-fn-drive-into-python" id="user-content-fnref-drive-into-python" data-footnote-ref aria-describedby="footnote-label" class="internal alias">3</a></sup> ，以及网上很多很多免费的 Python 教程都写得很好呢！</p>
+<p>没有经验的人不懂而已。当你搞明白了一本书，后面再多读哪怕很多本的时间精力成本都是很低的，但每多读一本，都能让你在这个话题中变得 <strong>更为完整</strong> 。</p>
+<p>针对同一个话题读很多本书的最常见体验就是：</p>
+<blockquote>
+<ul>
+<li>嗯？这个点很好玩！这个角度有意思！</li>
+<li>看看比比前面几个作者怎么论述的呢？</li>
+<li>嗯？！怎么我看过却竟然没注意到呢！</li>
+</ul>
+</blockquote>
+<p>这最后一条真的是很令人恼火却又享受的体验。它令你恼火，是因为你竟然错过；它令你享受，是因为虽然错过却竟然还有弥补的机会！</p>
+<p>总有一天你会明白的，一切的 “学会” 和 “学好” 之间的差异，无非是 <strong>全面程度</strong> 的差异。</p>
+<p>于是，翻译过来，“学好” 竟然如此简单：</p>
+<blockquote>
+<p><strong>多读几本书。狠一点，就是多读很多本书。</strong></p>
+</blockquote>
+<p>到最后，这种习惯会慢慢延伸到生活中。比如，我在遇到好歌的时候，总是想尽一切办法找到那首歌的很多版本，首唱者可能有很多版本，录音版、现场版，不同年份的版本等等；还有很多翻唱…… 看电影也一样，若是有翻拍版本，一定会找过来看 —— 不同国家的翻拍版本对比起来特别好玩。</p>
+<p>甚至，到最后，你做东西的时候都会想着顺手多做几个版本。我这本 “书”，就肯定会有印刷版、电子版…… 到最后还会有个产品版 —— 这基本上是目前尚无其它作者做到的事情。</p>
+<p>提高对所学知识技能的 “全面程度”，有个最狠的方法 —— 再次说出来不惊人，但实际效果惊到爆：</p>
+<blockquote>
+<p><strong>教是最好的学习方法。</strong></p>
+</blockquote>
+<p>这真的不是我的总结，人类很早就意识到这个现象了罢？</p>
+<p>孔老夫子在《礼记・学记》里就 “曰” 过：</p>
+<blockquote>
+<p>“学然后知不足，教然后知困。知不足，然后能自反也；知困，然后能自强也。故曰：教学相长也。”</p>
+</blockquote>
+<p>到了孔子三十二代孙，孔颖达，解读《兑命》中所提 “学学半” 时，说到：</p>
+<blockquote>
+<p>“学学半者，上学为教，下学者谓习也……”</p>
+</blockquote>
+<p>许嘉璐先生 <sup><a href="#user-content-fn-xjlxs" id="user-content-fnref-xjlxs" data-footnote-ref aria-describedby="footnote-label" class="internal alias">4</a></sup> 有一本书，《未央续集》，提到这段解读的时候讲了个自己的例子：</p>
+<blockquote>
+<p>“我当了五十年的教师，经常遇到这种情况：</p>
+<blockquote>
+<p>备好课了，上讲台了，讲着讲着，突然发现有的地方疏漏了，某个字的读音没有查，文章前后的逻辑没有理清楚，下完课回去补救，下次就不会出现同样的情况了，这就是教学相长。”</p>
+</blockquote>
+</blockquote>
+<p>所以，别说老师了，学生更是如此。</p>
+<p>我经常讲我所观察到的班里的第一和第二的区别 —— 因为这是很好的例子。</p>
+<p>第一总是很开放，乐于分享，别人问他问题，他会花时间耐心解答；第二总是很保守，不愿分享，不愿把时间 “浪费” 在帮助他人身上…… 注意，在 “浪费” 这个词上我加了引号 —— 这是有原因的。</p>
+<p>我的观察是，这不是现象，这是原因：</p>
+<blockquote>
+<p>第一之所以比第二强，更可能是因为他开放、乐于分享，才成了第一。</p>
+</blockquote>
+<p>而不是因为他是第一，所以才开放，所以才乐于分享。</p>
+<p>因为到最后，你会发现，第一并没有因为时间被占用而成绩退步，反而成绩更好。这是因为他总是在帮助其他同学的过程里，看到了自己也要避免的错误、发现了其它的解题思路、巩固了自己的知识点，所以他在社交的过程中学到了更多，同时还收获了同学们的友谊 —— 换言之，通过分享，通过反复讲解，他自己的 “全面程度” 得到了最快的提高。</p>
+<p>而第二呢？第二其实有可能比第一更聪明呢 —— 他可是全靠自己走到那个地步的！可是，他没有用最狠的方式提高自己的全面程度，虽然排名第二，可他其实只不过是一个 “下学” 者，于是，他很吃力的 —— 虽然他实际上很聪明…… 于是，在这种感受下，他怎么肯愿意把那么吃力才获得的东西分享出去呢？</p>
+<p>这真是个有趣且意味深长的现象。</p>
+<p>另外一个有趣的现象是，“下学” 者永远等待 “上学” 者整理好的东西。之前在《 <a href="https://renew-web.github.io/the-craft-of-selfteaching/Part.1.F.deal-with-forward-references/" class="external">如何从容应对含有过多 “前置引用” 的知识？<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 》提到过一个对应策略：</p>
+<blockquote>
+<p>尽快开始整理归纳总结</p>
+</blockquote>
+<p>同时给出了建议：</p>
+<blockquote>
+<p>一定要自己动手去做……</p>
+</blockquote>
+<p>不仅如此，还描述了个我自己的例子，通过 “自己动手整理” 才发现自己之前竟然完全理解错了。</p>
+<p>我这方面运气非常好，因为父母全都是大学教师，从小父母就鼓励我帮同学解答问题，这让我不知不觉在很早很早就开始了 “上学” 的阶段。</p>
+<p>这一次写这本 “书” 的过程中，同样的 “奇迹” 再次发生在我身上。</p>
+<p>说实话，正则表达式我一直没有完全掌握 —— 虽然偶尔用用，也都是边查边用。实在解决不了，就算了…… 现在回头想想，多少就是因为 “ <a href="https://renew-web.github.io/the-craft-of-selfteaching/Part.3.D.indispensable-illusion/" class="external">仅凭感觉，并没觉得那绝对是刚需<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ”<sup><a href="#user-content-fn-hj-feel" id="user-content-fnref-hj-feel" data-footnote-ref aria-describedby="footnote-label" class="internal alias">5</a></sup> —— 当然，真正会了之后，马上开始时时刻刻都有可能使用，离开它简直活不下去 —— 写这书的后半程，有大量的重新组织的需要，很多文字替换，若是没有正则表达式，就干脆没法干……</p>
+<p>我是如何完全掌握正则表达式的呢？就是因为写这本书。既然是写书，当然害怕自己在不经意中出错，此为其一。更为重要的是，必须先完整掌握之后才能有诸如 “为读者提供更好一点的理解起点”，“理解起来相对更简单直接的组织结构”，以及 “挖掘必须习得它的真正原因以便鼓励读者” 之类的畅销书卖点 —— 对作者来说，有什么比销量更重要的呢？</p>
+<p>写一本好书，对我来讲，这个需求太刚了，刚到好像是 <strong>钛钢</strong> 的地步。</p>
+<p>于是，本来就习惯于同一个话题多读好多本书的我，读了更多的书，翻了更多的教程，官方文档翻了更多遍，做了更多的笔记，每一章反复废掉原稿再次重写了很多遍…… 在这样的刺激下，“全面程度” 若是没有极速提高，那才怪了呢！</p>
+<p>还有啊，我的英语，也是这么搞出来的。</p>
+<p>所以，很多的时候，我这个人并不是 “好为人师”，细想想，貌似 “好为己师” 更为恰当一点。写书也好讲课也罢，其实自己的进步是最大的。</p>
+<p>若是我没有在新东方教书七年，我连当前这个半吊子英文水准都不会有…… 为了在讲台上不犯错，多多少少都得多费一些功夫吧？我的经验和许嘉璐先生是一样的，无论备课多努力，后面还是会有纰漏…… 可是，这若只是做个 “下学” 者，岂不更惨？</p>
+<p>哦，对了，其实所有的读者，都可以用这个简单的方法影响下一代：</p>
+<blockquote>
+<p>有同学问，你就一定要耐心讲讲 —— <strong>对自己有好处。</strong></p>
+</blockquote>
+<p>当然，最直接的方法是把自己变成 “上学” 者，保持开放，乐于分享，而孩子只需通过 “耳闻目染” 就可以了。</p>
+<h2 id="3f-自学-者的社交">3.F 自学 者的社交<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3f-自学-者的社交" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>很多人有莫名其妙的误解，以为 “自学”（self-teaching）就一定是 “自己独自学”（solo-learning），殊不知，自学也需要社交。也有另外一些人，因为 “专心” 到一定程度，觉得社交很累，所以开始抵触一切社交。这些都不是全面的看法。</p>
+<p>事实上，在任何领域，社交都是必须的，只不过，很多人没有建立、打磨过自己的社交原则，所以才被各种无效社交所累。就算讨厌，讨厌的也不应该是社交，而是无效社交。</p>
+<p>在自学的任何一个阶段，学、练、用、造，社交都可能存在。</p>
+<p>哪怕是在最枯燥，看起来最不需要社交的 “练” 的阶段，社交也会起很大的作用 —— 在自己累了的时候，看到有人还在练，看到很多人都在练，看到很多人其实也挺累的但还在练…… 这些都是让自己感觉没那么费劲的好办法。</p>
+<p>实际上，在最初 “学” 的阶段，社交也是极为重要的。</p>
+<p>生活中，你遇到过这样的现象没有：“看见别人打针，自己先疼得受不了……” 这是因为我们的大脑中有一种神经元，叫做 <strong>镜像神经元</strong> （Mirror Neuron），它会让我们 “感同身受”，当我们看到另外一个人正在做什么的时候，镜像神经元会尽力给我们足够的刺激，让我们 “体验” 那个人的感受。以前人们不知道为什么哈欠竟然会 “传染”，现在科学家们很清楚了 —— 那就是镜像神经元在起作用。</p>
+<p>镜像神经元的存在，使得我们有模仿能力、有通感能力、有同情心、有同理心…… 这也是为什么人类天然有社交需求的重要原因，因为我们的大脑皮层上都有很多的镜像神经元。</p>
+<p>一般来说，物品、书籍之类非人的东西，都不大可能激活镜像神经元。只有看到人的时候，镜像神经元才会被激发。所以，你送给小朋友一把吉他，他不会有什么兴趣的。可若是你在弹琴的时候被他看见，他的镜像神经元就会因为你的行为而被触发，进而对弹奏吉他感兴趣 —— 注意，不是对吉他本身感兴趣。若是你在弹琴的时候，带着某种能够打动他的情绪，那他更容易被影响，因为情绪更能激发镜像神经元。也就是说，一切的学习起初都基于模仿，一切的模仿，都源自于看到真人的行为 —— 哪怕是在电影里看到，虽然只不过是影像而已，并非真人，但毕竟是真人的影像。</p>
+<p>所以，无论学什么技能，都要找到用那种技能的人，这样我们的镜像神经元才可能更容易被激发，学习效果才会好。若是能找到热爱那项技能，乃至于一使用那项技能就很开心（最好的情绪之一）的人，那就更好了。激情这东西，是少数幸运儿才长期持有的东西，大多数人小时候挺多，过了十五六岁之后就开始有意无意磨灭了激情，且并不自知。</p>
+<p>之前提到，</p>
+<blockquote>
+<p>当我们看到另外一个人正在做什么的时候，镜像神经元会 <strong>尽力</strong> 给我们足够的刺激，让我们 “体验” 那个人的感受。</p>
+</blockquote>
+<p>这句话里有个词很重要，“尽力”。因为镜像神经元只能调用我们大脑里已有的信息去模拟对方的感受，所以，它最多也就是 “尽力”，无法做到 “确保正确”。今天的糖尿病患者使用的皮下注射针头，已经可以做到很细，细到让使用者 “无感” 的地步，所以，当一个糖尿病患者给自己注射胰岛素的时候，他自己并不觉得疼，可是看的人却能 “疼” 到紧皱眉头的地步，为什么？因为旁观者的大脑里没有实际用那么细的针头注射胰岛素的经验，所以镜像神经元在旁观者 “感同身受” 时所调用的，其实是过往旁观者自己打针的体验 —— 被很粗的针头做静脉注射的痛苦体验。</p>
+<p>所以，很多人误以为他们眼里的成功者靠的是 “坚持”、靠的是 “毅力”，这完全是自己的镜像神经元 “尽力” 的结果，是 “调用自己过往经验去 <strong>感同身受</strong> 的结果”…… 事实上呢？那些 “成功者” 其实并不在意成功，因为到死之前成长不应该也不可能结束，因为那是他们的生活方式，学习、进步、探索、迂回，甚至折腾、挫败和迷茫，都是他们生活中必不可少的内容，这是最初不自觉的选择，谈不上什么 “坚持”，谈不上什么 “毅力”…… 说实话，对他们来说，不让折腾才真痛苦呢，不学习才需要坚持和毅力呢！</p>
+<p>再进一步，这也是为什么要选择朋友的原因。人与人之间有很大的差异，最大的差异来自于性格养成，大多数人会沦为表现型人格，只有少数人才会在不断调整中保持、呵护、进一步培养 “进取型” 人格。他们自然而然地更为乐观，更有耐心，更有承受力，更有战斗力，更能生产更能体验学习与进步的乐趣。与这样的人在一起，学习会更容易 —— 只因为镜像神经元会更容易地被正确激发。说清楚了，道理其实挺简单的。</p>
+<p>有一次朋友跟我聊起他苦于没办法培养自己孩子的正经兴趣爱好…… 我说，其实很简单，只不过是你方法错了。你不用告诉孩子 “应该学什么，应该对什么感兴趣”，而是，想尽一切办法让孩子见识到拥有那个技能的，令他产生 <strong>羡慕情绪</strong> 的人 —— 只要孩子羡慕那个人，他就自然而然地有 “我也想这样” 的想法，到最后，谁都拦不住。这就是镜像神经元的力量。进而，所谓的社交，还真不一定是非要跟人说话、聊天…… 见识到，也是社交的最主要组成部分。</p>
+<p>你看，谁说社交不重要？</p>
+<p>进而，想要把一门手艺搞到真正 “精湛” 的地步，最有效的方法就是尽早进入 “造” 的阶段 —— 所谓的 “造”，就是不断 <strong>创造</strong> 的 “造”。</p>
+<p>自学这门手艺，很简单，就是不断地学：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="python" data-theme="github-light github-dark"><code data-language="python" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">def</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> teach_yourself</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(anything):</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">    while</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> not</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> create():</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        learn()</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        practice()</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">    return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> teach_yourself(another)</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">teach_yourself(coding)</span></span></code></pre></figure>
+<p>学上几个，自然就很精湛。而其它的用自学这门手艺习得的手艺，基本上都可以用 “是否做出了像样的作品” 作为检验自己的那门手艺是否达到了精湛的衡量指标。</p>
+<p>硅谷有一家著名的孵化器，叫 Y-Combinator，现在的掌门人是个很年轻的人，Samuel H. Altman。他在那篇著名的文章《 <a href="https://blog.samaltman.com/advice-for-ambitious-19-year-olds" class="external">Advice for ambitious 19 year olds<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 》中有一个精彩的建议：</p>
+<blockquote>
+<p>No matter what you choose, build stuff and be around smart people.
+无论你选择了什么，都要造出东西来，要与聪明人打交道。</p>
+</blockquote>
+<p>当然，对于 “聪明人” 这个概念，我和 Sam 的看法并不一致。在我看来，有好作品的人都很聪明，但还是那句话，那不是天分和智商，那分明是有效积累。</p>
+<p>我个人最看重的个人品质之一，就是 <strong>有没有像样的作品</strong> 。</p>
+<p>很少有人有像样的作品。人群中只有少数人最终能拿出完整的作品 —— 人与人之间的差异是如此之大，乃至于少数人有作品，更少数人有好的作品，只极少数极少数人才可能做出传世的作品；而与此同时，绝大多数人（万分之九千九百九十九的人）一辈子都没有像样的作品，他们连一篇作文都写不明白。于是，与有像样作品的人打交道，总是非常值得。</p>
+<p>并且，跟他们打交道也不费劲，都是思考非常通透的人，通常沟通能力极强。哪怕沟通起来貌似费劲的那一小部分，事实上也不是难以沟通，那只不过是人家简单朴实而已。</p>
+<p>我甚至经常建议我的合伙人们，在招人的时候，把这一点当作最靠谱的判断方式。少废话，少吹牛逼，给我看看你的作品。这个原则可以一下子过滤掉所有的不合格者。另外一个很自然的现象是，如果一个人能做出像样的东西来，那么他身边的聪明人密度无论如何都会比其他人的高出很多。</p>
+<p>地球上有效社交密度最高的地方，是 <a href="https://github.com/" class="external">Github<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 。有些程序员们常开玩笑，说 Github 是全球最大的同性社交网站，事实上，他们不知道，女性程序员的比例正在逐步提高，而且女性在科学上，从来就没有屈居二线过 <sup><a href="#user-content-fn-famale-win" id="user-content-fnref-famale-win" data-footnote-ref aria-describedby="footnote-label" class="internal alias">6</a></sup>。</p>
+<p>在 Github 上，找到自己感兴趣的项目，而后为那项目贡献一己之力，用自己的工作赢得社区的认同…… 这就是 Github 上的社交方式。若是自己做了有意义的项目，就会有更多人关注；若是那项目对很多人有用，那就不仅有很多人关注，更有很多人会像当初的你一样为这个项目做贡献…… 这就是程序员们的 <strong>有效社交</strong> 。</p>
+<p>Github 能成为地球上最大的有效社交网络，没毛病，因为 <strong>用作品社交肯定是最高效的。</strong></p>
+<p>所以，无论学什么，都要想尽一切办法尽快做出自己的作品。做一个产品出来的过程中，会磨练另外一项自学者不可或缺的能力和素质：</p>
+<blockquote>
+<p><strong>完整</strong></p>
+</blockquote>
+<p>与之前提到的另外一项加起来，就构成了自学者的最基本素养：</p>
+<blockquote>
+<ul>
+<li>学就学得 <strong>全面</strong> ；</li>
+<li>做就做得 <strong>完整</strong> 。</li>
+</ul>
+</blockquote>
+<p>无论多小的作品，都会让创作者感受到 “单一技能的必然无效性” —— 你试试就知道了。哪怕你想做个静态网站，你都会发现，仅仅学会 html/css 是不够的，因为部署到远端服务器上的时候，你无论如何都得学学 Linux 基本操作…… 而已然具备了自学者基本素养的你，自然会想办法 “全面掌握”，而不是糊弄一下而已。</p>
+<p>更为重要的是，一旦你开始创作作品，你更大的 “发现” 就是，你肯定需要很多 “之前看起来并不相干的知识与技能”，而非 “只靠专业就够了”……</p>
+<p>还是拿我出第一本书为例。那之前我没有写过书，若是出版了书放在书店，没有人知道李笑来是谁…… 于是，只有内容本身，并不保证那书能卖出去。除了把内容写出来之外，我必然要去学习很多之前完全没碰过的东西，比如 “如何才能做到系统持续地修订内容”；又比如，“如何与出版社编辑正常沟通”；再比如，“如何取一个好书名”…… 一个赛一个地 “与专业无关”。</p>
+<p>所以，“做得完整”，从来都不是容易的事情。</p>
+<p>从这个角度去理解，你就会明白那些高明的手艺人为什么总是做小东西 —— 那是因为在追求完整的过程中，你必然会发现，越小越容易完整。这也是为什么庸人总是好高骛远，因为他们不顾完整，所以就可以妄图建造海市蜃楼。</p>
+<p>手艺人不怕做的事小。而且，“小” 无所谓，“完整” 才是关键。</p>
+<p>有作品和没作品的人理解能力也不一样。做过作品的人，看到类似 MoSCoW Method 的做事原则，瞬间就能有所感悟，而没有作品的人，却不见得有一样的感受。</p>
+<blockquote>
+<p>顺带给你看个 Wikipedia 上的链接列表，在编程领域里，有无数可以借鉴到生活中的哲学、方法论： - <a href="https://en.wikipedia.org/wiki/If_it_ain%27t_broke,_don%27t_fix_it" class="external">If it ain’t broke, don’t fix it<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> - <a href="https://en.wikipedia.org/wiki/KISS_principle" class="external">KISS principle<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> - <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" class="external">Don’t repeat yourself<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> - <a href="https://en.wikipedia.org/wiki/Feature_creep" class="external">Feature creep<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> - <a href="https://en.wikipedia.org/wiki/List_of_software_development_philosophies" class="external">List of software development philosophies<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> - <a href="https://en.wikipedia.org/wiki/Minimum_viable_product" class="external">Minimum viable product<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> - <a href="https://en.wikipedia.org/wiki/MoSCoW_method" class="external">MoSCoW method<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> - <a href="https://en.wikipedia.org/wiki/Overengineering" class="external">Overengineering<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> - <a href="https://en.wikipedia.org/wiki/Worse_is_better" class="external">Worse is better<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> - <a href="https://en.wikipedia.org/wiki/SOLID" class="external">S.O.L.I.D.<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> - <a href="https://en.wikipedia.org/wiki/Unix_philosophy" class="external">Unix philosophy<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+<p>给自己足够长的时间去学；在充足 “预算” 之下耐心地练；不断找活干，以用代练；然后，最重要的是，一定要尽快尝试着做出属于自己的 <strong>完整</strong> 作品，无论大小。</p>
+<p>只有这样，你才是个值得被交往的人。</p>
+<h2 id="3h-避免注意力漂移">3.H 避免注意力漂移<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3h-避免注意力漂移" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>注意力漂移</strong> ，是我杜撰的一个词，用来作为 “注意力集中” 的反义词 —— 因为更多的时候，我们并不是 “注意力不集中”，而是…… 而是更令人恼火的一个现象：</p>
+<blockquote>
+<p>“注意力所集中的焦点总是不断被自己偷偷换掉……”</p>
+</blockquote>
+<p>比如，你本来只不过就想着去 Google 一个编程错误信息的解读，结果不知道怎么就 “注意到” 了另外一个东西，比如，“某编辑器的皮肤”，然后你就 “顺手” 把它下载下来，然后 “很自然地顺手把它装上”，而后又看了看，觉得有点必要于是 “顺手做了点定制”…… 然后欣赏了一会儿，并自我得意一番之后 “突然发现” 自己还没有解决两小时之前要解决的问题！</p>
+<p>说这种现象 “令人恼火”，是因为那注意力所集中的焦点，是被 <strong>自己</strong> 偷偷换掉的！</p>
+<p>好奇心越重的人，越是容易被注意力漂移所拖累。</p>
+<p>好奇心是好东西，而且是必须认真呵护的东西 —— 几乎最重要、最强劲的自学动力，都混合着好奇心出现并持续。</p>
+<p>在我成长的那个年代里，很多孩子本来是可以成为自学专家的，结果，99.99% 都被父母给毁了 —— 而且还是不经意地毁的。那些父母毁掉自己孩子的方法简单直接又粗暴、且毫不犹豫。</p>
+<p>刚开始图好玩，小孩子问啥都回答…… 当然，最初的时候，小孩子问的问题也很容易回答；就算不容易，也很容易糊弄过去。没多久，父母就开始应付不过来了，一方面自己也没那么多耐心了，另外一方面是更为严重的问题 —— 自己的脑力不够。再加上那时候也没有 Google，所以，父母的反应惊人地一致：“去去去，赶紧睡觉！怎么就你事这么多？！”</p>
+<p>一个个小朋友就这样被毁掉了，他们的好奇心就这样成了他们自己要主动避免的东西 —— 否则就会挨骂，谁愿意动不动就被一通数落呢？</p>
+<p>好奇心是驱动一个人不断进步的最重要动力之一。所以必须不断呵护，呵护到老才对。</p>
+<p>然而，就是这个如此金贵的东西，也会成为拖累；而且，若是真的被它拖累，那么最终真的会感觉非常遗憾，被好东西拖累 —— 太可惜了。</p>
+<p>刚才所描述的，还只不过是两个小时而已的 “损失”。事实上，被注意力漂移所拖累的人，损失肯定远不止如此。在做 “工程” 或者 “项目” 的时候 —— 尤其是那种非实物类的工程或项目，比如，写个书，写个软件之类的 —— 注意力漂移导致的结果就是：</p>
+<blockquote>
+<p>时间不断流逝，可是工程却永远没有结果。</p>
+</blockquote>
+<p>这种损失，完全是任何正常人都没办法承受的…… 这话其实并不准，因为事实上据我观察，绝大多数人受到这种拖累的结果，自己其实无法想象 —— 因为永远没有完成过什么项目，永远没有完成过什么工程，又如何知道自己损失的究竟是什么呢？</p>
+<p>到今天为止，我自己依然还是个需要不断与 “注意力漂移” 争斗的人 —— 许多年前，我注意到这个现象的时候，经过思考，就接受了一个事实：</p>
+<blockquote>
+<p>注意力漂移不是能杜绝的现象，但必须在关键时刻有所应对……</p>
+</blockquote>
+<p>如果当年的我没认真想过这事，没思索出对策，那么后来的我也不可能写那么多书，转行那么多次，自学那么多大大小小的技能…… 当然，各位读者也完全看不到现在正在阅读的文字 —— 因为它们不可能被完整地写出来，甚至干脆就不应该存在。</p>
+<p>在罗列并比较众多策略之后，我选了一个看起来最不相干，却最本质的策略：</p>
+<blockquote>
+<p><strong>把 “全面完整” 放到最高优先级。</strong></p>
+</blockquote>
+<p>而后，这些年全靠这个策略挺了过来……</p>
+<p>当我想做什么事的时候，或者想学什么东西的时候，我会投入一定的时间去琢磨，这个事或者这个东西，要做得全面完整，或者要学得全面完整，那都应该做什么呢？在思考如此严肃的问题的时候，我还是习惯用纸和笔，写写画画 —— 迄今为止没有找到合适的电子设备和软件替代。</p>
+<p>我买笔记本，不是为了记笔记的，因为记笔记这个东西，实在是在电脑上做更方便，许多年前开始就是如此了。我的笔记本主要用来做一件事：</p>
+<blockquote>
+<p>罗列整理那些为了做到 “全面完整” 而必须优先做的事。</p>
+</blockquote>
+<p>用列表也好、或者用图表也罢，反正都是要不断整理修订的，而它的存在，给了我一个优先级：</p>
+<blockquote>
+<p>除了这上面罗列的这些东西之外，在当前时间段，别的都不如它们重要。</p>
+</blockquote>
+<p>一旦发现自己的注意力没有集中在这上面的关键之时，一旦发现自己的注意力已经漂移到其它当前并不重要的事项上，就马上纠正。</p>
+<p>谁都知道应该先做重要且紧急的事情，可问题在于，如何判断 “是否重要” 呢？ <strong>全面完整</strong> 这四个字就会给我指引。</p>
+<p>一方面，是用全面完整来保持自己对重要事情的关注，另外一方面，还需要提高对抗 <strong>不相关完美诱惑</strong> 的能力。十年前，我写《 <a href="https://github.com/xiaolai/time-as-a-friend" class="external">把时间当作朋友<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 》的时候，还把这东西叫做 “脆弱的完美主义倾向”，现在我已经把这个概念升级了 —— 因为更准确地讲，那不是 “完美主义者的脆弱”，那是 “能力不及格者” 的 “轻重不分”。</p>
+<p>早些年，我跟很多人一样痴迷于电脑这个东西，也跟很多人那样，用 Windows 惯出来了坏毛病 —— 动不动就重装系统…… 重装系统很浪费时间的，但那时也不知道为什么总是忍不住去干那事，哪怕有些小毛病，马上就受不了，弄的好像重装一个干净的操作系统会让自己的世界焕然一新一样。</p>
+<p>再后来就明白了，这绝对就是 <strong>自己的毛病 —— 做事不分轻重</strong> 。</p>
+<p>说实话，这也不是自己想明白的 —— 我没那么聪明。是因为遇到了一个高人。他的电脑桌面上，乱七八糟摆满了各种图标，从不整理。我问他这不影响效率吗？他说，明明有搜索你不用，到底是谁效率低下？我被问愣了，无言以对。</p>
+<p>我又发现他根本没有装杀毒软件…… 我问为什么？他说，“养几个虫子玩玩也没什么不好……” 不过，他转念又告诉了我他的思考。他说，只要平时习惯好，病毒进来了也没啥可偷的，但更为关键的是，他用电脑是干活的，而不是干杀毒的活的…… 脑子如此清楚，让我自愧不如。</p>
+<p>但学到了。</p>
+<p>虽然我还是做不到桌面上图标很乱，虽然我是因为改用了 Mac OS，所以不装杀毒软件，但注意力要放到应该放的地方，这事我记住了，牢牢记住，从此之后许多年，从未忘过。每次发现自己轻重不分的时候，就会想起他，然后就改过自新。</p>
+<h2 id="q-如何成为优秀沟通者">Q: 如何成为优秀沟通者<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#q-如何成为优秀沟通者" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>一般认为，“手艺人” 的普遍特征之一就是缺乏沟通能力，或者沟通能力差 —— 也许是因为平时把所有的时间精力都投入到磨练手艺上去了罢。</p>
+<p>但这肯定不是最主要的原因。你看手艺不怎么样的人沟通能力更差；手艺顶级的人却常常反过来沟通能力很强很强…… 为什么呢？</p>
+<p>所以，最核心的理由，应该是一个人最基本的选择而已：</p>
+<blockquote>
+<p>看一个人是否重视沟通能力。</p>
+</blockquote>
+<p>因为若是一个人重视沟通能力，那么，他就自然而然地会想办法去进行刻意练习。如果他本人并不重视沟通能力，那么，自然就没有任何时间精力投入在这方面，结果就非常自然而然了。</p>
+<p>非常遗憾，绝大多数人对沟通能力的重视远远不够 —— 他们也不是不重视，就是重视的程度实际上太差了。别说双向沟通了，即便是单向沟通，向别人问个问题这么 “简单” 的事，其实也需要 “学” 与 “练” —— <a href="https://renew-web.github.io/the-craft-of-selfteaching/Part.3.G.the-golden-age-and-google/" class="external">之前提到过<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 的文章，事实上一定有读者并没有去认真阅读：</p>
+<blockquote>
+<p>…… 作为一个有素养的自学者，有一篇文章必须精读：</p>
+<blockquote>
+<p><a href="https://github.com/selfteaching/How-To-Ask-Questions-The-Smart-Way" class="external">How To Ask Questions The Smart Way<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+<p>这里还有 John Gordon（王渊源）同学录制的英文朗读版：</p>
+<blockquote>
+<p><a href="https://github.com/selfteaching/How-To-Ask-Questions-The-Smart-Way" class="external">https://github.com/selfteaching/How-To-Ask-Questions-The-Smart-Way<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</blockquote>
+</blockquote>
+<p>经过多次尝试就知道了，连 “描述清楚自己的问题” 都不是一件很容易做得足够清楚、足够好的事呢。</p>
+<p>对沟通能力进行 “刻意练习” 的最佳方式是什么呢？其实还是 <a href="https://renew-web.github.io/the-craft-of-selfteaching/Part.3.E.to-be-thorough/" class="external">你已经知道的<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ：</p>
+<blockquote>
+<p><strong>教是最好的学习方法</strong></p>
+</blockquote>
+<p>讲课、写教程，甚至写书 —— 这是最高效的提升沟通能力的刻意练习手段。</p>
+<p>人们常说，“杀鸡焉用宰牛刀”…… 在我看来，既然如此，备上一把宰牛刀挺好的，平时宰牛就用宰牛刀，备不住哪天需要杀鸡的时候，并不需要非得换把刀才行，依然可以用那把宰牛刀……</p>
+<p>讲演能力、写作能力，其实同样也是手艺而已，但它们也确实是很必要的手艺。尤其是，具备这两项手艺的人，在现在这样的社会里收入一定不差，不信你就观察一下身边的世界、你的眼界可以触达的人群。</p>
+<p>这两个手艺若比作宰牛刀的话，则日常生活里与单人沟通，只不过是杀鸡而已 —— 哈，这个类比真是不能说给沟通对象听，实在有太大的误会可能性。然而，说正经的，其实这也是为什么 “教师” 这个行业的人有不少能够跑出来成为优秀创业者、优秀投资人的原因之一。</p>
+<p>当然，绝大多数连一门手艺都没有弄明白的初学者，阅读以下内容时，会觉得 “与当前的自己没关系”…… 不过，请注意，这绝对是 “ <a href="https://renew-web.github.io/the-craft-of-selfteaching/Part.3.D.indispensable-illusion/" class="external">刚需幻觉<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ”，千万不要被它误导。</p>
+<p>已经说了无数遍了：绝大多数手艺都是这样的：</p>
+<blockquote>
+<p>原理很简单，精湛与否取决于重复的次数。</p>
+</blockquote>
+<p>哼，这句话不就是卖油翁说的吗？“无他，唯手熟尔” —— 是哦，卖油翁如是说。</p>
+<p>以下，让我从入门开始讲起，而后步入进阶，最后到达高级……</p>
+<h3 id="入门">入门<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#入门" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="内容第一">内容第一<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#内容第一" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>无论是平日里讲话、还是台上讲课，抑或是写篇文章、写本书，永远都是内容第一，至于形式，并非不重要，但绝对不能喧宾夺主。</p>
+<p>通常，我们用 “干货” 来描述内容的重要性。第一步就是准备干货，至于修辞啊、笑点啊、酷炫幻灯片啊等等等等，都必须是次要的，否则就是喧宾夺主。干货不够好，其它的做得越多、越好，最终越是容易露怯 —— 这很可怕。</p>
+<p>所以，在你还没有确定自己值得讲、别人值得听的内容的情况下，就去学习如何制作幻灯片，在我看来完全是浪费时间。</p>
+<p>使用工具的技巧之一，就是用最朴素的方法使用最好的工具，这样成本最低效果最好。所以，我在讲课、讲演的时候，通常就只用最简单的模版，空白、单色背景那种，而后一页里只写一句话 —— 就是接下来三五分钟里我要讲的重点（甚至干脆只是标题）…… 这样的幻灯片，我只需要几分钟就能做完。而后，我的所有时间精力都放在精心准备内容上去了。高效、低成本。</p>
+<p><a href="https://renew-web.github.io/the-craft-of-selfteaching/Part.3.H.prevent-focus-drifting/" class="external">做事不分轻重<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ，这不对。</p>
+<h4 id="内容质量">内容质量<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#内容质量" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>内容第一，就决定了另外一个事实：</p>
+<blockquote>
+<p><span class="text-highlight">不要讲或写你并不擅长的事</span>。</p>
+</blockquote>
+<p>换句话说，不要分享你做得不够好、做得不够精的手艺。讲课也好、写书也罢，都是分享。分享的意思是说，你有别人想要的东西 —— 别人想要的，就是他们学不好、做不好的东西…… 若是你自己手艺不强，手艺不精，其实就没什么可分享的，就算你想 “分享”，别人也不要。</p>
+<p>你值得讲，别人值得听的，一定是你做得比别人更好的东西，就这么简单。</p>
+<p>所以，在自己磨练手艺的时候，可以同时磨练沟通能力；然而，一旦需要讲，需要写，那么就说明，你自己确信自己做得比别人更好、比别人更精，所以，你值得讲，所以，人家值得听。</p>
+<p>一旦你确定自己有值得讲、人家值得听的东西，那么，内容质量的第一要素已经完成了，接下来要注意哪些呢？只需要关注最重要的三个方面就可以了：</p>
+<blockquote>
+<ul>
+<li>重点突出</li>
+<li>例证生动</li>
+<li>消除歧义</li>
+</ul>
+</blockquote>
+<p>首先，“重点突出”，是最简单朴素、成本最低的 “优秀结构”。</p>
+<p>既然是沟通，就要了解对方。在绝大多数情况下，对方想要的才是重点。</p>
+<p>可问题在于，我们平日里面对单个人的时候都觉得 “了解对方很困难”，我们又如何判断 “一个群体” 呢？与很多人想象得相反，判断群体远比判断个体容易得多…… 因为你可以用粗暴分类，比如，你把听众或读者划分为 “小白” 和 “专家”，那你就知道了，你面对的群体中，更可能 “大部分是小白，小部分是专家”。于是，你就可以思考，“小白们最想知道的是什么？”，“专家们最重视的是什么？”，于是，你就可以在脑子里对所谓的 “重点” 有应对策略。</p>
+<p>再比如说，你可以 “粗暴” 地把群体分为友善者和刺儿头两种。有经验的老师，都会专门准备 “针对刺儿头” 的内容，因为，人群中永远存在刺儿头 —— 至少一个，所以，在现场，必须要有应对他们的策略。比如，当一个刺儿头说了一句蛮不讲理却引发哄堂大笑的话，你怎么办？每个人的策略不同，但你必须找到属于你的最佳策略。</p>
+<p>进而，在找到重点之后，紧接着必须要做到的一步就是 “例证生动”。寻找好例子，是需要很多时间精力的事情 —— 从来就没有任何 “信手拈来” 的生动例子。信手拈来，是读者或者听众的感觉而已，对你来说，肯定是举重若轻的 —— 你明明是在举重，却被认为 “如若举轻”。在第一部分， <a href="https://renew-web.github.io/the-craft-of-selfteaching/Part.1.E.7.files/" class="external">讲文件的那一章<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 里，我举了个 “我自己费尽心机找好例子” 的例子，相信你读过之后，一定有所感触。</p>
+<p>最后一步，就是在前两步都完成之后，反复确认一件事情，消除 <strong>一切</strong> 歧义。这是真功夫，因为这东西很难把自己关在屋子里自顾自练成。并且，每个人有自己的 “容易引发误解” 的特殊属性，大家各不相同 —— 于是，只能靠自己探索。</p>
+<p>无论如何都不能骂听众读者傻逼，他们的所有看起来傻逼的反应，都是你所说、你所写引发的 —— 这是百分之百清楚无误的事实。当年我写博客的时候，决不删除任何留言。其中最大的一个理由就是，无论那留言显得多么荒谬，甚至干脆是谩骂，都值得我认真思考：</p>
+<blockquote>
+<p>我到底说什么了？居然引来这种反应？！</p>
+</blockquote>
+<p>看多了，思考多了，你就有你自己的策略了。</p>
+<h4 id="内容组织">内容组织<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#内容组织" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>只有一个重点的时候，其实并不需要组织；但若是有一个以上的重点，那么这些重点之间会产生逻辑关系：</p>
+<blockquote>
+<ul>
+<li><span class="text-highlight">并列</span></li>
+<li><span class="text-highlight">递进</span></li>
+<li><span class="text-highlight">转折</span></li>
+</ul>
+</blockquote>
+<p>这是上中学的时候，所有人在语文课上都学习并掌握了的知识 —— 现在终于需要 “活学活用” 了。</p>
+<p>在讲演、讲课、写教程、写非小说类书籍的时候，最有效的组织方式竟然是最简单的，并且只有一个：</p>
+<blockquote>
+<p><strong><span class="text-highlight">层层递进</span></strong></p>
+</blockquote>
+<p>你有两个重点需要分享，那么把更重要的那个重点放在后面；你有三个重点要分享，那么就把最重要的放在最后面…… 无论你有多少个重点，都按这种方式排列，准没错！</p>
+<p>并且，另外一个建议是：</p>
+<blockquote>
+<p>==<code>3</code> 是重点数量的极限==</p>
+</blockquote>
+<p>如果你必须有 <code>11</code> 个重点，那怎么办？那就把它们分到最多 3 个分组中，比如，像当前文章这样，“入门”、“进阶”、“高级”……</p>
+<p>另外一个策略，是与 “递进” 的逻辑关系组合使用的 —— 你要区分针对你所谓的重点，对方的已知状态。大家都知道的，何必当作重点？于是，未知程度最高的，放在未知程度不那么高的重点后面。</p>
+<p>这都是听起来无比简单，甚至好像 “无需讲述” 的 “重点”，但若是你多观察一下周遭的世界，你就明白了，很多人可能并不是不知道这些方法，但不知道为什么，他们就是不去应用这么简单有效的方法，也是怪得很！</p>
+<h3 id="进阶">进阶<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#进阶" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>当入门的手段都已经熟练了，就可以做很多所谓 “锦上添花” 的事情。锦上添花据说有很多种手段，比如，制造笑点啊，使用炫酷的幻灯片啊等等…… 但我只想给你讲一个学会了就够用，却也是最简单、最直接，然而又最有效的手段：</p>
+<blockquote>
+<p><strong>输送价值观</strong></p>
+</blockquote>
+<p>事实上，你可以把当前这本 “书” 当作一个巨大且又生动的例子：</p>
+<blockquote>
+<p>你把李笑来想象成一位在某个学校里为学生讲编程课的老师。那么，你就可以把当前这本书当作 “李笑来的讲义”…… 也许我和学生手里都拿着另外一本更著名的计算机专家所著的编程入门书籍，然而，我的讲义，就是按照我的顺序、我的内容编排来讲述的。</p>
+</blockquote>
+<p>事实上我在写这本书的时候，从某个层面上来看，真的写的就是 “Python 官方文档” 以及 “Python 官方教程” 的辅助讲义，写作目标如此，写作方式亦如是。</p>
+<p>那我做了什么最重要的事情呢？</p>
+<blockquote>
+<p>我向我的群体输送了我觉得更有意义的价值观：</p>
+<blockquote>
+<p>自学是门手艺……</p>
+</blockquote>
+</blockquote>
+<p>当年我在学校里讲英语课的时候，除了讲英语本身之外，我输送的价值观是：</p>
+<blockquote>
+<p>能管理好自己的时间的人，学英语学起来更容易……</p>
+</blockquote>
+<p>后来，这一部分单独被提取出来，在我离开那所学校之后，写成了长销书，《 <a href="https://github.com/xiaolai/time-as-a-friend" class="external">把时间当作朋友<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 》—— 你看，是一样的道理。</p>
+<p>而所谓的价值观，定义很简单：</p>
+<blockquote>
+<p>你的价值观，就是你认为什么比什么 <strong>更重要</strong> 。</p>
+</blockquote>
+<p>价值观可大可小。大到集体利益与个人利益之间的比较，小到自学中 “全面” 压倒一切…… 然而，这世界总有独立于任何人存在的 “客观的价值比较”，只不过，每个人的 “价值观” 是自己的 “观点”。而我们每个人都希望自己的观点尽量摆脱自己的主观，尽量靠近那个 “客观的价值比较”…… 而一旦我们确定自己比原来的自己，甚至相对于其他人更进一步的时候，就很可能值得认真分享。</p>
+<p>这个方法着实简单，然而却非常有效。这有点像什么呢？这有点像人家弹个吉他是 “蹦单音”，可你弹的却是 “曲调与和弦” 相辅相成的音乐…… 给你看一个 Youtube 上的《一生所爱》—— 这首曲子是我最喜欢的指弹版本 —— 这种弹法，不仅有旋律，还有和弦，并且还有打击乐器效果 “伴奏”：</p>
+<iframe src="https://www.youtube.com/embed/AjWTop5O5jo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<center>via: <a href="https://www.youtube.com/watch?v=AjWTop5O5jo" target="_blank" class="external-link external">https://www.youtube.com/watch?v=AjWTop5O5jo<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></center>
+<p>最初的时候，有个看起来很难以跨越的障碍：</p>
+<blockquote>
+<p>感觉总是需要为自己塑造权威感 —— 否则就害怕没人听、没人看、没人信……</p>
+</blockquote>
+<p>这是很多人掉进去的坑。刚开始的时候，自己就不是权威啊！无论怎么装神弄鬼，事实上就不是么！</p>
+<p>很多人没想明白，因为害怕没人听、害怕没人看、害怕没人信，所以就开始各种作弊，包括各种装神弄鬼，各种欺世盗名…… 这么做，暂时管用，长期来看，肯定是吃亏的。</p>
+<p>因为作弊其实并不难，装神弄鬼其实并不难，欺世盗名其实并不难 —— 真正难的是长期作弊…… 长期欺骗有多难呢？难到根本不可能的地步。尤其是在寿命越来越久的今天。《庄子》里说，“寿则多辱”，今天有了新解释 —— 大家都寿命很长，所以别骗人，因为早晚会露馅……</p>
+<p>花那么长时间作弊什么的，还不如花那么长时间磨练手艺，你想想看是不是这个道理？</p>
+<p>给你看一段视频，加州伯克利大学的 Brian Harvey 在课堂上告诉学生，“为什么不要作弊” 的真正原因：</p>
+<iframe src="https://www.youtube.com/embed/hMloyp6NI4E" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<center>via: <a href="https://www.youtube.com/watch?v=hMloyp6NI4E" target="_blank" class="external-link external">https://www.youtube.com/watch?v=hMloyp6NI4E<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></center>
+<p>于是，千万别扭曲了自己，是什么样就是什么样，该怎么做就怎么做。而另外一件事是确定的：</p>
+<blockquote>
+<p>分享多了，就自然进步了……</p>
+</blockquote>
+<p>在求知的领域里，分享得越多，进步越快，且社交有效性提高得更多。</p>
+<h3 id="高级">高级<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#高级" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>无论什么手艺，大多数人都可以入门、少数人可以进阶…… 再往后，就通常被认为是个人 “造化” 了。</p>
+<p>可这所谓的 “造化” 究竟指的是什么呢？</p>
+<p>我觉得通过这本书，我可以向绝大多数普通人解释这个 “玄学词汇” 了……</p>
+<blockquote>
+<p>这里所谓的 “造化”，指的应该是一个人的 “融会贯通的能力” —— 有 “造化” 的人，不过是把大量其他领域里的技能、技巧、甚至手艺学来而后应用到自己的手艺之中……</p>
+</blockquote>
+<p>就这么简单。</p>
+<p>有个特别好玩的例子。</p>
+<p>现在大家已经熟悉了的吉他演奏中的 “指弹”（Percussive Guitar），可这种玩法在没有 Youtube 的时代里并不多见 —— 在我长大的年代里，甚至 “前所未闻”。不知道是谁，把打击乐器的手法融合到吉他演奏手法中去了，于是，在 Youtube 这样的视频工具出现之后，人们的 “见识” 成本降低了（过去也许要 “去西天取经才行”），很快就有人模仿，很快就有人更为擅长……</p>
+<iframe src="https://www.youtube.com/embed/nY7GnAq6Znw" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<center>via: <a href="https://www.youtube.com/watch?v=nY7GnAq6Znw" target="_blank" class="external-link external">https://www.youtube.com/watch?v=nY7GnAq6Znw<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></center>
+<p>有这种能力的人，普遍有两个特征：</p>
+<blockquote>
+<ul>
+<li>他们自学很多看起来不相干的手艺</li>
+<li>他们对自己的手艺充满尊重与热爱</li>
+</ul>
+</blockquote>
+<p>我也只能猜个大概。这其中的第二个特征，很可能是第一个特征的根源，因为他们对自己的手艺充满了尊重与热爱，所以，他们追求全面，他们刻意练习，他们还刻意思考…… 由此引发了对一切可能与自己的手艺相关的东西都感兴趣 —— 虽然在外界看来那两样东西可能全无联系。于是，他们利用已经在自己的手艺中练就的自学能力，不断自学新的东西，不断 “发现” 所谓的 “新大陆”，不断用他们的所见所闻回过来锤炼或更新自己的手艺……</p>
+<p>所以，弹钢琴或者弹吉他的也去学了打击乐器；讲课的人会去听相声专场，学习相声演员是如何抖包袱的；写书的人可能会像我琢磨 “取名” 的艺术 —— 甚至不惜去研究一下自己并不屑于相信的易经八卦；学会计的去研究了物理或者经济学；学编程的也去学了设计，学设计的也去学了编程；做前端的去学了后端，做后端的也学会了前端；做统计的学会了数据可视化…… 搞来搞去，计算机行业里有个著名的词汇诞生：全栈工程师。</p>
+<p>其实，所有精湛的手艺人，都是 <strong>全栈</strong> ，不信你就仔细观察一下。</p>
+<p>于是，所有在入门、进阶之后走得更远的手艺人，都明白且认同这个道理：</p>
+<blockquote>
+<p><strong>学无止境</strong></p>
+</blockquote>
+<p>于是，最后一个重要技巧，不仅仅是 “不断磨练当前的手艺”，还有就是 <strong>不断向所有的手艺人学习</strong> 。</p>
+<p>再进一步，技巧没用了…… 想再进一步，靠的是另外一个层次的东西 —— 那就是尊重与热爱。</p>
+<p>这么多年来，在互联网上我最喜爱的老师，是麻省理工大学的 Walter Lewin 教授。</p>
+<iframe src="https://www.youtube.com/embed/sJG-rXBbmCc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<center>via: <a href="https://www.youtube.com/watch?v=sJG-rXBbmCc" target="_blank" class="external-link external">https://www.youtube.com/watch?v=sJG-rXBbmCc<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></center>
+<p>十多年前，MIT 出了一套 Open Course，在线的免费课程。授课老师绝大多数都是本校的著名教授 —— 在那么多课程里，我一下子就爱上了这位教授。建议你有时间把他的所有课程看完，虽然你可能觉得物理这东西你并不感兴趣 —— 可事实上，看完你就知道了，你只不过是运气不好，你从来没遇到过这么可爱牛逼的教授而已…… 在他身上，你可以学到无数，甚至是 “不可言说” 的技巧、秘密和手艺。</p>
+<p>关键在于，你一定会非常生动地、深刻地体会到他对物理、他对授课的 <strong>尊重和热爱</strong> 。看过之后，你一定会跟我有一样的慨叹：“是哦， <strong>Love is the power.</strong>”</p>
+<p>没有什么比 “热爱” 和 “尊重” 更为高级的了。就这样。</p>
+<section data-footnotes class="footnotes"><h2 class="sr-only" id="footnote-label">Footnotes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#footnote-label" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li id="user-content-fn-death">
+<p>也可能真的会死…… 请看一篇 2018 年 9 月份的一则新闻，发生在旧金山的事情： <a href="https://www.theregister.co.uk/2018/09/20/developer_work_shooting/" class="external">Developer goes rogue, shoots four colleagues at ERP code maker<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> <a href="#user-content-fnref-death" data-footnote-backref aria-label="Back to reference 1" class="data-footnote-backref internal alias">↩</a></p>
+</li>
+<li id="user-content-fn-regex">
+<p>写这本书的时候，前后弄出来那么多 <code>.ipynb</code> 文件 —— 于是，到最后哪怕 “生成个目录” 这样看起来简单的活，若是会用正则表达式，就能几分钟完成；但若是不会，那就得逐一手工提取、排序、编辑…… 对我来说怎么可能不是 <strong>刚需</strong> ！ <a href="#user-content-fnref-regex" data-footnote-backref aria-label="Back to reference 2" class="data-footnote-backref internal alias">↩</a></p>
+</li>
+<li id="user-content-fn-drive-into-python">
+<p>一点八卦：Dive into Python 的作者是 <a href="https://en.wikipedia.org/wiki/Mark_Pilgrim" class="external">Mark Pilgrim<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ；他是互联网上最著名的自绝于信息世界（ <a href="https://www.urbandictionary.com/define.php?term=infosuicide" class="external">infosuicide<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ）的三人之一。另外两位分别是比特币的作者 <a href="https://en.wikipedia.org/wiki/Satoshi_Nakamoto" class="external">Satoshi Nakamoto<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ，和 <a href="https://whytheluckystiff.net/" class="external">Why the lucky stiff<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 的作者 <a href="https://en.wikipedia.org/wiki/Why_the_lucky_stiff" class="external">Jonathan Gillette<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 。 <a href="#user-content-fnref-drive-into-python" data-footnote-backref aria-label="Back to reference 3" class="data-footnote-backref internal alias">↩</a></p>
+</li>
+<li id="user-content-fn-xjlxs">
+<p>许嘉璐，1998 年至 2000 年全国人大常委会副委员长，民进中央主席，国家语言文字工作委员会主任。 <a href="#user-content-fnref-xjlxs" data-footnote-backref aria-label="Back to reference 4" class="data-footnote-backref internal alias">↩</a></p>
+</li>
+<li id="user-content-fn-hj-feel">
+<p>写完这一段，给霍炬看，他当场嘲笑我，“哈！当年我就说，你应该学学 Vim，是不是到现在你都没学？” 我无言以对，因为真的就没学…… 然后，我想了想，回复他说，“好吧，我决定写一个 Vim 教程出来，嗯。” <a href="#user-content-fnref-hj-feel" data-footnote-backref aria-label="Back to reference 5" class="data-footnote-backref internal alias">↩</a></p>
+</li>
+<li id="user-content-fn-famale-win">
+<p>NPR： <a href="https://www.npr.org/2011/11/27/142664182/most-beautiful-woman-by-day-inventor-by-night" class="external">Most Beautiful Woman’ By Day, Inventor By Night<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 在美国专利局的一个存档文件（US Patent 2,292,387, Aug 11, 1942）截图。这项专利的发明者是 <a href="https://en.wikipedia.org/wiki/Hedy_Lamarr" class="external">Hedy Lamarr<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ，人家长得是这样的：Hedy Lamarr 是好莱坞最知名的演员之一，并且，她也是自学高手： Although Lamarr had no formal training and was primarily self-taught, she worked in her spare time on various hobbies and inventions, which included an improved traffic stoplight and a tablet that would dissolve in water to create a carbonated drink. The beverage was unsuccessful; Lamarr herself said it tasted like Alka-Seltzer. <a href="#user-content-fnref-famale-win" data-footnote-backref aria-label="Back to reference 6" class="data-footnote-backref internal alias">↩</a></p>
+</li>
+</ol>
+</section></article><hr/><div class="page-footer"><div class="giscus" data-repo="bGZo/vault" data-repo-id="R_kgDOM-7h7w" data-category="comments" data-category-id="DIC_kwDOM-7h784CmFf2" data-mapping="url" data-strict="1" data-reactions-enabled="1" data-input-position="bottom" data-light-theme="light" data-dark-theme="dark" data-theme-url="https://note.bgzo.cc//static/giscus" data-lang="en"></div></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[&quot;public&quot;],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[&quot;public&quot;],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-2" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#自学自学是门手艺" data-for="自学自学是门手艺">自学自学是门手艺</a></li><li class="depth-1"><a href="#如何证明你真的读过这本书" data-for="如何证明你真的读过这本书">如何证明你真的读过这本书？</a></li><li class="depth-2"><a href="#積ん読" data-for="積ん読">積ん読</a></li><li class="depth-2"><a href="#pow" data-for="pow">PoW</a></li><li class="depth-1"><a href="#1c-只靠阅读习得新技能" data-for="1c-只靠阅读习得新技能">1.C 只靠阅读习得新技能</a></li><li class="depth-1"><a href="#1f-如何从容应对含有过多-过早引用-的知识" data-for="1f-如何从容应对含有过多-过早引用-的知识">1.F 如何从容应对含有过多 “过早引用” 的知识？</a></li><li class="depth-2"><a href="#过早引用就是无所不在" data-for="过早引用就是无所不在">过早引用就是无所不在</a></li><li class="depth-2"><a href="#不懂也要硬着头皮读完" data-for="不懂也要硬着头皮读完">不懂也要硬着头皮读完</a></li><li class="depth-2"><a href="#磨练-只字不差-的能力" data-for="磨练-只字不差-的能力">磨练 “只字不差” 的能力</a></li><li class="depth-2"><a href="#好的记忆力很重要" data-for="好的记忆力很重要">好的记忆力很重要</a></li><li class="depth-2"><a href="#尽快开始整理归纳总结" data-for="尽快开始整理归纳总结">尽快开始整理归纳总结</a></li><li class="depth-2"><a href="#先关注使用再研究原理" data-for="先关注使用再研究原理">先关注使用再研究原理</a></li><li class="depth-2"><a href="#尊重前人的总结和建议" data-for="尊重前人的总结和建议">尊重前人的总结和建议</a></li><li class="depth-1"><a href="#2a-笨拙与耐心" data-for="2a-笨拙与耐心">2.A 笨拙与耐心</a></li><li class="depth-1"><a href="#2b-刻意练习" data-for="2b-刻意练习">2.B 刻意练习</a></li><li class="depth-1"><a href="#2e-刻意思考" data-for="2e-刻意思考">2.E 刻意思考</a></li><li class="depth-1"><a href="#3a-战胜难点" data-for="3a-战胜难点">3.A 战胜难点</a></li><li class="depth-1"><a href="#3d-刚需幻觉" data-for="3d-刚需幻觉">3.D 刚需幻觉</a></li><li class="depth-2"><a href="#感觉总是最大的坑" data-for="感觉总是最大的坑">感觉总是最大的坑</a></li><li class="depth-2"><a href="#刚需幻觉" data-for="刚需幻觉">刚需幻觉</a></li><li class="depth-2"><a href="#优势策略" data-for="优势策略">优势策略</a></li><li class="depth-2"><a href="#影响下一代" data-for="影响下一代">影响下一代</a></li><li class="depth-1"><a href="#3e-全面--自学的境界" data-for="3e-全面--自学的境界">3.E 全面 —— 自学的境界</a></li><li class="depth-1"><a href="#3f-自学-者的社交" data-for="3f-自学-者的社交">3.F 自学 者的社交</a></li><li class="depth-1"><a href="#3h-避免注意力漂移" data-for="3h-避免注意力漂移">3.H 避免注意力漂移</a></li><li class="depth-1"><a href="#q-如何成为优秀沟通者" data-for="q-如何成为优秀沟通者">Q: 如何成为优秀沟通者</a></li><li class="depth-2"><a href="#入门" data-for="入门">入门</a></li><li class="depth-2"><a href="#进阶" data-for="进阶">进阶</a></li><li class="depth-2"><a href="#高级" data-for="高级">高级</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function E(a,e){if(!a)return;function t(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function n(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}a?.addEventListener("click",t),window.addCleanup(()=>a?.removeEventListener("click",t)),document.addEventListener("keydown",n),window.addCleanup(()=>document.removeEventListener("keydown",n))}function f(a){for(;a.firstChild;)a.removeChild(a.firstChild)}var m=class{constructor(e,t){this.container=e;this.content=t;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),t=this.onMouseMove.bind(this),n=this.onMouseUp.bind(this),o=this.onTouchStart.bind(this),r=this.onTouchMove.bind(this),i=this.onTouchEnd.bind(this),s=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),this.container.addEventListener("touchstart",o,{passive:!1}),document.addEventListener("touchmove",r,{passive:!1}),document.addEventListener("touchend",i),window.addEventListener("resize",s),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",t),()=>document.removeEventListener("mouseup",n),()=>this.container.removeEventListener("touchstart",o),()=>document.removeEventListener("touchmove",r),()=>document.removeEventListener("touchend",i),()=>window.removeEventListener("resize",s))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let t=this.createButton("+",()=>this.zoom(.1)),n=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(n),e.appendChild(o),e.appendChild(t),this.container.appendChild(e)}createButton(e,t){let n=document.createElement("button");return n.textContent=e,n.className="mermaid-control-button",n.addEventListener("click",t),window.addCleanup(()=>n.removeEventListener("click",t)),n}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}onTouchStart(e){if(e.touches.length!==1)return;this.isDragging=!0;let t=e.touches[0];this.startPan={x:t.clientX-this.currentPan.x,y:t.clientY-this.currentPan.y}}onTouchMove(e){if(!this.isDragging||e.touches.length!==1)return;e.preventDefault();let t=e.touches[0];this.currentPan={x:t.clientX-this.startPan.x,y:t.clientY-this.startPan.y},this.updateTransform()}onTouchEnd(){this.isDragging=!1}zoom(e){let t=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),n=this.content.getBoundingClientRect(),o=n.width/2,r=n.height/2,i=t-this.scale;this.currentPan.x-=o*i,this.currentPan.y-=r*i,this.scale=t,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){let t=this.content.querySelector("svg").getBoundingClientRect(),n=t.width/this.scale,o=t.height/this.scale;this.scale=1,this.currentPan={x:(this.container.clientWidth-n)/2,y:(this.container.clientHeight-o)/2},this.updateTransform()}},T=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],y;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;y||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let t=y.default,n=new WeakMap;for(let r of e)n.set(r,r.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let c=n.get(s);c&&(s.innerHTML=c)}let r=T.reduce((s,c)=>(s[c]=window.getComputedStyle(document.documentElement).getPropertyValue(c),s),{}),i=document.documentElement.getAttribute("saved-theme")==="dark";t.initialize({startOnLoad:!1,securityLevel:"loose",theme:i?"dark":"base",themeVariables:{fontFamily:r["--codeFont"],primaryColor:r["--light"],primaryTextColor:r["--darkgray"],primaryBorderColor:r["--tertiary"],lineColor:r["--darkgray"],secondaryColor:r["--secondary"],tertiaryColor:r["--tertiary"],clusterBkg:r["--light"],edgeLabelBackground:r["--highlight"]}}),await t.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let r=0;r<e.length;r++){let v=function(){let g=l.querySelector("#mermaid-space"),h=l.querySelector(".mermaid-content");if(!h)return;f(h);let w=i.querySelector("svg").cloneNode(!0);h.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new m(g,h)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},i=e[r],s=i.parentElement,c=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(c),L=c.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),E(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript.js" type="module" data-persist="true"></script></html>

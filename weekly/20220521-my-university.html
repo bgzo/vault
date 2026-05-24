@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>我的大学</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto Sans:wght@400;700&amp;family=Noto Serif:ital,wght@0,400;0,600;1,400;1,600&amp;family=JetBrains Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="bGZo's Notes"/><meta property="og:title" content="我的大学"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="我的大学"/><meta name="twitter:description" content="我的大学 21 年 10 月第三个周末看到了 @february 的 blog，感慨博主在学校做出如此的成就之外，自己也心血来潮，想赶在表达欲消失之前，简单记录下个人编程，数字，读书相关的经历."/><meta property="og:description" content="我的大学 21 年 10 月第三个周末看到了 @february 的 blog，感慨博主在学校做出如此的成就之外，自己也心血来潮，想赶在表达欲消失之前，简单记录下个人编程，数字，读书相关的经历."/><meta property="og:image:alt" content="我的大学 21 年 10 月第三个周末看到了 @february 的 blog，感慨博主在学校做出如此的成就之外，自己也心血来潮，想赶在表达欲消失之前，简单记录下个人编程，数字，读书相关的经历."/><meta property="og:image" content="https://note.bgzo.cc//static/og-image.png"/><meta property="og:image:url" content="https://note.bgzo.cc//static/og-image.png"/><meta name="twitter:image" content="https://note.bgzo.cc//static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="note.bgzo.cc/"/><meta property="og:url" content="https://note.bgzo.cc/weekly/20220521-my-university"/><meta property="twitter:url" content="https://note.bgzo.cc/weekly/20220521-my-university"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="我的大学 21 年 10 月第三个周末看到了 @february 的 blog，感慨博主在学校做出如此的成就之外，自己也心血来潮，想赶在表达欲消失之前，简单记录下个人编程，数字，读书相关的经历."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL3F1YXJ0ei9xdWFydHovY29tcG9uZW50cy9zdHlsZXMiLCJzb3VyY2VzIjpbIm1lcm1haWQuaW5saW5lLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUdGO0VBQ0U7OztBQUtGO0VBQ0U7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDAgMDtcbiAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjFzIGVhc2U7XG4gICAgICBvdmVyZmxvdzogdmlzaWJsZTtcbiAgICAgIG1pbi1oZWlnaHQ6IDIwMHB4O1xuICAgICAgbWluLXdpZHRoOiAyMDBweDtcblxuICAgICAgcHJlIHtcbiAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICB9XG5cbiAgICAgIHN2ZyB7XG4gICAgICAgIG1heC13aWR0aDogbm9uZTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAubWVybWFpZC1jb250cm9scyB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBib3R0b206IDIwcHg7XG4gICAgICByaWdodDogMjBweDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBnYXA6IDhweDtcbiAgICAgIHBhZGRpbmc6IDhweDtcbiAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgICAgei1pbmRleDogMjtcblxuICAgICAgLm1lcm1haWQtY29udHJvbC1idXR0b24ge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgd2lkdGg6IDMycHg7XG4gICAgICAgIGhlaWdodDogMzJweDtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgICBjb2xvcjogdmFyKC0tZGFyayk7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1ib2R5Rm9udCk7XG4gICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjJzIGVhc2U7XG5cbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTtcbiAgICAgICAgfVxuXG4gICAgICAgIC8vIFN0eWxlIHRoZSByZXNldCBidXR0b24gZGlmZmVyZW50bHlcbiAgICAgICAgJjpudGgtY2hpbGQoMikge1xuICAgICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTJweDtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdfQ== */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script></head><body data-slug="weekly/20220521-my-university"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">bGZo's Notes</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>!new Set([\&quot;bgzo\&quot;,\&quot;clippers/newsletter/sync\&quot;]).has(node.displayName.toLowerCase())&quot;,&quot;mapFn&quot;:&quot;node=>{node.isFolder?node.displayName=\&quot;\\u{1F4C1} \&quot;+node.displayName:node.displayName=\&quot;\\u{1F4C4} \&quot;+node.displayName}&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-23"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-23" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../weekly/">表达之心不死</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>我的大学</a></div></nav><p show-comma="true" class="content-meta"><time datetime="2022-05-21T10:58:24.000Z">May 21, 2022</time><span>38 min read</span></p><ul class="tags"><li><a href="../tags/privacy" class="internal tag-link">privacy</a></li><li><a href="../tags/public" class="internal tag-link">public</a></li><li><a href="../tags/writing/story" class="internal tag-link">writing/story</a></li></ul></div></div><article class="popover-hint"><h1 id="我的大学">我的大学<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#我的大学" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>21 年 10 月第三个周末看到了 <a href="https://sunhuiquan.github.io/" class="external">@february<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 的 blog，感慨博主在学校做出如此的成就之外，自己也心血来潮，想赶在表达欲消失之前，简单记录下个人编程，数字，读书相关的经历.</p>
+<p>奈何初期文件管理做的不好，犄角旮旯都是自己的写的 Stickies，加上迁移系统丢掉的历史数据，和模糊的记忆，东拼西凑，勉强挤出些文字，却囿于自己的笔力浅薄，删改不断，写完回读，又弗如远甚。罢了，凑合着看吧…</p>
+<p>大致从 19 年复习期末的 CPP 考试开始写博客，一开始拿不准哪个平台，所以只能一个一个换着用, <a href="https://www.onenote.com" class="external">onenote<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://note.youdao.com/web" class="external">youdao<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://note.wiz.cn/" class="external">wiz<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://www.yuque.com" class="external">yuque<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://www.cnblogs.com/" class="external">cnblog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://blog.csdn.net" class="external">csdn<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://cn.wordpress.org" class="external">wordpress<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="http://typecho.org" class="external">typecho<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://www.bitcron.com/" class="external">bitcron<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://hexo.io/zh-cn" class="external">hexo<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://www.gitbook.com/" class="external">gitbook<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://www.mkdocs.org" class="external">mkdics<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://www.blogger.com" class="external">blogger<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://gohugo.io" class="external">hugo<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://www.notion.so/" class="external">notion<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://obsidian.md" class="external">obsidian<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://logseq.github.io" class="external">logseq<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>…, 最近决定沉淀在 <a href="https://logseq.github.io" class="external">logseq<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> + <a href="https://jekyllrb.com" class="external">Jekyll<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 不动了，前者依托 <strong><em>Bi-Directional Links &amp; Graphs &amp; Full-text Search</em></strong> 的特性让人眼前一亮，后者依托 <a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll" class="external"><strong><em>github build-in support</em></strong><svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 让人跃跃欲试。当然为了更高的可扩展性，最终选择在 <a href="https://vercel.com" class="external">vercel<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 上免费构建和托管，也推荐给大家. <sup><a href="#user-content-fn-cloud-note" id="user-content-fnref-cloud-note" data-footnote-ref aria-describedby="footnote-label" class="internal alias">1</a></sup></p>
+<h2 id="rules-not-new-year-resolution-but-past-year-reviewpyr">Rules: Not New Year Resolution, but Past Year Review(PYR)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#rules-not-new-year-resolution-but-past-year-reviewpyr" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>_ 狗熊有话说 _</strong> <a href="https://voice.beartalking.com/400" class="external">ep. 400<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 讲 <a href="https://tim.blog/2021/12/27/past-year-review/" class="external">@Tim Ferriss<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 的方法: <strong>不要着急做做新一年的计划，而是去回看过去一年的经历</strong>. 以及以下的方法论:</p>
+<blockquote>
+<ol>
+<li>Grab a notepad and create two columns: POSITIVE and NEGATIVE.</li>
+<li>Go through your calendar from the last year, looking at every week.</li>
+<li>For each week, jot down on the pad any people or activities or commitments that triggered peak positive or negative emotions for that month. Put them in their respective columns.</li>
+<li>Once you’ve gone through the past year, look at your notepad list and ask, “What 20% of each column produced the most reliable or powerful peaks?”</li>
+<li>Based on the answers, take your “positive” leaders and schedule more of them in the new year. Get them on the calendar now! Book things with friends and prepay for activities/events/commitments that you know work. It’s not real until it’s in the calendar. That’s step one. Step two is to take your “negative” leaders, put “NOT-TO-DO LIST” at the top, and put them somewhere you can see them each morning for the first few weeks of 2022. These are the people and things you <em>know</em> make you miserable, so don’t put them on your calendar out of obligation, guilt, FOMO, or other nonsense.</li>
+</ol>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Positive</th><th>Negative</th></tr></thead><tbody><tr><td>画像素画</td><td>生产力色情</td></tr><tr><td>线下看了奥斯卡最佳影片</td><td>美化桌面</td></tr><tr><td>哲学 / 经典的书</td><td>社交媒体 <br/> (<a href="https://v2ex.com/" class="external">V2EX<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>; <a href="https://twitter.com/" class="external">Twitter<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>; <a href="https://bgm.tv/" class="external">Bangumi<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>) <br/> 泛滥</td></tr><tr><td>用 GA &amp; Script 自动化繁琐的任务</td><td>手工格式化作业过多</td></tr><tr><td>笔记软件 Logseq</td><td>不断收集用不到的资源</td></tr><tr><td>看了一些小玩具的源码</td><td>漫无目的 改写/扩写 自己的废话</td></tr><tr><td>短时间就能收获成果的教程, <br/> 坚持做完教程 + 独立做一遍</td><td>” 要是当时我 xxx”, <br/> ” 看看他的动态吧 ” <br/> ” 纠结如何回应…” <br/> 找个酷酷的背景/头像</td></tr><tr><td>每天背单词，看一点英文 Youtube 视频</td><td>看了太多 动漫/漫画</td></tr><tr><td>无纸化办公，用掉多余的废纸和笔</td><td>频繁使用手机截图，事后也不处理</td></tr><tr><td>和他人搭话，多说一点无用的废话</td><td>看到陌生没有打招呼，默默走开</td></tr><tr><td>控制自己每日<strong>摄入信息</strong></td><td>迁移无关紧要的数据</td></tr></tbody></table></div>
+<h2 id="2019-winter">2019 Winter<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2019-winter" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>前十八年对大学的幻想甚高，一上来就是完全的理想主义之破碎: 辩论队参加是参加了，但是我的身份是裁判; 社团参与是参与了，谁知道手工社全社就三个男生; 课外活动诸如不明觉厉的讲座也参与了，但完全是被叫过去充数的… 和曾在社交媒体上流传的讲课视频全然不同，这和我对大学的幻想相形见绌。多多少少让人郁闷.</p>
+<p>军训的某一天，高中曾暧昧了两年的女生回来找我了，起因是他们军训的方式很不好受，一开始是非常开心的，放下一切地和她东扯西扯，但随之而来的是全力投入的反噬，我还没有做好告别一个人的生活，将自己的一部分空余时间割让给那个夏日里烫手的聊天窗口，我们的故事全部发生在社交媒体上，尽管我们是现实的同学，同桌，但是像极了网恋，这样的事情不想再重来一遍了. 而且惨淡的家境让我如履薄冰，我不敢渴求更进一步的关系，也无法无视这绵延两年的情感上的惯性，我悬在半空</p>
+<p>上了大学之后身边的同学都很聪明，我跟着他们愣头愣脑地卷到了 <a href="http://www.imudges.com/#/page/index" class="external">IMUDGES<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 后端组中，遇到了一大波各年级的翘楚，他们和我不太一样，要么有殷实的家境，永远手持最新款的电子产品，要么是注意力狂魔，可以心无旁骛地投身研究; 要么常挂微笑，口才一绝，组织力很强的角色。总之和他们呆在一起，整个人都会觉得有些不一样.</p>
+<p>借助着平日里呆在机房偷偷努力的功夫，这个学期过得还算是舒服，但是高中留下的怪毛病，我一直都不太敢开口去问别人，是个名副其实的闷葫芦，ACM 训练开始后，在 MOOC 产挑了门课，但是也没有坚持下去。组里学长讲题，面对套路化的模板却一无所知而不知所措，就一直搁置下去了，那些琐碎易得的博客让我压力更大，我开始逃避，就这样一直拖着，败给了这种畏难情绪.</p>
+<p>我在这种自我破碎的抑郁情绪下结束了那段持续了一个月的感情，因为各个方面我都看不到未来，无论我我自己的，还是她的. 我是个不自觉就会绑架他人的存在，我不认为拖着彼此会对她的新的开始有任何益处. 我在这样自我满足和自我感动中草草掐断了这段大起大落的感性线. 以至于很久之后，我都沉浸在这种可悲的自怜中. 就算是对他人也是一样，我希望不要利用自己的情节去绑架任何人，这样就实在真的太可怜了.🙁 如果我是一个不会藏着掖着，有啥说啥的人，也许很多朋友和机会我都不会失去…</p>
+<p>假期后端组长安排了三个任务:</p>
+<ol>
+<li>10 个人共同开发一个比赛发布网站;</li>
+<li>小组自己决定开发一个小东西练手;</li>
+<li>搭建自己的博客</li>
+</ol>
+<p>放假后的半个月里我分别用 hexo，github page 组了一个静态 blog，1 月 10 日用腾讯云的学生服务器无宝塔搭建了个 wordpress，折腾了 2 天电脑，却发现没备案是打不开的，又跑去去以 ” 服务器技术见解 ” 为由备了案，来来回回有半个月.</p>
+<p>回到小组开发后，没有什么框架思维，是想直接从零开始造个前端，页面基本标签造好了，但囿于不懂 HTTP 和计网，axaj 请求一直不会发，本地也不会 Debug，一直卡在原地，没有向别人求助. 1 月份结束交了个纯 html 的 PR，然后又去折腾自己的博客了。年后学了 bootscript 框架，还是不会 Debug. 最后也落得个让他人接手自己的项目的下场… 当时甚至不知道后端是用 django 来做，根本不用做纯接口…</p>
+<p>总之就是<strong>交流太少，不懂的东西太多，没有什么人带，自己还是用学生思维那一套，完全无法放手去做</strong>.</p>
+<p>这段时间开始跟着身边的同学学科学上网，也开始对 GFW 等屏蔽措施感到厌恶.</p>
+<h2 id="2020-spring--summer">2020 Spring &amp; Summer<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2020-spring--summer" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>因为上半截的失败开发经历，这段时间处在深深的自闭状态，没有什么勇气去群里发言，更是在寒假结果展示的时候，没有能拿得出手的东西，屏幕中闪过的每个 demo 都像是对我的迎头痛击，无法向外归因的我只能怨自己太笨，以至于后来连 IMUDGE 都不怎么想去了。基本少了很多交流。那段时光可以这样描述:</p>
+<blockquote>
+<p>人在低谷的时候，心里总是有很多怨气。所以我看谁都不顺眼，觉得谁都对不住自己，于是不和任何人联系，把自己裹得紧紧的.
+我在自己的四周，筑起了一道厚厚的墙，里面完全是我一个人的世界。我成了孤家寡人，不关心别人，也没有人来关心我，每天沉默寡言，活得像空气一样.
+── <em>全中国最穷的小伙子发财日记</em> <em>老康</em></p>
+</blockquote>
+<p>1 月赶上疫情，我同老姐到附近的自习室上了一个月自习，这段时间里我为了电脑调度和系统的美化，折腾起了 ubuntu，到后来直接在本机上装了双系统，每日琐碎的系统调教和折腾以及 linux 上莫名其妙的 bug 非常杀时间。算是度过了一个较充实的几个月.</p>
+<p>这学期的专业课是 <em>CPP 面向对象</em> 以及一门硬件相关的 <em>数字逻辑</em>，因为居家上课，拿到的所有书都是电子书，就算买了数位板看书也还是兴趣寥寥，尝试了很多办法都没能好好静下心来看上哪怕一两本经典的书籍，我非常后悔没能早点购买平板，而是一直用电脑鼠标看书，后者直接放弃教学，转播 MOOC 网课为主。实属搞笑.</p>
+<p>暑假同学找来一起开发一个 校园二手交易平台 (Android)，从 Java 开始学起，因为只有半个多月，草草结束了，没了什么后续，我们彼此依旧很少交流，我只做出来一个登录界面…</p>
+<p>这个时间了解了很多国内安卓不入流的 ” 特色 “，致使我很长时间都对 Google Play &amp; Apple 抱有向往; 也对 Windows 的很多调度都有不同程度的厌恶，非常喜欢 Linux 系电脑开机安静的模样.</p>
+<h2 id="2020-autumn--winter">2020 Autumn &amp; Winter<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2020-autumn--winter" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>这学期节奏非常快，功课和作业也非常熬人，小学期半个月补考了四门课。为了提前一周放假，取消了一切中途法定假期，计组老师疯狂漏题，Verilog 直接成了天书。看着身边人奖学金拿到手软真的很羡慕，傲慢的毛病又加重了，没有办法沉下心来求学.</p>
+<p>剩余时间要求开发一个学生选课系统，我却非常爱钻牛角尖，总想用标准库自底向上实现，疯狂给自己上难度，甚至看不起偷懒的 STL 库，快完不成那两天才像是个憨憨，基本的 CRUD，标记变量管理，检索算法，指针管理等想在半个月写好对当时没学过设计模式的我来说还是太难了.</p>
+<p>这个学期主课数据结构和离散数学，很遗憾没有结合 <strong>_ 算法 (第四版)_</strong> 好好练习数据结构，而是持续折腾在博客和 Linux 系统上。离散老师也教的非常散漫，我能感觉到老师在努力地阐释出每个定理的道理，但总是没有什么和计算机相结合，老师也略显疲态.</p>
+<p>这给冬天下定决心咸鱼淘了一个便携显示器和防冻手套，在几个难眠的夜晚抱着便携屏看了几本闲书， 归档了几年的读书笔记.</p>
+<p>开始使用 Twitter. 也开始注销之前不用的网站.</p>
+<h2 id="2021-spring--summer">2021 Spring &amp; Summer<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2021-spring--summer" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>5 月一咬牙买 Samsung Tab S4，决心要好好看书，顺便把便携显示器出掉了，但被闲鱼商家坑了一把，显示器被调包，没有留充足证据。</p>
+<p>这学期开始听博客，在 <a href="https://www.ximalaya.com/renwenjp/29887212" class="external"><strong><em>文化有限</em></strong><svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 的推荐下看完了几本有趣的小说，假期也看了几本关于代码风格的书 (<strong>代码整洁</strong>，<strong>人月神话</strong>，<strong>代码大全</strong>)，虽然都没有看完，但发现以前代码实在太烂了.</p>
+<p>主课是 软工概论，数据库 和 概率论，因为装不上 Orcale 11g 就把 ubuntu 卸载了。数据库大作业因为平时没时间做又坐了同学的车… 概率论和离散是一个老师，上课被迫开始摸鱼😭. 软工概论没有平时成绩，所以早 8 的课不去也没有事，简直是一大奇景。一个 50 多人的课堂上成了 1 对 1 辅导，最魔幻的是这学期教改，把计算机图形学换成了大学物理??? 直接导致了很多时间都浪在了这无关紧要的通识课上.</p>
+<p>假期开始直接上手 Python 写爬虫代替我的日常繁琐的文字工作和冲浪 (追漫) 工作; 同时照着 web 权威开发指南 敲了一个简单的 js demo，不明觉厉.</p>
+<p>中途有用 Notion 记录过一段时间的日记，最后因为网络和服务条款停止使用了，转去使用 <a href="../clippers/github/_logseq-logseq" class="internal" data-slug="clippers/github/_logseq-logseq">_logseq-logseq</a></p>
+<h2 id="2021-autumn--winter">2021 Autumn &amp; Winter<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2021-autumn--winter" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>小学期被拖，线上开发五子棋也慢慢过去了. 9 月开学回到校园直接大三.</p>
+<p>其实只有前半学期时间是自己的，后半学期老师就开始赶课，过 PPT，加上期中考试，大作业，复习压力，四六级考试也接踵而至，所以这期间只实践了 Github Action，前半学期看的书也没能全部啃下来，<strong>如果那些大部头的书前两个月没有看完，那么这个学期反正是没戏了</strong>，只能顺到假期了. (主要有 <strong>_ 网络基本功系列 _</strong>，<strong>_ 两周自制脚本语言 _</strong>，<strong>_ 操作系统真象还原 _</strong>，<strong>_ 深入理解计算机系统 _</strong>)</p>
+<p>这学期主科是 计算机网络，操作系统和编译原理，都是最关键的核心课，但是我对计算机网络的考核实在不感冒，没有什么实实在在的内容，平时只是在 <a href="https://www.educoder.net/" class="external">头歌<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 上完成最基本的任务，而且如果 Hack 一点，代码都不敲，改改测试脚本也能过，针对于考核方式 —— 只考课后题，完全背答案就能拿高分实属考研党的福音，我只是粗略的刷了两遍，所以最后成绩并不理想。极端点说，课也不用听，刷完那本课后题练习册，你就能拿高分…</p>
+<p>操作系统老师毕业上海交通大学，课余时间就是教唆同学考研，上起课来全是重点，基本是就是过教材，和计网如出一辙，这两门课我都有结合王道考研和原本教材对比着来学，我觉得用电子笔记整理起来还是太多了，响应速度，组织效率都有欠缺，<strong>最好的方法还是用截图的方式整理到笔记中</strong>，写起来实在太费事了。最后都放弃了写笔记了.</p>
+<p>最后一门编译原理实在听不懂老师的口音，可能老师年纪大了，说话听不清，吞音现象比英语六级还严重，最后靠刷 B 站的 <a href="https://www.bilibili.com/video/BV1ft4y1X7p6" class="external">编译原理—混子速成期末保过<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 过了，我觉得这是一门非常巧妙的设计课，不应该被讲得如此枯燥，而且最关键的，在学习做题的过程中，我有时完全不理解为什么这样做，我只知道有这样的定理，然后会通过题干套进去就行，还是三年前那个做题家，一点都没有变。老师也只是 PUA 你，之前讲过，不是我的问题. 😅</p>
+<p>Leetcode 唯一连续打卡一个月的是 10 月，之后就因为复习功课，泡图书馆还是什么的就隔开了。还有没有读完的《网络基本功系列》,《两周自制脚本语言》，《操作系统真象还原》，《深入理解计算机系统》，这个寒假必须要继续解决这些遗留问题了. 😭</p>
+<h2 id="2022-spring--summer">2022 Spring &amp; Summer<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2022-spring--summer" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>2 月 16 日，正月十五刚过，内蒙古全国首发爆出了疫情，原定 20 号的返校被无限延期，18 号和老朋友聚会也不了了之了，一开始我有点高兴，难得的假期又被延长了，但是这一延长就成了不返校了，梦回 2020.</p>
+<p>2 月剩余时间，以及整个 3，4 月都在看 设计模式 / Java / 算法 相关的书，整理书单以及一些闲书，4 月底才想去看网上的招聘，发现别人三面都结束了，实习 Offer 都拿到了，已经开始准备下个月实习了，实在有些像打死自己的冲动🤯，春招被自己这样完美错过.</p>
+<p>这学期主要课程是 JavaEE， 设计模式 和 Linux 系统编程，只有 Linux 系统编程老师比较务实，每节课都讲代码，跟着实践了管道通信，进程通信，线程通信，Socket 通信等等小 demo，但其他两门课就没那么友好了，最难受的是还是需要开学去考试.</p>
+<p>期间为了打发焦虑的情绪，除了帮忙做一些简单的家务外，还入门了哲学，一下子发现过往很多的东西变得都不一样了，尤其是在审视日常生活的决策和行为的过程中，很多东西都被解构掉了。发现了自己在过往十几年教育里所欠缺的逻辑思考，慢慢能跳脱二极管思维，能接受并承认些 ” 异见 “，和人好好的沟通.</p>
+<p>5 月底通知暑期实习培训，给定三家不同企业，乍一看都是省会级城市，其实搜一下就知道，全是外包，其他外包有如 中软 / 软通 / 动力 / 文思海辉 / 法本 / 中科软 / 宏软高科 / 宇视 (via: <a href="https://tieba.baidu.com/p/7756466909" class="external">tieba<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>) 都不建议去，没有五险一金，待遇很差之外，常年出差。但其实上至 C9 都和这些外包有相关合作，去的都是一家企业… 我不知道是否像 BAT / 字节 那样的民营企业是否和高校有合作，但<strong>如果你想要更高阶的实习经历，就需要自己去寻找</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Specialty</th><th>Company</th><th>Mark</th></tr></thead><tbody><tr><td>大数据 / 人工智能</td><td>辽宁 (大连) 东软睿道教育信息技术有限公司</td><td>外包顶流，也有面向社会招生的培训班/专科学院，涉猎广泛</td></tr><tr><td>JavaEE</td><td>四川 (成都) 华迪信息技术有限公司</td><td>19 年四川省教育考试院的自考系统出问题的开发商 (via: <a href="https://www.v2ex.com/t/598454" class="external">t/598454<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>)</td></tr><tr><td>大数据 / <del>Android</del> / 微信小程序</td><td>山东 (青岛) 恒邦教育信息有限公司</td><td>新外包，信息不多</td></tr></tbody></table></div>
+<h3 id="giving-up-postgraduate-entrance-examination">Giving Up Postgraduate Entrance Examination<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#giving-up-postgraduate-entrance-examination" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>在这简短的半个月里，从老姐考研二战失败的经验上，以及自己当时的精神状态，我放弃了考研，选择了一条看似轻松，实则更加崎岖的道路 ── 找工作，但说来滑稽，前几年都是抱有一丝侥幸心理去卷保研名额，但是这种吊儿郎当的半吊子心态还是败下阵来，这太压抑了，我需要钱.</p>
+<p>首先，事实上，可能因为父母没有正式的工作单位，如今才有所发觉，在 2021 年 2 月正式实行 <a href="https://baike.baidu.com/item/%E5%BB%B6%E8%BF%9F%E9%80%80%E4%BC%91/1832712#:~:text=%E2%80%9C%E5%8D%81%E5%9B%9B%E4%BA%94%E2%80%9D%E8%A7%84%E5%88%92%E3%80%8A%E5%BB%BA%E8%AE%AE%E3%80%8B%E6%8F%90%E5%87%BA%EF%BC%8C%E5%AE%9E%E6%96%BD%E6%B8%90%E8%BF%9B%E5%BC%8F%E5%BB%B6%E8%BF%9F%E6%B3%95%E5%AE%9A%E9%80%80%E4%BC%91%E5%B9%B4%E9%BE%84" class="external">延迟退休<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 之前，<strong>我的父母就已经到了法定退休年龄 (女 50，男 55)</strong>. 直到三年后的现在，我的父母依旧还在为支撑这个家劳累着，父母的衰老肉眼可见，<strong>当人生一晃眼间发现和父母所剩时间不多的时候，第一次懂得那句话，<em>” 父母在，不远游，游必有方 “</em></strong>，尤其是当我发现读书这个巨大的泡沫后，我只想回头多看看这陌生又熟悉的父母.</p>
+<p>大学前我总抱着尽量不顾家里事去读书，因为家事很多都听不懂，基本没有放在心上. 高三课间我曾问暗恋的女同桌，问她为什么放弃之前的那段恋情，她支支吾吾，原话已经记不太到了，大致意思是因为觉得对不起父母，这个早被我遗忘的理由其实一直陪伴着我. 我时常这样嘲讽自己说:</p>
+<blockquote>
+<p>” 如果父母知道自己含辛茹苦供养自己孩子二十几年，到头来养却是这样自欺欺人的学术垃圾? 这样的文化败类? 这样的废物? 这样的残废? 他们这几十年风雨是不是多少有点可悲啊? 有些难以接受? ”</p>
+</blockquote>
+<p>我再也对衰老的父母生不起来气了，就算我实在无法忍受父母轻微老年痴呆这件事一样，每次回家我都要将从前的事一次次吐露给他们，就像电影《<a href="https://movie.douban.com/subject/33432655/" class="external"><em>困在时间里的父亲</em><svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>》里 Anne 需要一遍又一遍告诉父亲 Anthony 现在是什么时候那样，我完全不知道，也没有办法知道父母脑海中的时间线是怎么样的，我还是我吗? 有被粉饰的痕迹吗?</p>
+<p><strong>我真正害怕的其实是他们记忆中的孩子不是我，是那个他们心目中完美的那个孩子</strong>，我没有勇气戳破这几十年被做空的泡沫，没有比施人绝望更绝望的了，但我能原谅这个辜负他们这么多年心血的孩子吗?</p>
+<p>其次，<strong>我怀疑自己是否能考上外地的高校,</strong> 我的运气不会次次都像高考那般，而且有无数无形的竞争对手，加上国内裁员形势如此严重，这种情况下又无法开学，希望就更渺茫了. 加上我对我们学校研究生整日通宵打游戏有点偏见，我觉得如果这样再霍霍三年也没有什么特别的意义. 终究是逃不掉找工作这道坎，索性就放弃了，我以前的朋友听说了我放弃考研也很惊讶</p>
+<p>其实，如果有殷实的家境，心无旁骛的学习环境以及喜欢的导师，我也很想试试考研，但是这三样东西我都没有.</p>
+<p>这样说好像我没有什么自我意志，但是，即使是巧合，意外还是什么,</p>
+<p>这剧烈动荡的三年疫情中，全球从融合逐渐走向分裂，叙事不再统一口径，这十几年发展出来的经济在急速倒退，未来没有更好，在这个异常狭窄的高墙之下，接踵不断的悲报，总是让人有点想要自暴自弃，放弃自我. 始终如一相信单边叙事的人总是幸福的，他们永远能够自洽，那些卡在两个极端之间的人们注定痛苦. 当我身边的人都统一口径将所有罪责都推脱给外部的时候，我不寒而栗. 当一个国家的全体人民，转嫁国内矛盾指向外部的时候，会发生什么? 我很遗憾很多事情没有坚持下来，其实很多时间点，在我爬上第一个难点高峰的时候我就放弃了，我没能看到山外山的全新视角，导致复盘的时候其实有很多工作没有做，到头来其实还不如不做.</p>
+<h2 id="2022-autumn">2022 Autumn<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2022-autumn" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>没有想到的是，呆在寝室甚至比家里更充实，有时候多和室友拌个嘴的功夫一天就过去了，玩不完的烂梗，道不完的八卦，最美好的时间仿佛都定格在这短暂的，临近告别的日子里，我们刻意不谈，仿佛窗外就是晴天，但是你也懂得，” 把寒气传递给每个人 “，任正非的这句话席卷了国内整个求职圈，成了统一的口号，明天的陈词滥调.</p>
+<p>整个秋天给人的感觉是麻木的，因为我个人社恐而怠慢，导致自己成了小组 leader 这件事，成了我 21 岁人生的第一个礼物，虽然开发的整个过程都是面向网络编程，Gitee/Github 上针对 CMS 更是卷的不行，起初本来想跟着 Youtube 上一个视频敲得，但因为只有小半个月的时间，还是去 Bilibili 现学了一个，整个小学期就这样过去了.</p>
+<p>8 月前中期有一段短暂的海投时间，不曾想在半路泄了气，之前大量的准备的面经完全没有派上用场，自己此前也没有了解 Java 笔试能难到什么地步，面对很多中厂的笔试，基本全挂了，说实话那段时间就开始向内自我归因了，无论是写 Java 遇到瓶颈期的上半个月，还是闹心的 Java 笔试.</p>
+<p>想了很多东西，更多的还是 Work Balance 的问题，这样持续了半年漫无目的，毫无深浅的日子，仿佛到了我个人的临界点，最后大多数的时间里还是躺在了 Virtual Reality 里，活成了一个名副其实的 Neet 党，这一泄气，就跟着疫情拖到了 28 号开学。在 3 天的时间突击了 5 门考试，缩印，胶带，草稿纸，手机，这就是 3 天想的全部事情，仗着大四的弱势，作弊竟成了被默许的事情，上下都一副 ” 管他呢，过了就行 ” 的嘴脸，说实话，很多人的人生就是这样草草添上几笔就结束的，包括我自己.</p>
+<p>如果 9 月真的是过去半年日子的延续，我真的不会研究学校毕业生的走向，泄了气不会再充气逼自己继续海投，不会想着从 Virtual Reality 的日子中走出来，而这，全都是我和我的室友一起走过来的，我真心感激他们,</p>
+<p>简单说下日程，7 月 11 日 为期一个月的线上培训，然后就是 8 月 14 日 开学的 4 门期末补考，9 月 四六级补考，接下来又是秋招的投递和面试. 😇</p>
+<p>9 月以来，焦虑随着漫无尽头的在线测评肆意生长，我已经不知道</p>
+<p>我只是想要一个能当 ” 人 ” 的就业环境，我讨厌自己在职场上就必须要点头哈腰，低人一等，” 王侯将相，宁有种乎?”，我只希望我能早点回家，只希望工作能多少保留自己的尊严，不要剥夺自己的健康，但是，这偏偏成了这个糟糕环境中最宝贵的东西，我们所谓的 ” 卷 “，只是希望自己能够正正常常地，体面地吃口饭罢了，就是这么难，操.</p>
+<hr/>
+<p>我发现我控制不住自己写作的语气，总是不知觉地加入用于点缀的辞藻，我过去几番将其从我的文中剥去，但是如今我发现，我再也没有功夫回头都我的文章了，这太累了，如果手边真的有一个快进的按钮，我真希望便捷地逃离</p>
+<h2 id="一点意见和经验">一点意见和经验<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#一点意见和经验" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>欢迎查看互联网上我的嘴替：</p>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>NOTE</p></div>
+                  
+                </div>
+<div class="callout-content">
+<ul>
+<li>
+<p>ACM：这个需要团队和老师的，自己弄不了的。不推荐。</p>
+</li>
+<li>
+<p>保研：考研是为了提升平台，保研一般也是同等水平学校吧，也就是没提升，除非你能继续读博，否则不推荐。</p>
+</li>
+<li>
+<p>出国：将来想移民的，推荐。自己申请的，推荐。找机构花钱的，不推荐。</p>
+</li>
+<li>
+<p>考公：看性格，如果你不是特别反感体制内可能出现的一些问题，推荐。否则不推荐。</p>
+</li>
+<li>
+<p>提高编程能力&amp;考研：这个一般人只能二选一，选哪个基本看你有信心考上什么水平的学校：</p>
+</li>
+<li>
+<p>一二本：工作和考研都差不多，根据自己的性格和爱好选就行。</p>
+</li>
+<li>
+<p>985 ，211：推荐先全力考研。考上了再提高编程能力。你想知道差距有多大，去看看校招就知道了。</p>
+</li>
+</ul>
+<p>精确一点的本科技能线路：
+<span class="katex-error" title="ParseError: KaTeX parse error: Expected 'EOF', got '#' at position 51: …C/C++ > Java/C`#̲`/PHP/Python > …" style="color:#cc0000;"><span class="cjk_fallback">数学 > 统计 > 物理 > 模电 > 数电 > 组成 > 汇编 > C/C++ > Java/C`#`/PHP/Python > 操作系统 + 计算机网络 + 多媒体 > 数据库 > 分布式</span></span>
+但如果想成为大佬，如果想不操作工作，需要把这条线路学精，并且：</p>
+<ol>
+<li>加入各种主流或前沿的产品、组件的讨论社区或群，多对 bug 、特性、发展方向 等，提出想法与具体实施方式；</li>
+<li>从大二开始，选一个主流或前沿方向，做一个作品。让它的某些指标，超过现在该行业内，全球 TOP3 的主流产品。</li>
+</ol>
+<p>—— <a href="https://hk.v2ex.com/t/870369" class="external">二本计算机求一个努力方向 - V2EX<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</div>
+</blockquote>
+<section data-footnotes class="footnotes"><h2 class="sr-only" id="footnote-label">Footnotes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#footnote-label" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li id="user-content-fn-cloud-note">
+<p>上大学的这几年，历经各商家绞尽脑汁想出的复杂消费活动，朝令夕改的隐私条款，无故被屏蔽的审查压力，以及数据迁移/导出的焦虑，我对任何 ” 云 ” 软件的数据持久性，对使用用户的宽容度都保持深刻地怀疑，像是 <strong><em>The Social Dilemma</em></strong> 里说的: “If you’re not paying the product，then you are the product.” 那些标榜着永不变质，永久免费，永不倒闭的公司，只是骗你交出尽量多的私人数据，之后做什么就全看企业良心了，综上所述，自托管才是当前市场下的良策. <a href="#user-content-fnref-cloud-note" data-footnote-backref aria-label="Back to reference 1" class="data-footnote-backref internal alias">↩</a></p>
+</li>
+</ol>
+</section></article><hr/><div class="page-footer"><div class="giscus" data-repo="bGZo/vault" data-repo-id="R_kgDOM-7h7w" data-category="comments" data-category-id="DIC_kwDOM-7h784CmFf2" data-mapping="url" data-strict="1" data-reactions-enabled="1" data-input-position="bottom" data-light-theme="light" data-dark-theme="dark" data-theme-url="https://note.bgzo.cc//static/giscus" data-lang="en"></div></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[&quot;public&quot;],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[&quot;public&quot;],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-20" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#我的大学" data-for="我的大学">我的大学</a></li><li class="depth-1"><a href="#rules-not-new-year-resolution-but-past-year-reviewpyr" data-for="rules-not-new-year-resolution-but-past-year-reviewpyr">Rules: Not New Year Resolution, but Past Year Review(PYR)</a></li><li class="depth-1"><a href="#2019-winter" data-for="2019-winter">2019 Winter</a></li><li class="depth-1"><a href="#2020-spring--summer" data-for="2020-spring--summer">2020 Spring &amp; Summer</a></li><li class="depth-1"><a href="#2020-autumn--winter" data-for="2020-autumn--winter">2020 Autumn &amp; Winter</a></li><li class="depth-1"><a href="#2021-spring--summer" data-for="2021-spring--summer">2021 Spring &amp; Summer</a></li><li class="depth-1"><a href="#2021-autumn--winter" data-for="2021-autumn--winter">2021 Autumn &amp; Winter</a></li><li class="depth-1"><a href="#2022-spring--summer" data-for="2022-spring--summer">2022 Spring &amp; Summer</a></li><li class="depth-2"><a href="#giving-up-postgraduate-entrance-examination" data-for="giving-up-postgraduate-entrance-examination">Giving Up Postgraduate Entrance Examination</a></li><li class="depth-1"><a href="#2022-autumn" data-for="2022-autumn">2022 Autumn</a></li><li class="depth-1"><a href="#一点意见和经验" data-for="一点意见和经验">一点意见和经验</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function E(a,e){if(!a)return;function t(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function n(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}a?.addEventListener("click",t),window.addCleanup(()=>a?.removeEventListener("click",t)),document.addEventListener("keydown",n),window.addCleanup(()=>document.removeEventListener("keydown",n))}function f(a){for(;a.firstChild;)a.removeChild(a.firstChild)}var m=class{constructor(e,t){this.container=e;this.content=t;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),t=this.onMouseMove.bind(this),n=this.onMouseUp.bind(this),o=this.onTouchStart.bind(this),r=this.onTouchMove.bind(this),i=this.onTouchEnd.bind(this),s=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),this.container.addEventListener("touchstart",o,{passive:!1}),document.addEventListener("touchmove",r,{passive:!1}),document.addEventListener("touchend",i),window.addEventListener("resize",s),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",t),()=>document.removeEventListener("mouseup",n),()=>this.container.removeEventListener("touchstart",o),()=>document.removeEventListener("touchmove",r),()=>document.removeEventListener("touchend",i),()=>window.removeEventListener("resize",s))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let t=this.createButton("+",()=>this.zoom(.1)),n=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(n),e.appendChild(o),e.appendChild(t),this.container.appendChild(e)}createButton(e,t){let n=document.createElement("button");return n.textContent=e,n.className="mermaid-control-button",n.addEventListener("click",t),window.addCleanup(()=>n.removeEventListener("click",t)),n}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}onTouchStart(e){if(e.touches.length!==1)return;this.isDragging=!0;let t=e.touches[0];this.startPan={x:t.clientX-this.currentPan.x,y:t.clientY-this.currentPan.y}}onTouchMove(e){if(!this.isDragging||e.touches.length!==1)return;e.preventDefault();let t=e.touches[0];this.currentPan={x:t.clientX-this.startPan.x,y:t.clientY-this.startPan.y},this.updateTransform()}onTouchEnd(){this.isDragging=!1}zoom(e){let t=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),n=this.content.getBoundingClientRect(),o=n.width/2,r=n.height/2,i=t-this.scale;this.currentPan.x-=o*i,this.currentPan.y-=r*i,this.scale=t,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){let t=this.content.querySelector("svg").getBoundingClientRect(),n=t.width/this.scale,o=t.height/this.scale;this.scale=1,this.currentPan={x:(this.container.clientWidth-n)/2,y:(this.container.clientHeight-o)/2},this.updateTransform()}},T=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],y;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;y||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let t=y.default,n=new WeakMap;for(let r of e)n.set(r,r.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let c=n.get(s);c&&(s.innerHTML=c)}let r=T.reduce((s,c)=>(s[c]=window.getComputedStyle(document.documentElement).getPropertyValue(c),s),{}),i=document.documentElement.getAttribute("saved-theme")==="dark";t.initialize({startOnLoad:!1,securityLevel:"loose",theme:i?"dark":"base",themeVariables:{fontFamily:r["--codeFont"],primaryColor:r["--light"],primaryTextColor:r["--darkgray"],primaryBorderColor:r["--tertiary"],lineColor:r["--darkgray"],secondaryColor:r["--secondary"],tertiaryColor:r["--tertiary"],clusterBkg:r["--light"],edgeLabelBackground:r["--highlight"]}}),await t.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let r=0;r<e.length;r++){let v=function(){let g=l.querySelector("#mermaid-space"),h=l.querySelector(".mermaid-content");if(!h)return;f(h);let w=i.querySelector("svg").cloneNode(!0);h.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new m(g,h)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},i=e[r],s=i.parentElement,c=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(c),L=c.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),E(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript.js" type="module" data-persist="true"></script></html>

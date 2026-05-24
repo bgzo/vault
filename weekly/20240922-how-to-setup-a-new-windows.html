@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Windows 调教指南</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto Sans:wght@400;700&amp;family=Noto Serif:ital,wght@0,400;0,600;1,400;1,600&amp;family=JetBrains Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="bGZo's Notes"/><meta property="og:title" content="Windows 调教指南"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Windows 调教指南"/><meta name="twitter:description" content="Windows 调教指南 TIP 换机很麻烦，不妨看看这篇指南？ 安装 拿到 Windows ISO 镜像： www.microsoft.com/en-us/software-download/windows11 msdn.sjjzm.com msdn.itellyou.cn www.hellowindows.cn 写到 U 盘里面： github.com/pbatard/rufus 跳联网激活 shift + f12 弹出命令行后，输入 oobe\bypassnro 重启进入系统即可跳过联网激活 激活 irm massgrave.dev/get | iex via: github.com/m..."/><meta property="og:description" content="Windows 调教指南 TIP 换机很麻烦，不妨看看这篇指南？ 安装 拿到 Windows ISO 镜像： www.microsoft.com/en-us/software-download/windows11 msdn.sjjzm.com msdn.itellyou.cn www.hellowindows.cn 写到 U 盘里面： github.com/pbatard/rufus 跳联网激活 shift + f12 弹出命令行后，输入 oobe\bypassnro 重启进入系统即可跳过联网激活 激活 irm massgrave.dev/get | iex via: github.com/m..."/><meta property="og:image:alt" content="Windows 调教指南 TIP 换机很麻烦，不妨看看这篇指南？ 安装 拿到 Windows ISO 镜像： www.microsoft.com/en-us/software-download/windows11 msdn.sjjzm.com msdn.itellyou.cn www.hellowindows.cn 写到 U 盘里面： github.com/pbatard/rufus 跳联网激活 shift + f12 弹出命令行后，输入 oobe\bypassnro 重启进入系统即可跳过联网激活 激活 irm massgrave.dev/get | iex via: github.com/m..."/><meta property="og:image" content="https://note.bgzo.cc//static/og-image.png"/><meta property="og:image:url" content="https://note.bgzo.cc//static/og-image.png"/><meta name="twitter:image" content="https://note.bgzo.cc//static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="note.bgzo.cc/"/><meta property="og:url" content="https://note.bgzo.cc/weekly/20240922-how-to-setup-a-new-windows"/><meta property="twitter:url" content="https://note.bgzo.cc/weekly/20240922-how-to-setup-a-new-windows"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Windows 调教指南 TIP 换机很麻烦，不妨看看这篇指南？ 安装 拿到 Windows ISO 镜像： www.microsoft.com/en-us/software-download/windows11 msdn.sjjzm.com msdn.itellyou.cn www.hellowindows.cn 写到 U 盘里面： github.com/pbatard/rufus 跳联网激活 shift + f12 弹出命令行后，输入 oobe\bypassnro 重启进入系统即可跳过联网激活 激活 irm massgrave.dev/get | iex via: github.com/m..."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL3F1YXJ0ei9xdWFydHovY29tcG9uZW50cy9zdHlsZXMiLCJzb3VyY2VzIjpbIm1lcm1haWQuaW5saW5lLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUdGO0VBQ0U7OztBQUtGO0VBQ0U7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDAgMDtcbiAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjFzIGVhc2U7XG4gICAgICBvdmVyZmxvdzogdmlzaWJsZTtcbiAgICAgIG1pbi1oZWlnaHQ6IDIwMHB4O1xuICAgICAgbWluLXdpZHRoOiAyMDBweDtcblxuICAgICAgcHJlIHtcbiAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICB9XG5cbiAgICAgIHN2ZyB7XG4gICAgICAgIG1heC13aWR0aDogbm9uZTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAubWVybWFpZC1jb250cm9scyB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBib3R0b206IDIwcHg7XG4gICAgICByaWdodDogMjBweDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBnYXA6IDhweDtcbiAgICAgIHBhZGRpbmc6IDhweDtcbiAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgICAgei1pbmRleDogMjtcblxuICAgICAgLm1lcm1haWQtY29udHJvbC1idXR0b24ge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgd2lkdGg6IDMycHg7XG4gICAgICAgIGhlaWdodDogMzJweDtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgICBjb2xvcjogdmFyKC0tZGFyayk7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1ib2R5Rm9udCk7XG4gICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjJzIGVhc2U7XG5cbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTtcbiAgICAgICAgfVxuXG4gICAgICAgIC8vIFN0eWxlIHRoZSByZXNldCBidXR0b24gZGlmZmVyZW50bHlcbiAgICAgICAgJjpudGgtY2hpbGQoMikge1xuICAgICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTJweDtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdfQ== */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script></head><body data-slug="weekly/20240922-how-to-setup-a-new-windows"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">bGZo's Notes</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>!new Set([\&quot;bgzo\&quot;,\&quot;clippers/newsletter/sync\&quot;]).has(node.displayName.toLowerCase())&quot;,&quot;mapFn&quot;:&quot;node=>{node.isFolder?node.displayName=\&quot;\\u{1F4C1} \&quot;+node.displayName:node.displayName=\&quot;\\u{1F4C4} \&quot;+node.displayName}&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-63"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-63" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../weekly/">表达之心不死</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Windows 调教指南</a></div></nav><p show-comma="true" class="content-meta"><time datetime="2024-09-22T09:26:22.000Z">Sep 22, 2024</time><span>10 min read</span></p><ul class="tags"><li><a href="../tags/public" class="internal tag-link">public</a></li><li><a href="../tags/writing/how-to" class="internal tag-link">writing/how-to</a></li></ul></div></div><article class="popover-hint"><h1 id="windows-调教指南">Windows 调教指南<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#windows-调教指南" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>TIP</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>换机很麻烦，不妨看看这篇指南？</p>
+</div>
+</blockquote>
+<h2 id="安装">安装<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#安装" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>拿到 Windows ISO 镜像：
+<ul>
+<li><a href="https://www.microsoft.com/en-us/software-download/windows11" class="external">https://www.microsoft.com/en-us/software-download/windows11<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://msdn.sjjzm.com" class="external">https://msdn.sjjzm.com<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://msdn.itellyou.cn" class="external">https://msdn.itellyou.cn<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.hellowindows.cn" class="external">https://www.hellowindows.cn<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+<li>写到 U 盘里面：
+<ul>
+<li><a href="https://github.com/pbatard/rufus" class="external">https://github.com/pbatard/rufus<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+<h2 id="跳联网激活">跳联网激活<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#跳联网激活" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><code>shift + f12</code> 弹出命令行后，输入</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="shell" data-theme="github-light github-dark"><code data-language="shell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">oobe\bypassnro</span></span></code></pre></figure>
+<p>重启进入系统即可跳过联网激活</p>
+<h2 id="激活">激活<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#激活" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="shell" data-theme="github-light github-dark"><code data-language="shell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">irm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> https://massgrave.dev/get</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> |</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> iex</span></span></code></pre></figure>
+<p>via: <a href="https://github.com/massgravel/Microsoft-Activation-Scripts" class="external">https://github.com/massgravel/Microsoft-Activation-Scripts<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<h2 id="包管理器">包管理器<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#包管理器" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote class="callout tip" data-callout="tip">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>IMPORTANT</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>下面的指南需要 <code>winget</code>，好在现在改命令已经支持代理，因此你唯一需要保证的是畅通的网络 <sup><a href="#user-content-fn-proxy_winget" id="user-content-fnref-proxy_winget" data-footnote-ref aria-describedby="footnote-label" class="internal alias">1</a></sup>。选择自己偏好的命令开启代理：</p>
+</div>
+</blockquote>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Set Proxy for winget</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> winget</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> settings</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --enable</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> ProxyCommandLineOptions</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Temporary</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> winget</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --proxy</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> http://127.0.0.1:10800</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> install</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> </span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Permanent</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> winget</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> settings</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> set</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> DefaultProxy</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> http://127.0.0.1:10800</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Cancel permanent</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> winget</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> settings</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> reset</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> DefaultProxy</span></span></code></pre></figure>
+<h3 id="可选-从-scoop-导入">可选: 从 <a href="../tools/ScoopInstaller-Scoop" class="internal alias" data-slug="tools/ScoopInstaller-Scoop">Scoop</a> 导入<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#可选-从-scoop-导入" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Scoop 也支持代理，别忘了：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="shell" data-theme="github-light github-dark"><code data-language="shell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Set Proxy for scoop, via https://github.com/ScoopInstaller/Scoop/wiki/Using-Scoop-behind-a-proxy</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">scoop</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> config</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> proxy</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> 127.0.0.1:10800</span></span></code></pre></figure>
+<p>建议将旧机器的 SCOOP 文件夹放在用户目录（<code>~</code>)，然后保存 <code>install-scoop.ps1</code>, 运行下面的脚本更新环境变量：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="powershell" data-theme="github-light github-dark"><code data-language="powershell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$username </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> $</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">env:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">USERNAME</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$scoopPath </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;C:\Users\</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$username</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">\scoop&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$currentScoop </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">Environment</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]::GetEnvironmentVariable(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;SCOOP&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">,</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;User&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">)</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> ($currentScoop </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-eq</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> $null</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) {</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    [</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">Environment</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]::SetEnvironmentVariable(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;SCOOP&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">,</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> $scoopPath</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">,</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;User&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">)</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">    Write-Output</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;SCOOP environment variable set to </span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$scoopPath</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">} </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">else</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">    Write-Output</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;SCOOP environment variable already exists with value: </span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$currentScoop</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span>
+<span data-line> </span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$currentUserPath </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">Environment</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]::GetEnvironmentVariable(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;PATH&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">,</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;User&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$newPathEntry </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;%SCOOP%\shims&quot;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-not</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> $currentUserPath.Contains($newPathEntry)) {</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    $updatedPath </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$currentUserPath</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$newPathEntry</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    [</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">Environment</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]::SetEnvironmentVariable(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;PATH&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">,</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> $updatedPath</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">,</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;User&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">)</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">    Write-Output</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;Path updated: </span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$updatedPath</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">} </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">else</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">    Write-Output</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;Path already contains </span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$newPathEntry</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span></code></pre></figure>
+<p>接下来重新创建符号连接（需要管理员）：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> scoop</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> reset</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> *</span></span></code></pre></figure>
+<h2 id="components-build-in">Components build-in<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#components-build-in" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="remove-ads">Remove: Ads<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#remove-ads" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Run as <code>.ps1</code>:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="powershell" data-theme="github-light github-dark"><code data-language="powershell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># 设置下载的目标目录</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$distDir </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;dist&quot;</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># 确保 dist 目录存在</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-not</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">Test-Path</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> -</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Path $distDir)) {</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">    # New-Item -Path $distDir -ItemType Directory</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    mkdir $distDir</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-not</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> $distDir) {</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">    Write-Host</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;Error: \</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$distDir</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> is null or empty!&quot;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">    exit</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$fileUrl </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;https://github.com/xM4ddy/OFGB/releases/download/v0.4/OFGB-Deps.exe&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$fileName </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;OFGB-Deps.exe&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$destinationPath </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> Join-Path</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> -</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Path $distDir </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">ChildPath $fileName</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># 确保 dist 目录存在</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-not</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">Test-Path</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> -</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Path $distDir)) {</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">    New-Item</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> -</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Path $distDir </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">ItemType Directory</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># 默认代理地址</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$defaultProxy </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;http://127.0.0.1:7890&quot;</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># 询问用户是否使用代理</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$useProxy </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> Read-Host</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;是否需要使用代理下载文件? (y/n)&quot;</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># 判断是否使用代理</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> ($useProxy </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-eq</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;y&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) {</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">    # 询问用户是否使用默认代理地址</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    $proxyAddress </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> Read-Host</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;是否使用默认代理地址 </span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$defaultProxy</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">? (y/n)&quot;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">    if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> ($proxyAddress </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-eq</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;y&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) {</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        $proxy </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> $defaultProxy</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">else</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">        # 用户提供自定义代理地址</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        $proxy </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> Read-Host</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;请输入自定义代理地址&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    }</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">    # 设置代理并下载文件</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    $webClient </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> New-Object</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> System.Net.WebClient</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    $webClient.Proxy </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> New-Object</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> System.Net.WebProxy($proxy)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    $webClient.DownloadFile($fileUrl</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">,</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> $destinationPath)</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">    Write-Host</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;文件已通过代理下载到 </span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$distDir</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> 目录&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">} </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">else</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">    # 直接下载文件，不使用代理</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">    Invoke-WebRequest</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> -</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Uri $fileUrl </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">OutFile $destinationPath</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">    Write-Host</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;文件已下载到 </span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$distDir</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> 目录&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span></code></pre></figure>
+<h3 id="remove-packages">Remove: Packages<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#remove-packages" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Run following:<sup><a href="#user-content-fn-uninstall-garbage" id="user-content-fnref-uninstall-garbage" data-footnote-ref aria-describedby="footnote-label" class="internal alias">2</a></sup> <sup><a href="#user-content-fn-china-office" id="user-content-fnref-china-office" data-footnote-ref aria-describedby="footnote-label" class="internal alias">3</a></sup></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> winget</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> uninstall</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;windows web experience pack&quot;</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> winget</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> uninstall</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;电脑管家&quot;</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> winget</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> uninstall</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;资讯&quot;</span></span></code></pre></figure>
+<h3 id="replace-powershell">Replace: Powershell<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#replace-powershell" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="shell" data-theme="github-light github-dark"><code data-language="shell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">#Powershell 7</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> winget</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> install</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --id</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> Microsoft.PowerShell</span></span></code></pre></figure>
+<h3 id="replace-search">Replace: Search<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#replace-search" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><a href="https://github.com/srwi/EverythingToolbar" class="external">GitHub - srwi/EverythingToolbar: Everything integration for the Windows taskbar.<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> <img src="https://img.shields.io/github/stars/srwi/EverythingToolbar" alt="https://github.com/srwi/EverythingToolbar"/></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="shell" data-theme="github-light github-dark"><code data-language="shell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># EverythingToolbar </span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> winget</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> install</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> stnkl.EverythingToolbar</span></span></code></pre></figure>
+<h3 id="disable-services">Disable: Services<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#disable-services" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Run following as <code>disable-services.ps1</code>:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="powershell" data-theme="github-light github-dark"><code data-language="powershell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$servicesToDisable </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> @</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">  &quot;WSearch&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">,</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> </span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">  &quot;DtsApo4Service&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">)</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">foreach</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> ($service </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">in</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> $servicesToDisable) {</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">    # 获取服务状态</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    $svc </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> Get-Service</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> -</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Name $service </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">ErrorAction SilentlyContinue</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    </span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">    if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">$null</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> -ne</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> $svc) {</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">        # 停止服务</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">        if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> ($svc.Status </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-ne</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> 'Stopped'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) {</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">            Write-Host</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;Stopping service: </span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$service</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">            Stop-Service</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> -</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Name $service </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Force</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        }</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        </span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">        # 设置服务启动类型为禁用</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">        Write-Host</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;Disabling service: </span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$service</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">        Set-Service</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> -</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Name $service </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">StartupType Disabled</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">else</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">        Write-Host</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;Service </span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">$service</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> not found!&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    }</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span></code></pre></figure>
+<h3 id="disable-firewall">Disable: Firewall<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#disable-firewall" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Run as <code>disable-firewall.ps1</code></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="powershell" data-theme="github-light github-dark"><code data-language="powershell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Before</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">Get-NetFirewallProfile</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">Set-NetFirewallProfile</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> -</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Profile Domain </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Enabled False</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">Set-NetFirewallProfile</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> -</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Profile Private </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Enabled False</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">Set-NetFirewallProfile</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> -</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Profile Public </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Enabled False</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># After</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">Get-NetFirewallProfile</span></span></code></pre></figure>
+<h3 id="disable-windows-defender">Disable: Windows Defender<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#disable-windows-defender" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>use <a href="https://www.sordum.org/9480/defender-control-v2-1/" class="external"><code>dControl</code><svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, but not open-source.</p>
+<h3 id="hide-windows-security-notifications">Hide: Windows Security Notifications<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hide-windows-security-notifications" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Run as <code>disable-security-notifications.reg</code><sup><a href="#user-content-fn-wsn" id="user-content-fnref-wsn" data-footnote-ref aria-describedby="footnote-label" class="internal alias">4</a></sup></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="reg" data-theme="github-light github-dark"><code data-language="reg" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">Windows Registry Editor Version 5.00</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Notifications]</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&quot;</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">DisableNotifications</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&quot;=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">dword</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">00000001</span></span></code></pre></figure>
+<h3 id="disable-windows-update">Disable: Windows Update<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#disable-windows-update" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>TODO</p>
+<h3 id="disable-sticky-keys">Disable: Sticky keys<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#disable-sticky-keys" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>TODO</p>
+<h2 id="laptop-option">Laptop Option<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#laptop-option" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="processor-performance-boost-mode-5">Processor performance boost mode <sup><a href="#user-content-fn-turbo-boost" id="user-content-fnref-turbo-boost" data-footnote-ref aria-describedby="footnote-label" class="internal alias">5</a></sup><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#processor-performance-boost-mode-5" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Run <code>process-boost.bat</code>, then go <code>powercfg.cpl</code> to disable boost it. If you are using windows 11, you could use the <code>EnergyStar</code> meanwhile.<sup><a href="#user-content-fn-overheat-laptop" id="user-content-fnref-overheat-laptop" data-footnote-ref aria-describedby="footnote-label" class="internal alias">6</a></sup></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> winget</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> install</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> 9NF7JTB3B17P</span></span></code></pre></figure>
+<h2 id="modern-standby-s0">Modern Standby (S0)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#modern-standby-s0" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Check your laptop whether support S3 sleep mode:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">powercfg</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -a</span></span></code></pre></figure>
+<p>If shown only support S0, run following as <code>kill-s0-sleep.bat</code> to delete sleep mode.<sup><a href="#user-content-fn-windows_modern_standby" id="user-content-fnref-windows_modern_standby" data-footnote-ref aria-describedby="footnote-label" class="internal alias">7</a></sup></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bat" data-theme="github-light github-dark"><code data-language="bat" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Windows Registry Editor Version 5.00</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Power]</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;PlatformAoAcOverride&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=dword:00000000</span></span></code></pre></figure>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>NOTE</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>If you delete sleep mode, you should select your laptop to hibernate after closing lid.</p>
+</div>
+</blockquote>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="shell" data-theme="github-light github-dark"><code data-language="shell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">powercfg</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> /hibernate</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> on</span></span></code></pre></figure>
+<p>Recovery sleep mood run following as <code>reg</code>:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bat" data-theme="github-light github-dark"><code data-language="bat" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Windows Registry Editor Version 5.00</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">[-HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Power]</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;PlatformAoAcOverride&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=-</span></span></code></pre></figure>
+<h1 id="subsystem">SubSystem<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#subsystem" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="wsl">WSL<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#wsl" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Install WSL</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> dism</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> /online</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> /enable-feature</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> /featurename:VirtualMachinePlatform</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> /all</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> /norestart</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> wsl</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --set-default-version</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> 2</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> wsl</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --install</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --no-distribution</span></span></code></pre></figure>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>NOTE</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>If show <code>无法解析服务器的名称或地址</code>, just set system proxy, then retry.</p>
+</div>
+</blockquote>
+<p>Then import ubuntu<sup><a href="#user-content-fn-import_export_wsl" id="user-content-fnref-import_export_wsl" data-footnote-ref aria-describedby="footnote-label" class="internal alias">8</a></sup></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">wsl</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --import</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> ubuntu</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;C:\Users\bgzo\wsl</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\&quot;</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &quot;C:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\U</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">sers</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\b</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">gzo</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\D</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">ownloads</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\u</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">buntu.tar&quot; --version 2</span></span></code></pre></figure>
+<h2 id="wsa">WSA<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#wsa" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>TODO</p>
+<h1 id="customized">Customized<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#customized" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="install-runtime-dependencies">Install Runtime Dependencies<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#install-runtime-dependencies" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># C++</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> winget</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> install</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> Microsoft.VCRedist.2010.x64</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> winget</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> install</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> Microsoft.VCRedist.2012.x64</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> winget</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> install</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> Microsoft.VCRedist.2013.x64</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> winget</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> install</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> Microsoft.VCRedist.2015+.x64</span></span></code></pre></figure>
+<h2 id="install-font">Install Font<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#install-font" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>install under user permission, stored in <code>~\AppData\Local\Microsoft\Windows\Fonts</code></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="shell" data-theme="github-light github-dark"><code data-language="shell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> scoop</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> bucket</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> add</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> nerd-fonts</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># https://github.com/lxgw/LxgwWenKai</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> scoop</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> install</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> LXGWWenKai</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> scoop</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> install</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> LXGWWenKaiMono</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># https://github.com/JetBrains/JetBrainsMono</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> scoop</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> install</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> JetBrainsMono-NF</span></span></code></pre></figure>
+<p>Recommend you install following fonts:</p>
+<ul>
+<li>Ping Fang Font</li>
+<li>Noble Scarlet</li>
+</ul>
+<h2 id="coding-case-sensitive-9">Coding: Case Sensitive <sup><a href="#user-content-fn-case-sensitive" id="user-content-fnref-case-sensitive" data-footnote-ref aria-describedby="footnote-label" class="internal alias">9</a></sup><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#coding-case-sensitive-9" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="shell" data-theme="github-light github-dark"><code data-language="shell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Windows</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> fsutil.exe</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> file</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> setCaseSensitiveInfo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> ~</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\w</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">orkspaces</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> enable</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Git</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> git</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> config</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> core.ignorecase</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> false</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> </span></span></code></pre></figure>
+<h2 id="chinese-flypy-support">Chinese: Flypy Support<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#chinese-flypy-support" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Run as <code>install-flypy.reg</code></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="reg" data-theme="github-light github-dark"><code data-language="reg" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">Windows Registry Editor Version 5.00</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">[HKEY_CURRENT_USER\Software\Microsoft\InputMethod\Settings\CHS]</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&quot;</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">UserDefinedDoublePinyinScheme0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&quot;=&quot;</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">flypy*2*^*iuvdjhcwfg^xmlnpbksqszxkrltvyovt</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&quot;</span></span></code></pre></figure>
+<h2 id="chinese-font-rendering">Chinese: Font rendering<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#chinese-font-rendering" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li>ClearType build-in windows.</li>
+<li>Install <a href="https://github.com/fernvenue/microsoft-yahei" class="external">Noble Scarlet<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a><sup><a href="#user-content-fn-auto_replace_in_chinese_windows" id="user-content-fnref-auto_replace_in_chinese_windows" data-footnote-ref aria-describedby="footnote-label" class="internal alias">10</a></sup></li>
+<li>Replace with Apple PingFang using <a href="https://github.com/Tatsu-syo/noMeiryoUI" class="external">https://github.com/Tatsu-syo/noMeiryoUI<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ol>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>NOTE</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>In 22H2 later versions, something would be wrong. via <a href="https://github.com/Tatsu-syo/noMeiryoUI/discussions/86" class="external">https://github.com/Tatsu-syo/noMeiryoUI/discussions/86<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</div>
+</blockquote>
+<ol start="4">
+<li>(Not recommend, cause <em>outdated</em>) MacType</li>
+</ol>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="sh" data-theme="github-light github-dark"><code data-language="sh" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> winget</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> install</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> MacType.MacType</span></span></code></pre></figure>
+<ol start="5">
+<li>(Not recommend, cause <em>side effect</em>) Replace Fonts</li>
+</ol>
+<h2 id="proxy">Proxy<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#proxy" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>See <a href="../pages/proxy" class="internal" data-slug="pages/proxy">proxy</a>, then go <a href="https://github.com/bGZo/proxy" class="external">https://github.com/bGZo/proxy<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<h2 id="beautify">Beautify<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#beautify" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="like-mac">Like Mac<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#like-mac" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>BitDock: <a href="http://www.bitdock.cn/bbs/forum.php" class="external">http://www.bitdock.cn/bbs/forum.php<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<h1 id="waiting-features">Waiting features<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#waiting-features" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="unlock-windows-hello-without-pin">Unlock windows hello without PIN<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#unlock-windows-hello-without-pin" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Impossible via: <a href="https://answers.microsoft.com/en-us/windows/forum/all/option-to-setup-fingerprint-without-pin-windows/10692b78-a60a-4208-9c97-b9ec27809cea" class="external">https://answers.microsoft.com/en-us/windows/forum/all/option-to-setup-fingerprint-without-pin-windows/10692b78-a60a-4208-9c97-b9ec27809cea<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<h1 id="reference">Reference<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#reference" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="shortcuts">Shortcuts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#shortcuts" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="global">Global<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#global" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">Operation</th><th style="text-align:center;">Effects</th></tr></thead><tbody><tr><td style="text-align:center;">Win+E</td><td style="text-align:center;">打开资源管理器</td></tr><tr><td style="text-align:center;">Win+t</td><td style="text-align:center;">循环切换任务栏</td></tr><tr><td style="text-align:center;">Win+Ctrl+D</td><td style="text-align:center;">创建虚拟 Desktop</td></tr><tr><td style="text-align:center;">Win+Q</td><td style="text-align:center;">搜索</td></tr><tr><td style="text-align:center;">Win+Ctrl+F4</td><td style="text-align:center;">关闭虚拟 Desktop</td></tr><tr><td style="text-align:center;">Win+R</td><td style="text-align:center;">对话框</td></tr><tr><td style="text-align:center;">Win+Ctrl+ 左/右</td><td style="text-align:center;">左右切换虚拟 Desktop</td></tr><tr><td style="text-align:center;">Win+X</td><td style="text-align:center;">“Windows 移动中心”设置面板</td></tr><tr><td style="text-align:center;">Win+F4</td><td style="text-align:center;">关闭窗口</td></tr><tr><td style="text-align:center;">Win+m</td><td style="text-align:center;">最小化窗口（全部窗口）</td></tr><tr><td style="text-align:center;">Win+Shift+M</td><td style="text-align:center;">还原窗口最小化（全部）</td></tr></tbody></table></div>
+<h3 id="ctrl">Ctrl<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ctrl" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">Operation</th><th style="text-align:center;">Effects</th></tr></thead><tbody><tr><td style="text-align:center;">ctrl+w</td><td style="text-align:center;">关闭浏览器当前页（我的电脑）</td></tr><tr><td style="text-align:center;">ctrl+t</td><td style="text-align:center;">打开新标签页</td></tr><tr><td style="text-align:center;">ctrl+alt+delete</td><td style="text-align:center;">打开任务管理器</td></tr><tr><td style="text-align:center;">ctrl+shift+t</td><td style="text-align:center;">恢复关闭的浏览器页面</td></tr><tr><td style="text-align:center;">ctrl+</td><td style="text-align:center;">放大页面</td></tr><tr><td style="text-align:center;">ctrl-</td><td style="text-align:center;">缩小页面</td></tr></tbody></table></div>
+<h3 id="alt">Alt<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#alt" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">Operation</th><th style="text-align:center;">Effects</th></tr></thead><tbody><tr><td style="text-align:center;">alt+F4</td><td style="text-align:center;">关闭窗口</td></tr><tr><td style="text-align:center;">alt+enter</td><td style="text-align:center;">查看选中文件属性</td></tr><tr><td style="text-align:center;">alt+ 前进/后退方向键</td><td style="text-align:center;">浏览器页面后退前进</td></tr><tr><td style="text-align:center;">alt+d</td><td style="text-align:center;">焦点固定到地址栏</td></tr><tr><td style="text-align:center;">alt+shief+numLock</td><td style="text-align:center;">用键盘控制鼠标</td></tr><tr><td style="text-align:center;">alt+space+n</td><td style="text-align:center;">单个窗口最小化（配合 Dock 使用）</td></tr></tbody></table></div>
+<h3 id="fn">Fn<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fn" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:center;">Operation</th><th style="text-align:center;">Effects</th></tr></thead><tbody><tr><td style="text-align:center;">F1</td><td style="text-align:center;">显示当前程序或者 windows 的帮助内容</td></tr><tr><td style="text-align:center;">F2</td><td style="text-align:center;">如果选中文件的话，进行重命名</td></tr><tr><td style="text-align:center;">F3</td><td style="text-align:center;">查找</td></tr><tr><td style="text-align:center;">F5</td><td style="text-align:center;">浏览器页面刷新</td></tr><tr><td style="text-align:center;">F6</td><td style="text-align:center;">使用浏览器时，地址栏获得焦点（即光标移到了地址栏）</td></tr><tr><td style="text-align:center;">F11</td><td style="text-align:center;">浏览器全屏</td></tr><tr><td style="text-align:center;">F12</td><td style="text-align:center;">浏览器审查元素/调试界面</td></tr><tr><td style="text-align:center;">prtsc</td><td style="text-align:center;">截屏</td></tr></tbody></table></div>
+<h2 id="changelog">Changelog<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#changelog" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="24h2">24H2<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#24h2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>via: <a href="https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-11-version-24h2#features-added-to-windows-11-since-version-23h2" class="external">https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-11-version-24h2#features-added-to-windows-11-since-version-23h2<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>Features no longer under temporary enterprise control</li>
+<li>Checkpoint cumulative updates</li>
+<li>Features exclusive to Copilot+ PCs in 24H2</li>
+<li>Features added to Windows 11 since version 23H2
+<ul>
+<li>Server Message Block (SMB) protocol changes
+<ul>
+<li>SMB signing and encryption</li>
+<li>SMB alternative client and server ports</li>
+<li>SMB NTLM blocking exception list</li>
+<li>SMB dialect management</li>
+<li>SMB over QUIC</li>
+<li>SMB firewall rule changes</li>
+</ul>
+</li>
+<li>Local Security Authority (LSA) protection enablement on upgrade</li>
+<li>Remote Mailslot protocol disabled by default</li>
+<li>Local Administrator Password Solution (LAPS) improvements</li>
+<li>Rust in the Windows kernel</li>
+<li>Personal Data Encryption (PDE) for folders</li>
+<li>Windows protected print mode</li>
+<li>SHA-3 support</li>
+<li>App Control for Business</li>
+<li>Wi-Fi 7 support</li>
+<li>Bluetooth ® LE audio support for assistive devices</li>
+<li>Windows location improvements</li>
+<li>Sudo for Windows</li>
+<li>Enable optional updates</li>
+<li>Remote Desktop Connection improvements</li>
+<li>Additional features
+<ul>
+<li><strong>File Explorer</strong>
+<ul>
+<li>7-zip and TAR archives support</li>
+</ul>
+</li>
+<li><strong>OOBE improvement</strong>: when you need to connect to a network and there’s no Wi-Fi drivers, you’re given an <em>Install drivers</em> option to install drivers that are already downloaded</li>
+<li><strong>Registry Editor</strong>: The Registry Editor supports limiting a search to the currently selected key and its descendants</li>
+<li><strong>Task Manager</strong>: The Task Manager settings page has <a href="https://learn.microsoft.com/en-us/windows/apps/design/style/mica" class="external">Mica material<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> and a redesigned icon</li>
+</ul>
+</li>
+<li>Developer APIs</li>
+</ul>
+</li>
+<li>Features removed in Windows 11, version 24H2
+<ul>
+<li>WordPad</li>
+<li>Alljoyn</li>
+</ul>
+</li>
+</ul>
+<h3 id="23h2">23H2<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#23h2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>via: <a href="https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-11-version-23h2" class="external">https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-11-version-23h2<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>Features no longer under temporary enterprise control</li>
+<li>Features added to Windows 11 since version 22H2
+<ul>
+<li>Passkeys in Windows</li>
+<li>Windows passwordless experience</li>
+<li>Web sign-in for Windows</li>
+<li>Declared configuration protocol</li>
+<li>Education themes</li>
+<li>Temporary enterprise feature control</li>
+<li>Multi-app kiosk</li>
+<li>Copilot in Windows</li>
+<li>Windows Hello for Business authentication improvement</li>
+<li>LAPS native integration</li>
+<li>Federated sign-in</li>
+<li>Customize Windows 11 taskbar buttons</li>
+<li>Braille displays</li>
+<li>Dev Drive</li>
+<li>Additional features
+<ul>
+<li>In-box apps</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="22h2">22H2<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#22h2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>via: <a href="https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-11-version-22h2" class="external">https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-11-version-22h2<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<ul>
+<li>Microsoft Pluton</li>
+<li>Enhanced Phishing Protection</li>
+<li>Smart App Control</li>
+<li>Credential Guard</li>
+<li>Malicious and vulnerable driver blocking</li>
+<li>Security hardening and threat protection</li>
+<li>Personal Data Encryption</li>
+<li>WebAuthn APIs support ECC</li>
+<li>Stickers for Windows 11 SE, version 22H2</li>
+<li>Education themes</li>
+<li>Windows Update notifications</li>
+<li>Start menu layout</li>
+<li>Improvements to task manager</li>
+<li>Windows accessibility</li>
+<li>High Efficiency Video Coding (HEVC) support</li>
+</ul>
+<h1 id="close-function">Close Function<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#close-function" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>Close 粘滞键
+<ul>
+<li>设置 > 粘滞键 > 关闭所有触发方式</li>
+<li><a href="https://blog.csdn.net/xitongzhijia_abc/article/details/125505930" class="external">https://blog.csdn.net/xitongzhijia_abc/article/details/125505930<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+<h1 id="references">References<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#references" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>Seem like some pc support edit on the bios
+<ul>
+<li>Settings <span>⇒</span> AMD OverClocking <span>⇒</span> Precision Boost Overdrive
+via: <a href="https://www.reddit.com/r/AMDHelp/comments/es0d4a/how_exactly_do_you_disable_pbo/" class="external">https://www.reddit.com/r/AMDHelp/comments/es0d4a/how_exactly_do_you_disable_pbo/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+</li>
+</ul>
+<h1 id="todo-remote-config">TODO Remote Config<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#todo-remote-config" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>Reg editor</li>
+</ul>
+<h1 id="todo-备份-m2-目录">TODO 备份 .m2 目录<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#todo-备份-m2-目录" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<section data-footnotes class="footnotes"><h2 class="sr-only" id="footnote-label">Footnotes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#footnote-label" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li id="user-content-fn-proxy_winget">
+<p><a href="https://github.com/microsoft/winget-cli/issues/190" class="external">https://github.com/microsoft/winget-cli/issues/190<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://github.com/microsoft/winget-cli/discussions/4428" class="external">https://github.com/microsoft/winget-cli/discussions/4428<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> <a href="#user-content-fnref-proxy_winget" data-footnote-backref aria-label="Back to reference 1" class="data-footnote-backref internal alias">↩</a></p>
+</li>
+<li id="user-content-fn-uninstall-garbage">
+<p><a href="https://superuser.com/questions/1684005/how-do-i-prevent-widgets-exe-from-getting-automatically-started-on-windows-11" class="external">https://superuser.com/questions/1684005/how-do-i-prevent-widgets-exe-from-getting-automatically-started-on-windows-11<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://answers.microsoft.com/en-us/windows/forum/all/how-to-permanently-stop-the-widgets-service-from/de082ed2-81db-4074-a334-0c9ca13f15c4" class="external">https://answers.microsoft.com/en-us/windows/forum/all/how-to-permanently-stop-the-widgets-service-from/de082ed2-81db-4074-a334-0c9ca13f15c4<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://v2ex.com/t/1048191" class="external">https://v2ex.com/t/1048191<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> <a href="#user-content-fnref-uninstall-garbage" data-footnote-backref aria-label="Back to reference 2" class="data-footnote-backref internal alias">↩</a></p>
+</li>
+<li id="user-content-fn-china-office">
+<p><a href="https://v2ex.com/t/1048191" class="external">https://v2ex.com/t/1048191<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> <a href="#user-content-fnref-china-office" data-footnote-backref aria-label="Back to reference 3" class="data-footnote-backref internal alias">↩</a></p>
+</li>
+<li id="user-content-fn-wsn">
+<p><a href="https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/windows-defender-security-center/wdsc-hide-notifications" class="external">https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/windows-defender-security-center/wdsc-hide-notifications<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> <a href="#user-content-fnref-wsn" data-footnote-backref aria-label="Back to reference 4" class="data-footnote-backref internal alias">↩</a></p>
+</li>
+<li id="user-content-fn-turbo-boost">
+<p><a href="https://www.youtube.com/watch?v=iWBVtXPfTB0" class="external">https://www.youtube.com/watch?v=iWBVtXPfTB0<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> <a href="#user-content-fnref-turbo-boost" data-footnote-backref aria-label="Back to reference 5" class="data-footnote-backref internal alias">↩</a></p>
+</li>
+<li id="user-content-fn-overheat-laptop">
+<p><a href="https://www.youtube.com/watch?v=iWBVtXPfTB0" class="external">https://www.youtube.com/watch?v=iWBVtXPfTB0<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> <a href="#user-content-fnref-overheat-laptop" data-footnote-backref aria-label="Back to reference 6" class="data-footnote-backref internal alias">↩</a></p>
+</li>
+<li id="user-content-fn-windows_modern_standby">
+<p>via <a href="https://www.chiphell.com/thread-2460017-1-1.html" class="external">https://www.chiphell.com/thread-2460017-1-1.html<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> to check abnormal power on count with ssd disk. more instructions you could via <a href="https://www.bilibili.com/video/BV1Pv4y1d7Ms/" class="external">https://www.bilibili.com/video/BV1Pv4y1d7Ms/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, solution via <a href="https://blog.csdn.net/sinat_30603081/article/details/130637807" class="external">https://blog.csdn.net/sinat_30603081/article/details/130637807<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://www.timochan.cn/posts/any_pen/stupid_modern_standby" class="external">https://www.timochan.cn/posts/any_pen/stupid_modern_standby<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> <a href="#user-content-fnref-windows_modern_standby" data-footnote-backref aria-label="Back to reference 7" class="data-footnote-backref internal alias">↩</a></p>
+</li>
+<li id="user-content-fn-import_export_wsl">
+<p><a href="https://blog.csdn.net/momodosky/article/details/108102146" class="external">https://blog.csdn.net/momodosky/article/details/108102146<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> <a href="#user-content-fnref-import_export_wsl" data-footnote-backref aria-label="Back to reference 8" class="data-footnote-backref internal alias">↩</a></p>
+</li>
+<li id="user-content-fn-case-sensitive">
+<p>case-sensitive via <a href="https://juejin.cn/post/7135422871735631902" class="external">https://juejin.cn/post/7135422871735631902<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://www.zhihu.com/question/443835000/answer/1726902348%E2%86%A9" class="external">https://www.zhihu.com/question/443835000/answer/1726902348↩<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> <a href="#user-content-fnref-case-sensitive" data-footnote-backref aria-label="Back to reference 9" class="data-footnote-backref internal alias">↩</a></p>
+</li>
+<li id="user-content-fn-auto_replace_in_chinese_windows">
+<p>via: <a href="https://hermit.world/post/2022/01/17/refining-windows-font-rendering/" class="external">https://hermit.world/post/2022/01/17/refining-windows-font-rendering/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://www.zhihu.com/question/67196637" class="external">https://www.zhihu.com/question/67196637<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>, <a href="https://v2ex.com/t/941786" class="external">https://v2ex.com/t/941786<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> <a href="#user-content-fnref-auto_replace_in_chinese_windows" data-footnote-backref aria-label="Back to reference 10" class="data-footnote-backref internal alias">↩</a></p>
+</li>
+</ol>
+</section></article><hr/><div class="page-footer"><div class="giscus" data-repo="bGZo/vault" data-repo-id="R_kgDOM-7h7w" data-category="comments" data-category-id="DIC_kwDOM-7h784CmFf2" data-mapping="url" data-strict="1" data-reactions-enabled="1" data-input-position="bottom" data-light-theme="light" data-dark-theme="dark" data-theme-url="https://note.bgzo.cc//static/giscus" data-lang="en"></div></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[&quot;public&quot;],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[&quot;public&quot;],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-41" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#windows-调教指南" data-for="windows-调教指南">Windows 调教指南</a></li><li class="depth-1"><a href="#安装" data-for="安装">安装</a></li><li class="depth-1"><a href="#跳联网激活" data-for="跳联网激活">跳联网激活</a></li><li class="depth-1"><a href="#激活" data-for="激活">激活</a></li><li class="depth-1"><a href="#包管理器" data-for="包管理器">包管理器</a></li><li class="depth-2"><a href="#可选-从-scoop-导入" data-for="可选-从-scoop-导入">可选: 从 Scoop 导入</a></li><li class="depth-1"><a href="#components-build-in" data-for="components-build-in">Components build-in</a></li><li class="depth-2"><a href="#remove-ads" data-for="remove-ads">Remove: Ads</a></li><li class="depth-2"><a href="#remove-packages" data-for="remove-packages">Remove: Packages</a></li><li class="depth-2"><a href="#replace-powershell" data-for="replace-powershell">Replace: Powershell</a></li><li class="depth-2"><a href="#replace-search" data-for="replace-search">Replace: Search</a></li><li class="depth-2"><a href="#disable-services" data-for="disable-services">Disable: Services</a></li><li class="depth-2"><a href="#disable-firewall" data-for="disable-firewall">Disable: Firewall</a></li><li class="depth-2"><a href="#disable-windows-defender" data-for="disable-windows-defender">Disable: Windows Defender</a></li><li class="depth-2"><a href="#hide-windows-security-notifications" data-for="hide-windows-security-notifications">Hide: Windows Security Notifications</a></li><li class="depth-2"><a href="#disable-windows-update" data-for="disable-windows-update">Disable: Windows Update</a></li><li class="depth-2"><a href="#disable-sticky-keys" data-for="disable-sticky-keys">Disable: Sticky keys</a></li><li class="depth-1"><a href="#laptop-option" data-for="laptop-option">Laptop Option</a></li><li class="depth-2"><a href="#processor-performance-boost-mode-" data-for="processor-performance-boost-mode-">Processor performance boost mode </a></li><li class="depth-1"><a href="#modern-standby-s0" data-for="modern-standby-s0">Modern Standby (S0)</a></li><li class="depth-0"><a href="#subsystem" data-for="subsystem">SubSystem</a></li><li class="depth-1"><a href="#wsl" data-for="wsl">WSL</a></li><li class="depth-1"><a href="#wsa" data-for="wsa">WSA</a></li><li class="depth-0"><a href="#customized" data-for="customized">Customized</a></li><li class="depth-1"><a href="#install-runtime-dependencies" data-for="install-runtime-dependencies">Install Runtime Dependencies</a></li><li class="depth-1"><a href="#install-font" data-for="install-font">Install Font</a></li><li class="depth-1"><a href="#coding-case-sensitive-" data-for="coding-case-sensitive-">Coding: Case Sensitive </a></li><li class="depth-1"><a href="#chinese-flypy-support" data-for="chinese-flypy-support">Chinese: Flypy Support</a></li><li class="depth-1"><a href="#chinese-font-rendering" data-for="chinese-font-rendering">Chinese: Font rendering</a></li><li class="depth-1"><a href="#proxy" data-for="proxy">Proxy</a></li><li class="depth-1"><a href="#beautify" data-for="beautify">Beautify</a></li><li class="depth-2"><a href="#like-mac" data-for="like-mac">Like Mac</a></li><li class="depth-0"><a href="#waiting-features" data-for="waiting-features">Waiting features</a></li><li class="depth-1"><a href="#unlock-windows-hello-without-pin" data-for="unlock-windows-hello-without-pin">Unlock windows hello without PIN</a></li><li class="depth-0"><a href="#reference" data-for="reference">Reference</a></li><li class="depth-1"><a href="#shortcuts" data-for="shortcuts">Shortcuts</a></li><li class="depth-2"><a href="#global" data-for="global">Global</a></li><li class="depth-2"><a href="#ctrl" data-for="ctrl">Ctrl</a></li><li class="depth-2"><a href="#alt" data-for="alt">Alt</a></li><li class="depth-2"><a href="#fn" data-for="fn">Fn</a></li><li class="depth-1"><a href="#changelog" data-for="changelog">Changelog</a></li><li class="depth-2"><a href="#24h2" data-for="24h2">24H2</a></li><li class="depth-2"><a href="#23h2" data-for="23h2">23H2</a></li><li class="depth-2"><a href="#22h2" data-for="22h2">22H2</a></li><li class="depth-0"><a href="#close-function" data-for="close-function">Close Function</a></li><li class="depth-0"><a href="#references" data-for="references">References</a></li><li class="depth-0"><a href="#todo-remote-config" data-for="todo-remote-config">TODO Remote Config</a></li><li class="depth-0"><a href="#todo-备份-m2-目录" data-for="todo-备份-m2-目录">TODO 备份 .m2 目录</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>Backlinks</h3><ul id="list-2" class="overflow"><li><a href="../tools" class="internal">我用的一些工具</a></li><li><a href="../weekly/20240714-hp-starbook" class="internal">买了一台 HP Starbook 2024</a></li><li><a href="../weekly/20250406-choose-tool-for-package-management" class="internal">How to choose package management</a></li><li><a href="../weekly/20250719-run-program-in-background" class="internal">How to run program in background</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function E(a,e){if(!a)return;function t(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function n(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}a?.addEventListener("click",t),window.addCleanup(()=>a?.removeEventListener("click",t)),document.addEventListener("keydown",n),window.addCleanup(()=>document.removeEventListener("keydown",n))}function f(a){for(;a.firstChild;)a.removeChild(a.firstChild)}var m=class{constructor(e,t){this.container=e;this.content=t;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),t=this.onMouseMove.bind(this),n=this.onMouseUp.bind(this),o=this.onTouchStart.bind(this),r=this.onTouchMove.bind(this),i=this.onTouchEnd.bind(this),s=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),this.container.addEventListener("touchstart",o,{passive:!1}),document.addEventListener("touchmove",r,{passive:!1}),document.addEventListener("touchend",i),window.addEventListener("resize",s),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",t),()=>document.removeEventListener("mouseup",n),()=>this.container.removeEventListener("touchstart",o),()=>document.removeEventListener("touchmove",r),()=>document.removeEventListener("touchend",i),()=>window.removeEventListener("resize",s))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let t=this.createButton("+",()=>this.zoom(.1)),n=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(n),e.appendChild(o),e.appendChild(t),this.container.appendChild(e)}createButton(e,t){let n=document.createElement("button");return n.textContent=e,n.className="mermaid-control-button",n.addEventListener("click",t),window.addCleanup(()=>n.removeEventListener("click",t)),n}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}onTouchStart(e){if(e.touches.length!==1)return;this.isDragging=!0;let t=e.touches[0];this.startPan={x:t.clientX-this.currentPan.x,y:t.clientY-this.currentPan.y}}onTouchMove(e){if(!this.isDragging||e.touches.length!==1)return;e.preventDefault();let t=e.touches[0];this.currentPan={x:t.clientX-this.startPan.x,y:t.clientY-this.startPan.y},this.updateTransform()}onTouchEnd(){this.isDragging=!1}zoom(e){let t=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),n=this.content.getBoundingClientRect(),o=n.width/2,r=n.height/2,i=t-this.scale;this.currentPan.x-=o*i,this.currentPan.y-=r*i,this.scale=t,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){let t=this.content.querySelector("svg").getBoundingClientRect(),n=t.width/this.scale,o=t.height/this.scale;this.scale=1,this.currentPan={x:(this.container.clientWidth-n)/2,y:(this.container.clientHeight-o)/2},this.updateTransform()}},T=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],y;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;y||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let t=y.default,n=new WeakMap;for(let r of e)n.set(r,r.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let c=n.get(s);c&&(s.innerHTML=c)}let r=T.reduce((s,c)=>(s[c]=window.getComputedStyle(document.documentElement).getPropertyValue(c),s),{}),i=document.documentElement.getAttribute("saved-theme")==="dark";t.initialize({startOnLoad:!1,securityLevel:"loose",theme:i?"dark":"base",themeVariables:{fontFamily:r["--codeFont"],primaryColor:r["--light"],primaryTextColor:r["--darkgray"],primaryBorderColor:r["--tertiary"],lineColor:r["--darkgray"],secondaryColor:r["--secondary"],tertiaryColor:r["--tertiary"],clusterBkg:r["--light"],edgeLabelBackground:r["--highlight"]}}),await t.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let r=0;r<e.length;r++){let v=function(){let g=l.querySelector("#mermaid-space"),h=l.querySelector(".mermaid-content");if(!h)return;f(h);let w=i.querySelector("svg").cloneNode(!0);h.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new m(g,h)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},i=e[r],s=i.parentElement,c=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(c),L=c.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),E(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript.js" type="module" data-persist="true"></script></html>
