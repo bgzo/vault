@@ -1,11 +1,11 @@
 ---
 title: 圖牀遷移 Cloudflare R2
-aliases: ['圖牀遷移 Cloudflare R2']
+aliases: 圖牀遷移 Cloudflare R2
 created: 2026-04-12 00:55:38
-modified: 2026-04-12 22:09:38
+modified: 2026-05-26 21:36:26
+published: 2026-04-12 16:23:58
 tags: ['blog', 'cloudflare', 'public', 'writing/lab']
 draft: False
-published: 2026-04-12 16:23:58
 description: 不得不說 CF 是互聯網界的活菩薩，免費提供的對象存儲量大管飽，對我這種沒人看的小透明足夠了： 存儲：10GB/月免費，每增加 1GB/月收取 0.015 美元 A 類操作：100 萬次操作/月免費，每增加 100 萬次操作收取 4.50 美元 B 類操作：1000 萬次操作/月免費，每增加 100 萬次操作收取 0.36 美元 出口流量費全免 [!TIP] 什麼意思呢？只有訪問次數計入賬單（A ...
 ---
 
@@ -68,7 +68,7 @@ pngquant --force --ext .png --quality=60-80 frieren.png
 
 [^manage-func]: 雲端由於需要列出 bucket 列表，所以需要的權限比只上傳圖片更高，需要管理員讀和寫 via https://github.com/Kuingsmile/PicList/issues/473
 
-![](https://private-user-images.githubusercontent.com/96409857/543530856-82f1df17-83b4-49b8-9ec5-36d37b7eac54.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzYwMDI2NTIsIm5iZiI6MTc3NjAwMjM1MiwicGF0aCI6Ii85NjQwOTg1Ny81NDM1MzA4NTYtODJmMWRmMTctODNiNC00OWI4LTllYzUtMzZkMzdiN2VhYzU0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA0MTIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNDEyVDEzNTkxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTFiZDMzYTliYjc0ZmI3ODE0NWQxODQxYjUwOWJhMjJjNzYzMDE4ZjRkMTIzNmQ2ZjlkNjQ1MTFkYTlhOWE0ZjcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.y_8O3NFJ4CmSedqDXJ0d85yC6y-2LTMynfcqn_wC0Lc)
+![](https://pub-89c11651a8434f18a530bd6f93e399da.r2.dev/{year}/{fullName}/20260526213617218.webp)
 
 如果僅僅是上傳的話，配置第三個，對象讀寫的權限就完全可以勝任。
 
