@@ -68,7 +68,7 @@ pngquant --force --ext .png --quality=60-80 frieren.png
 
 [^manage-func]: 雲端由於需要列出 bucket 列表，所以需要的權限比只上傳圖片更高，需要管理員讀和寫 via https://github.com/Kuingsmile/PicList/issues/473
 
-![](https://pub-89c11651a8434f18a530bd6f93e399da.r2.dev/{year}/{fullName}/20260526213617218.webp)
+![](https://pub-89c11651a8434f18a530bd6f93e399da.r2.dev/2026/20260526213617218.webp)
 
 如果僅僅是上傳的話，配置第三個，對象讀寫的權限就完全可以勝任。
 
