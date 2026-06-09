@@ -2,48 +2,63 @@
 title: Windows 調教指南
 aliases: ['How to setup a new windows', 'Windows 調教指南']
 created: 2024-09-22 09:26:22
-modified: 2026-04-11 18:50:20
+modified: 2026-06-06 11:17:42
 published: 2024-09-22 09:26:22
-tags: ['public', 'writing/how-to']
+tags: ['public', 'windows', 'writing/how-to']
 draft: False
-description: [!TIP] 換機很麻煩，不妨看看這篇指南？ 安裝 拿到 Windows ISO 鏡像： https//www.microsoft.com/en-us/software-download/windows11 https//msdn.sjjzm.com https//msdn.itellyou.cn https//www.hellowindows.cn 寫到 U 盤裏面： https//github...
+description: "自用換機指南：不正確、不建議、不負責；"
 ---
 
-> [!TIP]
-> 換機很麻煩，不妨看看這篇指南？
+## 安裝（可選）
 
-## 安裝
+我們的最終目標是 Windows Pro, 其他版本不建議，首先可以用 [RUFUS](https://github.com/pbatard/rufus) 進行 ISO 燒錄，然後重裝系統，鏡像可以從下面網站獲取：
 
-- 拿到 Windows ISO 鏡像：
-    - https://www.microsoft.com/en-us/software-download/windows11
-    - https://msdn.sjjzm.com
-    - https://msdn.itellyou.cn
-    - https://www.hellowindows.cn
-- 寫到 U 盤裏面：
-    - https://github.com/pbatard/rufus
+| 網站  | 存活  |
+| --- | --- |
+|   https://www.microsoft.com/en-us/software-download/windows11  |  ![](https://img.shields.io/website?style=for-the-badge&label=&url=https://www.microsoft.com/en-us/software-download/windows11)   |
+|  https://msdn.sjjzm.com   |  ![](https://img.shields.io/website?style=for-the-badge&label=&url=https://msdn.sjjzm.com)   |
+|  https://msdn.itellyou.cn   |  ![](https://img.shields.io/website?style=for-the-badge&label=&url=https://msdn.itellyou.cn)   |
+|  https://www.hellowindows.cn   |  ![](https://img.shields.io/website?style=for-the-badge&label=&url=https://www.hellowindows.cn)   |
 
-## 跳聯網激活
+另一種方式是從家庭版或者亂八七糟的版本直接升級爲 Pro 版本，需要輸入激活碼，嘗試：
 
-`shift + f12` 彈出命令行後，輸入
+```shell
+MPNQW-MGTVK-678YR-P6GT8-JFG6T
+```
+
+## 跳過聯網激活（可選）
+
+`shift + f12` 彈出命令行後，輸入如下命令即可跳過聯網激活：
 
 ```shell
 oobe\bypassnro
 ```
 
-重啓進入系統即可跳過聯網激活
-
 ## 激活
 
 ```shell
-irm https://massgrave.dev/get | iex
+irm https://get.activated.win | iex
 ```
 
-via: https://github.com/massgravel/Microsoft-Activation-Scripts
+via: https://github.com/massgravel/Microsoft-Activation-Scripts / [Microsoft Activation Scripts | MAS](https://massgrave.dev/)
 
-## 包管理器
+## 包管理器: Winget + Scoop
 
 > [!IMPORTANT]
-> 下面的指南需要 `winget`，好在現在改命令已經支持代理，因此你唯一需要保證的是暢通的網絡 [^proxy_winget]。選擇自己偏好的命令開啓代理：
+> 環境準備：現在我們已經成功進入激活系統了，可以開始搞了，以下指南全部經過命令行實現，所以自行準備 PWSH 7 的運行環境，不保證自帶的 Powershell 5 可以正常運行；
+>
+> `winget install --id Microsoft.PowerShell`
+
+考慮到可遷移性，我們優先選擇 Scoop 安裝/恢復軟件，找不到的情況下再選 scoop，當然，其他包管理器也可以；
+
+> [!TIP]
+> 從使用上來說，無狀態的工具兩者都可，但是有狀態的工具最好還是 scoop。
+
+### 代理
+
+如果你的網絡環境不好，現在 Winget / Scoop 都有很好的代理支持，因此你唯一需要保證的是暢通的網絡 [^proxy_winget]。選擇自己偏好的命令開啓代理：
+
+Winget 代理如下：
 
 ```bash
 $ sudo winget settings --enable ProxyCommandLineOptions
@@ -52,15 +67,15 @@ $ winget settings set DefaultProxy http://127.0.0.1:10800
 $ winget settings reset DefaultProxy
 ```
 
-### 可選: 從 Scoop 導入
-
 Scoop 也支持代理，別忘了：
 
 ```shell
 scoop config proxy 127.0.0.1:10800
 ```
 
-建議將舊機器的 SCOOP 文件夾放在用戶目錄（`~`)，然後保存 `install-scoop.ps1`, 運行下面的腳本更新環境變量：
+### 從 Scoop 恢復（可選）
+
+建議將舊機器的 SCOOP 文件夾放在用戶目錄（`~`)，然後保存 `install-scoop.ps1`（PS7）, 運行下面的腳本更新環境變量：
 
 ```powershell
 $username = $env:USERNAME
@@ -84,89 +99,122 @@ if (-not $currentUserPath.Contains($newPathEntry)) {
 }
 ```
 
-接下來重新創建符號連接（需要管理員）：
+如果不想運行命令，可以人肉做如下事情：
+
+1. 配置 `SCOOP` 的用戶環境變量爲 `~/scoop`；
+2. 配置 `~/scoop/shimes/` 到 `path` 環境變量；
+
+接下來重新創建符號連接（管理員運行）：
 
 ```bash
 sudo scoop reset *
 ```
 
-## Components build-in
+這樣，你上個機器的軟件全部恢復了；
+
+## 優化
+
+### Disable: Windows Defender
+
+use [`dControl`](https://www.sordum.org/9480/defender-control-v2-1/), but not open-source.
+
+### Disable: Windows Update
+
+use [`Wub`]([Windows Update Blocker v1.8](https://www.sordum.org/9470/windows-update-blocker-v1-8/)), but not open-source.
+
+### Disable: Firewall
+
+Run as `disable-firewall.ps1`
+
+```powershell
+Get-NetFirewallProfile
+
+Set-NetFirewallProfile -Profile Domain -Enabled False
+Set-NetFirewallProfile -Profile Private -Enabled False
+Set-NetFirewallProfile -Profile Public -Enabled False
+
+Get-NetFirewallProfile
+```
 
 ### Remove: Ads
 
-Run as `.ps1`:
+有比較多的 Windows 優化工具，我之前用的是 https://github.com/xM4ddy/OFGB ，現在更推薦 [Raphire/Win11Debloats](https://github.com/Raphire/Win11Debloat)，默認的就可以，刪掉沒有用的 AI 和廣告。
 
-```powershell
-$distDir = "dist"
+然後，每個 OEM 自帶的垃圾軟件都不一樣，所以需要甄別，比如 Hornor 自帶的奇安信其實是 [可以卸載](https://zhidao.baidu.com/question/438719543940411652.html) 的，這點需要自行注意；
 
-if (-not (Test-Path -Path $distDir)) {
-    # New-Item -Path $distDir -ItemType Directory
-    mkdir $distDir
-}
+## 自定義
 
-if (-not $distDir) {
-    Write-Host "Error: \$distDir is null or empty!"
-    exit
-}
+### Chinese: Flypy(小鶴雙拼)
 
-$fileUrl = "https://github.com/xM4ddy/OFGB/releases/download/v0.4/OFGB-Deps.exe"
-$fileName = "OFGB-Deps.exe"
-$destinationPath = Join-Path -Path $distDir -ChildPath $fileName
+Run as `install-flypy.reg`
 
-if (-not (Test-Path -Path $distDir)) {
-    New-Item -Path $distDir -ItemType Directory
-}
+```reg
+Windows Registry Editor Version 5.00
 
-$defaultProxy = "http://127.0.0.1:7890"
-
-$useProxy = Read-Host "是否需要使用代理下載文件? (y/n)"
-
-if ($useProxy -eq "y") {
-    # 詢問用戶是否使用默認代理地址
-    $proxyAddress = Read-Host "是否使用默認代理地址 $defaultProxy? (y/n)"
-    if ($proxyAddress -eq "y") {
-        $proxy = $defaultProxy
-    } else {
-        # 用戶提供自定義代理地址
-        $proxy = Read-Host "請輸入自定義代理地址"
-    }
-
-    # 設置代理並下載文件
-    $webClient = New-Object System.Net.WebClient
-    $webClient.Proxy = New-Object System.Net.WebProxy($proxy)
-    $webClient.DownloadFile($fileUrl, $destinationPath)
-    Write-Host "文件已通過代理下載到 $distDir 目錄"
-} else {
-    # 直接下載文件，不使用代理
-    Invoke-WebRequest -Uri $fileUrl -OutFile $destinationPath
-    Write-Host "文件已下載到 $distDir 目錄"
-}
+[HKEY_CURRENT_USER\Software\Microsoft\InputMethod\Settings\CHS]
+"UserDefinedDoublePinyinScheme0"="flypy*2*^*iuvdjhcwfg^xmlnpbksqszxkrltvyovt"
 ```
 
-### Remove: Packages
+### 字體美化
 
-Run following:[^uninstall-garbage] [^china-office]
+因爲種種原因，優先安裝 [AliceT8d/NobleScarlet](https://github.com/AliceT8d/NobleScarlet)（自行找），可以緩解中文虛化的問題，其他字體可以根據 Scoop 自行安裝：
+
+```shell
+$ scoop bucket add nerd-fonts
+
+$ scoop install LXGWWenKai
+$ scoop install LXGWWenKaiMono
+
+$ scoop install JetBrainsMono-NF
+```
+
+所有的字體都在 `~\AppData\Local\Microsoft\Windows\Fonts` 目錄中，
+
+## 軟件推薦
+
+1. [flexits/HotCornersWin: macOS "hot corners" feature for Windows](https://github.com/flexits/HotCornersWin)
+
+```shell
+winget install stnkl.EverythingToolbar
+
+winget install Microsoft.Coreutils
+
+```
+
+### Install Runtime Dependencies
 
 ```bash
-$ winget uninstall "windows web experience pack"
-$ winget uninstall "電腦管家"
-$ winget uninstall "資訊"
+$ winget install Microsoft.VCRedist.2010.x64
+$ winget install Microsoft.VCRedist.2012.x64
+$ winget install Microsoft.VCRedist.2013.x64
+$ winget install Microsoft.VCRedist.2015+.x64
 ```
 
-### Replace: Powershell
+## 魔改（不推薦）
+
+### Coding: Case Sensitive [^case-sensitive]
 
 ```shell
-#Powershell 7
-$ winget install --id Microsoft.PowerShell
+$ fsutil.exe file setCaseSensitiveInfo ~\workspaces enable
+$ git config core.ignorecase false
 ```
 
-### Replace: Search
+### Chinese: Font rendering
 
-[GitHub - srwi/EverythingToolbar: Everything integration for the Windows taskbar.](https://github.com/srwi/EverythingToolbar) ![https://github.com/srwi/EverythingToolbar](https://img.shields.io/github/stars/srwi/EverythingToolbar)
+1. ClearType build-in windows.
+2. Install [Noble Scarlet](https://github.com/fernvenue/microsoft-yahei)[^auto_replace_in_chinese_windows]
+3. Replace with Apple PingFang using https://github.com/Tatsu-syo/noMeiryoUI
 
-```shell
-$ winget install stnkl.EverythingToolbar
-```
+> [!NOTE]
+> In 22H2 later versions, something would be wrong. via https://github.com/Tatsu-syo/noMeiryoUI/discussions/86
+
+4. (Not recommend, cause *outdated*) MacType
+
+````sh
+$ winget install MacType.MacType
+````
+
+5. (Not recommend, cause *side effect*) Replace Fonts
 
 ### Disable: Services
 
@@ -198,24 +246,6 @@ foreach ($service in $servicesToDisable) {
 }
 ```
 
-### Disable: Firewall
-
-Run as `disable-firewall.ps1`
-
-```powershell
-Get-NetFirewallProfile
-
-Set-NetFirewallProfile -Profile Domain -Enabled False
-Set-NetFirewallProfile -Profile Private -Enabled False
-Set-NetFirewallProfile -Profile Public -Enabled False
-
-Get-NetFirewallProfile
-```
-
-### Disable: Windows Defender
-
-use [`dControl`](https://www.sordum.org/9480/defender-control-v2-1/), but not open-source.
-
 ### Hide: Windows Security Notifications
 
 Run as `disable-security-notifications.reg`[^wsn]
@@ -227,16 +257,6 @@ Windows Registry Editor Version 5.00
 "DisableNotifications"=dword:00000001
 ```
 
-### Disable: Windows Update
-
-TODO
-
-### Disable: Sticky keys
-
-TODO
-
-## Laptop Option
-
 ### Processor performance boost mode [^turbo-boost]
 
 Run <code>process-boost.bat</code>, then go `powercfg.cpl` to disable boost it. If you are using windows 11, you could use the `EnergyStar` meanwhile.[^overheat-laptop]
@@ -245,7 +265,9 @@ Run <code>process-boost.bat</code>, then go `powercfg.cpl` to disable boost it. 
 $ winget install 9NF7JTB3B17P
 ```
 
-## Modern Standby (S0)
+Seem like some pc support edit on the bios, like AMD: `Settings --> AMD OverClocking --> Precision Boost Overdrive`, via via: https://www.reddit.com/r/AMDHelp/comments/es0d4a/how_exactly_do_you_disable_pbo/
+
+### Modern Standby (S0)
 
 Check your laptop whether support S3 sleep mode:
 
@@ -278,7 +300,15 @@ Windows Registry Editor Version 5.00
 "PlatformAoAcOverride"=-
 ```
 
-## WSL
+### Disable: Sticky keys
+
+  - Close 粘滯鍵
+    - 設置 > 粘滯鍵 > 關閉所有觸發方式
+    - https://blog.csdn.net/xitongzhijia_abc/article/details/125505930
+
+## SubSystem
+
+### WSL
 
 Install WSL
 
@@ -297,138 +327,19 @@ Then import ubuntu[^import_export_wsl]
 wsl --import ubuntu "C:\Users\bgzo\wsl\" "C:\Users\bgzo\Downloads\ubuntu.tar" --version 2
 ```
 
-## WSA
+### WSA
 
 TODO
 
-## Install Runtime Dependencies
+## Windows is soooo good:
 
-```bash
-$ winget install Microsoft.VCRedist.2010.x64
-$ winget install Microsoft.VCRedist.2012.x64
-$ winget install Microsoft.VCRedist.2013.x64
-$ winget install Microsoft.VCRedist.2015+.x64
-```
+Waitng feature:
 
-## Install Font
-
-install under user permission, stored in `~\AppData\Local\Microsoft\Windows\Fonts`
-
-```shell
-$ scoop bucket add nerd-fonts
-
-$ scoop install LXGWWenKai
-$ scoop install LXGWWenKaiMono
-
-$ scoop install JetBrainsMono-NF
-```
-
-Recommend you install following fonts:
-
-- Ping Fang Font
-- Noble Scarlet
-
-## Coding: Case Sensitive [^case-sensitive]
-
-```shell
-$ fsutil.exe file setCaseSensitiveInfo ~\workspaces enable
-$ git config core.ignorecase false
-```
-
-## Chinese: Flypy Support
-
-Run as `install-flypy.reg`
-
-```reg
-Windows Registry Editor Version 5.00
-
-[HKEY_CURRENT_USER\Software\Microsoft\InputMethod\Settings\CHS]
-"UserDefinedDoublePinyinScheme0"="flypy*2*^*iuvdjhcwfg^xmlnpbksqszxkrltvyovt"
-```
-
-## Chinese: Font rendering
-
-1. ClearType build-in windows.
-2. Install [Noble Scarlet](https://github.com/fernvenue/microsoft-yahei)[^auto_replace_in_chinese_windows]
-3. Replace with Apple PingFang using https://github.com/Tatsu-syo/noMeiryoUI
-
-> [!NOTE]
-> In 22H2 later versions, something would be wrong. via https://github.com/Tatsu-syo/noMeiryoUI/discussions/86
-
-4. (Not recommend, cause *outdated*) MacType
-
-````sh
-$ winget install MacType.MacType
-````
-
-5. (Not recommend, cause *side effect*) Replace Fonts
-
-## Proxy
-
-See proxy, then go https://github.com/bGZo/proxy
-
-## Beautify
-
-### Like Mac
-
-- BitDock: http://www.bitdock.cn/bbs/forum.php
-
-## Unlock windows hello without PIN
-
-Impossible via: https://answers.microsoft.com/en-us/windows/forum/all/option-to-setup-fingerprint-without-pin-windows/10692b78-a60a-4208-9c97-b9ec27809cea
-
-## Shortcuts
-
-### Global
-
-|    Operation    |          Effects           |
-| :-------------: | :------------------------: |
-|      Win+E      |       打開資源管理器       |
-|      Win+t      |       循環切換任務欄       |
-|   Win+Ctrl+D    |      創建虛擬 Desktop      |
-|      Win+Q      |            搜索            |
-|   Win+Ctrl+F4   |      關閉虛擬 Desktop      |
-|      Win+R      |           對話框           |
-| Win+Ctrl+ 左/右 |    左右切換虛擬 Desktop    |
-|      Win+X      | “Windows 移動中心”設置面板 |
-|     Win+F4      |          關閉窗口          |
-|      Win+m      |   最小化窗口（全部窗口）   |
-|   Win+Shift+M   |   還原窗口最小化（全部）   |
-
-### Ctrl
-
-|    Operation    |           Effects            |
-| :-------------: | :--------------------------: |
-|     ctrl+w      | 關閉瀏覽器當前頁（我的電腦） |
-|     ctrl+t      |         打開新標籤頁         |
-| ctrl+alt+delete |        打開任務管理器        |
-|  ctrl+shift+t   |     恢復關閉的瀏覽器頁面     |
-|      ctrl+      |           放大頁面           |
-|      ctrl-      |           縮小頁面           |
-
-### Alt
-
-|      Operation       |             Effects              |
-| :------------------: | :------------------------------: |
-|        alt+F4        |             關閉窗口             |
-|      alt+enter       |         查看選中文件屬性         |
-| alt+ 前進/後退方向鍵 |        瀏覽器頁面後退前進        |
-|        alt+d         |         焦點固定到地址欄         |
-|  alt+shief+numLock   |          用鍵盤控制鼠標          |
-|     alt+space+n      | 單個窗口最小化（配合 Dock 使用） |
-
-### Fn
-
-| Operation |                      Effects                       |
-| :-------: | :------------------------------------------------: |
-|    F1     |        顯示當前程序或者 windows 的幫助內容         |
-|    F2     |            如果選中文件的話，進行重命名            |
-|    F3     |                        查找                        |
-|    F5     |                   瀏覽器頁面刷新                   |
-|    F6     | 使用瀏覽器時，地址欄獲得焦點（即光標移到了地址欄） |
-|    F11    |                     瀏覽器全屏                     |
-|    F12    |              瀏覽器審查元素/調試界面               |
-|   prtsc   |                        截屏                        |
+1. 自動切換黑暗模式
+2. 自動亮度調節
+3. Unlock windows hello without PIN
+	1. Impossible via: https://answers.microsoft.com/en-us/windows/forum/all/option-to-setup-fingerprint-without-pin-windows/10692b78-a60a-4208-9c97-b9ec27809cea
+4. 屏幕使用時間
 
 ## Changelog
 
@@ -515,15 +426,50 @@ via: https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-11-ve
 - Windows accessibility
 - High Efficiency Video Coding (HEVC) support
 
-  - Close 粘滯鍵
-    - 設置 > 粘滯鍵 > 關閉所有觸發方式
-    - https://blog.csdn.net/xitongzhijia_abc/article/details/125505930
+## Quck Sheet for Shortcuts
 
-- Seem like some pc support edit on the bios
-    - Settings --> AMD OverClocking --> Precision Boost Overdrive
-    via: https://www.reddit.com/r/AMDHelp/comments/es0d4a/how_exactly_do_you_disable_pbo/
+|    Operation    |          Effects           |
+| :-------------: | :------------------------: |
+|      Win+E      |       打開資源管理器       |
+|      Win+t      |       循環切換任務欄       |
+|   Win+Ctrl+D    |      創建虛擬 Desktop      |
+|      Win+Q      |            搜索            |
+|   Win+Ctrl+F4   |      關閉虛擬 Desktop      |
+|      Win+R      |           對話框           |
+| Win+Ctrl+ 左/右 |    左右切換虛擬 Desktop    |
+|      Win+X      | “Windows 移動中心”設置面板 |
+|     Win+F4      |          關閉窗口          |
+|      Win+m      |   最小化窗口（全部窗口）   |
+|   Win+Shift+M   |   還原窗口最小化（全部）   |
 
-  - Reg editor
+|    Operation    |           Effects            |
+| :-------------: | :--------------------------: |
+|     ctrl+w      | 關閉瀏覽器當前頁（我的電腦） |
+|     ctrl+t      |         打開新標籤頁         |
+| ctrl+alt+delete |        打開任務管理器        |
+|  ctrl+shift+t   |     恢復關閉的瀏覽器頁面     |
+|      ctrl+      |           放大頁面           |
+|      ctrl-      |           縮小頁面           |
+
+|      Operation       |             Effects              |
+| :------------------: | :------------------------------: |
+|        alt+F4        |             關閉窗口             |
+|      alt+enter       |         查看選中文件屬性         |
+| alt+ 前進/後退方向鍵 |        瀏覽器頁面後退前進        |
+|        alt+d         |         焦點固定到地址欄         |
+|  alt+shief+numLock   |          用鍵盤控制鼠標          |
+|     alt+space+n      | 單個窗口最小化（配合 Dock 使用） |
+
+| Operation |          Effects          |
+| :-------: | :-----------------------: |
+|    F1     |  顯示當前程序或者 windows 的幫助內容   |
+|    F2     |      如果選中文件的話，進行重命名       |
+|    F3     |            查找             |
+|    F5     |          瀏覽器頁面刷新          |
+|    F6     | 使用瀏覽器時，地址欄獲得焦點（即光標移到了地址欄） |
+|    F11    |           瀏覽器全屏           |
+|    F12    |       瀏覽器審查元素/調試界面        |
+|   prtsc   |            截屏             |
 
 [^proxy_winget]: https://github.com/microsoft/winget-cli/issues/190, https://github.com/microsoft/winget-cli/discussions/4428
 [^uninstall-garbage]: https://superuser.com/questions/1684005/how-do-i-prevent-widgets-exe-from-getting-automatically-started-on-windows-11, https://answers.microsoft.com/en-us/windows/forum/all/how-to-permanently-stop-the-widgets-service-from/de082ed2-81db-4074-a334-0c9ca13f15c4, https://v2ex.com/t/1048191
