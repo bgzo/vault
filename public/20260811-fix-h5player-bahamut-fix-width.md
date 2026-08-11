@@ -1,11 +1,11 @@
 ---
-title: 修復 h5player 腳本在巴哈姆特注入 CSS
-aliases: 修復 h5player 腳本在巴哈姆特注入 CSS
+title: 修復 h5player 腳本在巴哈姆特持續注入 CSS
+aliases: 修復 h5player 腳本在巴哈姆特持續注入 CSS
 created: 2026-08-11 20:10:06
-modified: 2026-08-11 23:53:11
-tags: ['bahamute', 'javascript', 'tampermonkey', 'userscripts', 'writing/lab', 'public']
-draft: False
+modified: 2026-08-12 00:17:17
 published: 2026-08-11 23:56:00
+tags: ['bahamute', 'javascript', 'public', 'tampermonkey', 'userscripts', 'writing/lab']
+draft: False
 description: 很喜歡 h5player 的截圖功能，喜歡到了剛需的程度！它強大到自己可以讓網頁上的一切視頻都能截圖，甚至做到下載。雖然它如今已經適配 37+ 網站，但它還是不對付我常用的兩個看番網站： 1. https//ani.gamer.com.tw/ 2. https//anime1.me 這個問題我 22 年左右就發現了，一直沒有提 ISSUE，也沒有下載下來自己定位看看，時至如今，這個問題依舊，終於在...
 ---
 
