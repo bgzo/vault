@@ -2,7 +2,7 @@
 title: Windows 調教指南
 aliases: ['How to setup a new windows', 'Windows 調教指南']
 created: 2024-09-22 09:26:22
-modified: 2026-06-06 11:17:42
+modified: 2026-06-11 20:59:34
 published: 2024-09-22 09:26:22
 tags: ['public', 'windows', 'writing/how-to']
 draft: False
@@ -139,6 +139,26 @@ Get-NetFirewallProfile
 ### Remove: Ads
 
 有比較多的 Windows 優化工具，我之前用的是 https://github.com/xM4ddy/OFGB ，現在更推薦 [Raphire/Win11Debloats](https://github.com/Raphire/Win11Debloat)，默認的就可以，刪掉沒有用的 AI 和廣告。
+
+```shell
+-------------------------------------------------------------------------------------------
+ Win11Debloat Script - Default Mode (User: bgzo)
+-------------------------------------------------------------------------------------------
+Win11Debloat will make the following changes:
+- Remove the default selection of apps:
+Clipchamp.Clipchamp Microsoft.3DBuilder Microsoft.549981C3F5F10 Microsoft.BingFinance Microsoft.BingFoodAndDrink Microsoft.BingHealthAndFitness Microsoft.BingNews Microsoft.BingSports Microsoft.BingTranslator Microsoft.BingTravel Microsoft.BingWeather Microsoft.Copilot Microsoft.Getstarted Microsoft.Messaging Microsoft.Microsoft3DViewer Microsoft.MicrosoftJournal Microsoft.MicrosoftOfficeHub Microsoft.MicrosoftPowerBIForWindows Microsoft.MicrosoftSolitaireCollection Microsoft.MicrosoftStickyNotes Microsoft.MixedReality.Portal Microsoft.NetworkSpeedTest Microsoft.News Microsoft.Office.OneNote Microsoft.Office.Sway Microsoft.OneConnect Microsoft.Print3D Microsoft.PowerAutomateDesktop Microsoft.SkypeApp Microsoft.Todos Microsoft.Windows.DevHome Microsoft.WindowsAlarms Microsoft.WindowsFeedbackHub Microsoft.WindowsMaps Microsoft.WindowsSoundRecorder Microsoft.XboxApp Microsoft.ZuneVideo MicrosoftCorporationII.MicrosoftFamily MicrosoftCorporationII.QuickAssist MicrosoftTeams MSTeams ACGMediaPlayer ActiproSoftwareLLC AdobeSystemsIncorporated.AdobePhotoshopExpress Amazon.com.Amazon AmazonVideo.PrimeVideo Asphalt8Airborne AutodeskSketchBook CaesarsSlotsFreeCasino COOKINGFEVER CyberLinkMediaSuiteEssentials DisneyMagicKingdoms Disney DrawboardPDF Duolingo-LearnLanguagesforFree EclipseManager Facebook FarmVille2CountryEscape fitbit Flipboard HiddenCity HULULLC.HULUPLUS iHeartRadio Instagram king.com.BubbleWitch3Saga king.com.CandyCrushSaga king.com.CandyCrushSodaSaga LinkedInforWindows MarchofEmpires Netflix NYTCrossword OneCalendar PandoraMediaInc PhototasticCollage PicsArt-PhotoStudio Plex PolarrPhotoEditorAcademicEdition Royal Revolt Shazam Sidia.LiveWallpaper SlingTV Spotify TikTok TuneInRadio Twitter Viber WinZipUniversal Wunderlist XING
+- Disable Windows Recall
+- Disable Click to Do (AI text & image analysis)
+- Disable & remove Microsoft Copilot
+- Disable telemetry, diagnostic data, activity history, app-launch tracking & targeted ads
+- Disable tips, tricks, suggestions and ads in start, settings, notifications and File Explorer
+- Disable ads, suggestions and the MSN news feed in Microsoft Edge
+- Disable tips & tricks on the lockscreen (This may change your lockscreen wallpaper)
+- Disable & remove Bing web search, Bing AI and Cortana from Windows search
+- Show file extensions for known file types
+- Disable widgets on the taskbar & lockscreen
+- Disable Fast Start-up
+```
 
 然後，每個 OEM 自帶的垃圾軟件都不一樣，所以需要甄別，比如 Hornor 自帶的奇安信其實是 [可以卸載](https://zhidao.baidu.com/question/438719543940411652.html) 的，這點需要自行注意；
 
